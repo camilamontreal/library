@@ -27,3 +27,17 @@ The app is a standard Next.js app and uses no host-specific features. On Vercel,
 - `match_candidate` is the review queue. Content is merged only through `merge_content(keep, drop)` after you decide.
 - Search uses `search_content(q, ...)`, a weighted full-text index (title above topics, notes and captions, which rank above transcript) combined with fuzzy title matching. Accents and typos are tolerated.
 - `v_distribution` shows the best status per platform for each content record. Example filter: `dist->>'instagram' = 'published' and dist->>'tiktok' is distinct from 'published'`.
+
+## Workbook import
+
+```
+python3 importer/import_workbook.py path/to/Content_camilamontreal.xlsx
+```
+
+This is a dry run. It reads the workbook without changing it and writes four files to `importer/out/`, which git ignores:
+- `report.md`: a summary to review
+- `review_candidates.csv`: possible duplicates
+- `unparsed_values.csv`: values the importer couldn't interpret
+- `import.sql`: the load script
+
+After you've reviewed the report, load it with `psql "$DATABASE_URL" -f importer/out/import.sql`. The script runs as a single transaction and refuses to run if this workbook has already been imported. It needs `openpyxl` (`pip install openpyxl`).
