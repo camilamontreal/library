@@ -15,8 +15,12 @@ Only strong evidence merges automatically; everything else becomes a review cand
 import argparse, collections, csv, datetime as dt, json, os, re, unicodedata, uuid
 import openpyxl
 
-# Account attribution. None = uncertain -> publication.account left empty and flagged.
-VP_IG_ACCOUNT = None  # Instagram links in "Vídeos Postados" do not say which account posted them.
+# Account attribution for this workbook (confirmed by the owner):
+# Instagram defaults to @camilamontreal; only the "IG Disney" column is @mundodacami.
+# TikTok defaults to @camilamontreal; cells that say "TT Baby" belong to the dog's account (handle unknown).
+# YouTube/Shorts: @camilamontreal. Nothing is attributed to @bonjourhicami without explicit evidence.
+DEFAULT_IG = "camilamontreal"
+TT_BABY = ("tiktok", "label:TT Baby")
 
 CAND_MIN = 0.5        # minimum title similarity for a review candidate
 GENERIC = {"live", "alerta spoiler", "eu no brasil", "trend", "meme", "vlog", "depoimento"}
@@ -122,7 +126,7 @@ class Model:
         c = {"id": str(uuid.uuid4()), "title": title, "kind": "short", "status": "idea", "priority": None,
              "destination": None, "topics": [], "season": None, "notes": [], "editor": None,
              "audio_notes": [], "references_text": [], "needs_review": False, "pubs": [], "assets": [],
-             "origin": src["sheet"], "cand": False}
+             "origin": src["sheet"], "why": "outro", "cand": False}
         c.update(kw)
         self.contents.append(c)
         src["content_id"] = c["id"]
@@ -206,8 +210,7 @@ def reliable_ids(rows, extract):
 # ---------- distribution cell parsing ----------
 DATE_RE = re.compile(r"(?<!\d)(\d{1,2})/(\d{1,2})(?:/(\d{2,4}))?(?![\d/])")
 
-def parse_dist(c, ig_column=False):
-    v = c.value
+def parse_dist(v, ig_column=False):
     out = {"status": "pending", "raw": None, "by": None, "at": None, "conf": "none", "flags": [], "dm": None}
     if v is None or str(v).strip() == "":
         return out
@@ -225,8 +228,6 @@ def parse_dist(c, ig_column=False):
     if "ja tem" in n:
         out["status"] = "published"
         out["flags"].append("ja_tem")
-    if "tt baby" in n:
-        out["flags"].append("other_account_mentioned")
     dates = DATE_RE.findall(s)
     if len(dates) > 1 or " e " in f" {n} " or " / " in s:
         out["flags"].append("multiple_dates")
@@ -300,7 +301,8 @@ def import_videos_postados(ws):
             c = M.content(src, title, status="edited" if falta else "published",
                           kind="live" if norm(tema) == "live" or norm(title).startswith("live") else "short",
                           topics=[tema] if tema and norm(tema) != "x" else [],
-                          destination=local if local and norm(local) != "x" else None, cand=False)
+                          destination=local if local and norm(local) != "x" else None, cand=False,
+                          why="Vídeos Postados (arquivo publicado do Instagram)")
             if falta:
                 c["notes"].append("Vídeos Postados: FALTA POSTAR")
             if code and code in ok:
@@ -308,7 +310,7 @@ def import_videos_postados(ws):
         for u in links:
             k = classify(u)
             if k[0] == "instagram":
-                M.pub(c, src, "instagram", account=ig_account(VP_IG_ACCOUNT) if VP_IG_ACCOUNT else False,
+                M.pub(c, src, "instagram", account=ig_account(DEFAULT_IG),
                       status="published", platform_id=k[1], url=u)
             else:
                 lbl = text(r[1]) if not URL_RE.match(text(r[1])) else None
@@ -370,13 +372,13 @@ def import_para_postar(ws):
                 c = None
         if not c:
             c = M.content(src, title or f"[sem título] Para Postar linha {r[0].row}", status="edited",
-                          needs_review=True, cand=True)
+                          needs_review=True, cand=True, why="Para Postar: linha de distribuição sem correspondência")
             if code and code in ok:
                 M.ig[code] = c
         for u in links:
             k = classify(u)
             if k[0] == "instagram":
-                M.pub(c, src, "instagram", account=False, status="published", platform_id=k[1], url=u)
+                M.pub(c, src, "instagram", account=ig_account(DEFAULT_IG), status="published", platform_id=k[1], url=u)
             elif k[0] == "tiktok":
                 M.pub(c, src, "tiktok", account=tt_acc, status="published", platform_id=k[1], url=u)
             else:
@@ -387,7 +389,23 @@ def import_para_postar(ws):
         if text(r[7]):
             c["notes"].append(f"Para Postar: {text(r[7])}")
         for i, (platform, acc) in cols.items():
-            d = parse_dist(r[i], ig_column=(platform == "instagram"))
+            full = r[i].value
+            if platform == "tiktok" and "tt baby" in norm(full):
+                # e.g. "13/11 (J) e 07/12 TT Baby)": one posting per account
+                parts = [(x, M.accounts[TT_BABY] if "tt baby" in norm(x) else acc)
+                         for x in re.split(r"\s+e\s+", str(full).strip())]
+                for part, part_acc in parts:
+                    d = parse_dist(part)
+                    p = M.pub(c, src, platform, account=part_acc, status=d["status"], posted_by=d["by"],
+                              published_at=d["at"], published_at_raw=d["raw"], flags=d["flags"],
+                              notes=[f"Célula original: {full}"])
+                    if d["at"]:
+                        p["date_confidence"] = "high"
+                    if d["dm"]:
+                        pending_dm.append((i, r[0].row, d["dm"], p))
+                M.flags["Para Postar: TT Baby (conta separada)"] += 1
+                continue
+            d = parse_dist(full, ig_column=(platform == "instagram"))
             if d["raw"] is None and d["status"] == "pending" and platform == "instagram":
                 continue  # empty IG columns: Para Postar is about distributing elsewhere
             if d["status"] == "unknown":
@@ -413,7 +431,7 @@ def infer_years(ws, rows, pending):
     full = collections.defaultdict(dict)  # col -> row -> date
     for r in rows:
         for i in (3, 4, 5, 6):
-            d = parse_dist(r[i])
+            d = parse_dist(r[i].value)
             if d["at"]:
                 full[i][r[0].row] = d["at"]
     for col, row, (d, m), p in pending:
@@ -480,10 +498,12 @@ def import_shorts_tiktok(ws):
         else:
             placeholder = next((f"[sem título] {k[0]} {k[1]}" for k, u in plat_links if k[0] != "asset"),
                                f"[sem título] Shorts & TikTok linha {r[0].row}")
-            c = M.content(src, title or placeholder, status="published", needs_review=True, cand=bool(title))
+            c = M.content(src, title or placeholder, status="published", needs_review=True, cand=bool(title),
+                          why="Shorts & TikTok: linha de distribuição sem correspondência"
+                              + ("" if title else " (sem título)"))
         for k, u in plat_links:
             if k[0] == "instagram":
-                p = M.pub(c, src, "instagram", account=False, status="published", platform_id=k[1], url=u)
+                p = M.pub(c, src, "instagram", account=ig_account(DEFAULT_IG), status="published", platform_id=k[1], url=u)
                 if (k[0], k[1]) in ok:
                     M.ig.setdefault(k[1], c)
             elif k[0] == "tiktok":
@@ -503,7 +523,7 @@ def import_shorts_tiktok(ws):
         ig_status, _ = parse_flag(r[1])
         igp = next((p for p in c["pubs"] if p["platform"] == "instagram"), None)
         if ig_status == "published" and not igp:
-            igp = M.pub(c, src, "instagram", account=False, status="published")
+            igp = M.pub(c, src, "instagram", account=ig_account(DEFAULT_IG), status="published")
         if igp and (views is not None or repost):
             if views is not None:
                 igp["metrics"] = {"views": views, "views_text": e, "source": "Shorts & TikTok"}
@@ -575,7 +595,9 @@ def import_youtube_export(ws):
             p["published_at"], p["date_confidence"] = published, "high"
             continue
         c = M.content(src, clean_title(title), status="published", kind="short" if is_short else "long",
-                      needs_review=True, cand=True)
+                      needs_review=True, cand=True,
+                      why="YouTube Studio export: Short sem correspondência" if is_short
+                      else "YouTube Studio export: vídeo longo")
         M.pub(c, src, platform, account=yt_acc, status="published", platform_id=vid, **kw)
         M.yt[vid] = c
 
@@ -621,7 +643,9 @@ def import_production(ws, kind, cols, start=2, stop=None):
             st = status_of(text(r[cols["status"]]))
             if "status2" in cols and norm(text(r[cols["status2"]])) == "postado":
                 st = "published"
-            c = M.content(src, title, kind=kind, status=st, cand=True)
+            c = M.content(src, title, kind=kind, status=st, cand=True, why={
+                "Reels": "Reels (produção)", "Youtube": "Youtube (produção)"}.get(
+                ws.title, "Videos Postados YT: bloco de produção (linhas 2–18)"))
         if not c["priority"]:
             c["priority"] = PRIORITY.get(norm(text(r[0])))
         for key, typ in (("video", None), ("final", "final_edit")):
@@ -629,7 +653,7 @@ def import_production(ws, kind, cols, start=2, stop=None):
             lbl = text(cl) if text(cl) and not URL_RE.match(text(cl)) else None
             for u in urls(cl):
                 if classify(u)[0] == "instagram":
-                    M.pub(c, src, "instagram", account=False, status="published", platform_id=classify(u)[1], url=u)
+                    M.pub(c, src, "instagram", account=ig_account(DEFAULT_IG), status="published", platform_id=classify(u)[1], url=u)
                 else:
                     M.asset(c, src, u, typ=typ, label=lbl)
             if lbl and not urls(cl) and key == "final":
@@ -703,6 +727,13 @@ def build_candidates():
 
 
 # ---------- output ----------
+ACCOUNT_KEY = "a.platform || ':' || coalesce(a.handle, 'label:' || a.label)"
+
+
+def sql_array(items):
+    return "array[" + ",".join("'" + i.replace("'", "''") + "'" for i in items) + "]::text[]"
+
+
 def write_sql(path):
     tag = "$imp$"
     def j(rows):
@@ -734,8 +765,13 @@ def write_sql(path):
     chunks = lambda rows, n=300: [rows[i:i + n] for i in range(0, len(rows), n)]
     with open(path, "w", encoding="utf-8") as f:
         f.write("-- Generated by importer/import_workbook.py. Runs in one transaction.\nbegin;\n")
-        f.write(f"do $$ begin if exists (select 1 from public.source_record where workbook = {json.dumps(M.workbook).replace(chr(34), chr(39))})"
-                " then raise exception 'workbook already imported'; end if; end $$;\n")
+        keys = sorted({p["account"] for c in M.contents for p in c["pubs"] if p["account"]})
+        f.write("do $$ begin\n"
+                "  if exists (select 1 from public.source_record) or exists (select 1 from public.content) then\n"
+                "    raise exception 'database already has imported data: refusing to import again'; end if;\n"
+                f"  if (select count(*) from public.account a where {ACCOUNT_KEY} = any({sql_array(keys)}))"
+                f" <> {len(keys)} then\n"
+                "    raise exception 'missing account rows: apply all migrations first'; end if;\nend $$;\n")
         for part in chunks(content_rows):
             f.write("insert into public.content (id,title,kind,status,priority,destination,topics,season,notes,editor,"
                     "audio_notes,references_text,needs_review,language)\nselect * from jsonb_to_recordset("
@@ -764,7 +800,7 @@ def write_sql(path):
                     "platform text,account_key text,status text,platform_id text,url text,title text,"
                     "published_at timestamptz,published_at_raw text,date_confidence text,posted_by text,parts int,"
                     "duration_s int,metrics jsonb,flags text[],notes text,source_record_id bigint) "
-                    "left join public.account a on a.platform || ':' || a.handle = x.account_key;\n")
+                    f"left join public.account a on {ACCOUNT_KEY} = x.account_key;\n")
         for part in chunks(assets):
             f.write("insert into public.asset (content_id,type,url,label,note,source_record_id) select * from "
                     f"jsonb_to_recordset({j(part)}) as x(content_id uuid,type text,url text,label text,note text,"
@@ -773,6 +809,18 @@ def write_sql(path):
             f.write("insert into public.match_candidate (content_a_id,content_b_id,score,reasons) select * from "
                     f"jsonb_to_recordset({j(part)}) as x(content_a_id uuid,content_b_id uuid,score real,reasons jsonb)"
                     " on conflict do nothing;\n")
+        n_pubs, n_assets = len(pubs), len(assets)
+        f.write("do $$ begin\n"
+                f"  if (select count(*) from public.source_record) <> {len(srcs)}"
+                f" or (select count(*) from public.content) <> {len(content_rows)}"
+                f" or (select count(*) from public.publication) <> {n_pubs}"
+                f" or (select count(*) from public.publication where account_id is null) <> "
+                f"{sum(1 for p in pubs if not p['account_key'])}"
+                f" or (select count(*) from public.asset) <> {n_assets}"
+                f" or (select count(*) from public.idea) <> {len(M.ideas)}"
+                f" or (select count(*) from public.inspiration) <> {len(M.inspirations)}"
+                f" or (select count(*) from public.match_candidate) <> {len(cands)} then\n"
+                "    raise exception 'post-load counts do not match the dry run: rolled back'; end if;\nend $$;\n")
         f.write("commit;\n")
 
 
@@ -790,12 +838,18 @@ def write_report(out):
               f"- Assets: **{sum(len(c['assets']) for c in M.contents)}**",
               f"- Ideias: **{len(M.ideas)}** · Inspirações: **{len(M.inspirations)}**",
               f"- Candidatos a duplicata (Revisão): **{len(M.cands)}**", "",
-              "## Status de conteúdo", ""]
+              "## Origem dos conteúdos (por que este total)", "", "| Criado a partir de | Qtde |", "|---|---|"]
+    lines += [f"| {k} | {v} |" for k, v in collections.Counter(c["why"] for c in M.contents).most_common()]
+    lines += [f"| **Total** | **{len(M.contents)}** |", "",
+              "Linhas que se juntaram a um conteúdo já existente (evidência forte) não criam conteúdo novo; "
+              "ver “Associações automáticas”.", "", "## Status de conteúdo", ""]
     lines += [f"- {k}: {v}" for k, v in collections.Counter(c["status"] for c in M.contents).most_common()]
     lines += ["", "## Publicações por plataforma/status", "", "| Plataforma | Status | Qtde |", "|---|---|---|"]
     lines += [f"| {k[0]} | {k[1]} | {v} |" for k, v in sorted(pc.items())]
     lines += ["", "## Associações automáticas (evidência forte)", ""]
     lines += [f"- {k[len('auto-match: '):]}: {v}" for k, v in M.stats.items() if k.startswith("auto-match")]
+    acc = collections.Counter(p["account"] or "sem conta (incerta)" for p in pubs)
+    lines += ["", "## Publicações por conta", ""] + [f"- {k}: {v}" for k, v in acc.most_common()]
     lines += ["", "## Datas", ""]
     dc = collections.Counter(p["date_confidence"] for p in pubs if p["published_at_raw"] or p["published_at"])
     lines += [f"- confiança {k}: {v}" for k, v in dc.items()]
@@ -834,6 +888,7 @@ def main():
                              ("instagram", "bonjourhicami"), ("tiktok", "camilamontreal"),
                              ("youtube", "camilamontreal")]:
         M.accounts[(platform, handle)] = f"{platform}:{handle}"
+    M.accounts[TT_BABY] = "tiktok:label:TT Baby"
 
     import_videos_postados(wb["Vídeos Postados"])
     import_para_postar(wb["Para Postar (Jack)"])
