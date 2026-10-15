@@ -1,0 +1,8 @@
+[
+  { "institution": "a confirmar", "title": { "en": "Bachelor's degree in Marketing", "pt": "Graduação em Marketing", "fr": "Baccalauréat en marketing" }, "year": "2019", "kind": "formacao", "exemplo": true },
+  { "institution": "a confirmar", "title": { "en": "Postgraduate in Innovation Marketing", "pt": "Pós-graduação em Marketing de Inovação", "fr": "Études supérieures en marketing de l'innovation" }, "year": "2021", "kind": "formacao", "exemplo": true },
+  { "institution": "UNESP", "title": { "en": "Music (classical training, 10+ years)", "pt": "Música (formação clássica, 10+ anos)", "fr": "Musique (formation classique)" }, "year": "2012", "kind": "formacao", "exemplo": true },
+  { "institution": "Meta Blueprint", "title": { "en": "Certification (exemplo)", "pt": "Certificação (exemplo)" }, "year": "2024", "kind": "certificacao", "exemplo": true },
+  { "institution": "Google", "title": { "en": "Google Analytics certification (exemplo)", "pt": "Certificação Google Analytics (exemplo)" }, "year": "2023", "kind": "certificacao", "exemplo": true },
+  { "institution": "HubSpot Academy", "title": { "en": "Social Media Marketing (exemplo)", "pt": "Social Media Marketing (exemplo)" }, "year": "2023", "kind": "certificacao", "exemplo": true }
+]

@@ -1,0 +1,63 @@
+/* DESIGN TOKENS — a única fonte de cores, raios, sombras e tipografia.
+   Documentação em /docs/design-system.md. Claro e escuro seguem o sistema. */
+:root {
+  --font: 'Inter Variable', Inter, -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+
+  /* cor de destaque: azul-lilás do mídia kit (uma só) */
+  --acc: #5B6BD5;
+  --acc-ink: #ffffff;
+  --acc-soft: rgba(91, 107, 213, 0.14);
+
+  /* etiquetas de tipo de projeto */
+  --tag-publicado: #F2C14E;
+  --tag-ugc: #8FE0C3;
+  --tag-profissional: #C7D2FE;
+
+  /* superfícies claras */
+  --ink: #0F1629;
+  --ink-2: #5B6480;
+  --ink-3: #8B93AB;
+  --paper: #ffffff;
+  --paper-2: #F4F5F9;
+  --line: rgba(15, 22, 41, 0.10);
+  --glass: rgba(255, 255, 255, 0.62);
+  --glass-strong: rgba(255, 255, 255, 0.82);
+  --glass-dark: rgba(18, 22, 40, 0.46);
+  --glass-ink: #0F1629;
+  --menubar: rgba(255, 255, 255, 0.5);
+
+  --shadow-win: 0 0 0 0.5px rgba(0,0,0,.22), 0 30px 70px rgba(10,14,30,.38);
+  --shadow-card: 0 12px 32px rgba(10,14,30,.18);
+  --shadow-icon: 0 4px 10px rgba(0,0,0,.25);
+
+  --r-win: 12px; --r-card: 20px; --r-icon: 14px; --r-pill: 999px;
+  --blur: blur(26px) saturate(1.5);
+
+  --ease: cubic-bezier(.2,.8,.2,1);
+  --dur: 240ms;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #F2F4FA; --ink-2: #B5BCD1; --ink-3: #7F879F;
+    --paper: #171B2C; --paper-2: #1F2437; --line: rgba(255,255,255,.10);
+    --glass: rgba(24, 28, 46, 0.62); --glass-strong: rgba(24, 28, 46, 0.84); --glass-dark: rgba(10,12,24,.55);
+    --glass-ink: #F2F4FA; --menubar: rgba(20, 24, 40, 0.55);
+    --acc-soft: rgba(91, 107, 213, 0.26);
+    --shadow-win: 0 0 0 0.5px rgba(255,255,255,.12), 0 30px 70px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #F2F4FA; --ink-2: #B5BCD1; --ink-3: #7F879F;
+  --paper: #171B2C; --paper-2: #1F2437; --line: rgba(255,255,255,.10);
+  --glass: rgba(24, 28, 46, 0.62); --glass-strong: rgba(24, 28, 46, 0.84); --glass-dark: rgba(10,12,24,.55);
+  --glass-ink: #F2F4FA; --menubar: rgba(20, 24, 40, 0.55);
+  --acc-soft: rgba(91, 107, 213, 0.26);
+  --shadow-win: 0 0 0 0.5px rgba(255,255,255,.12), 0 30px 70px rgba(0,0,0,.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur: 0ms; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

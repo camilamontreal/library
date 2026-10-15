@@ -1,0 +1,47 @@
+@import './tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; }
+body {
+  font-family: var(--font); color: var(--ink); background: #0F1629;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow: hidden;
+  font-size: 14px; line-height: 1.45;
+}
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+a { color: inherit; }
+h1, h2, h3, h4, p { margin: 0; }
+:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; border-radius: 6px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- Media placeholder ---------- */
+.media { position: relative; overflow: hidden; background: var(--tone, #7A6A5E); }
+.media::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(70% 55% at 35% 25%, color-mix(in oklab, var(--tone, #7A6A5E) 60%, white) 0%, transparent 70%),
+    radial-gradient(60% 70% at 80% 80%, color-mix(in oklab, var(--tone, #7A6A5E) 55%, black) 0%, transparent 70%),
+    linear-gradient(180deg, color-mix(in oklab, var(--tone, #7A6A5E) 80%, white), color-mix(in oklab, var(--tone, #7A6A5E) 60%, black));
+}
+.media > img, .media > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.media__label {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  font-size: 11px; font-weight: 700; letter-spacing: .02em; color: #fff; white-space: nowrap;
+  background: rgba(10, 14, 30, .55); padding: 6px 10px; border-radius: 999px; backdrop-filter: blur(6px); pointer-events: none;
+}
+.media--small .media__label { display: none; }
+.exemplo-badge {
+  position: absolute; top: 8px; left: 8px; z-index: 2; font-size: 9.5px; font-weight: 800; letter-spacing: .08em;
+  background: #FFD60A; color: #111; padding: 2px 6px; border-radius: 4px; pointer-events: none;
+}
+
+/* ---------- Shared primitives ---------- */
+.glass { background: var(--glass); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border-radius: var(--r-card); box-shadow: 0 0 0 .5px rgba(255,255,255,.55) inset, var(--shadow-card); color: var(--glass-ink); }
+.glass--dark { background: var(--glass-dark); color: #fff; box-shadow: 0 0 0 .5px rgba(255,255,255,.22) inset, var(--shadow-card); }
+.tag { display: inline-block; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: var(--r-pill); color: #0F1629; letter-spacing: .01em; white-space: nowrap; }
+.tag--publicado { background: var(--tag-publicado); } .tag--ugc { background: var(--tag-ugc); } .tag--profissional { background: var(--tag-profissional); }
+.btn { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; font-size: 13px; padding: 9px 14px; border-radius: 10px; background: var(--acc); color: var(--acc-ink); transition: transform var(--dur) var(--ease), filter var(--dur); }
+.btn:hover { filter: brightness(1.06); } .btn:active { transform: scale(.97); }
+.btn--ghost { background: var(--acc-soft); color: var(--ink); }
+.num { font-weight: 800; letter-spacing: -.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+.muted { color: var(--ink-2); }
+.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); }

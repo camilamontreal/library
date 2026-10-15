@@ -1,0 +1,44 @@
+{
+  "name": "Camila Monteiro",
+  "brandName": "Camila Montreal",
+  "handle": "@camilamontreal",
+  "positioning": {
+    "en": "Travel creator and social media strategist. 600K+ community, 290M+ views, 50+ brand partners.",
+    "pt": "Criadora de viagem e estrategista de social media. 600K+ de comunidade, 290M+ views, 50+ marcas parceiras.",
+    "fr": "Créatrice voyage et stratège médias sociaux. 600K+ de communauté, 290M+ de vues, 50+ marques partenaires."
+  },
+  "tagline": { "en": "A passport, a lens, a story.", "pt": "Um passaporte, uma lente, uma história.", "fr": "Un passeport, un objectif, une histoire." },
+  "bio": {
+    "en": "Brazilian-born, based in Montreal since 2022. Seven years turning destinations, products and brands into stories people actually watch: as a creator for my own community and as a social media manager for companies. Multilingual, data-driven, and still excited every time a plane takes off.",
+    "pt": "Brasileira, em Montreal desde 2022. Sete anos transformando destinos, produtos e marcas em histórias que as pessoas realmente assistem: como criadora para a minha comunidade e como social media manager para empresas. Multilíngue, orientada a dados e ainda empolgada toda vez que um avião decola.",
+    "fr": "Brésilienne, installée à Montréal depuis 2022. Sept ans à transformer destinations, produits et marques en histoires que les gens regardent vraiment : comme créatrice pour ma communauté et comme gestionnaire de médias sociaux pour des entreprises."
+  },
+  "location": "Montreal, Canada",
+  "languages": ["Português", "English", "Español", "Français"],
+  "email": "hello@camilamontreal.com",
+  "whatsapp": "",
+  "avatar": { "src": "profile/avatar.jpg", "kind": "image", "tone": "#7A6A5E", "exemplo": true, "alt": { "en": "Cami smiling with sunglasses", "pt": "Cami sorrindo de óculos escuros" } },
+  "wallpapers": {
+    "morning":   { "src": "wallpapers/morning.jpg",   "kind": "image", "tone": "#DCE9F0", "exemplo": true, "alt": { "en": "Morning at Lake Louise", "pt": "Manhã no Lago Louise" } },
+    "afternoon": { "src": "wallpapers/afternoon.jpg", "kind": "image", "tone": "#9FD6DB", "exemplo": true, "alt": { "en": "Turquoise sea", "pt": "Mar turquesa" } },
+    "evening":   { "src": "wallpapers/evening.jpg",   "kind": "image", "tone": "#F3C9A6", "exemplo": true, "alt": { "en": "Sunset in Lisbon", "pt": "Pôr do sol em Lisboa" } },
+    "night":     { "src": "wallpapers/night.jpg",     "kind": "image", "tone": "#1A2250", "exemplo": true, "alt": { "en": "Montreal at night", "pt": "Montreal à noite" } }
+  },
+  "lockscreen": { "src": "wallpapers/lockscreen.jpg", "kind": "image", "tone": "#6D5B8E", "exemplo": true },
+  "heroStats": [
+    { "value": "600K+", "label": { "en": "community", "pt": "comunidade", "fr": "communauté" }, "source": "Mídia kit 2026", "period": "jun/2026" },
+    { "value": "290M+", "label": { "en": "views", "pt": "views", "fr": "vues" }, "source": "Mídia kit 2026", "period": "jun/2026" },
+    { "value": "50+", "label": { "en": "brand partners", "pt": "marcas parceiras", "fr": "marques partenaires" }, "source": "Mídia kit 2026" },
+    { "value": "27", "label": { "en": "countries", "pt": "países", "fr": "pays" }, "source": "camilamontreal.com/sobremim" }
+  ],
+  "countries": 27,
+  "since": 2017,
+  "tools": ["Canva", "CapCut", "Meta Business Suite", "TikTok Studio", "YouTube Studio", "Google Analytics", "Lightroom", "Filmora", "Notion", "Trello", "Asana", "Hootsuite", "Buffer", "AirTable", "Wix", "Google Workspace"],
+  "trash": [
+    { "en": "A 40-minute vlog nobody finished (exemplo)", "pt": "Um vlog de 40 minutos que ninguém terminou (exemplo)" },
+    { "en": "Posting at 3 a.m. because 'the algorithm' (exemplo)", "pt": "Postar às 3h da manhã por causa 'do algoritmo' (exemplo)" },
+    { "en": "The podcast intro with a jingle (exemplo)", "pt": "A vinheta cantada do podcast (exemplo)" }
+  ],
+  "mediaKitPdf": "",
+  "exemplo": false
+}

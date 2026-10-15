@@ -1,0 +1,102 @@
+/* ---------- Mesa ---------- */
+.desk { position: fixed; inset: 0; overflow: hidden; background: #0F1629; }
+.desk__wall { position: absolute; inset: 0; }
+.desk__wall::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.22), transparent 25%, rgba(0,0,0,.28)); pointer-events: none; }
+.desk__wall .media__label { top: 52px; left: 400px; transform: none; }
+.desk__wall .exemplo-badge { top: 40px; left: 400px; }
+
+/* ---------- Barra de menu ---------- */
+.menubar { position: absolute; top: 0; left: 0; right: 0; height: 30px; z-index: 50; display: flex; align-items: center; gap: 18px; padding: 0 14px;
+  background: var(--menubar); backdrop-filter: blur(30px) saturate(1.6); -webkit-backdrop-filter: blur(30px) saturate(1.6); color: var(--glass-ink); font-size: 13px; font-weight: 600; }
+.menubar__brand { font-weight: 800; }
+.menubar__item { padding: 4px 6px; border-radius: 6px; } .menubar__item:hover { background: rgba(127,127,127,.18); }
+.menubar__sp { flex: 1; }
+.menubar__menu { position: relative; }
+.menubar__dropdown { position: absolute; top: 26px; left: 0; min-width: 200px; list-style: none; margin: 0; padding: 6px; border-radius: 12px; z-index: 60; }
+.menubar__dropdown button { display: block; width: 100%; text-align: left; padding: 7px 10px; border-radius: 8px; font-weight: 600; }
+.menubar__dropdown button:hover { background: var(--acc); color: #fff; }
+.menubar__seg { display: flex; align-items: center; gap: 2px; background: rgba(127,127,127,.18); padding: 2px; border-radius: var(--r-pill); font-size: 12px; }
+.menubar__seglabel { padding: 0 8px 0 10px; color: var(--ink-2); font-weight: 600; }
+.menubar__seg button { padding: 3px 11px; border-radius: var(--r-pill); color: var(--ink-2); font-weight: 600; }
+.menubar__seg button.on { background: var(--paper); color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.18); }
+.menubar__lang button { margin-left: 6px; font-size: 12px; color: var(--ink-2); font-weight: 700; padding: 3px 4px; border-radius: 6px; }
+.menubar__lang button.on { color: var(--ink); }
+.menubar__clock { font-variant-numeric: tabular-nums; font-weight: 600; }
+
+/* ---------- Widgets ---------- */
+.widgets { position: absolute; left: 22px; top: 46px; width: 300px; display: flex; flex-direction: column; gap: 14px; z-index: 5; }
+.widget { text-align: left; padding: 16px 18px; width: 100%; transition: transform var(--dur) var(--ease); }
+.widget:hover { transform: translateY(-2px); }
+.widget h4 { font-size: 13px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
+.widget h4 small { font-size: 11px; font-weight: 600; opacity: .7; }
+.widget__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; margin-top: 10px; }
+.widget__big { font-size: 36px; margin-top: 2px; }
+.widget__lab { font-size: 12px; opacity: .75; margin-top: 4px; font-weight: 500; }
+.widget__stamps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
+.stamp { height: 50px; border-radius: 10px; background: rgba(255,255,255,.14); display: flex; align-items: center; justify-content: center; text-align: center; font-size: 10px; font-weight: 700; line-height: 1.1; padding: 4px; border: 1px dashed rgba(255,255,255,.35); transform: rotate(var(--rot, 0deg)); }
+.stamp:nth-child(2n) { --rot: -2deg; } .stamp:nth-child(3n) { --rot: 2deg; }
+.stamp--more { background: var(--acc); border-color: transparent; }
+.widget--boarding { padding: 0; overflow: hidden; }
+.widget__bp { display: grid; grid-template-columns: 1fr 84px; }
+.widget__bp > div:first-child { padding: 14px 16px; }
+.widget__route { font-size: 22px; margin: 4px 0 2px; }
+.widget__stub { background: var(--acc); color: #fff; border-left: 2px dashed rgba(255,255,255,.8); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-weight: 800; font-size: 12px; }
+
+/* ---------- Ícones de pasta ---------- */
+.desk__icons { position: absolute; inset: 0; pointer-events: none; z-index: 4; }
+.dicon-wrap { position: absolute; pointer-events: auto; }
+.dicon { position: relative; width: 118px; display: flex; flex-direction: column; align-items: center; gap: 4px; color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,.7); font-size: 12px; font-weight: 600; line-height: 1.2; text-align: center; touch-action: none; user-select: none; }
+.dicon__art { position: relative; width: 76px; height: 60px; filter: drop-shadow(0 4px 8px rgba(0,0,0,.3)); }
+.dicon__cover { position: absolute; left: 7px; right: 7px; top: 22px; bottom: 6px; border-radius: 4px; }
+.dicon:hover .dicon__art { transform: scale(1.04); } .dicon:focus-visible { outline: none; }
+.dicon:focus-visible .dicon__label { background: var(--acc); border-radius: 4px; padding: 0 4px; }
+.dicon__label { max-width: 118px; }
+.desk__tidy { position: absolute; right: 22px; bottom: 100px; z-index: 5; font-size: 11px; font-weight: 700; color: #fff; background: rgba(0,0,0,.35); backdrop-filter: blur(8px); padding: 5px 10px; border-radius: var(--r-pill); opacity: .7; }
+.desk__tidy:hover { opacity: 1; }
+
+/* ---------- Janela ---------- */
+.win { position: absolute; display: flex; flex-direction: column; background: var(--paper); color: var(--ink); border-radius: var(--r-win); box-shadow: var(--shadow-win); overflow: hidden; }
+.win__bar { height: 40px; flex: none; display: flex; align-items: center; gap: 8px; padding: 0 14px; background: var(--glass-strong); backdrop-filter: blur(18px); border-bottom: .5px solid var(--line); cursor: grab; user-select: none; touch-action: none; }
+.win__bar:active { cursor: grabbing; }
+.win__light { width: 12px; height: 12px; border-radius: 50%; background: #ddd; display: inline-block; }
+.win__light--close { background: #FF5F57; } .win__light--min { background: #FEBC2E; } .win__light--max { background: #28C840; }
+.win__light--close:hover::after { content: "×"; display: block; font-size: 11px; line-height: 12px; text-align: center; color: rgba(0,0,0,.6); font-weight: 800; }
+.win__title { margin-left: 10px; font-size: 13px; font-weight: 600; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.win__body { flex: 1; overflow: auto; overscroll-behavior: contain; }
+
+/* ---------- Dock ---------- */
+.dock { position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%); display: flex; align-items: flex-end; gap: 6px; padding: 8px 10px; border-radius: 22px; z-index: 40; }
+.dock__app { position: relative; display: flex; flex-direction: column; align-items: center; width: 56px; transition: transform var(--dur) var(--ease); }
+.dock__app:hover { transform: translateY(-6px) scale(1.08); }
+.dock__label { position: absolute; top: -34px; font-size: 12px; font-weight: 600; color: var(--glass-ink); background: var(--glass-strong); padding: 4px 9px; border-radius: 8px; opacity: 0; pointer-events: none; white-space: nowrap; transition: opacity var(--dur); }
+.dock__app:hover .dock__label, .dock__app:focus-visible .dock__label { opacity: 1; }
+.dock__dot { position: absolute; bottom: -7px; width: 4px; height: 4px; border-radius: 50%; background: var(--glass-ink); opacity: .7; }
+.dock__sep { width: .5px; height: 46px; background: rgba(127,127,127,.5); margin: 0 4px 3px; }
+.appicon { display: inline-flex; align-items: center; justify-content: center; box-shadow: var(--shadow-icon), 0 0 0 .5px rgba(0,0,0,.08) inset; color: #fff; }
+
+/* ---------- Notificação ---------- */
+.toast { position: absolute; right: 20px; bottom: 100px; width: 330px; display: flex; align-items: center; gap: 6px; padding: 10px 10px 10px 12px; border-radius: 18px; z-index: 45; }
+.toast__body { display: flex; align-items: center; gap: 12px; text-align: left; flex: 1; font-size: 13px; }
+.toast__body b { display: block; font-size: 12px; } .toast__body em { font-style: normal; color: var(--ink-2); }
+.toast__thumb { width: 40px; height: 40px; border-radius: 10px; flex: none; }
+.toast__close { opacity: .6; padding: 6px; } .toast__close:hover { opacity: 1; }
+
+/* ---------- Tablet (768–1023) ---------- */
+@media (max-width: 1023px) {
+  .menubar { gap: 10px; font-size: 12px; white-space: nowrap; }
+  .menubar__seglabel { display: none; }
+  .menubar__clock { font-size: 12px; }
+  .widgets { width: 230px; gap: 10px; }
+  .widget { padding: 12px 14px; } .widget__big { font-size: 26px; } .widget__stamps { grid-template-columns: repeat(3, 1fr); }
+  .widget__route { font-size: 18px; }
+  .desk__wall .media__label, .desk__wall .exemplo-badge { left: 270px; }
+  .dicon { width: 100px; }
+  .dock .appicon { width: 44px !important; height: 44px !important; }
+}
+
+/* ---------- Boot (1,5 s, pulável, só na primeira visita da sessão) ---------- */
+.boot { position: absolute; inset: 0; z-index: 100; background: #0F1629; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; cursor: pointer; }
+.boot__logo { font-size: 28px; font-weight: 800; letter-spacing: -.03em; }
+.boot__bar { width: 180px; height: 5px; border-radius: 3px; background: rgba(255,255,255,.18); overflow: hidden; display: block; }
+.boot__bar i { display: block; height: 100%; background: #fff; }
+.boot__skip { position: absolute; bottom: 28px; font-size: 12px; opacity: .55; font-weight: 600; }
