@@ -20,22 +20,21 @@
       "fr": "Gestionnaire médias sociaux et micro-contenu"
     },
     "challenge": {
-      "en": "Turn a storytelling media brand into a TikTok channel people actually share.",
-      "pt": "Transformar uma marca de mídia de storytelling num canal de TikTok que as pessoas realmente compartilham.",
-      "fr": "Faire d'une marque média de storytelling une chaîne TikTok que les gens partagent vraiment."
+      "en": "Distribute a storytelling media brand's short-form content on the platforms where it grows.",
+      "pt": "Distribuir o conteúdo curto de uma marca de mídia de storytelling nas plataformas onde ela cresce."
     },
     "actions": [
       {
-        "en": "Content strategy, hooks and publishing cadence defined from data.",
-        "pt": "Estratégia de conteúdo, ganchos e ritmo de publicação definidos a partir dos dados."
+        "en": "Owned content strategy and distribution for the short-form channels, from the editorial calendar to publishing and community management.",
+        "pt": "Responsável pela estratégia e distribuição dos canais de vídeo curto, do calendário editorial à publicação e à comunidade."
       },
       {
-        "en": "Scripting and editing of short-form storytelling videos.",
-        "pt": "Roteiro e edição de vídeos curtos de storytelling."
+        "en": "Turned analytics, audience sentiment and platform trends into recommendations for the editorial and content teams.",
+        "pt": "Transformei análises, sentimento da audiência e tendências das plataformas em recomendações para as equipes editorial e de conteúdo."
       },
       {
-        "en": "Weekly reporting and iteration on formats.",
-        "pt": "Relatórios semanais e iteração de formatos."
+        "en": "Ran A/B creative tests to improve reach and engagement and reported results against KPIs.",
+        "pt": "Conduzi testes A/B de criativos para melhorar alcance e engajamento e reportei os resultados contra KPIs."
       }
     ],
     "cover": {
@@ -109,11 +108,7 @@
       }
     ],
     "links": [],
-    "tools": [
-      "CapCut",
-      "TikTok Studio",
-      "Notion"
-    ],
+    "tools": [],
     "featured": 90,
     "audience": "ambos"
   },
@@ -137,18 +132,17 @@
       "fr": "Stratégie médias sociaux et contenu"
     },
     "challenge": {
-      "en": "Grow an entertainment studio's TikTok presence fast.",
-      "pt": "Fazer a presença de um estúdio de entretenimento no TikTok crescer rápido.",
-      "fr": "Faire croître rapidement la présence TikTok d'un studio de divertissement."
+      "en": "A short-form TikTok account handled in my Goalcast role.",
+      "pt": "Uma conta de TikTok em vídeo curto atendida no meu cargo no Goalcast."
     },
     "actions": [
       {
-        "en": "Format testing and hook library.",
-        "pt": "Teste de formatos e biblioteca de ganchos."
+        "en": "Part of my work as Social Media Manager and Micro Content Manager at Goalcast.",
+        "pt": "Parte do meu trabalho como Social Media Manager e Micro Content Manager no Goalcast."
       },
       {
-        "en": "Daily publishing with performance review.",
-        "pt": "Publicação diária com revisão de desempenho."
+        "en": "Details of what was done on this account: to be confirmed by Cami.",
+        "pt": "Detalhes do que foi feito nesta conta: a confirmar pela Cami."
       }
     ],
     "cover": {
@@ -193,12 +187,10 @@
       }
     ],
     "links": [],
-    "tools": [
-      "CapCut",
-      "TikTok Studio"
-    ],
+    "tools": [],
     "featured": 80,
-    "audience": "recrutador"
+    "audience": "recrutador",
+    "exemplo": true
   },
   {
     "id": "life-stories",
@@ -221,14 +213,17 @@
       "fr": "Contenu storytelling pour TikTok"
     },
     "challenge": {
-      "en": "Make emotional long stories work in under a minute.",
-      "pt": "Fazer histórias longas e emocionais funcionarem em menos de um minuto.",
-      "fr": "Faire fonctionner des histoires longues et émotionnelles en moins d'une minute."
+      "en": "A short-form TikTok account handled in my Goalcast role.",
+      "pt": "Uma conta de TikTok em vídeo curto atendida no meu cargo no Goalcast."
     },
     "actions": [
       {
-        "en": "Story selection, script and pacing.",
-        "pt": "Seleção de histórias, roteiro e ritmo."
+        "en": "Part of my work as Social Media Manager and Micro Content Manager at Goalcast.",
+        "pt": "Parte do meu trabalho como Social Media Manager e Micro Content Manager no Goalcast."
+      },
+      {
+        "en": "Details of what was done on this account: to be confirmed by Cami.",
+        "pt": "Detalhes do que foi feito nesta conta: a confirmar pela Cami."
       }
     ],
     "cover": {
@@ -282,11 +277,10 @@
       }
     ],
     "links": [],
-    "tools": [
-      "CapCut"
-    ],
+    "tools": [],
     "featured": 70,
-    "audience": "recrutador"
+    "audience": "recrutador",
+    "exemplo": true
   },
   {
     "id": "disney-universal-media",
@@ -309,23 +303,29 @@
     "template": "campanha",
     "period": "2021–2025",
     "role": {
-      "en": "Official media correspondent and influencer",
-      "pt": "Correspondente oficial de mídia e influenciadora",
-      "fr": "Correspondante média officielle et influenceuse"
+      "en": "Official media correspondent and creator",
+      "pt": "Correspondente oficial de mídia e criadora"
     },
     "challenge": {
-      "en": "Cover themed festivals and launches live for a Portuguese- and English-speaking travel audience.",
-      "pt": "Cobrir festivais temáticos e lançamentos ao vivo para um público de viagem que fala português e inglês.",
-      "fr": "Couvrir en direct des festivals et lancements pour un public voyage lusophone et anglophone."
+      "en": "Cover theme park events and launches live, in Portuguese and English, for a travel audience.",
+      "pt": "Cobrir eventos e lançamentos de parques temáticos ao vivo, em português e inglês, para um público de viagem."
     },
     "actions": [
       {
-        "en": "On-site coverage: Stories, Reels and TikToks during the event.",
-        "pt": "Cobertura no local: Stories, Reels e TikToks durante o evento."
+        "en": "Official media correspondent at Walt Disney World, including Epcot festivals.",
+        "pt": "Correspondente oficial de mídia no Walt Disney World, incluindo os festivais do Epcot."
       },
       {
-        "en": "Florida Cup, Christmas events, Shark Awareness and D23 Anaheim 2024.",
-        "pt": "Florida Cup, eventos de Natal, Shark Awareness e D23 Anaheim 2024."
+        "en": "Press-event coverage at Universal Studios (Florida Cup, Epic Universe), SeaWorld (Shark Awareness, Christmas) and Busch Gardens (Christmas).",
+        "pt": "Cobertura de eventos de imprensa na Universal Studios (Florida Cup, Epic Universe), SeaWorld (Shark Awareness, Natal) e Busch Gardens (Natal)."
+      },
+      {
+        "en": "D23 Anaheim 2024 and D23 Brasil 2024: photo and video.",
+        "pt": "D23 Anaheim 2024 e D23 Brasil 2024: foto e vídeo."
+      },
+      {
+        "en": "Content turned around on site, under tight deadlines, for Instagram, TikTok and YouTube.",
+        "pt": "Conteúdo entregue no local, com prazos curtos, para Instagram, TikTok e YouTube."
       }
     ],
     "cover": {
@@ -381,10 +381,7 @@
         "url": "https://www.instagram.com/p/CW9McAQpEW8/"
       }
     ],
-    "tools": [
-      "CapCut",
-      "Lightroom"
-    ],
+    "tools": [],
     "featured": 85,
     "audience": "marca"
   },
@@ -404,19 +401,21 @@
     "template": "campanha",
     "period": "2024",
     "role": {
-      "en": "Creator, coverage of the Montreal–Austin direct flight launch",
-      "pt": "Criadora, cobertura do lançamento do voo direto Montreal–Austin",
-      "fr": "Créatrice, couverture du lancement du vol direct Montréal–Austin"
+      "en": "Creator: coverage of the Montreal–Austin direct flight launch",
+      "pt": "Criadora: cobertura do lançamento do voo direto Montreal–Austin"
     },
     "challenge": {
-      "en": "Make a route launch feel like a trip people want to book.",
-      "pt": "Fazer o lançamento de uma rota parecer uma viagem que as pessoas querem reservar.",
-      "fr": "Faire d'un lancement de ligne un voyage que les gens veulent réserver."
+      "en": "Make a new route feel like a trip people want to book.",
+      "pt": "Fazer uma rota nova parecer uma viagem que as pessoas querem reservar."
     },
     "actions": [
       {
-        "en": "Launch event coverage and destination content.",
-        "pt": "Cobertura do evento de lançamento e conteúdo de destino."
+        "en": "Coverage of the route launch event and of the destination, with Air Canada and Visit Austin.",
+        "pt": "Cobertura do evento de lançamento da rota e do destino, com Air Canada e Visit Austin."
+      },
+      {
+        "en": "Also an Air Canada event and a hockey game in Montreal, shared on YouTube.",
+        "pt": "Também um evento da Air Canada e um jogo de hockey em Montreal, no YouTube."
       }
     ],
     "cover": {
@@ -459,9 +458,7 @@
         "url": "https://www.instagram.com/p/C54oNAvN0W0/"
       }
     ],
-    "tools": [
-      "CapCut"
-    ],
+    "tools": [],
     "featured": 75,
     "audience": "marca"
   },
@@ -482,22 +479,20 @@
     "period": "2022",
     "role": {
       "en": "UGC creator",
-      "pt": "Criadora de UGC",
-      "fr": "Créatrice UGC"
+      "pt": "Criadora de UGC"
     },
     "challenge": {
-      "en": "Deliver real-consumer style videos the brands could run in their own channels and ads.",
-      "pt": "Entregar vídeos em formato de consumidora real que as marcas pudessem usar nos próprios canais e anúncios.",
-      "fr": "Livrer des vidéos de style consommatrice réelle utilisables par les marques dans leurs propres canaux et publicités."
+      "en": "Deliver content that feels like a real traveler, ready for the brands' own channels.",
+      "pt": "Entregar conteúdo com cara de viajante real, pronto para os canais das próprias marcas."
     },
     "actions": [
       {
-        "en": "Natural script, recording and editing optimized for Reels, TikTok and ads.",
-        "pt": "Roteiro natural, gravação e edição otimizada para Reels, TikTok e anúncios."
+        "en": "Videos and photos for Québec tourism and for Nickelodeon Resort, delivered to the brands.",
+        "pt": "Vídeos e fotos para o turismo de Québec e para o Nickelodeon Resort, entregues às marcas."
       },
       {
-        "en": "Deliverables: vertical videos, lifestyle photos, raw files.",
-        "pt": "Entregáveis: vídeos verticais, fotos lifestyle, arquivos brutos."
+        "en": "Format details (number of pieces, raw files, usage): to be confirmed by Cami.",
+        "pt": "Detalhes de formato (número de peças, arquivos brutos, uso): a confirmar pela Cami."
       }
     ],
     "cover": {
@@ -544,12 +539,10 @@
         "url": "https://www.instagram.com/p/CcC_N9mlhaw/"
       }
     ],
-    "tools": [
-      "CapCut",
-      "Lightroom"
-    ],
+    "tools": [],
     "featured": 60,
-    "audience": "marca"
+    "audience": "marca",
+    "exemplo": true
   },
   {
     "id": "crowdriff",
@@ -566,20 +559,21 @@
     "template": "ugc",
     "period": "a confirmar",
     "role": {
-      "en": "UGC creator for destination clients",
-      "pt": "Criadora de UGC para destinos clientes da plataforma",
-      "fr": "Créatrice UGC pour des destinations clientes"
+      "en": "Content creator on the CrowdRiff platform",
+      "pt": "Criadora de conteúdo na plataforma CrowdRiff"
     },
     "challenge": {
-      "en": "Produce destination content licensed through the platform.",
-      "pt": "Produzir conteúdo de destino licenciado pela plataforma.",
-      "fr": "Produire du contenu de destination sous licence via la plateforme."
+      "en": "Create destination content for the platform tourism boards use to tell their story.",
+      "pt": "Criar conteúdo de destino para a plataforma que órgãos de turismo usam para contar a sua história."
     },
     "actions": [
       {
-        "en": "Details to be filled in by Cami.",
-        "pt": "Detalhes a preencher pela Cami.",
-        "fr": "Détails à compléter par Cami."
+        "en": "Active CrowdRiff creator, with hands-on knowledge of the destination-marketing workflow.",
+        "pt": "Creator ativa na CrowdRiff, com conhecimento prático do fluxo de marketing de destinos."
+      },
+      {
+        "en": "Assignments delivered (destinations, formats): to be confirmed by Cami.",
+        "pt": "Trabalhos entregues (destinos, formatos): a confirmar pela Cami."
       }
     ],
     "cover": {
@@ -611,19 +605,21 @@
     "template": "estrategia",
     "period": "a confirmar",
     "role": {
-      "en": "Instagram management",
-      "pt": "Gestão de Instagram",
-      "fr": "Gestion Instagram"
+      "en": "Social media management",
+      "pt": "Gestão de social media"
     },
     "challenge": {
-      "en": "Grow reach for a hospitality account.",
-      "pt": "Aumentar o alcance de uma conta de hospitalidade.",
-      "fr": "Augmenter la portée d'un compte d'hôtellerie."
+      "en": "Grow the reach of a vacation-home account in Orlando.",
+      "pt": "Aumentar o alcance da conta de uma casa de temporada em Orlando."
     },
     "actions": [
       {
-        "en": "Content calendar, Reels and community management.",
-        "pt": "Calendário de conteúdo, Reels e gestão de comunidade."
+        "en": "Instagram management for a vacation home in Orlando.",
+        "pt": "Gestão de Instagram de uma casa de temporada em Orlando."
+      },
+      {
+        "en": "Scope and period: to be confirmed by Cami.",
+        "pt": "Escopo e período: a confirmar pela Cami."
       }
     ],
     "cover": {
@@ -656,12 +652,10 @@
       }
     ],
     "links": [],
-    "tools": [
-      "Meta Business Suite",
-      "Canva"
-    ],
+    "tools": [],
     "featured": 0,
-    "audience": "recrutador"
+    "audience": "recrutador",
+    "exemplo": true
   },
   {
     "id": "mundo-magico",
@@ -678,19 +672,21 @@
     "template": "estrategia",
     "period": "a confirmar",
     "role": {
-      "en": "Instagram management",
-      "pt": "Gestão de Instagram",
-      "fr": "Gestion Instagram"
+      "en": "Marketing Coordinator, then Marketing Manager",
+      "pt": "Coordenadora e depois Marketing Manager"
     },
     "challenge": {
-      "en": "Quick reach lift for a retail account.",
-      "pt": "Ganho rápido de alcance para uma conta de varejo.",
-      "fr": "Gain rapide de portée pour un compte de détail."
+      "en": "Raise the reach of a Disney partner store's Instagram.",
+      "pt": "Aumentar o alcance do Instagram de uma loja parceira da Disney."
     },
     "actions": [
       {
-        "en": "Content and format reset in the first week.",
-        "pt": "Reset de conteúdo e formatos na primeira semana."
+        "en": "Instagram management for the store, alongside my marketing role (2017–2021).",
+        "pt": "Gestão do Instagram da loja, em paralelo ao meu cargo de marketing (2017–2021)."
+      },
+      {
+        "en": "Details of the +37% reach week: to be confirmed by Cami.",
+        "pt": "Detalhes da semana de +37% de alcance: a confirmar pela Cami."
       }
     ],
     "cover": {
@@ -723,11 +719,10 @@
       }
     ],
     "links": [],
-    "tools": [
-      "Meta Business Suite"
-    ],
+    "tools": [],
     "featured": 0,
-    "audience": "recrutador"
+    "audience": "recrutador",
+    "exemplo": true
   },
   {
     "id": "produtos-proprios",
@@ -761,16 +756,16 @@
     },
     "actions": [
       {
-        "en": "Travel itineraries, planners and checklists; Montreal guide with 100+ places.",
-        "pt": "Roteiros, planners e checklists de viagem; guia de Montreal com 100+ lugares."
+        "en": "Travel itineraries as PDFs (Montreal with 100+ places, New York, Epic Universe) and e-books.",
+        "pt": "Roteiros de viagem em PDF (Montreal com mais de 100 lugares, Nova York, Epic Universe) e e-books."
       },
       {
-        "en": "Photo presets, e-books and mentoring sold via Hotmart.",
-        "pt": "Presets, e-books e mentoria vendidos via Hotmart."
+        "en": "Photo presets and monthly mentoring for women entrepreneurs.",
+        "pt": "Presets de foto e mentoria mensal para mulheres empreendedoras."
       },
       {
-        "en": "Podcast and a digital marketing agency in Brazil.",
-        "pt": "Podcast e uma agência de marketing digital no Brasil."
+        "en": "Products sold through Hotmart; podcast; group trips.",
+        "pt": "Produtos vendidos pela Hotmart; podcast; viagens em grupo."
       }
     ],
     "cover": {
@@ -813,7 +808,6 @@
       }
     ],
     "tools": [
-      "Wix",
       "Canva",
       "Hotmart"
     ],
