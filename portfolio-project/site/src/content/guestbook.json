@@ -1,0 +1,13 @@
+{
+  "exemplo": true,
+  "welcomeTitle": {
+    "en": "Leave me a note ✍️",
+    "pt": "Deixe um recado ✍️",
+    "fr": "Laisse-moi un mot ✍️"
+  },
+  "welcomeBody": {
+    "en": "Say hi, tell me where you're from, or what we could make together. I read everything.",
+    "pt": "Diga oi, conte de onde você é ou o que podemos criar juntos. Eu leio tudo.",
+    "fr": "Dis bonjour, dis-moi d'où tu viens ou ce qu'on pourrait créer ensemble. Je lis tout."
+  }
+}

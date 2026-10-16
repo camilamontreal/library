@@ -1,0 +1,282 @@
+[
+  {
+    "id": "montreal",
+    "title": {
+      "en": "Montréal",
+      "pt": "Montreal",
+      "fr": "Montréal"
+    },
+    "year": "2022–",
+    "exemplo": true,
+    "photos": [
+      {
+        "src": "albums/montreal/01.jpg",
+        "kind": "image",
+        "tone": "#1A2250",
+        "exemplo": true,
+        "alt": {
+          "en": "Montréal photo 1",
+          "pt": "Foto 1 de Montreal",
+          "fr": "Photo 1 de Montréal"
+        }
+      },
+      {
+        "src": "albums/montreal/02.jpg",
+        "kind": "image",
+        "tone": "#1A2250",
+        "exemplo": true,
+        "alt": {
+          "en": "Montréal photo 2",
+          "pt": "Foto 2 de Montreal",
+          "fr": "Photo 2 de Montréal"
+        }
+      },
+      {
+        "src": "albums/montreal/03.jpg",
+        "kind": "image",
+        "tone": "#1A2250",
+        "exemplo": true,
+        "alt": {
+          "en": "Montréal photo 3",
+          "pt": "Foto 3 de Montreal",
+          "fr": "Photo 3 de Montréal"
+        }
+      },
+      {
+        "src": "albums/montreal/04.jpg",
+        "kind": "image",
+        "tone": "#1A2250",
+        "exemplo": true,
+        "alt": {
+          "en": "Montréal photo 4",
+          "pt": "Foto 4 de Montreal",
+          "fr": "Photo 4 de Montréal"
+        }
+      }
+    ]
+  },
+  {
+    "id": "quebec",
+    "title": {
+      "en": "Québec City",
+      "pt": "Cidade de Québec",
+      "fr": "Québec"
+    },
+    "year": "2022",
+    "exemplo": true,
+    "photos": [
+      {
+        "src": "albums/quebec/01.jpg",
+        "kind": "image",
+        "tone": "#6D5B8E",
+        "exemplo": true,
+        "alt": {
+          "en": "Québec City photo 1",
+          "pt": "Foto 1 de Cidade de Québec",
+          "fr": "Photo 1 de Québec"
+        }
+      },
+      {
+        "src": "albums/quebec/02.jpg",
+        "kind": "image",
+        "tone": "#6D5B8E",
+        "exemplo": true,
+        "alt": {
+          "en": "Québec City photo 2",
+          "pt": "Foto 2 de Cidade de Québec",
+          "fr": "Photo 2 de Québec"
+        }
+      },
+      {
+        "src": "albums/quebec/03.jpg",
+        "kind": "image",
+        "tone": "#6D5B8E",
+        "exemplo": true,
+        "alt": {
+          "en": "Québec City photo 3",
+          "pt": "Foto 3 de Cidade de Québec",
+          "fr": "Photo 3 de Québec"
+        }
+      },
+      {
+        "src": "albums/quebec/04.jpg",
+        "kind": "image",
+        "tone": "#6D5B8E",
+        "exemplo": true,
+        "alt": {
+          "en": "Québec City photo 4",
+          "pt": "Foto 4 de Cidade de Québec",
+          "fr": "Photo 4 de Québec"
+        }
+      }
+    ]
+  },
+  {
+    "id": "orlando",
+    "title": {
+      "en": "Orlando",
+      "pt": "Orlando",
+      "fr": "Orlando"
+    },
+    "year": "2021–2025",
+    "exemplo": true,
+    "photos": [
+      {
+        "src": "albums/orlando/01.jpg",
+        "kind": "image",
+        "tone": "#E8A87C",
+        "exemplo": true,
+        "alt": {
+          "en": "Orlando photo 1",
+          "pt": "Foto 1 de Orlando",
+          "fr": "Photo 1 de Orlando"
+        }
+      },
+      {
+        "src": "albums/orlando/02.jpg",
+        "kind": "image",
+        "tone": "#E8A87C",
+        "exemplo": true,
+        "alt": {
+          "en": "Orlando photo 2",
+          "pt": "Foto 2 de Orlando",
+          "fr": "Photo 2 de Orlando"
+        }
+      },
+      {
+        "src": "albums/orlando/03.jpg",
+        "kind": "image",
+        "tone": "#E8A87C",
+        "exemplo": true,
+        "alt": {
+          "en": "Orlando photo 3",
+          "pt": "Foto 3 de Orlando",
+          "fr": "Photo 3 de Orlando"
+        }
+      },
+      {
+        "src": "albums/orlando/04.jpg",
+        "kind": "image",
+        "tone": "#E8A87C",
+        "exemplo": true,
+        "alt": {
+          "en": "Orlando photo 4",
+          "pt": "Foto 4 de Orlando",
+          "fr": "Photo 4 de Orlando"
+        }
+      }
+    ]
+  },
+  {
+    "id": "austin",
+    "title": {
+      "en": "Austin",
+      "pt": "Austin",
+      "fr": "Austin"
+    },
+    "year": "2024",
+    "exemplo": true,
+    "photos": [
+      {
+        "src": "albums/austin/01.jpg",
+        "kind": "image",
+        "tone": "#C97B63",
+        "exemplo": true,
+        "alt": {
+          "en": "Austin photo 1",
+          "pt": "Foto 1 de Austin",
+          "fr": "Photo 1 de Austin"
+        }
+      },
+      {
+        "src": "albums/austin/02.jpg",
+        "kind": "image",
+        "tone": "#C97B63",
+        "exemplo": true,
+        "alt": {
+          "en": "Austin photo 2",
+          "pt": "Foto 2 de Austin",
+          "fr": "Photo 2 de Austin"
+        }
+      },
+      {
+        "src": "albums/austin/03.jpg",
+        "kind": "image",
+        "tone": "#C97B63",
+        "exemplo": true,
+        "alt": {
+          "en": "Austin photo 3",
+          "pt": "Foto 3 de Austin",
+          "fr": "Photo 3 de Austin"
+        }
+      },
+      {
+        "src": "albums/austin/04.jpg",
+        "kind": "image",
+        "tone": "#C97B63",
+        "exemplo": true,
+        "alt": {
+          "en": "Austin photo 4",
+          "pt": "Foto 4 de Austin",
+          "fr": "Photo 4 de Austin"
+        }
+      }
+    ]
+  },
+  {
+    "id": "anaheim",
+    "title": {
+      "en": "Anaheim",
+      "pt": "Anaheim",
+      "fr": "Anaheim"
+    },
+    "year": "2024",
+    "exemplo": true,
+    "photos": [
+      {
+        "src": "albums/anaheim/01.jpg",
+        "kind": "image",
+        "tone": "#5BA4B5",
+        "exemplo": true,
+        "alt": {
+          "en": "Anaheim photo 1",
+          "pt": "Foto 1 de Anaheim",
+          "fr": "Photo 1 de Anaheim"
+        }
+      },
+      {
+        "src": "albums/anaheim/02.jpg",
+        "kind": "image",
+        "tone": "#5BA4B5",
+        "exemplo": true,
+        "alt": {
+          "en": "Anaheim photo 2",
+          "pt": "Foto 2 de Anaheim",
+          "fr": "Photo 2 de Anaheim"
+        }
+      },
+      {
+        "src": "albums/anaheim/03.jpg",
+        "kind": "image",
+        "tone": "#5BA4B5",
+        "exemplo": true,
+        "alt": {
+          "en": "Anaheim photo 3",
+          "pt": "Foto 3 de Anaheim",
+          "fr": "Photo 3 de Anaheim"
+        }
+      },
+      {
+        "src": "albums/anaheim/04.jpg",
+        "kind": "image",
+        "tone": "#5BA4B5",
+        "exemplo": true,
+        "alt": {
+          "en": "Anaheim photo 4",
+          "pt": "Foto 4 de Anaheim",
+          "fr": "Photo 4 de Anaheim"
+        }
+      }
+    ]
+  }
+]

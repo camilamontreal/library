@@ -139,6 +139,78 @@ export const Profile = z.object({
   exemplo: z.boolean().default(false),
 })
 
+/** Lugar no mapa de rotas (Mapas). `lat`/`lon` em graus decimais. */
+export const Place = z.object({
+  id: z.string().regex(/^[a-z0-9-]+$/),
+  name: I18n,
+  lat: z.number().min(-90).max(90),
+  lon: z.number().min(-180).max(180),
+  kind: z.enum(['home', 'trip']).default('trip'),
+  year: z.string().optional(),
+  note: I18n.optional().describe('uma frase que aparece ao tocar no pino'),
+  albumId: z.string().optional().describe('álbum do app Fotos'),
+  projectIds: z.array(z.string()).default([]),
+  exemplo: z.boolean().default(false),
+})
+
+/** Álbum do app Fotos. Se `cover` faltar, usa a primeira foto. */
+export const Album = z.object({
+  id: z.string().regex(/^[a-z0-9-]+$/),
+  title: I18n,
+  year: z.string().optional(),
+  cover: Media.optional(),
+  photos: z.array(Media).min(1),
+  exemplo: z.boolean().default(false),
+})
+
+export const Track = z.object({
+  title: z.string(),
+  artist: z.string(),
+  placeId: z.string().optional().describe('destino a que a música pertence (id de places.json)'),
+  url: z.string().url().optional().describe('link para ouvir (Spotify, YouTube Music…)'),
+  audio: z.string().optional().describe('arquivo em /public/media/music para tocar aqui (opcional)'),
+})
+export const Music = z.object({
+  title: I18n,
+  playlistUrl: z.string().url().optional(),
+  tracks: z.array(Track),
+  exemplo: z.boolean().default(false),
+})
+
+export const CalEvent = z.object({
+  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  endDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+  title: I18n,
+  kind: z.enum(['trip', 'busy', 'open']),
+  placeId: z.string().optional(),
+})
+export const CalendarData = z.object({
+  bookingUrl: z.string().url().optional().describe('Calendly, Google Agenda… vazio = botão manda e-mail'),
+  statusNote: I18n.describe('linha de disponibilidade no topo'),
+  events: z.array(CalEvent).default([]),
+  exemplo: z.boolean().default(false),
+})
+
+export const Topic = z.object({
+  id: z.string(),
+  q: I18n.describe('o que o visitante "diz" (botão)'),
+  a: z.array(I18n).min(1).describe('balões de resposta, em sequência'),
+  actions: z.array(z.object({
+    label: I18n,
+    app: z.string().optional().describe('abre um app do site (ex.: mediakit, departures, maps, notes, calendar)'),
+    payload: z.string().optional(),
+    email: z.boolean().optional().describe('true = abre o e-mail do perfil'),
+    url: z.string().url().optional(),
+  })).default([]),
+})
+export const Messages = z.object({ intro: I18n, topics: z.array(Topic).min(1), exemplo: z.boolean().default(false) })
+
+export const Guestbook = z.object({
+  welcomeTitle: I18n,
+  welcomeBody: I18n,
+  exemplo: z.boolean().default(false),
+})
+
 export const Content = z.object({
   profile: Profile,
   networks: z.array(Network),
@@ -146,5 +218,11 @@ export const Content = z.object({
   experience: z.array(Experience),
   education: z.array(Education),
   brands: z.array(Brand),
+  places: z.array(Place),
+  albums: z.array(Album),
+  music: Music,
+  calendar: CalendarData,
+  messages: Messages,
+  guestbook: Guestbook,
 })
 export type ContentT = z.infer<typeof Content>

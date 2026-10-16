@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { content, featuredProjects } from '../../content'
-import { useOS, type AppId } from '../../store/os'
+import { useOS } from '../../store/os'
 import { useLang, ui, t } from '../../lib/i18n'
 import { useWallpaper, useClock, fmtTime, fmtDate } from '../../lib/hooks'
 import { Media } from '../../ui/Media'
@@ -10,10 +10,9 @@ import { Window } from './Window'
 import { Widgets } from './Widgets'
 import { DesktopIcon } from './DesktopIcon'
 import { renderApp, appTitle } from '../../apps'
+import { APP_LABEL, DOCK, ALL_APPS } from '../../apps/registry'
 import './desktop.css'
 
-const DOCK: AppId[] = ['browser', 'miles', 'passport', 'departures', 'about', 'mediakit', 'contact']
-const APP_LABEL: Record<AppId, Parameters<typeof ui>[0]> = { browser: 'browser', miles: 'miles', passport: 'passport', departures: 'departures', about: 'about', mediakit: 'mediaKit', contact: 'contact', trash: 'trash', finder: 'allProjects', case: 'projects' }
 
 export function Desktop() {
   const lang = useLang((s) => s.lang)
@@ -74,15 +73,16 @@ export function Desktop() {
 function MenuBar() {
   const { lang, setLang } = useLang()
   const now = useClock()
-  const { audience, setAudience, open } = useOS()
+  const { audience, setAudience, open, setSpotlight } = useOS()
   const [menu, setMenu] = useState(false)
-  const items: { id: AppId; key: Parameters<typeof ui>[0]; payload?: string }[] = [
-    { id: 'finder', key: 'allProjects' }, { id: 'browser', key: 'browser' }, { id: 'miles', key: 'miles' }, { id: 'passport', key: 'passport' },
-    { id: 'departures', key: 'departures' }, { id: 'about', key: 'about' }, { id: 'mediakit', key: 'mediaKit' }, { id: 'contact', key: 'contact' },
-  ]
+  const items = ALL_APPS.filter((id) => id !== 'trash').map((id) => ({ id, key: APP_LABEL[id], payload: undefined as string | undefined }))
+  const [pop, setPop] = useState<'about' | 'clock' | null>(null)
   return (
     <header className="menubar">
-      <strong className="menubar__brand">{content.profile.brandName}</strong>
+      <div className="menubar__menu">
+        <button className="menubar__brand" aria-haspopup="dialog" aria-expanded={pop === 'about'} onClick={() => setPop((p) => (p === 'about' ? null : 'about'))}>{content.profile.brandName}</button>
+        {pop === 'about' && <AboutPop onClose={() => setPop(null)} />}
+      </div>
       <button className="menubar__item" onClick={() => open('finder')}>{ui('projects', lang)}</button>
       <div className="menubar__menu">
         <button className="menubar__item" aria-haspopup="menu" aria-expanded={menu} onClick={() => setMenu((m) => !m)}>{ui('goTo', lang)}</button>
@@ -105,7 +105,11 @@ function MenuBar() {
           <button key={l} role="radio" aria-checked={lang === l} className={lang === l ? 'on' : ''} onClick={() => setLang(l)}>{l.toUpperCase()}</button>
         ))}
       </div>
-      <time className="menubar__clock" dateTime={now.toISOString()}>{fmtDate(now, lang)} · {fmtTime(now, lang)}</time>
+      <button className="menubar__item" onClick={() => setSpotlight(true)} aria-label={`${ui('search', lang)} (⌘K)`} title={`${ui('search', lang)} (⌘K)`}><Icon.search width={15} height={15} /></button>
+      <div className="menubar__menu">
+        <button className="menubar__clock menubar__item" aria-haspopup="dialog" aria-expanded={pop === 'clock'} onClick={() => setPop((p) => (p === 'clock' ? null : 'clock'))}><time dateTime={now.toISOString()}>{fmtDate(now, lang)} · {fmtTime(now, lang)}</time></button>
+        {pop === 'clock' && <ClockPop now={now} onClose={() => setPop(null)} />}
+      </div>
     </header>
   )
 }
@@ -137,3 +141,31 @@ function Toast() {
   )
 }
 
+
+/** Clicar no nome no canto da barra de menu abre um "Sobre este Mac" com a bio (surpresa). */
+function AboutPop({ onClose }: { onClose: () => void }) {
+  const lang = useLang((s) => s.lang)
+  const open = useOS((s) => s.open)
+  const p = content.profile
+  return (
+    <div className="pop glass" role="dialog" aria-label={ui('aboutThis', lang)} onMouseLeave={onClose}>
+      <Media media={p.avatar} className="pop__avatar" small />
+      <b>{p.name}</b>
+      <span className="muted">{p.brandName} · {p.location}</span>
+      <p>{t(p.tagline, lang)}</p>
+      <button className="btn btn--ghost" onClick={() => { open('about'); onClose() }}>{ui('moreInfo', lang)}</button>
+    </div>
+  )
+}
+
+/** Clicar no relógio mostra a hora de Montreal, a do visitante e a de São Paulo. */
+function ClockPop({ now, onClose }: { now: Date; onClose: () => void }) {
+  const lang = useLang((s) => s.lang)
+  const at = (tz?: string) => now.toLocaleTimeString(lang === 'en' ? 'en-CA' : lang === 'fr' ? 'fr-CA' : 'pt-BR', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: tz })
+  const rows: [string, string][] = [['Montréal', at('America/Toronto')], [ui('yourTime', lang), at()], ['São Paulo', at('America/Sao_Paulo')]]
+  return (
+    <div className="pop pop--clock glass" role="dialog" onMouseLeave={onClose}>
+      {rows.map(([k, v]) => <div key={k} className="pop__row"><span>{k}</span><b className="num">{v}</b></div>)}
+    </div>
+  )
+}

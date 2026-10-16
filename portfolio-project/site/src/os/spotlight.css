@@ -1,0 +1,14 @@
+/* ---------- Busca (⌘K) ---------- */
+.spot { position: fixed; inset: 0; z-index: 300; background: rgba(8,10,24,.36); display: flex; justify-content: center; align-items: flex-start; padding: 14vh 16px 0; }
+.spot__box { width: min(620px, 100%); border-radius: 18px; overflow: hidden; background: var(--glass-strong); }
+.spot__field { display: flex; align-items: center; gap: 10px; padding: 0 16px; height: 54px; border-bottom: .5px solid var(--line); color: var(--ink-2); }
+.spot__field input { flex: 1; border: 0; outline: 0; background: transparent; font: inherit; font-size: 17px; font-weight: 500; color: var(--ink); min-width: 0; }
+.spot__esc { font-size: 11px; font-weight: 700; padding: 3px 7px; border-radius: 6px; background: rgba(127,127,127,.2); color: var(--ink-2); min-height: 26px; }
+.spot__list { list-style: none; margin: 0; padding: 6px; max-height: min(52vh, 420px); overflow: auto; }
+.spot__head { padding: 10px 10px 4px; }
+.spot__item button { display: flex; align-items: baseline; gap: 10px; width: 100%; text-align: left; padding: 9px 10px; border-radius: 10px; min-height: 40px; }
+.spot__item button b { font-weight: 600; font-size: 14px; }
+.spot__item button span { font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.spot__item button.on { background: var(--acc); color: #fff; } .spot__item button.on span { color: rgba(255,255,255,.8); }
+.spot__none { padding: 20px 12px; text-align: center; }
+@media (max-width: 767px) { .spot { padding-top: 8vh; } .spot__field input { font-size: 16px; } }

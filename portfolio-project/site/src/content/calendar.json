@@ -1,0 +1,41 @@
+{
+  "exemplo": true,
+  "statusNote": {
+    "en": "Open for new projects.",
+    "pt": "Aberta para novos projetos.",
+    "fr": "Ouverte à de nouveaux projets."
+  },
+  "events": [
+    {
+      "date": "2026-11-09",
+      "endDate": "2026-11-13",
+      "kind": "trip",
+      "placeId": "orlando",
+      "title": {
+        "en": "Trip: Orlando",
+        "pt": "Viagem: Orlando",
+        "fr": "Voyage : Orlando"
+      }
+    },
+    {
+      "date": "2026-11-23",
+      "endDate": "2026-11-27",
+      "kind": "busy",
+      "title": {
+        "en": "Booked: campaign shoot",
+        "pt": "Agenda fechada: gravação de campanha",
+        "fr": "Réservé : tournage de campagne"
+      }
+    },
+    {
+      "date": "2026-12-07",
+      "endDate": "2026-12-18",
+      "kind": "open",
+      "title": {
+        "en": "Open for new projects",
+        "pt": "Aberta para novos projetos",
+        "fr": "Ouverte à de nouveaux projets"
+      }
+    }
+  ]
+}

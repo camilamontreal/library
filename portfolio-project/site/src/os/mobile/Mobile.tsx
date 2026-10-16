@@ -74,11 +74,20 @@ function HomeScreen({ onOpen }: { onOpen: (app: AppId, payload?: string) => void
   const p = content.profile
   const { audience } = useOS()
   const featured = featuredProjects(audience)
+  const [cc, setCc] = useState(false)
+  const setSpotlight = useOS((s) => s.setSpotlight)
   const apps: { id: AppId; payload?: string; label: string; icon: Parameters<typeof AppIcon>[0]['id'] }[] = [
     { id: 'browser', payload: 'instagram', label: 'Instagram', icon: 'instagram' },
     { id: 'browser', payload: 'tiktok', label: 'TikTok', icon: 'tiktok' },
     { id: 'browser', payload: 'youtube', label: 'YouTube', icon: 'youtube' },
     { id: 'browser', payload: 'linkedin', label: 'LinkedIn', icon: 'linkedin' },
+    { id: 'notes', label: ui('notes', lang), icon: 'notes' },
+    { id: 'messages', label: ui('messages', lang), icon: 'messages' },
+    { id: 'photos', label: ui('photos', lang), icon: 'photos' },
+    { id: 'maps', label: ui('maps', lang), icon: 'maps' },
+    { id: 'music', label: ui('music', lang), icon: 'music' },
+    { id: 'calendar', label: ui('calendar', lang), icon: 'calendar' },
+    { id: 'ticket', label: ui('ticket', lang), icon: 'ticket' },
     { id: 'passport', label: ui('passport', lang), icon: 'passport' },
     { id: 'departures', label: ui('departures', lang), icon: 'departures' },
     { id: 'about', label: ui('about', lang), icon: 'about' },
@@ -90,7 +99,10 @@ function HomeScreen({ onOpen }: { onOpen: (app: AppId, payload?: string) => void
   return (
     <div className="home">
       <Media media={p.wallpapers.evening} className="home__wall" label={`${ui('photo', lang)} · reel`} />
-      <div className="home__status"><span>{fmtTime(now, lang)}</span><span aria-hidden="true">●●● ▮</span></div>
+      <div className="home__status"><span>{fmtTime(now, lang)}</span>
+        <button className="home__cc" onClick={() => setCc(true)} aria-label={ui('controlCenter', lang)}><span aria-hidden="true">●●● ▮</span></button>
+      </div>
+      {cc && <ControlCenter onClose={() => setCc(false)} />}
       <button className="home__widget glass glass--dark" onClick={() => onOpen('miles')}>
         <h4>{ui('miles', lang)} <small>{p.heroStats[1].period}</small></h4>
         <div className="home__grid">{p.heroStats.map((m, i) => <div key={i}><div className="num home__big">{m.value}</div><div className="home__lab">{t(m.label, lang)}</div></div>)}</div>
@@ -104,12 +116,34 @@ function HomeScreen({ onOpen }: { onOpen: (app: AppId, payload?: string) => void
           <button key={i} className="happ" onClick={() => onOpen(a.id, a.payload)}><AppIcon id={a.icon} size={60} /><span>{a.label}</span></button>
         ))}
       </div>
+      <button className="home__search glass" onClick={() => setSpotlight(true)}><Icon.search width={15} height={15} /> {ui('search', lang)}</button>
       <nav className="home__dock glass" aria-label="Dock">
         <button onClick={() => onOpen('contact')} aria-label={ui('contact', lang)}><AppIcon id="contact" size={58} /></button>
         <button onClick={() => onOpen('browser')} aria-label={ui('browser', lang)}><AppIcon id="browser" size={58} /></button>
         <button onClick={() => onOpen('finder')} aria-label={ui('allProjects', lang)}><AppIcon id="finder" size={58} /></button>
         <button onClick={() => onOpen('miles')} aria-label={ui('miles', lang)}><AppIcon id="miles" size={58} /></button>
       </nav>
+    </div>
+  )
+}
+
+/** Central de Controle (toque nos ícones de status): idioma e "Ver como", que no celular não tinham onde ficar. */
+function ControlCenter({ onClose }: { onClose: () => void }) {
+  const { lang, setLang } = useLang()
+  const { audience, setAudience } = useOS()
+  return (
+    <div className="cc" onClick={onClose}>
+      <div className="cc__panel glass" role="dialog" aria-label={ui('controlCenter', lang)} onClick={(e) => e.stopPropagation()}>
+        <div className="eyebrow">{ui('language', lang)}</div>
+        <div className="cc__seg" role="radiogroup" aria-label={ui('language', lang)}>
+          {(['en', 'pt', 'fr'] as const).map((l) => <button key={l} role="radio" aria-checked={lang === l} className={lang === l ? 'on' : ''} onClick={() => setLang(l)}>{l.toUpperCase()}</button>)}
+        </div>
+        <div className="eyebrow">{ui('viewAs', lang)}</div>
+        <div className="cc__seg" role="radiogroup" aria-label={ui('viewAs', lang)}>
+          <button role="radio" aria-checked={audience === 'marca'} className={audience === 'marca' ? 'on' : ''} onClick={() => setAudience('marca')}>{ui('brand', lang)}</button>
+          <button role="radio" aria-checked={audience === 'recrutador'} className={audience === 'recrutador' ? 'on' : ''} onClick={() => setAudience('recrutador')}>{ui('recruiter', lang)}</button>
+        </div>
+      </div>
     </div>
   )
 }

@@ -8,7 +8,16 @@ import { MilesApp } from './MilesApp'
 import { PassportApp } from './PassportApp'
 import { DeparturesApp } from './DeparturesApp'
 import { AboutApp, MediaKitApp, ContactApp, TrashApp } from './SmallApps'
+import { NotesApp } from './NotesApp'
+import { MessagesApp } from './MessagesApp'
+import { PhotosApp } from './PhotosApp'
+import { MapsApp } from './MapsApp'
+import { MusicApp } from './MusicApp'
+import { CalendarApp } from './CalendarApp'
+import { TicketApp } from './TicketApp'
+import { APP_LABEL } from './registry'
 import './apps.css'
+import './extra.css'
 
 /** Mapeia uma janela para o app que ela mostra. Usado no desktop (janelas) e no mobile (telas cheias). */
 export function renderApp(win: Pick<Win, 'app' | 'payload'>) {
@@ -23,6 +32,13 @@ export function renderApp(win: Pick<Win, 'app' | 'payload'>) {
     case 'mediakit': return <MediaKitApp />
     case 'contact': return <ContactApp />
     case 'trash': return <TrashApp />
+    case 'notes': return <NotesApp />
+    case 'messages': return <MessagesApp />
+    case 'photos': return <PhotosApp initial={win.payload} />
+    case 'maps': return <MapsApp initial={win.payload} />
+    case 'music': return <MusicApp />
+    case 'calendar': return <CalendarApp />
+    case 'ticket': return <TicketApp initial={win.payload} />
   }
 }
 
@@ -38,5 +54,6 @@ export function appTitle(win: Pick<Win, 'app' | 'payload'>, lang: Lang): string 
     case 'mediakit': return ui('mediaKit', lang)
     case 'contact': return ui('contact', lang)
     case 'trash': return t({ en: 'Trash', pt: 'Lixeira', fr: 'Corbeille' }, lang)
+    default: return ui(APP_LABEL[win.app], lang)
   }
 }

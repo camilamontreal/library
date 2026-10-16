@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 
 /** Que app/janela está aberta. `payload` carrega o id do projeto, a aba do navegador etc. */
-export type AppId = 'case' | 'finder' | 'browser' | 'miles' | 'passport' | 'departures' | 'about' | 'mediakit' | 'contact' | 'trash'
+export type AppId = 'case' | 'finder' | 'browser' | 'miles' | 'passport' | 'departures' | 'about' | 'mediakit' | 'contact' | 'trash' | 'notes' | 'messages' | 'photos' | 'maps' | 'music' | 'calendar' | 'ticket'
 export type Win = { key: string; app: AppId; payload?: string; z: number; x: number; y: number; w: number; h: number }
 export type Audience = 'marca' | 'recrutador'
 
@@ -15,12 +15,15 @@ function initialAudience(): Audience {
 export const DEFAULT_SIZE: Record<AppId, [number, number]> = {
   case: [780, 640], finder: [860, 560], browser: [980, 660], miles: [820, 600], passport: [820, 600],
   departures: [860, 560], about: [720, 560], mediakit: [720, 520], contact: [520, 420], trash: [520, 420],
+  notes: [820, 560], messages: [420, 620], photos: [860, 600], maps: [900, 600], music: [520, 560], calendar: [760, 580], ticket: [640, 560],
 }
 
 type State = {
   windows: Win[]
   zTop: number
   audience: Audience
+  spotlight: boolean
+  setSpotlight: (v: boolean) => void
   iconOffsets: Record<string, { dx: number; dy: number }>
   /** No mobile, o Mobile.tsx registra um handler que empilha telas em vez de abrir janelas. */
   openHandler: ((app: AppId, payload?: string) => void) | null
@@ -38,6 +41,8 @@ export const useOS = create<State>((set, get) => ({
   windows: [],
   zTop: 10,
   audience: initialAudience(),
+  spotlight: false,
+  setSpotlight: (spotlight) => set({ spotlight }),
   iconOffsets: {},
   openHandler: null,
   setOpenHandler: (openHandler) => set({ openHandler }),

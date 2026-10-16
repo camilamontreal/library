@@ -1,0 +1,201 @@
+{
+  "exemplo": true,
+  "intro": {
+    "en": "Hi! I'm Cami 👋 Pick a question and I'll answer.",
+    "pt": "Oi! Eu sou a Cami 👋 Escolha uma pergunta e eu respondo.",
+    "fr": "Salut ! Moi c'est Cami 👋 Choisis une question et je te réponds."
+  },
+  "topics": [
+    {
+      "id": "brand",
+      "q": {
+        "en": "I'm a brand and want content",
+        "pt": "Sou uma marca e quero conteúdo",
+        "fr": "Je suis une marque et je veux du contenu"
+      },
+      "a": [
+        {
+          "en": "Hi! So glad you're here 🙌",
+          "pt": "Oi! Que bom que você veio 🙌",
+          "fr": "Salut ! Contente que tu sois là 🙌"
+        },
+        {
+          "en": "I create travel content and UGC for brands like Disney, Air Canada and Québec Tourism.",
+          "pt": "Eu crio conteúdo de viagem e UGC para marcas como Disney, Air Canada e Québec Tourism.",
+          "fr": "Je crée du contenu voyage et de l'UGC pour des marques comme Disney, Air Canada et Tourisme Québec."
+        },
+        {
+          "en": "Easiest next step: take a look at my media kit, then email me your goal and timeline.",
+          "pt": "Próximo passo mais fácil: dê uma olhada no meu mídia kit e me mande por e-mail o seu objetivo e o prazo.",
+          "fr": "Le plus simple : jette un œil à mon kit média, puis écris-moi ton objectif et ton échéancier."
+        }
+      ],
+      "actions": [
+        {
+          "label": {
+            "en": "Open media kit",
+            "pt": "Abrir mídia kit",
+            "fr": "Ouvrir le kit média"
+          },
+          "app": "mediakit"
+        },
+        {
+          "label": {
+            "en": "Send e-mail",
+            "pt": "Enviar e-mail",
+            "fr": "Envoyer un courriel"
+          },
+          "email": true
+        }
+      ]
+    },
+    {
+      "id": "recruiter",
+      "q": {
+        "en": "I'm a recruiter",
+        "pt": "Sou recrutador(a)",
+        "fr": "Je suis recruteur"
+      },
+      "a": [
+        {
+          "en": "Hey, thanks for stopping by 💼",
+          "pt": "Oi, obrigada por passar por aqui 💼",
+          "fr": "Salut, merci de passer 💼"
+        },
+        {
+          "en": "Seven years in social media: strategy, content and analytics. The Departures app has my timeline, and each role links to real cases.",
+          "pt": "Sete anos em social media: estratégia, conteúdo e análise de dados. O app Partidas tem a minha linha do tempo e cada cargo leva a cases reais.",
+          "fr": "Sept ans en médias sociaux : stratégie, contenu et analyse. L'app Départs montre mon parcours, et chaque poste mène à de vrais cas."
+        },
+        {
+          "en": "Prefer to talk? Book a time or email me.",
+          "pt": "Prefere conversar? Marque um horário ou me escreva.",
+          "fr": "Tu préfères parler ? Réserve un moment ou écris-moi."
+        }
+      ],
+      "actions": [
+        {
+          "label": {
+            "en": "See my experience",
+            "pt": "Ver minha experiência",
+            "fr": "Voir mon parcours"
+          },
+          "app": "departures"
+        },
+        {
+          "label": {
+            "en": "Book a chat",
+            "pt": "Agendar conversa",
+            "fr": "Réserver un échange"
+          },
+          "app": "calendar"
+        }
+      ]
+    },
+    {
+      "id": "rates",
+      "q": {
+        "en": "How much do you charge?",
+        "pt": "Quanto você cobra?",
+        "fr": "Quels sont tes tarifs ?"
+      },
+      "a": [
+        {
+          "en": "It depends on scope, usage rights and timeline 🙂",
+          "pt": "Depende do escopo, dos direitos de uso e do prazo 🙂",
+          "fr": "Ça dépend de la portée, des droits d'utilisation et de l'échéancier 🙂"
+        },
+        {
+          "en": "Send me the brief and I'll come back with a proposal.",
+          "pt": "Me mande o briefing e eu volto com uma proposta.",
+          "fr": "Envoie-moi le brief et je reviens avec une proposition."
+        }
+      ],
+      "actions": [
+        {
+          "label": {
+            "en": "Send e-mail",
+            "pt": "Enviar e-mail",
+            "fr": "Envoyer un courriel"
+          },
+          "email": true
+        }
+      ]
+    },
+    {
+      "id": "reply",
+      "q": {
+        "en": "How fast do you reply?",
+        "pt": "Em quanto tempo você responde?",
+        "fr": "Tu réponds en combien de temps ?"
+      },
+      "a": [
+        {
+          "en": "Within 48 hours, usually faster ✈️",
+          "pt": "Em até 48 horas, geralmente antes ✈️",
+          "fr": "Sous 48 heures, souvent plus vite ✈️"
+        }
+      ]
+    },
+    {
+      "id": "where",
+      "q": {
+        "en": "Where are you based?",
+        "pt": "Onde você mora?",
+        "fr": "Tu habites où ?"
+      },
+      "a": [
+        {
+          "en": "Montréal 🇨🇦, but I travel a lot.",
+          "pt": "Em Montreal 🇨🇦, mas viajo bastante.",
+          "fr": "À Montréal 🇨🇦, mais je voyage beaucoup."
+        },
+        {
+          "en": "The Maps app shows where I've been.",
+          "pt": "O app Mapas mostra por onde eu já passei.",
+          "fr": "L'app Cartes montre où je suis passée."
+        }
+      ],
+      "actions": [
+        {
+          "label": {
+            "en": "Open Maps",
+            "pt": "Abrir Mapas",
+            "fr": "Ouvrir Cartes"
+          },
+          "app": "maps"
+        }
+      ]
+    },
+    {
+      "id": "hi",
+      "q": {
+        "en": "Just saying hi 💛",
+        "pt": "Só vim dar oi 💛",
+        "fr": "Juste un petit salut 💛"
+      },
+      "a": [
+        {
+          "en": "Hi!! 💛",
+          "pt": "Oi!! 💛",
+          "fr": "Salut !! 💛"
+        },
+        {
+          "en": "Leave me a note in the Notes app. I read every single one.",
+          "pt": "Deixe um recado no app Notas. Eu leio todos.",
+          "fr": "Laisse-moi un mot dans l'app Notes. Je les lis tous."
+        }
+      ],
+      "actions": [
+        {
+          "label": {
+            "en": "Open Notes",
+            "pt": "Abrir Notas",
+            "fr": "Ouvrir Notes"
+          },
+          "app": "notes"
+        }
+      ]
+    }
+  ]
+}

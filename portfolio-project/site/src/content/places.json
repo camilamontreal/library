@@ -1,0 +1,104 @@
+[
+  {
+    "id": "montreal",
+    "name": {
+      "en": "Montréal",
+      "pt": "Montreal",
+      "fr": "Montréal"
+    },
+    "lat": 45.5017,
+    "lon": -73.5673,
+    "kind": "home",
+    "year": "2022",
+    "note": {
+      "en": "Home base since 2022.",
+      "pt": "Minha base desde 2022.",
+      "fr": "Ma base depuis 2022."
+    },
+    "albumId": "montreal",
+    "projectIds": [
+      "produtos-proprios"
+    ]
+  },
+  {
+    "id": "quebec-city",
+    "name": {
+      "en": "Québec City",
+      "pt": "Cidade de Québec",
+      "fr": "Québec"
+    },
+    "lat": 46.8139,
+    "lon": -71.208,
+    "year": "2022",
+    "note": {
+      "en": "UGC for Québec Tourism and Nickelodeon.",
+      "pt": "UGC para Québec Tourism e Nickelodeon.",
+      "fr": "UGC pour Tourisme Québec et Nickelodeon."
+    },
+    "albumId": "quebec",
+    "projectIds": [
+      "quebec-nickelodeon-ugc"
+    ]
+  },
+  {
+    "id": "orlando",
+    "name": {
+      "en": "Orlando",
+      "pt": "Orlando",
+      "fr": "Orlando"
+    },
+    "lat": 28.5383,
+    "lon": -81.3792,
+    "year": "2021–2025",
+    "note": {
+      "en": "Disney, Universal, SeaWorld and Busch Gardens coverage.",
+      "pt": "Cobertura de Disney, Universal, SeaWorld e Busch Gardens.",
+      "fr": "Couverture de Disney, Universal, SeaWorld et Busch Gardens."
+    },
+    "albumId": "orlando",
+    "projectIds": [
+      "disney-universal-media",
+      "house-inn-orlando"
+    ]
+  },
+  {
+    "id": "austin",
+    "name": {
+      "en": "Austin",
+      "pt": "Austin",
+      "fr": "Austin"
+    },
+    "lat": 30.2672,
+    "lon": -97.7431,
+    "year": "2024",
+    "note": {
+      "en": "Air Canada inaugural flight with Visit Austin.",
+      "pt": "Voo inaugural da Air Canada com a Visit Austin.",
+      "fr": "Vol inaugural d'Air Canada avec Visit Austin."
+    },
+    "albumId": "austin",
+    "projectIds": [
+      "air-canada-austin"
+    ]
+  },
+  {
+    "id": "anaheim",
+    "name": {
+      "en": "Anaheim",
+      "pt": "Anaheim",
+      "fr": "Anaheim"
+    },
+    "lat": 33.8366,
+    "lon": -117.9143,
+    "year": "2024",
+    "note": {
+      "en": "D23 Anaheim.",
+      "pt": "D23 Anaheim.",
+      "fr": "D23 Anaheim."
+    },
+    "albumId": "anaheim",
+    "projectIds": [
+      "disney-universal-media"
+    ]
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "title": {
+    "en": "Travel playlist",
+    "pt": "Playlist de viagem",
+    "fr": "Playlist de voyage"
+  },
+  "exemplo": true,
+  "tracks": [
+    {
+      "title": "Track 01",
+      "artist": "Artist",
+      "placeId": "montreal"
+    },
+    {
+      "title": "Track 02",
+      "artist": "Artist",
+      "placeId": "quebec-city"
+    },
+    {
+      "title": "Track 03",
+      "artist": "Artist",
+      "placeId": "orlando"
+    },
+    {
+      "title": "Track 04",
+      "artist": "Artist",
+      "placeId": "austin"
+    },
+    {
+      "title": "Track 05",
+      "artist": "Artist",
+      "placeId": "anaheim"
+    },
+    {
+      "title": "Track 06",
+      "artist": "Artist",
+      "placeId": "montreal"
+    }
+  ]
+}
