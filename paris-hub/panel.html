@@ -580,6 +580,15 @@ function runPatV(){var miss=patVMissing();if(!miss.length||PATVING)return;PATVIN
   function pump(){while(inflight<3&&i<total){var p=miss[i++];inflight++;one(p,0).then(function(){inflight--;done++;if(done>=total)fin();else pump()})}}
   toast("Atualizando "+total+" verificações...",6000);pump()}
 function patVBanner(){if(!PATV)return"";var n=patVMissing().length;if(!n)return"";return '<div class="card row" style="justify-content:space-between"><div><b>'+n+' verificações de empresas prontas para entrar</b><div class="small mut">Resultado da checagem de sites, e-mails e identidade. Verde só quando o canal de contato foi visto numa página oficial.</div></div><button class="btn ok" data-a="patv" type="button"'+(PATVING?' disabled':'')+'>Aplicar verificações</button></div>'}
+var PATT=null,PATTING=false;
+function loadPatT(){if(PATT!==null)return;PATT=false;try{fetch("patch_tone.json").then(function(r){return r.ok?r.json():null}).then(function(j){PATT=j||false;render()}).catch(function(){PATT=false})}catch(e){PATT=false}}
+function patTMissing(){if(!PATT)return[];var m={};(S.ph_opps||[]).forEach(function(o){m[o._id]=o});return PATT.filter(function(p){var o=m[p[1]];return o&&o.msg&&o.msg.status==="draft"&&o.msg.body!==p[2].msg.body})}
+function runPatT(){var miss=patTMissing();if(!miss.length||PATTING)return;PATTING=true;var i=0,done=0,ok=0,bad=0,inflight=0,firstErr="",total=miss.length;
+  function fin(){PATTING=false;toast("Tom novo aplicado em "+ok+" rascunhos"+(bad?" ("+bad+" falharam: "+firstErr+")":""),9000);render()}
+  function one(p,n){return upd(p[0],p[1],JSON.parse(JSON.stringify(p[2]))).then(function(){ok++},function(e){if(n<3)return new Promise(function(r){setTimeout(r,600*(n+1))}).then(function(){return one(p,n+1)});bad++;if(!firstErr)firstErr=String(e&&e.message||e).slice(0,120)})}
+  function pump(){while(inflight<3&&i<total){var p=miss[i++];inflight++;one(p,0).then(function(){inflight--;done++;if(done>=total)fin();else pump()})}}
+  toast("Atualizando "+total+" rascunhos...",6000);pump()}
+function patTBanner(){if(!PATT)return"";var n=patTMissing().length;if(!n)return"";return '<div class="card row" style="justify-content:space-between"><div><b>'+n+' rascunhos com o tom novo</b><div class="small mut">Para fotógrafos, restaurantes, cabarés e salões de chá: sem "em troca de visibilidade", com pergunta aberta sobre como colaborar. Só reescreve rascunhos que você ainda não aprovou.</div></div><button class="btn ok" data-a="patt" type="button"'+(PATTING?' disabled':'')+'>Aplicar tom novo</button></div>'}
 function impBanner(){if(!IMP)return"";var n=impMissing().length;if(!n&&!IMPORTING)return"";return '<div class="card row" style="justify-content:space-between"><div><b>'+(IMPORTING?'Importando experiências novas':n+' itens novos prontos para entrar no hub')+'</b><div class="small mut" id="impst">'+esc(IMPORTING?IMPST:(IMPERR?"Último erro: "+IMPERR:"Experiências, empresas e caminhos da terceira varredura. Nada é enviado e nada é sobrescrito."))+'</div></div>'+(IMPORTING?'':'<button class="btn ok" data-a="imp" type="button">Importar agora</button>')+'</div>'}
 function isPlat(ex){return !ex.operatorOrgId}
 function ppOf(ex){return ex.pricePPEUR!=null?ex.pricePPEUR:(ex.price3EUR!=null?ex.price3EUR/3:null)}
@@ -625,7 +634,7 @@ function coverageBox(){var cv=meta("gyg_coverage"),op=companies();
   var rows=[["Resultados do GetYourGuide na sua lista",cv.gygVisible!=null?cv.gygVisible:"indisponível: o site bloqueia acesso automático"],["Atividades analisadas individualmente",cv.analyzed!=null?cv.analyzed:"—"],["Experiências únicas cadastradas",arr("ph_experiences").length],["Propostas prontas (rascunhos)",op.filter(function(o){return o.msg&&o.msg.status==="draft"}).length],["Ainda faltam analisar",cv.pending!=null?cv.pending:"não dá para saber sem a lista exata"]];
   return '<details class="card"><summary style="cursor:pointer;font-weight:700">Cobertura da pesquisa</summary><dl class="facts" style="margin-top:10px">'+rows.map(function(r){return '<div><dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd></div>'}).join("")+'</dl><p class="small mut">'+esc(cv.note||"A página filtrada do GetYourGuide retorna erro 403 para acesso automático. As experiências abaixo vêm de buscas públicas e de outras plataformas, e aproximam seus filtros. Cole os links da sua lista para eu cobrir exatamente os mesmos resultados.")+'</p>'+((cv.pendingList||[]).length?'<p class="small"><b>Pendentes:</b> '+cv.pendingList.map(esc).join(" · ")+'</p>':'')+'</details>'}
 function viewHunt(){var all=arr("ph_experiences"),list=huntFiltered();
-  var h='<div class="pagehead"><div><h2>🎟️ <span class="serif">GetYourGuide</span> Experience Hunter</h2><p class="lead">Cada experiência reúne todos os caminhos comerciais: operador, revendedores, agências e PR. Cada contato tem o seu pitch e a sua aprovação.</p></div></div>'+impBanner()+patBanner()+patVBanner()+huntKpis()+coverageBox();
+  var h='<div class="pagehead"><div><h2>🎟️ <span class="serif">GetYourGuide</span> Experience Hunter</h2><p class="lead">Cada experiência reúne todos os caminhos comerciais: operador, revendedores, agências e PR. Cada contato tem o seu pitch e a sua aprovação.</p></div></div>'+impBanner()+patBanner()+patVBanner()+patTBanner()+huntKpis()+coverageBox();
   var cats={};all.forEach(function(e){cats[e.category]=(cats[e.category]||0)+1});
   h+='<div class="row">'+Object.keys(cats).map(function(k){return '<button class="chip" data-a="hcat" data-v="'+esc(k)+'" aria-pressed="'+(H.cat===k)+'" type="button">'+(CATG[k]||"")+' '+esc(CAT[k]||k)+' <span class="n">'+cats[k]+'</span></button>'}).join("")+'</div>';
   h+='<div class="fbar"><input type="search" id="h_q" placeholder="Buscar experiência, operador ou empresa" value="'+esc(H.q)+'" aria-label="Buscar"><select data-h="slot" aria-label="Data">'+opt([["2","2 nov"],["3","3 nov"],["4","4 nov"]],H.slot,"Qualquer data")+'</select><select data-h="hour" aria-label="Horário">'+opt([["m","Manhã"],["t","Tarde / dia"],["n","Noite"]],H.hour,"Qualquer horário")+'</select><select data-h="price" aria-label="Preço para 3">'+opt([["a","até €150"],["b","€150 a €300"],["c","€300 a €600"],["d","acima de €600"]],H.price,"Preço p/ 3")+'</select><select data-h="sort" aria-label="Ordenar">'+opt([["prio","Prioridade"],["preco","Maior preço"],["caminhos","Mais caminhos"],["nome","Nome"]],H.sort,"Ordenar")+'</select>'+
@@ -685,6 +694,7 @@ document.addEventListener("click",function(e){var t=e.target.closest("[data-a]")
   else if(a==="imp"){runImp()}
   else if(a==="pat"){runPat()}
   else if(a==="patv"){runPatV()}
+  else if(a==="patt"){runPatT()}
   else if(a==="dtab")openCompany(DID,tt);
   else if(a==="approve")doApprove(id);
   else if(a==="edit")editSheet(id);
@@ -723,7 +733,7 @@ function boot(claude){
     render()},function(){setLive(false,"sem banco");render()});
   claude.use("mcp").then(function(m){MCP=m},function(){MCP=null});
 }
-F.view="decisao";render();loadImp();loadPat();loadPatV();
+F.view="decisao";render();loadImp();loadPat();loadPatV();loadPatT();
 if(window.claude&&window.claude.use)boot(window.claude);else setLive(false,"fora do Claude");
 })();
 </script>

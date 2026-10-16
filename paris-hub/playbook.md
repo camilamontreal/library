@@ -59,3 +59,13 @@ Todo dia ~9h de Montreal. Grave `ph_meta/report_<AAAA-MM-DD>` {date, text} e mos
 PARIS PARTNERSHIPS — DAILY REPORT
 Empresas pesquisadas / contatadas / Novas respostas / Propostas recebidas / Parcerias aprovadas / Experiências confirmadas / Pendências minhas
 Depois só novidades importantes e decisões urgentes. Tudo vem do banco (conte ph_companies, ph_contacts, ph_itinerary), sem repetir o antigo. Inclua dias até 2 nov e erros de integração.
+
+# APRENDIZADOS DE ABORDAGEM (atualizar a cada rodada de respostas)
+Fonte: primeiras 12 respostas (16/10/2026). Vale para todo rascunho novo, follow-up e resposta.
+1. Profissional consagrado (ex.: maquiadora com Vogue britânica) não aceita "visibilidade em troca": soa como subestimar. Para estúdios e profissionais de nome, abrir elogiando algo específico do trabalho e perguntar "como poderíamos colaborar?", sem prometer alcance. "Visibilidade" só para negócios que a procuram.
+2. Pequenas empresas francesas locais podem achar que Montréal não é público-alvo. Não inventar números: apontar o mídia kit (camilamontreal.com/mediakit) e falar de viajantes que visitam Paris.
+3. Empresas maiores pedem kit, entregas e repost. Entregas que a Camila oferece (confirmado por ela): stories da experiência, reels que resume a experiência (a empresa usa nas redes dela ou Camila posta nas dela), fotos em alta qualidade para uso orgânico da empresa (não para fotógrafos), marcação da empresa, link do passeio e hashtags que a empresa preferir. Repost permitido citando a Camila.
+4. Fotógrafos costumam oferecer tarifa especial em vez de cortesia. Camila decide: pedir o valor sem compromisso, guardar o desconto e agradecer. Nunca aceitar nem reservar.
+5. Sessões variam por dia. Confirmar horários antes de fixar data; evitar propor o dia 2 se a atração não tem sessão (AURA não tem 2/11).
+6. Formulário próprio para criadores (Secret Food Tours): preencher manualmente, nada automático. Anti-spam (Mailinblack) exige clique humano da Camila.
+7. Responder na mesma thread, em poucas linhas, com mídia kit link na primeira resposta. Respostas automáticas (Septime, Fever) não são resposta humana.
