@@ -4,7 +4,7 @@
 > **Decisões aprovadas:** headline A · estrutura de 15 seções · garantia de 7 dias · links com comissão "depende do parceiro" (aviso genérico de transparência no rodapé e no FAQ; detalhar por parceiro).
 > **Dados confirmados:** entrega por link com PDF interativo (desktop e celular) · Camila já foi a NYC "inúmeras vezes" e mora perto (sem número exato: usar "já perdi a conta de quantas vezes fui").
 > **Preço e pagamento (conforme prints do checkout):**
-> - **Brasil:** R$ 67,90 à vista (1×). Parcelamento em até 9×: 2× R$ 35,74 · 3× R$ 24,23 · 4× R$ 18,48 · 5× R$ 15,03 · 6× R$ 12,74 · 7× R$ 11,10 · 8× R$ 9,87 · 9× R$ 8,92. **De 2× em diante há asterisco (*) = parcelas com juros: NÃO escrever "sem juros".** Não aparece Pix nos prints.
+> - **Brasil:** R$ 67,90 à vista (1×). Parcelamento em até 9×: 2× R$ 35,74 · 3× R$ 24,23 · 4× R$ 18,48 · 5× R$ 15,03 · 6× R$ 12,74 · 7× R$ 11,10 · 8× R$ 9,87 · 9× R$ 8,92. **De 2× em diante há asterisco (*) = parcelas com juros: NÃO escrever "sem juros".** Formas de pagamento no Brasil (print do checkout): cartão de crédito (opção de dois cartões), **Pix**, **boleto**, **PayPal** e "Mostrar mais" (há outras opções ocultas: confirmar quais).
 > - **Exterior/Canadá:** $ 21,00 (o checkout mostra só "$"; confirmar se é CAD). Opções: cartão de crédito, Klarna (Pay Over Time), PayPal e dois cartões.
 > **Atualizações:** gratuitas, pelo mesmo link. **Offline:** o PDF pode ser baixado (links e vídeos precisam de internet).
 > Status: rascunho para aprovação. Nenhum design ou código foi iniciado.
@@ -479,7 +479,7 @@ Já perdi a conta de quantas vezes fui a Nova York. Moro por perto e volto sempr
 **Texto sob o preço:** `[Pagamento único. Acesso por e-mail logo após a confirmação. A CONFIRMAR]`
 
 **Botão:** Quero o guia de Nova York
-**Microcopy:** `Pagamento seguro · Cartão em até 9× (parcelas com juros a partir de 2×) · Garantia de 7 dias`
+**Microcopy:** `Pagamento seguro · Cartão em até 9× (parcelas com juros a partir de 2×), Pix, boleto ou PayPal · Garantia de 7 dias`
 
 **Garantia (texto sugerido, só publicar se for verdadeiro):**
 > Se o guia não for o que você esperava, você pode pedir o reembolso em até 7 dias. Basta enviar um e-mail para `[e-mail]`. Sem perguntas complicadas.
