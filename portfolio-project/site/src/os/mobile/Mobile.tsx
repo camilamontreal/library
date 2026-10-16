@@ -77,23 +77,13 @@ function HomeScreen({ onOpen }: { onOpen: (app: AppId, payload?: string) => void
   const [cc, setCc] = useState(false)
   const setSpotlight = useOS((s) => s.setSpotlight)
   const apps: { id: AppId; payload?: string; label: string; icon: AppIconId }[] = [
-    { id: 'browser', payload: 'instagram', label: 'Instagram', icon: 'instagram' },
-    { id: 'browser', payload: 'tiktok', label: 'TikTok', icon: 'tiktok' },
-    { id: 'browser', payload: 'youtube', label: 'YouTube', icon: 'youtube' },
-    { id: 'browser', payload: 'linkedin', label: 'LinkedIn', icon: 'linkedin' },
     { id: 'notes', label: ui('notes', lang), icon: 'notes' },
     { id: 'messages', label: ui('messages', lang), icon: 'messages' },
     { id: 'photos', label: ui('photos', lang), icon: 'photos' },
-    { id: 'maps', label: ui('maps', lang), icon: 'maps' },
-    { id: 'music', label: ui('music', lang), icon: 'music' },
-    { id: 'ticket', label: ui('ticket', lang), icon: 'ticket' },
     { id: 'passport', label: ui('passport', lang), icon: 'passport' },
     { id: 'departures', label: ui('departures', lang), icon: 'departures' },
     { id: 'about', label: ui('about', lang), icon: 'about' },
     { id: 'mediakit', label: ui('mediaKit', lang), icon: 'mediakit' },
-    { id: 'miles', label: ui('miles', lang), icon: 'miles' },
-    { id: 'trash', label: ui('trash', lang), icon: 'trashTile' },
-    { id: 'browser', payload: 'site', label: 'Site', icon: 'site' },
   ]
   return (
     <div className="home">
@@ -102,10 +92,6 @@ function HomeScreen({ onOpen }: { onOpen: (app: AppId, payload?: string) => void
         <button className="home__cc" onClick={() => setCc(true)} aria-label={ui('controlCenter', lang)}><span aria-hidden="true">●●● ▮</span></button>
       </div>
       {cc && <ControlCenter onClose={() => setCc(false)} />}
-      <button className="home__widget glass glass--dark" onClick={() => onOpen('miles')}>
-        <h4>{ui('miles', lang)} <small>{p.heroStats[1].period}</small></h4>
-        <div className="home__grid">{p.heroStats.map((m, i) => <div key={i}><div className="num home__big">{m.value}</div><div className="home__lab">{t(m.label, lang)}</div></div>)}</div>
-      </button>
       <div className="home__apps">
         <button className="happ" onClick={() => onOpen('finder')}>
           <span className="happ__folder glass">{featured.slice(0, 6).map((f) => <Media key={f.id} media={f.cover} className="happ__mini" small />)}</span>
