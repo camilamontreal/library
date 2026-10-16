@@ -86,7 +86,6 @@ function HomeScreen({ onOpen }: { onOpen: (app: AppId, payload?: string) => void
     { id: 'photos', label: ui('photos', lang), icon: 'photos' },
     { id: 'maps', label: ui('maps', lang), icon: 'maps' },
     { id: 'music', label: ui('music', lang), icon: 'music' },
-    { id: 'calendar', label: ui('calendar', lang), icon: 'calendar' },
     { id: 'ticket', label: ui('ticket', lang), icon: 'ticket' },
     { id: 'passport', label: ui('passport', lang), icon: 'passport' },
     { id: 'departures', label: ui('departures', lang), icon: 'departures' },

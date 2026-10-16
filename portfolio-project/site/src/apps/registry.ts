@@ -9,7 +9,7 @@ export const APP_LABEL: Record<AppId, UIKey> = {
 }
 
 /** Apps que aparecem no dock do desktop (a Lixeira fica à parte). */
-export const DOCK: AppId[] = ['browser', 'notes', 'messages', 'photos', 'maps', 'music', 'calendar', 'departures', 'about', 'mediakit', 'contact']
+export const DOCK: AppId[] = ['browser', 'notes', 'messages', 'photos', 'maps', 'music', 'departures', 'about', 'mediakit', 'contact']
 
 /** Apps listados em "Ir para…" e na busca. */
-export const ALL_APPS: AppId[] = ['finder', 'browser', 'notes', 'messages', 'photos', 'maps', 'music', 'calendar', 'miles', 'passport', 'departures', 'about', 'mediakit', 'contact', 'ticket', 'trash']
+export const ALL_APPS: AppId[] = ['finder', 'browser', 'notes', 'messages', 'photos', 'maps', 'music', 'miles', 'passport', 'departures', 'about', 'mediakit', 'contact', 'ticket', 'trash']

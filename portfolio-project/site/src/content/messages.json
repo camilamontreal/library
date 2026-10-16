@@ -84,11 +84,11 @@
         },
         {
           "label": {
-            "en": "Book a chat",
-            "pt": "Agendar conversa",
-            "fr": "Réserver un échange"
+            "en": "Send e-mail",
+            "pt": "Enviar e-mail",
+            "fr": "Envoyer un courriel"
           },
-          "app": "calendar"
+          "email": true
         }
       ]
     },
