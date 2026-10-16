@@ -402,6 +402,41 @@ html:not(.js) .arrive{display:none}
 @media (prefers-reduced-motion:reduce){.esc,.pg,.rt,.pg svg,.rt svg{animation:none}.arrive{display:none}.pg{left:20px}.rt{right:20px;transform:none}}
 @media (max-width:860px){.esc{padding-left:56px}.arrive .trn{top:30%}}
 
+/* sound toggle */
+.snd{background:#1e2129;color:#fff;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;margin-left:auto;white-space:nowrap;transition:background-color .2s ease}
+.snd[aria-pressed=true]{background:#4ade80;color:#000}
+.led a{margin-left:0}
+/* button whose doors close on hover: stand clear of the closing doors */
+.btn{position:relative;isolation:isolate;overflow:hidden;background:#14161c;color:#fff;transition:color .2s ease .15s,transform .2s var(--ease)}
+.btn::before,.btn::after{content:"";position:absolute;top:0;bottom:0;width:50.5%;background:var(--amber);z-index:-1;transition:transform .45s var(--ease)}
+.btn::before{left:0;transform:translateX(-101%)}
+.btn::after{right:0;transform:translateX(101%)}
+.btn:hover,.btn:focus-visible{background:#14161c;color:#000}
+.btn:hover::before,.btn:hover::after,.btn:focus-visible::before,.btn:focus-visible::after{transform:none}
+.fd-p .btn{background:#14161c;color:#fff}
+.fd-p .btn:hover{background:#14161c;color:#000}
+.tb::before,.tb::after,.snd::before,.snd::after{display:none}
+@media (hover:none){.btn:active::before,.btn:active::after{transform:none}.btn:active{color:#000}}
+@media (prefers-reduced-motion:reduce){.btn::before,.btn::after{transition:none}}
+/* crowded vs empty car */
+.crowd .lead{margin-top:14px;color:var(--soft);max-width:60ch}
+.clock{display:flex;align-items:center;gap:16px;margin-top:26px;max-width:620px;background:#fff;border-radius:999px;padding:12px 22px}
+.clock label{font-weight:800}
+.clock input{flex:1;accent-color:#14161c;height:28px}
+.clock output{font-weight:800;font-size:22px;font-variant-numeric:tabular-nums;min-width:62px;text-align:right}
+.cars{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.car2{margin:0;background:#fff;border-radius:26px;padding:18px;border:4px solid #14161c}
+.car2.ok{border-color:#00933c}
+.dots{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;padding:10px 4px 16px;min-height:150px;align-content:end}
+.dots i{aspect-ratio:1;border-radius:50% 50% 40% 40%;background:#14161c;opacity:.08;transform:scale(.6);transition:opacity .25s ease,transform .35s var(--ease)}
+.car2.ok .dots i{background:#00933c}
+.dots i.on{opacity:1;transform:none}
+.car2 figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:var(--t-small);border-top:3px dashed #d3dad8;padding-top:12px}
+.car2 figcaption b{font-size:20px;letter-spacing:-.02em}
+.car2 figcaption span{font-weight:800;font-variant-numeric:tabular-nums}
+.crowd .note{margin-top:18px;color:var(--soft);font-size:var(--t-small);max-width:70ch}
+@media (max-width:860px){.cars{grid-template-columns:1fr}.dots{grid-template-columns:repeat(10,1fr);min-height:0}.clock{border-radius:24px;flex-wrap:wrap}}
+
 </style>
 <script>document.documentElement.classList.add("js")</script>
 
@@ -409,6 +444,7 @@ html:not(.js) .arrive{display:none}
 <div class="led" role="status" aria-live="off">
   <span class="bl t" id="ledb" aria-hidden="true">N</span>
   <p class="t" id="ledt"><span>Próxima estação</span>Início da linha</p>
+  <button type="button" class="snd" id="snd" aria-pressed="false" aria-label="Ligar o som do metrô">Som desligado</button>
   <a href="#preco">Eu quero</a>
 </div>
 
@@ -582,6 +618,20 @@ html:not(.js) .arrive{display:none}
         <div data-r style="--i:1"><h3><span class="bl g">2</span>Na cidade</h3><p>Abra o dia, siga manhã, tarde e noite e pule o que estiver marcado como opcional se faltar tempo.</p></div>
         <div data-r style="--i:2"><h3><span class="bl g">3</span>No celular</h3><p>Há uma versão pensada para a tela do celular, com rolagem vertical. Você pode baixar o PDF e abrir sem internet.</p></div>
       </div>
+    </div>
+  </section>
+
+  <section class="st crowd" data-st="Hora do rush" data-b="R" data-bc="r" data-c="#ee352e" style="--sc:#ee352e" aria-labelledby="hr">
+    <div class="in-w">
+      <span class="name"><span class="bl r">R</span>Hora do rush</span>
+      <h2 id="hr" data-r>Vagão lotado ou vagão vazio?</h2>
+      <p class="lead" data-r style="--i:1">Arraste a hora do dia. À esquerda, quem vai sem plano. À direita, quem leva o guia, que marca o melhor horário de cada parada.</p>
+      <div class="clock" data-r style="--i:2"><label for="hour">Hora do dia</label><input id="hour" type="range" min="6" max="23" step="1" value="8"><output id="hout" for="hour">08:00</output></div>
+      <div class="cars" data-r style="--i:3">
+        <figure class="car2"><div class="dots" id="dA" aria-hidden="true"></div><figcaption><b>Sem plano</b><span id="cA">0 pessoas</span></figcaption></figure>
+        <figure class="car2 ok"><div class="dots" id="dB" aria-hidden="true"></div><figcaption><b>Com o guia</b><span id="cB">0 pessoas</span></figcaption></figure>
+      </div>
+      <p class="note" data-r>Ilustração para brincar, não é dado real de lotação. No guia, as dicas de horário são reais, por exemplo: Summit One Vanderbilt no primeiro horário e Museu de História Natural pela entrada Gilder Center às 10h.</p>
     </div>
   </section>
 
@@ -903,6 +953,52 @@ html:not(.js) .arrive{display:none}
     if (!reduce) { pg.classList.add("fly"); setTimeout(function () { pg.classList.remove("fly"); }, 3200); }
   });
   rat.addEventListener("click", function () { say("Pizza rat! Esse levou a fatia até a escada."); });
+
+  /* crowded vs empty car (illustration) */
+  var hour = $("hour"), dA = $("dA"), dB = $("dB");
+  function mkDots(el) { for (var i = 0; i < 40; i++) el.appendChild(document.createElement("i")); }
+  mkDots(dA); mkDots(dB);
+  function crowd(h) {
+    function bump(x, m, s) { return Math.exp(-Math.pow((x - m) / s, 2)); }
+    var base = Math.round(6 + 34 * Math.max(bump(h, 8.5, 1.8), bump(h, 17.5, 2.2)) + 6 * bump(h, 13, 3));
+    return Math.min(40, base);
+  }
+  function setHour() {
+    var h = +hour.value, a = crowd(h), b = Math.max(3, Math.round(a * 0.3));
+    $("hout").textContent = (h < 10 ? "0" : "") + h + ":00";
+    dA.querySelectorAll("i").forEach(function (d, k) { d.classList.toggle("on", k < a); });
+    dB.querySelectorAll("i").forEach(function (d, k) { d.classList.toggle("on", k < b); });
+    $("cA").textContent = a + " pessoas"; $("cB").textContent = b + " pessoas";
+  }
+  hour.addEventListener("input", setHour); setHour();
+
+  /* optional subway sound (Web Audio, no files) */
+  var actx, soundOn = false, snd = $("snd");
+  function chime(kind) {
+    if (!soundOn) return;
+    try {
+      actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+      var notes = kind === "tick" ? [988] : [880, 659], t = actx.currentTime;
+      notes.forEach(function (f, i) {
+        var o = actx.createOscillator(), g = actx.createGain();
+        o.type = "sine"; o.frequency.value = f;
+        g.gain.setValueAtTime(0.0001, t + i * 0.28);
+        g.gain.exponentialRampToValueAtTime(0.18, t + i * 0.28 + 0.02);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + i * 0.28 + 0.5);
+        o.connect(g); g.connect(actx.destination); o.start(t + i * 0.28); o.stop(t + i * 0.28 + 0.55);
+      });
+    } catch (e) {}
+  }
+  snd.addEventListener("click", function () {
+    soundOn = !soundOn;
+    snd.setAttribute("aria-pressed", String(soundOn));
+    snd.textContent = soundOn ? "Som ligado" : "Som desligado";
+    snd.setAttribute("aria-label", soundOn ? "Desligar o som do metrô" : "Ligar o som do metrô");
+    chime("door");
+  });
+  $("tnext").addEventListener("click", function () { chime("tick"); });
+  document.querySelectorAll("#btns button").forEach(function (b) { b.addEventListener("click", function () { chime("tick"); }); });
+  ["br", "ca"].forEach(function (k) { $("buy-" + k).addEventListener("click", function () { chime("door"); }); });
 })();
 
 </script>
