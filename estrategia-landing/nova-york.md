@@ -3,7 +3,9 @@
 
 > **Decisões aprovadas:** headline A · estrutura de 15 seções · garantia de 7 dias · links com comissão "depende do parceiro" (aviso genérico de transparência no rodapé e no FAQ; detalhar por parceiro).
 > **Dados confirmados:** entrega por link com PDF interativo (desktop e celular) · Camila já foi a NYC "inúmeras vezes" e mora perto (sem número exato: usar "já perdi a conta de quantas vezes fui").
-> **Preço atual:** R$ 67,90 (Brasil) e $ 21 (Canadá; moeda a confirmar, provavelmente CAD). Prints das opções de pagamento BR/CA serão enviados.
+> **Preço e pagamento (conforme prints do checkout):**
+> - **Brasil:** R$ 67,90 à vista (1×). Parcelamento em até 9×: 2× R$ 35,74 · 3× R$ 24,23 · 4× R$ 18,48 · 5× R$ 15,03 · 6× R$ 12,74 · 7× R$ 11,10 · 8× R$ 9,87 · 9× R$ 8,92. **De 2× em diante há asterisco (*) = parcelas com juros: NÃO escrever "sem juros".** Não aparece Pix nos prints.
+> - **Exterior/Canadá:** $ 21,00 (o checkout mostra só "$"; confirmar se é CAD). Opções: cartão de crédito, Klarna (Pay Over Time), PayPal e dois cartões.
 > **Atualizações:** gratuitas, pelo mesmo link. **Offline:** o PDF pode ser baixado (links e vídeos precisam de internet).
 > Status: rascunho para aprovação. Nenhum design ou código foi iniciado.
 > Tudo que aparece entre `[colchetes]` é informação que **eu não tenho** e que precisa ser confirmada ou preenchida por você.
@@ -471,11 +473,13 @@ Já perdi a conta de quantas vezes fui a Nova York. Moro por perto e volto sempr
 - ✔ **Atualizações gratuitas** pelo mesmo link
 - ✔ `[Bônus: A CONFIRMAR]`
 
-**Preço:** R$ 67,90 (Brasil) · `$ 21 [CAD? A CONFIRMAR]` (Canadá). `[Parcelamento e formas de pagamento: aguardando prints]`
+**Preço (Brasil):** R$ 67,90 à vista · ou em até 9× de R$ 8,92 (parcelas com juros a partir de 2×)
+**Preço (exterior):** $ 21 `[confirmar moeda]` · cartão, PayPal ou Klarna
+*(Recomendo a landing detectar o país e mostrar só o preço correspondente, ou ter dois botões claros: "Comprar no Brasil (R$)" e "Buy from Canada/abroad ($)". Confirmar se são dois checkouts/links diferentes.)*
 **Texto sob o preço:** `[Pagamento único. Acesso por e-mail logo após a confirmação. A CONFIRMAR]`
 
 **Botão:** Quero o guia de Nova York
-**Microcopy:** `[Pagamento seguro · Cartão, Pix `[confirmar]` · Garantia de 7 dias]`
+**Microcopy:** `Pagamento seguro · Cartão em até 9× (parcelas com juros a partir de 2×) · Garantia de 7 dias`
 
 **Garantia (texto sugerido, só publicar se for verdadeiro):**
 > Se o guia não for o que você esperava, você pode pedir o reembolso em até 7 dias. Basta enviar um e-mail para `[e-mail]`. Sem perguntas complicadas.
@@ -562,7 +566,7 @@ Escreva para `[e-mail/WhatsApp]`.
 ## 3.4 Microcopy que facilita a compra
 
 - Abaixo do botão: `Pagamento seguro · Acesso por e-mail · [Garantia]`
-- Perto do preço: `[Pagamento único, sem mensalidade]`
+- Perto do preço: Pagamento único, sem mensalidade. R$ 67,90 à vista ou parcelado em até 9× (com juros a partir de 2×).
 - Perto da entrega: `Você recebe a versão para desktop e a versão para celular`
 - No checkout: `Se tiver qualquer dúvida na compra, escreva para [contato]`
 - Pós-compra: `Seu guia foi enviado para [e-mail]. Não achou? Olhe o spam e a aba Promoções.`
