@@ -56,7 +56,7 @@ EN = {
 "wy1":"You're planning a trip to New York and want a ready route to adapt.","wy2":"You prefer everything organized in one place.","wy3":"You want practical tips, with times, addresses and prices.","wy4":"You want a guide with opinions, not a neutral list.",
 "wn1":"You prefer to improvise everything and don't like itineraries.","wn2":"You're looking for a guide focused on shopping or nightlife. The guide covers both, but the focus is sightseeing and experiences.","wn3":"You expect one-on-one service. The guide is a digital product.",
 "st13":"Turnstile","hp":"Swipe your MetroCard","doors":"Stand clear of the closing doors, please.",
-"mc1":"New York · the guide","mc2":"MetroCard · desktop + mobile PDF","scr0":"Swipe your card",
+"mc1":"New York · the guide","mc2":"desktop + mobile PDF","scr0":"Swipe your card",
 "inc":"You get a link with the desktop and mobile versions of the PDF, the interactive map, free updates and a refund within 7 days.",
 "lg":"You're viewing the site in English: price in dollars and checkout in English. To see it in Portuguese, use the PT button at the top.",
 "buy":"Swipe the card",
@@ -71,7 +71,8 @@ EN = {
 "q8":"What are the discount links?","r8":"They are booking links for tours, tickets and services with my coupon. Some partners pay me a commission when you book through the link, at no extra cost to you.",
 "q9":"What if I don't like it?","r9":"You can ask for a refund within 7 days. Write to the contact in the footer of the page.",
 "q10":"Are there guides for other destinations?","r10":"Yes! You can see all my guides on my social media.",
-"st15":"Hudson Yards · end of the 7 line","hz":"Ready to see the best of NY?","zt":"You've already picked the destination. All that's left is how to get there: with 30 tabs open or with a guide in hand.","zb":"Get it",
+"st15":"Hudson Yards · end of the 7 line","hz":"Ready to see the best of NY?","hpf":"Who already used the guide","pflead":"Real reviews from people who traveled with it.","pfnote":"Reviews sent by customers, published with permission. Shown in the original Portuguese.","heli":"Tap a building!","kk":"Tap a building!",
+"zt":"You've already picked the destination. All that's left is how to get there: with 30 tabs open or with a guide in hand.","zb":"Get it",
 "ft1":"Terms of use","ft2":"Privacy","ft3":"Contact",
 "fine1":"Prices, times and tour availability change. Check the official websites before booking. Some booking links may earn me a commission, at no extra cost to you.","fine2":"tip: there are critters loose in the subway, tap them.",
 }
@@ -109,8 +110,8 @@ EN.update({
 "q3":"Do I have to stay an exact number of days?","r3":"No. The guide is organized by area, so you build the itinerary for however many days you have. If you stay less, pick the areas that suit you; if you stay longer, there are extra ideas like day trips and different outings.",
 "t0":"Secrets","t1":"Savings","t2":"Broadway","t3":"Movies"
 })
-for _k,_v in {"st0":"Início","st1":"O guia","st2":"Roteiro por região","st3":"Por dentro do guia","st4":"Desktop e celular","st5":"O que está incluso","st6":"Inspiração","st7":"Segredos","st8":"Economize","st9":"Tempo e filas","st10":"Organização","st11":"Quem é a Camila","st12":"Para quem é","st13":"Comprar","st14":"Dúvidas","st15":"Embarque"}.items(): EXTRA_PT[_k]=_v
-EN.update({"st0":"Start","st1":"The guide","st2":"Route by area","st3":"Inside the guide","st4":"Desktop and mobile","st5":"What's included","st6":"Inspiration","st7":"Secrets","st8":"Save money","st9":"Time and lines","st10":"Organization","st11":"Meet Camila","st12":"Who it's for","st13":"Buy","st14":"Questions","st15":"All aboard"})
+for _k,_v in {"st0":"Início","st1":"O guia","st2":"Roteiro por região","st3":"Por dentro do guia","st4":"Desktop e celular","st5":"O que está incluso","st6":"Inspiração","st7":"Segredos","st8":"Economize","st9":"Tempo e filas","st10":"Organização","st11":"Quem é a Camila","st12":"Para quem é","st13":"Comprar","st14":"Dúvidas","st15":"Embarque","st10b":"Depoimentos"}.items(): EXTRA_PT[_k]=_v
+EN.update({"st0":"Start","st1":"The guide","st2":"Route by area","st3":"Inside the guide","st4":"Desktop and mobile","st5":"What's included","st6":"Inspiration","st7":"Secrets","st8":"Save money","st9":"Time and lines","st10":"Organization","st11":"Meet Camila","st12":"Who it's for","st13":"Buy","st14":"Questions","st15":"All aboard","st10b":"Reviews"})
 
 EN.update({
 "what1":"It's my personal New York guide: a complete itinerary that adapts to your trip, without months of research.",

@@ -10,11 +10,11 @@
   var DYN = {
     pt: {
       days: [
-        { t: "Midtown e Times Square", n: "16 paradas", s: ["Grand Central Terminal", "Summit One Vanderbilt", "Biblioteca Pública", "Bryant Park", "Times Square"], tip: "Segredo: Whispering Gallery, na Grand Central.", imgs: ["img/gc.webp","img/ts.webp","img/friends.webp"] },
-        { t: "Central Park, Upper West e Midtown", n: "11 paradas", s: ["Museu de História Natural", "Central Park", "Upper West Side"], tip: "Entre pelo Gilder Center às 10h: quase sem fila.", imgs: ["img/park.webp","img/vb-rink.webp","img/vb-empire-view.webp"] },
-        { t: "Estátua, Downtown e Brooklyn", n: "16 paradas", s: ["Staten Island Ferry", "Estátua da Liberdade", "Downtown", "Ponte do Brooklyn"], tip: "O Staten Island Ferry é gratuito e passa pertinho da Estátua.", imgs: ["img/ferry.webp","img/statue.webp","img/vb-brooklyn-bridge.webp"] },
-        { t: "Hudson Yards, Chelsea e Downtown", n: "14 paradas", s: ["Hudson Yards", "Vessel", "Chelsea", "Downtown"], tip: "Prédio de Friends: só a fachada, o Central Perk não existe.", imgs: ["img/vessel.webp","img/vb-hudson.webp","img/vb-edge.webp"] },
-        { t: "Mais dias, mais ideias", n: "extras do guia", s: ["Bate-voltas: Washington, Filadélfia, Boston, Niagara Falls e Long Island", "Harlem", "Passeios pela cidade e arredores"], tip: "Cada dia é independente: se você fica menos, escolha os dias que combinam.", imgs: ["img/aerial.webp","img/vb-bridge-walk.webp","img/vb-balloons.webp"] }
+        { h: "O coração de Manhattan, de mirante em mirante.", t: "Midtown e Times Square", n: "16 paradas", s: ["Grand Central Terminal", "Summit One Vanderbilt", "Biblioteca Pública", "Bryant Park", "Times Square"], tip: "Segredo: Whispering Gallery, na Grand Central.", imgs: ["img/gc.webp","img/ts.webp","img/friends.webp"] },
+        { h: "Verde, museus e um bairro para caminhar.", t: "Central Park, Upper West e Midtown", n: "11 paradas", s: ["Museu de História Natural", "Central Park", "Upper West Side"], tip: "Entre pelo Gilder Center às 10h: quase sem fila.", imgs: ["img/park.webp","img/vb-rink.webp","img/vb-empire-view.webp"] },
+        { h: "A Estátua, os arranha-céus e a ponte mais famosa.", t: "Estátua, Downtown e Brooklyn", n: "16 paradas", s: ["Staten Island Ferry", "Estátua da Liberdade", "Downtown", "Ponte do Brooklyn"], tip: "O Staten Island Ferry é gratuito e passa pertinho da Estátua.", imgs: ["img/ferry.webp","img/statue.webp","img/vb-brooklyn-bridge.webp"] },
+        { h: "O bairro novo, com vista e muita arquitetura.", t: "Hudson Yards, Chelsea e Downtown", n: "14 paradas", s: ["Hudson Yards", "Vessel", "Chelsea", "Downtown"], tip: "Prédio de Friends: só a fachada, o Central Perk não existe.", imgs: ["img/vessel.webp","img/vb-hudson.webp","img/vb-edge.webp"] },
+        { h: "Ideias para quando você tem mais dias.", t: "Mais dias, mais ideias", n: "extras do guia", s: ["Bate-voltas: Washington, Filadélfia, Boston, Niagara Falls e Long Island", "Harlem", "Passeios pela cidade e arredores"], tip: "Cada dia é independente: se você fica menos, escolha os dias que combinam.", imgs: ["img/aerial.webp","img/vb-bridge-walk.webp","img/vb-balloons.webp"] }
       ],
       tips: [
         "Tem um segredo escondido numa das estações mais famosas da cidade.",
@@ -40,15 +40,15 @@
       people: " pessoas", price: "R$ 67,90",
       per: "à vista, ou em até 9× de R$ 8,92 (parcelas com juros a partir de 2×). Cartão, Pix, boleto ou PayPal.",
       scrOk: "Liberado · bom embarque",
-      pigeon: "Cuu! Pombo de Nova York, dono da plataforma.", rat: "Pizza rat! Esse levou a fatia até a escada."
+      pigeon: "Cuu! Pombo de Nova York, dono da plataforma.", taxi: "Beep beep! Táxi amarelo livre.", squirrel: "O esquilo do Central Park achou uma noz!", cart: "Hot dog de carrinho: parada obrigatória em NY.", bln: "Parada de Thanksgiving! Olha o balão gigante.", lady: ["Bem-vinda a Nova York!", "Já pensou no roteiro?", "A tocha é minha, o guia é da Cami.", "Psiu, role a página!"], hi: "Oi! Clique em mim.", kk: "Toque em um prédio!", rat: "Pizza rat! Esse levou a fatia até a escada."
     },
     en: {
       days: [
-        { t: "Midtown and Times Square", n: "16 stops", s: ["Grand Central Terminal", "Summit One Vanderbilt", "Public Library", "Bryant Park", "Times Square"], tip: "Secret: the Whispering Gallery, at Grand Central.", imgs: ["img/gc.webp","img/ts.webp","img/friends.webp"] },
-        { t: "Central Park, Upper West and Midtown", n: "11 stops", s: ["Natural History Museum", "Central Park", "Upper West Side"], tip: "Enter through the Gilder Center at 10am: almost no line.", imgs: ["img/park.webp","img/vb-rink.webp","img/vb-empire-view.webp"] },
-        { t: "Statue, Downtown and Brooklyn", n: "16 stops", s: ["Staten Island Ferry", "Statue of Liberty", "Downtown", "Brooklyn Bridge"], tip: "The Staten Island Ferry is free and passes close to the Statue.", imgs: ["img/ferry.webp","img/statue.webp","img/vb-brooklyn-bridge.webp"] },
-        { t: "Hudson Yards, Chelsea and Downtown", n: "14 stops", s: ["Hudson Yards", "Vessel", "Chelsea", "Downtown"], tip: "The Friends building: just the facade, Central Perk doesn't exist.", imgs: ["img/vessel.webp","img/vb-hudson.webp","img/vb-edge.webp"] },
-        { t: "More days, more ideas", n: "guide extras", s: ["Day trips: Washington, Philadelphia, Boston, Niagara Falls and Long Island", "Harlem", "Outings around the city and nearby"], tip: "Each day is independent: if you stay less, pick the days that suit you.", imgs: ["img/aerial.webp","img/vb-bridge-walk.webp","img/vb-balloons.webp"] }
+        { h: "The heart of Manhattan, from viewpoint to viewpoint.", t: "Midtown and Times Square", n: "16 stops", s: ["Grand Central Terminal", "Summit One Vanderbilt", "Public Library", "Bryant Park", "Times Square"], tip: "Secret: the Whispering Gallery, at Grand Central.", imgs: ["img/gc.webp","img/ts.webp","img/friends.webp"] },
+        { h: "Green space, museums and a neighborhood to walk.", t: "Central Park, Upper West and Midtown", n: "11 stops", s: ["Natural History Museum", "Central Park", "Upper West Side"], tip: "Enter through the Gilder Center at 10am: almost no line.", imgs: ["img/park.webp","img/vb-rink.webp","img/vb-empire-view.webp"] },
+        { h: "The Statue, the skyscrapers and the most famous bridge.", t: "Statue, Downtown and Brooklyn", n: "16 stops", s: ["Staten Island Ferry", "Statue of Liberty", "Downtown", "Brooklyn Bridge"], tip: "The Staten Island Ferry is free and passes close to the Statue.", imgs: ["img/ferry.webp","img/statue.webp","img/vb-brooklyn-bridge.webp"] },
+        { h: "The new neighborhood, with views and great architecture.", t: "Hudson Yards, Chelsea and Downtown", n: "14 stops", s: ["Hudson Yards", "Vessel", "Chelsea", "Downtown"], tip: "The Friends building: just the facade, Central Perk doesn't exist.", imgs: ["img/vessel.webp","img/vb-hudson.webp","img/vb-edge.webp"] },
+        { h: "Ideas for when you have more days.", t: "More days, more ideas", n: "guide extras", s: ["Day trips: Washington, Philadelphia, Boston, Niagara Falls and Long Island", "Harlem", "Outings around the city and nearby"], tip: "Each day is independent: if you stay less, pick the days that suit you.", imgs: ["img/aerial.webp","img/vb-bridge-walk.webp","img/vb-balloons.webp"] }
       ],
       tips: [
         "There's a secret hidden in one of the city's most famous stations.",
@@ -74,7 +74,7 @@
       people: " people", price: "CAD 21",
       per: "one-time payment, no subscription. Card, PayPal or Klarna.",
       scrOk: "Cleared · enjoy the ride",
-      pigeon: "Coo! New York pigeon, owner of the platform.", rat: "Pizza rat! This one carried the slice all the way to the stairs."
+      pigeon: "Coo! New York pigeon, owner of the platform.", taxi: "Beep beep! Yellow cab available.", squirrel: "The Central Park squirrel found a nut!", cart: "Street hot dog: a must-stop in NYC.", bln: "Thanksgiving parade! Look at the giant balloon.", lady: ["Welcome to New York!", "Thought about your itinerary yet?", "The torch is mine, the guide is Cami's.", "Psst, keep scrolling!"], hi: "Hi! Click me.", kk: "Tap a building!", rat: "Pizza rat! This one carried the slice all the way to the stairs."
     }
   };
   function D() { return DYN[lang]; }
@@ -133,7 +133,7 @@
     sel = i; cancelAnimationFrame(anim);
     var d = D().days[i];
     document.querySelectorAll("#btns button").forEach(function (b, q) { b.setAttribute("aria-selected", String(q === i)); });
-    $("rt").textContent = d.t; $("rn").textContent = d.n;
+    $("rt").textContent = d.t; $("rn").textContent = d.n; $("phook").textContent = d.h; $("pls").style.setProperty("--rc", ["#fccc0a", "#ff6319", "#00933c", "#b933ad", "#2e3052"][i]);
     $("ptt").textContent = d.t; d.imgs.forEach(function (s, q) { $("pg" + q).src = s; });
     $("pls").innerHTML = d.s.map(function (n) { return "<li>" + n + "</li>"; }).join("");
     stns.innerHTML = ""; tr.setAttribute("cx", -20); tr.setAttribute("cy", -20);
@@ -250,18 +250,31 @@
   function showSky(i) {
     skSel = i;
     sks.forEach(function (b, k) { b.setAttribute("aria-expanded", String(k === i)); });
-    var c = $("skycard");
+    var c = $("skycard"); placeKong(i);
     if (i < 0) { c.classList.remove("on"); return; }
     $("skt").textContent = sks[i].querySelector(".bt").textContent;
     $("skd").textContent = sks[i].querySelector(".bd").textContent;
     c.classList.add("on");
   }
+  var kong = $("kong"), kbub = $("kbub"), swrap = $("skywrap");
+  function placeKong(i) {
+    var b = sks[i < 0 ? 3 : i], wr = swrap.getBoundingClientRect(), r = b.getBoundingClientRect(), kw = kong.offsetWidth, kh = kong.offsetHeight;
+    var x = r.left - wr.left + r.width / 2 - kw / 2;
+    var top = r.top - wr.top - kh + 8 - (i < 0 ? 0 : 0);
+    if (i >= 0) { var h = parseFloat(getComputedStyle(b).getPropertyValue("--h")) + 44; top = (r.bottom - wr.top) - h - kh + 8; } else { top = (r.bottom - wr.top) - parseFloat(getComputedStyle(b).getPropertyValue("--h")) - kh + 8; }
+    kong.style.left = Math.max(0, Math.min(x, wr.width - kw)) + "px"; kong.style.top = Math.max(0, top) + "px";
+    kbub.textContent = i < 0 ? T("kk") : sks[i].querySelector(".bt").textContent + "!";
+    kong.classList.remove("hop"); void kong.offsetWidth; if (i >= 0) kong.classList.add("hop");
+    swrap.style.setProperty("--sw", swrap.offsetWidth + "px");
+  }
+  window.addEventListener("resize", function () { placeKong(skSel); });
+  window.addEventListener("load", function () { placeKong(skSel); });
   sks.forEach(function (b, i) { b.addEventListener("click", function () { showSky(skSel === i ? -1 : i); }); });
-  showSky(0);
+  showSky(-1);
 
   /* ---------- guide viewer ---------- */
-  var VC = { pt: ["Sumário clicável: toque e vá direto para a seção.", "Roteiro por região, com paradas e segredos.", "Mais paradas, organizadas por região.", "Hudson Yards, Chelsea e Downtown.", "Épocas do ano e o que fazer em cada uma.", "Guia fotográfico: onde e quando fotografar."],
-             en: ["Clickable contents: tap to jump to a section.", "Itinerary by area, with stops and secrets.", "More stops, organized by area.", "Hudson Yards, Chelsea and Downtown.", "Seasons and what to do in each one.", "Photo guide: where and when to shoot."] };
+  var VC = { pt: ["Boas-vindas: tudo o que você vai encontrar.", "Épocas do ano: Natal em NYC.", "Onde comer, por região.", "Teatro e Broadway.", "Guia fotográfico.", "Locações de filmes e séries."],
+             en: ["Welcome: everything you'll find.", "Seasons: Christmas in NYC.", "Where to eat, by area.", "Theater and Broadway.", "Photo guide.", "Movie and series locations."] };
   var vimg = $("vimg"), vth = Array.prototype.slice.call(document.querySelectorAll("#vthumbs button")), vi = 0, vt;
   function setV(i) {
     vi = (i + vth.length) % vth.length;
@@ -277,11 +290,40 @@
 
   /* ---------- update sign messages ---------- */
   var BM = { pt: ["Sempre que eu conhecer um lugar novo, você vai saber.", "Você recebe pelo mesmo link do guia.", "Sem pagar nada a mais."], en: ["Whenever I discover a new place, you'll know.", "You get it through the same guide link.", "At no extra cost."] };
-  var bi = 0, bmsg = $("bmsg");
+  var bi = 0, bmsg = $("bmsg"), bbl = document.querySelectorAll(".mrow .bl");
+  function bulb() { bbl.forEach(function (b, k) { b.classList.toggle("on", k === bi); }); }
+  bulb();
   if (!reduce) setInterval(function () {
-    bi = (bi + 1) % 3; bmsg.classList.add("sw");
-    setTimeout(function () { bmsg.textContent = BM[lang][bi]; bmsg.classList.remove("sw"); }, 220);
+    bi = (bi + 1) % 3; bulb(); bmsg.classList.add("sw");
+    setTimeout(function () { bmsg.textContent = BM[lang][bi]; placeKong(skSel); bmsg.classList.remove("sw"); }, 220);
   }, 3800);
+
+  /* ---------- testimonials carousel ---------- */
+  var tqt = $("tqtrack");
+  function tqmove(d) { var w = tqt.querySelector(".tq").offsetWidth + 14; if (d > 0 && tqt.scrollLeft + tqt.clientWidth >= tqt.scrollWidth - 4) tqt.scrollTo({ left: 0 }); else if (d < 0 && tqt.scrollLeft <= 2) tqt.scrollTo({ left: tqt.scrollWidth }); else tqt.scrollBy({ left: d * w }); }
+  $("tqprev").addEventListener("click", function () { tqmove(-1); });
+  $("tqnext").addEventListener("click", function () { tqmove(1); });
+  var tqh = false; tqt.addEventListener("pointerenter", function () { tqh = true; }); tqt.addEventListener("pointerleave", function () { tqh = false; });
+  if (!reduce) setInterval(function () { if (!tqh) tqmove(1); }, 6500);
+
+  /* ---------- hero lady ---------- */
+  var lady = $("lady"), lsay = $("ladysay"), lhead = $("lhead"), li = 0, lt;
+  function ladySay(t) { lsay.textContent = t; lsay.classList.add("on"); clearTimeout(lt); lt = setTimeout(function () { lsay.classList.remove("on"); }, 2800); }
+  lady.querySelector("svg").addEventListener("click", function () {
+    ladySay(D().lady[li]); li = (li + 1) % D().lady.length; lady.classList.add("up"); setTimeout(function () { lady.classList.remove("up"); }, 800);
+  });
+  document.addEventListener("pointermove", function (e) {
+    var r = lady.getBoundingClientRect(), cx = r.left + r.width * 0.5, cy = r.top + r.height * 0.3;
+    var dx = (e.clientX - cx) / Math.max(window.innerWidth, 1);
+    lady.style.setProperty("--rot", Math.max(-9, Math.min(9, dx * 24)) + "deg");
+  }, { passive: true });
+  if (!reduce) setTimeout(function () { ladySay(D().hi); }, 2800);
+
+  /* ---------- wanderers ---------- */
+  $("taxi").addEventListener("click", function () { say(D().taxi); });
+  $("bln").addEventListener("click", function () { say(D().bln); });
+  $("squirrel").addEventListener("click", function () { say(D().squirrel); });
+  $("cart").addEventListener("click", function () { say(D().cart); });
 
   /* ---------- language: PT / EN ---------- */
   function applyLang(l) {
