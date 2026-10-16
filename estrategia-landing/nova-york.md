@@ -5,7 +5,7 @@
 > **Dados confirmados:** entrega por link com PDF interativo (desktop e celular) · Camila já foi a NYC "inúmeras vezes" e mora perto (sem número exato: usar "já perdi a conta de quantas vezes fui").
 > **Preço e pagamento (conforme prints do checkout):**
 > - **Brasil:** R$ 67,90 à vista (1×). Parcelamento em até 9×: 2× R$ 35,74 · 3× R$ 24,23 · 4× R$ 18,48 · 5× R$ 15,03 · 6× R$ 12,74 · 7× R$ 11,10 · 8× R$ 9,87 · 9× R$ 8,92. **De 2× em diante há asterisco (*) = parcelas com juros: NÃO escrever "sem juros".** Formas de pagamento no Brasil (print do checkout): cartão de crédito (opção de dois cartões), **Pix**, **boleto**, **PayPal** e "Mostrar mais" (há outras opções ocultas: confirmar quais).
-> - **Exterior/Canadá:** $ 21,00 (o checkout mostra só "$"; confirmar se é CAD). Opções: cartão de crédito, Klarna (Pay Over Time), PayPal e dois cartões.
+> - **Exterior/Canadá:** CAD 21,00 (confirmado). Opções: cartão de crédito, Klarna (Pay Over Time), PayPal e dois cartões.
 > **Atualizações:** gratuitas, pelo mesmo link. **Offline:** o PDF pode ser baixado (links e vídeos precisam de internet).
 > Status: rascunho para aprovação. Nenhum design ou código foi iniciado.
 > Tudo que aparece entre `[colchetes]` é informação que **eu não tenho** e que precisa ser confirmada ou preenchida por você.
@@ -474,8 +474,8 @@ Já perdi a conta de quantas vezes fui a Nova York. Moro por perto e volto sempr
 - ✔ `[Bônus: A CONFIRMAR]`
 
 **Preço (Brasil):** R$ 67,90 à vista · ou em até 9× de R$ 8,92 (parcelas com juros a partir de 2×)
-**Preço (exterior):** $ 21 `[confirmar moeda]` · cartão, PayPal ou Klarna
-*(Recomendo a landing detectar o país e mostrar só o preço correspondente, ou ter dois botões claros: "Comprar no Brasil (R$)" e "Buy from Canada/abroad ($)". Confirmar se são dois checkouts/links diferentes.)*
+**Preço (exterior):** CAD 21 · cartão, PayPal ou Klarna
+*(Decisão: mesma página, detecta o país e mostra só o preço correspondente. Fallback sugerido sem detecção: mostrar R$. Confirmar se são dois links de checkout diferentes.)*
 **Texto sob o preço:** `[Pagamento único. Acesso por e-mail logo após a confirmação. A CONFIRMAR]`
 
 **Botão:** Quero o guia de Nova York
