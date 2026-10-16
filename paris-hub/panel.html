@@ -672,7 +672,19 @@ function openBell(){var al=alertsList(),nw=newInbound();
   openSheet('<h2 style="font-size:22px">Avisos</h2><p class="mut small">Calculados a partir dos dados reais do banco.</p>'+(al.length?al.map(function(a){return '<div class="card" style="margin-top:8px"><div class="row" style="justify-content:space-between"><span><span style="font-size:18px">'+a.t+'</span> <b>'+esc(a.title)+'</b><br><span class="small mut">'+esc(a.sub)+'</span></span>'+(a.id?'<button class="btn gh sm" data-a="open" data-id="'+esc(a.id)+'" type="button">Abrir</button>':'')+'</div></div>'}).join(""):'<div class="empty">Nada urgente agora.</div>')+(nw.length?'<div class="btns" style="margin-top:12px"><button class="btn gh" data-a="seen" type="button">Marcar respostas como vistas</button></div>':''))}
 
 /* ---- render ---- */
-var TABS=[["inicio","🏠","Início"],["hunt","🎟️","Hunter"],["exp","⏳","Aprovações"],["pipe","🧭","Pipeline"],["neg","💌","Respostas"],["rot","🗓️","Roteiro"],["ativ","🛠️","Atividade"]];
+var TABS=[["inicio","🏠","Início"],["hunt","🎟️","Hunter"],["exp","⏳","Aprovações"],["dm","📲","Fila DM"],["pipe","🧭","Pipeline"],["neg","💌","Respostas"],["rot","🗓️","Roteiro"],["ativ","🛠️","Atividade"]];
+var DMF={all:false};
+function dmItems(){var ex={};arr("ph_experiences").forEach(function(e){ex[e._id]=e});
+  return companies().filter(function(c){var m=c.msg;return m&&(m.channel==="instagram"||m.channel==="form")&&(m.status==="draft"||m.status==="approved_manual")}).map(function(c){var e=ex[c.experienceId]||{};return {c:c,e:e,prem:isPrem(e),pp:ppOf(e)}}).filter(function(x){return DMF.all||x.prem}).sort(function(a,b){return (b.prem-a.prem)||((b.pp||0)-(a.pp||0))||String(a.c.name).localeCompare(String(b.c.name))})}
+function viewDM(){var L=dmItems();
+  var h='<div class="pagehead"><div><h2>📲 Fila de <span class="serif">DMs</span></h2><p class="lead">Você envia pelo seu Instagram, eu só deixo tudo pronto. Em cada cartão: copiar o texto, abrir o perfil, colar e enviar, e marcar como enviada. Os mais premium vêm primeiro.</p></div></div>';
+  h+='<div class="card row" style="justify-content:space-between"><div><b>'+L.length+(DMF.all?' mensagens (todas)':' mensagens premium (€100 ou mais por pessoa)')+'</b><div class="small mut">Marcar como enviada registra o contato e agenda o follow-up para 2 dias úteis.</div></div><button class="btn gh sm" data-a="dmall" type="button">'+(DMF.all?'Só premium':'Mostrar todas')+'</button></div>';
+  if(!L.length)return h+'<div class="card empty">Nenhuma DM pendente neste filtro.</div>';
+  return h+'<div style="display:grid;gap:12px">'+L.map(function(x){var c=x.c,m=c.msg,url=m.channel==="instagram"?igUrl(c):c.contactForm;
+    return '<div class="card"><div class="row" style="justify-content:space-between"><b>'+esc(c.name)+'</b><span>'+(x.prem?'<span class="tag acc">✦ premium</span>':'')+'<span class="tag">'+esc(CH[m.channel]||m.channel)+'</span>'+(x.pp!=null?'<span class="tag gold">'+eur(x.pp)+' p/ pessoa</span>':'')+'</span></div>'+
+    '<div class="small mut" style="margin-top:4px">'+esc(x.e.name||"")+'</div>'+
+    '<details style="margin-top:8px"><summary class="small" style="cursor:pointer;font-weight:700">Ver texto</summary><pre style="white-space:pre-wrap;margin:6px 0 0">'+esc(m.body)+'</pre></details>'+
+    '<div class="btns" style="margin-top:10px"><button class="btn" data-a="copy" data-id="'+esc(c._id)+'" type="button">Copiar texto</button>'+(safeUrl(url)?'<a class="btn" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Abrir '+(m.channel==="instagram"?'perfil':'formulário')+'</a>':'<span class="small mut">sem link oficial visto</span>')+'<button class="btn pri" data-a="sent" data-id="'+esc(c._id)+'" type="button">Marquei como enviada</button></div></div>'}).join("")+'</div>'}
 function render(){
   var nMe=companies().filter(needsMe).length,al=alertsList().length+newInbound().length;
   $("#tabs").innerHTML=TABS.map(function(t){return '<button role="tab" data-a="tab" data-t="'+t[0]+'" aria-selected="'+(TAB===t[0])+'" type="button"><span class="em">'+t[1]+'</span>'+t[2]+(t[0]==="exp"&&nMe?'<span class="n">'+nMe+'</span>':'')+'</button>'}).join("");
@@ -680,7 +692,7 @@ function render(){
   var v=$("#view");
   if(!DB){v.innerHTML='<div class="card empty">Banco indisponível nesta visualização. Abra o hub pela sua conta no Claude.</div>';return}
   var active=document.activeElement,keepQ=active&&(active.id==="f_q"||active.id==="h_q"),qid=keepQ?active.id:"",pos=keepQ?active.selectionStart:0,y=window.scrollY;
-  v.innerHTML=TAB==="inicio"?viewInicio():TAB==="hunt"?viewHunt():TAB==="exp"?viewExp():TAB==="pipe"?viewPipe():TAB==="neg"?viewNeg():TAB==="rot"?viewRoteiro():viewAtiv();
+  v.innerHTML=TAB==="inicio"?viewInicio():TAB==="hunt"?viewHunt():TAB==="exp"?viewExp():TAB==="dm"?viewDM():TAB==="pipe"?viewPipe():TAB==="neg"?viewNeg():TAB==="rot"?viewRoteiro():viewAtiv();
   if(keepQ){var q=$("#"+qid);if(q){q.focus();try{q.setSelectionRange(pos,pos)}catch(e){}}}
 }
 function goto(t,patch){TAB=t;if(patch)Object.keys(patch).forEach(function(k){F[k]=patch[k]});render();window.scrollTo(0,0)}
@@ -703,7 +715,7 @@ document.addEventListener("click",function(e){var t=e.target.closest("[data-a]")
   else if(a==="hmore"){H.lim+=60;render()}
   else if(a==="imp"){runImp()}
   else if(a==="pat"){runPat()}
-  else if(a==="patv"){runPatV()}else if(a==="patm"){runPatM()}
+  else if(a==="dmall"){DMF.all=!DMF.all;render()}else if(a==="patv"){runPatV()}else if(a==="patm"){runPatM()}
   else if(a==="patt"){runPatT()}
   else if(a==="dtab")openCompany(DID,tt);
   else if(a==="approve")doApprove(id);
