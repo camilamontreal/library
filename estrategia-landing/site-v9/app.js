@@ -4,7 +4,25 @@
   var TXT = window.TXT, lang = "pt";
 
   /* ---------- checkout links: replace with the two real URLs ---------- */
-  var BUY = { pt: "#checkout-pt", en: "#checkout-en" };
+  var CM = window.CM || {};
+  var BUY = CM.buy || { pt: "#checkout-pt", en: "#checkout-en" };
+
+  /* ---------- measurement (only loads what has an ID in config.js) ---------- */
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  if (CM.ga) { var gs = document.createElement("script"); gs.async = true; gs.src = "https://www.googletagmanager.com/gtag/js?id=" + CM.ga; document.head.appendChild(gs); gtag("js", new Date()); gtag("config", CM.ga); }
+  if (CM.pixel) {
+    !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = "2.0"; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    window.fbq("init", CM.pixel); window.fbq("track", "PageView");
+  }
+  function track(name, p) {
+    p = p || {}; p.lang = lang;
+    try {
+      window.dataLayer.push({ event: name, lang: lang, params: p });
+      if (CM.ga) gtag("event", name, p);
+      if (window.fbq) { if (name === "click_buy") window.fbq("track", "InitiateCheckout", { currency: lang === "pt" ? "BRL" : "CAD" }); else window.fbq("trackCustom", name, p); }
+    } catch (e) {}
+  }
 
   /* ---------- dynamic copy in both languages ---------- */
   var DYN = {
@@ -30,8 +48,8 @@
         "O que muda no roteiro no inverno e no verão.",
         "Locações de filmes e séries, com endereço direto no mapa."
       ],
-      people: " pessoas", price: "R$ 67,90",
-      per: "à vista, ou em até 9× de R$ 8,92 (parcelas com juros a partir de 2×). Cartão, Pix, boleto ou PayPal.",
+      people: " pessoas", pays: ["Pix", "Cartão", "Boleto", "PayPal"], price: "R$ 67,90",
+      per: "à vista, ou em até 9× de R$ 8,92 (parcelas com juros a partir de 2×).",
      
       pigeon: "Cuu! Pombo de Nova York, dono da plataforma.", taxi: "Beep beep! Táxi amarelo livre.", squirrel: "O esquilo do Central Park achou uma noz!", cart: "Hot dog de carrinho: parada obrigatória em NY.", kk: "Toque em um prédio!", rat: "Pizza rat! Esse levou a fatia até a escada."
     },
@@ -57,8 +75,8 @@
         "What changes in the itinerary in winter and in summer.",
         "Movie and series locations, with the address right on the map."
       ],
-      people: " people", price: "CAD 21",
-      per: "one-time payment, no subscription. Card, PayPal or Klarna.",
+      people: " people", pays: ["Card", "PayPal", "Klarna"], price: "CAD 21",
+      per: "one-time payment, no subscription.",
      
       pigeon: "Coo! New York pigeon, owner of the platform.", taxi: "Beep beep! Yellow cab available.", squirrel: "The Central Park squirrel found a nut!", cart: "Street hot dog: a must-stop in NYC.", kk: "Tap a building!", rat: "Pizza rat! This one carried the slice all the way to the stairs."
     }
@@ -121,8 +139,14 @@
     var idx = 0, near = false;
     for (var i = 0; i < tops.length; i++) { if (tops[i] - 40 <= y) idx = i; if (Math.abs(tops[i] - y) < 70) near = true; }
     if (near !== lastNear) { lastNear = near; train.classList.toggle("open", near); }
-    setLed(idx);
+    setLed(idx); barUpdate();
     if (idx !== lastIdx) { lastIdx = idx; sts.forEach(function (s, k) { s.classList.toggle("in", k <= idx); }); }
+  }
+  var bar = $("buybar"), precoSec = document.getElementById("preco"), seenPrice = false;
+  function barUpdate() {
+    var show = window.scrollY > window.innerHeight * 0.9 && !inView(precoSec);
+    bar.classList.toggle("on", show);
+    if (!seenPrice && inView(precoSec)) { seenPrice = true; track("view_price"); }
   }
   function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
   window.addEventListener("scroll", onScroll, { passive: true });
@@ -226,9 +250,14 @@
   var busy = false, buy = $("buy");
   function paintPrice() {
     $("mprice").textContent = D().price; $("per").textContent = D().per;
-    buy.href = BUY[lang];
+    buy.href = BUY[lang]; $("bbtn").href = BUY[lang]; $("bbp").textContent = D().price;
+    $("pays").innerHTML = D().pays.map(function (n) { return "<li>" + n + "</li>"; }).join("");
+    $("help").href = CM.contact || $("help").href; $("flink").href = CM.contact || $("flink").href;
   }
+  $("bbtn").addEventListener("click", function () { track("click_buy", { from: "bar" }); });
+  $("help").addEventListener("click", function () { track("click_help"); });
   buy.addEventListener("click", function (e) {
+    track("click_buy", { from: "card" });
     if (reduce || busy) return;
     e.preventDefault(); busy = true;
     document.querySelector(".pay").classList.add("go");
@@ -313,7 +342,7 @@
 
   /* ---------- language: PT / EN ---------- */
   function applyLang(l) {
-    lang = l;
+    var changed = l !== lang; lang = l; if (changed && started0) track("change_language", { to: l });
     document.documentElement.lang = l === "pt" ? "pt-BR" : "en";
     document.querySelectorAll("[data-k]").forEach(function (el) { var v = TXT[l][el.dataset.k]; if (v != null) el.innerHTML = v; });
     document.querySelectorAll(".lang button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.l === l)); });
@@ -323,7 +352,8 @@
     paintLed(); paintPrice(); setHour(); setDay(sel); showSky(skSel); $("vcap").textContent = VC[lang][vi]; bmsg.textContent = BM[lang][bi];
   }
   document.querySelectorAll(".lang button").forEach(function (b) { b.addEventListener("click", function () { applyLang(b.dataset.l); }); });
+  var started0 = false;
   var saved = null; try { saved = localStorage.getItem("cm-lang"); } catch (e) {}
   var start = saved || ((navigator.language || "pt").toLowerCase().indexOf("pt") === 0 ? "pt" : "en");
-  measure(); cur = -1; applyLang(start); update();
+  measure(); cur = -1; applyLang(start); update(); started0 = true;
 })();

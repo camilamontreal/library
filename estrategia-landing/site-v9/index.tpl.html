@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nova York organizada · Camila Montreal</title>
+<meta property="og:type" content="website"><meta property="og:title" content="O guia perfeito de Nova York · Camila Montreal"><meta property="og:description" content="Roteiro completo, adaptado para quantos dias você tiver. Mapa interativo, segredos e links com desconto."><meta property="og:image" content="og.jpg"><meta name="twitter:card" content="summary_large_image">
 <meta name="description" content="Guia de Nova York da Camila Montreal: roteiro por região, mapa interativo com +200 locais, dicas, segredos e links de reserva.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500..800&display=swap">
@@ -368,10 +369,13 @@
           <p class="pk">{{pk|Guia completo de Nova York}}</p>
           <p class="pr" id="mprice">R$ 67,90</p>
           <p class="per" id="per"></p>
+          <figure class="mini"><blockquote>“Esse guia é simplesmente maravilhoso! Tem tanta dica boa que parece que alguém reuniu tudo de melhor da internet em um lugar só. Economizei horas de pesquisa!”</blockquote><figcaption>Mariana S. · São Paulo, SP</figcaption></figure>
           <a class="btn" id="buy" href="#checkout"><span data-k="buy">Comprar o guia</span></a>
+          <ul class="pays" id="pays" aria-label="Formas de pagamento"></ul>
           <p class="gar">{{gar|Garantia de 7 dias.}}</p>
           <p class="inc">{{inc|Você recebe o link por e-mail, com a versão desktop e a celular do PDF.}}</p>
           <p class="lg">{{lg|Site em português: preço em reais. Para ver em inglês, use o botão EN.}}</p>
+          <a class="help" id="help" href="https://ig.me/m/camilamontreal" target="_blank" rel="noopener">{{help|Dúvidas? Fale comigo no Instagram}}</a>
         </div>
         </div>
       </div>
@@ -412,15 +416,17 @@
   </main>
 
   <div class="zoo"><button type="button" class="cart" id="cart" aria-label="Hot dog"><svg viewBox="0 0 150 110"><i></i><path class="steam" d="M40 28q-8-10 0-18M56 28q-8-10 0-18M72 28q-8-10 0-18" fill="none" stroke="#9aa1ad" stroke-width="3" stroke-linecap="round"/><path d="M14 50H128L118 82H24Z" fill="#ee352e"/><rect x="20" y="40" width="102" height="14" rx="4" fill="#fccc0a"/><path d="M26 20Q71 -2 116 20L118 40H24Z" fill="#fff" stroke="#2e3052" stroke-width="3"/><path d="M26 20Q71 -2 116 20" fill="none" stroke="#ee352e" stroke-width="8"/><rect x="34" y="82" width="6" height="18" fill="#2e3052"/><rect x="104" y="82" width="6" height="18" fill="#2e3052"/><circle cx="36" cy="102" r="8" fill="#2e3052"/><circle cx="108" cy="102" r="8" fill="#2e3052"/><rect x="56" y="58" width="40" height="14" rx="7" fill="#d9a05b"/><rect x="60" y="60" width="32" height="5" rx="2.5" fill="#ee352e"/></svg></button><button type="button" class="pg" id="pigeon" aria-label="Pombo / Pigeon"><svg viewBox="0 0 80 70"><g class="legs" stroke="#e08a5a" stroke-width="3" stroke-linecap="round"><path d="M34 52v14M46 52v14"/></g><ellipse cx="40" cy="38" rx="26" ry="16" fill="#8d96a6"/><path d="M20 36q-14 4-16 14 14-2 22-10z" fill="#6f7888"/><circle cx="62" cy="24" r="11" fill="#6a7ab0"/><path d="M72 24l9 3-9 3z" fill="#e08a5a"/><circle cx="65" cy="22" r="2.2" fill="#14161c"/><path d="M30 34q10-10 24 0" stroke="#aab2c0" stroke-width="3" fill="none" stroke-linecap="round"/></svg></button><button type="button" class="rt" id="rat" aria-label="Rato / Rat"><svg viewBox="0 0 110 60"><path d="M6 44q-6-18 12-14" fill="none" stroke="#c98f8f" stroke-width="3" stroke-linecap="round"/><ellipse cx="46" cy="40" rx="30" ry="15" fill="#6b6459"/><circle cx="76" cy="36" r="11" fill="#6b6459"/><circle cx="82" cy="28" r="6" fill="#8a8173"/><circle cx="80" cy="34" r="2" fill="#14161c"/><circle cx="88" cy="38" r="2.4" fill="#c98f8f"/><path d="M88 40l18 6-14 6z" fill="#fccc0a"/><circle cx="97" cy="46" r="2" fill="#ee352e"/><g stroke="#4a443c" stroke-width="3" stroke-linecap="round"><path d="M32 52v6M52 52v6"/></g></svg></button></div>
+  <div class="buybar" id="buybar"><span class="bbp" id="bbp"></span><a class="btn" id="bbtn" href="#checkout"><span data-k="bbuy">Comprar</span></a></div>
   <p class="toast" id="toast" role="status" aria-live="polite"></p>
 
   <footer>
-    <div class="row"><a class="link" href="https://www.instagram.com/camilamontreal">Instagram</a><a class="link" href="https://www.tiktok.com/@camilamontreal">TikTok</a><a class="link" href="https://www.youtube.com/@camilamontreal">YouTube</a><a class="link" href="#termos">{{ft1|Termos de uso}}</a><a class="link" href="#privacidade">{{ft2|Privacidade}}</a><a class="link" href="#contato">{{ft3|Contato}}</a></div>
+    <div class="row"><a class="link" href="https://www.instagram.com/camilamontreal">Instagram</a><a class="link" href="https://www.tiktok.com/@camilamontreal">TikTok</a><a class="link" href="https://www.youtube.com/@camilamontreal">YouTube</a><a class="link" href="termos.html">{{ft1|Termos de uso}}</a><a class="link" href="privacidade.html">{{ft2|Privacidade}}</a><a class="link" id="flink" href="https://ig.me/m/camilamontreal" target="_blank" rel="noopener">{{ft3|Contato}}</a></div>
     <p class="fine">{{fine1|Preços, horários e disponibilidade de passeios mudam. Confira nos sites oficiais antes de reservar. Alguns links de reserva podem render comissão para mim, sem custo extra para você.}}</p>
     <p class="fine">© 2026 Camila Montreal · @camilamontreal · {{fine2|dica: tem bicho solto no metrô, toque nele.}}</p>
   </footer>
 </div>
 
+<script src="config.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

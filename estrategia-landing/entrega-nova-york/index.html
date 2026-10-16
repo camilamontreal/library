@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nova York organizada · Camila Montreal</title>
+<meta property="og:type" content="website"><meta property="og:title" content="O guia perfeito de Nova York · Camila Montreal"><meta property="og:description" content="Roteiro completo, adaptado para quantos dias você tiver. Mapa interativo, segredos e links com desconto."><meta property="og:image" content="og.jpg"><meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Guia de Nova York da Camila Montreal: roteiro por região, mapa interativo com +200 locais, dicas, segredos e links de reserva.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500..800&display=swap">
+<link rel="stylesheet" href="styles.min.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<div class="led" role="status" aria-live="off">
+  <span class="bl t" id="ledb" aria-hidden="true">1</span>
+  <p class="t" id="ledt"><span><span data-k="k-next">Próxima estação</span></span><b id="ledn"><span data-k="k-st0">Início da linha</span></b></p>
+  <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-l="pt" aria-pressed="true">PT</button><button type="button" data-l="en" aria-pressed="false">EN</button></div>
+</div>
+
+<div class="wrapline" id="line">
+  <div class="rail" aria-hidden="true"></div>
+  <div class="trainwrap" aria-hidden="true">
+  <div class="train" id="train">
+    <svg viewBox="0 0 34 64"><rect class="body" x="2" y="0" width="30" height="64" rx="10"/><rect class="stripe" x="2" y="26" width="30" height="6"/><rect class="win" x="7" y="6" width="20" height="14" rx="4"/><rect class="win" x="7" y="42" width="20" height="14" rx="4"/><rect class="door" x="15" y="33" width="4" height="8"/></svg>
+  </div>
+  </div>
+
+  <main id="topo">
+
+  <!-- 1. Hero: the city behind -->
+  <section class="st hero" data-st="st0" data-b="1" data-bc="t" data-c="#31a593" aria-labelledby="h1">
+    <div class="bgc" aria-hidden="true"><img src="img/aerial.webp" srcset="img/aerial-m.webp 480w, img/aerial.webp 760w" sizes="100vw" width="760" height="1351" alt="" fetchpriority="high" decoding="async"></div>
+    <div class="in-w">
+      <h1 id="h1"><span data-k="h1">O guia perfeito de Nova York</span></h1>
+      <p class="lede"><span data-k="lede">roteiro completo, adaptado para quantos dias você tiver.</span></p>
+      <div class="act"><a class="btn" href="#o-guia"><span data-k="meet">Conhecer o guia</span></a><a class="lk" href="#preco"><span data-k="seeprice">Ver o preço</span></a></div>
+    </div>
+
+  </section>
+
+  <!-- 2. What it is, before the product -->
+  <section class="st what" id="o-guia" data-st="st1" data-b="2" data-bc="r" data-c="#ee352e" style="--sc:#ee352e" aria-labelledby="hw">
+    <div class="in-w">
+      
+      <div class="two">
+        <div>
+          <h2 id="hw" data-r><span data-k="hw">O que é este guia?</span></h2>
+          <p class="big" data-r style="--i:1"><span data-k="what1">O meu guia pessoal de Nova York: um roteiro completo que se adapta à sua viagem, sem meses de pesquisa.</span></p>
+          <p data-r style="--i:2"><span data-k="what2">Tudo que eu faria e recomendaria a uma amiga: bairros, horários, segredos, onde comer e links com desconto. No computador para planejar, no celular durante a viagem.</span></p>
+        </div>
+        <ul class="facts" data-r style="--i:1">
+          <li><b>+200</b><span><span data-k="f1">locais no mapa interativo</span></span></li>
+          <li><b>+20</b><span><span data-k="f2">locações de filmes e séries</span></span></li>
+          <li><b>+60</b><span><span data-k="f3">paradas organizadas por região</span></span></li>
+          <li><b>+</b><span><span data-k="f4">ideias extras para qualquer duração de viagem</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- escalator + announcements -->
+  <section class="esc" aria-label="Avisos da estação">
+    <div class="road" aria-hidden="true"><button type="button" class="txi" id="taxi" tabindex="-1"><svg viewBox="0 0 200 90"><rect x="8" y="34" width="184" height="36" rx="14" fill="#fccc0a"/><path d="M48 34L66 8H128L150 34Z" fill="#fccc0a"/><path d="M58 32L72 14H100V32ZM108 32V14H124L140 32Z" fill="#d8e2e6"/><rect x="82" y="2" width="38" height="10" rx="3" fill="#2e3052"/><path d="M92 7h18" stroke="#fccc0a" stroke-width="3"/><path d="M8 52H192" stroke="#2e3052" stroke-width="3" stroke-dasharray="6 6"/><circle cx="48" cy="72" r="14" fill="#2e3052"/><circle cx="48" cy="72" r="6" fill="#d8e2e6"/><circle cx="154" cy="72" r="14" fill="#2e3052"/><circle cx="154" cy="72" r="6" fill="#d8e2e6"/><rect x="176" y="40" width="14" height="8" rx="3" fill="#fff"/></svg></button></div>
+    <div class="ticker">
+      <p class="tl"><span class="bl t" aria-hidden="true">!</span><span data-k="tl">Dentro do guia</span></p>
+      <p class="tm" id="tmsg" aria-live="polite"><span data-k="tm0">Tem um segredo escondido numa das estações mais famosas da cidade.</span></p>
+      <button type="button" id="tnext" class="tb"><span data-k="tnext">Mais dicas</span></button>
+    </div>
+  </section>
+
+  <!-- 3. Regions menu with preview -->
+  <section class="st days bg-pale" id="dias" data-st="st2" data-b="3" data-bc="n" data-c="#fccc0a" style="--sc:#fccc0a" aria-labelledby="hd">
+    <div class="in-w">
+      <h2 id="hd" data-r><span data-k="hd">Por onde você quer começar?</span></h2>
+      <p class="lead" data-r style="--i:1"><span data-k="dlead">Não importa quantos dias você tem: o guia é organizado por região, então sempre tem o que fazer. Escolha uma e espie.</span></p>
+      <div class="dtabs" id="btns" role="tablist" aria-label="Regiões" data-r style="--i:2">
+        <button role="tab" aria-selected="true" data-i="0"><span class="bl n">1</span><span data-k="d1">Midtown</span></button>
+        <button role="tab" aria-selected="false" data-i="1"><span class="bl b">2</span><span data-k="d2">Central Park</span></button>
+        <button role="tab" aria-selected="false" data-i="2"><span class="bl g">3</span><span data-k="d3">Downtown e Brooklyn</span></button>
+        <button role="tab" aria-selected="false" data-i="3"><span class="bl p">4</span><span data-k="d4">Hudson Yards</span></button>
+        <button role="tab" aria-selected="false" data-i="4"><span class="bl x">5</span><span data-k="d5">Além da cidade</span></button>
+      </div>
+      <div class="dgrid" data-r style="--i:3">
+        <div class="mcol">
+        <div class="map" id="map">
+          <svg viewBox="20 40 720 400" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Mapa de linhas do guia">
+            <path class="ln" id="L0" style="--c:#fccc0a" d="M40 80H220L300 160V260L340 300H720"/>
+            <path class="ln" id="L1" style="--c:#ff6319" d="M40 350H190L270 270V120L330 60H720"/>
+            <path class="ln" id="L2" style="--c:#00933c" d="M110 420V310L180 240H430L510 160H720"/>
+            <path class="ln" id="L3" style="--c:#b933ad" d="M720 400H520L410 290V190L470 130H720"/>
+            <g id="stns"></g><circle class="tr" id="tr" r="10" cx="-20" cy="-20"/>
+          </svg>
+          <div class="mapcap"><b id="rt"></b><span id="rn"></span></div>
+        </div>
+        </div>
+        <div class="prev" id="prev">
+          <div class="pph"><img id="pg0" src="img/gc.webp" width="560" height="747" alt="" loading="lazy" decoding="async"><img id="pg1" src="img/ts.webp" width="560" height="747" alt="" loading="lazy" decoding="async"><img id="pg2" src="img/friends.webp" width="560" height="747" alt="" loading="lazy" decoding="async"></div>
+          <div class="ptx"><h3 id="ptt"></h3><p class="phook" id="phook"></p><ul id="pls"></ul><p class="ptip"><span data-k="ptipk">No guia, você encontra as melhores paradas, spots para foto, horários e links com desconto.</span></p></div>
+        </div>
+      </div>
+    </div>
+      <button type="button" class="sq" id="squirrel" aria-label="Esquilo"><svg viewBox="0 0 110 100"><path class="tail" d="M30 70Q-8 60 6 26Q16 4 40 18Q22 28 34 52Z" fill="#b8763a"/><ellipse cx="52" cy="70" rx="28" ry="22" fill="#c98544"/><circle cx="74" cy="48" r="17" fill="#c98544"/><path d="M68 34L66 22L78 32Z" fill="#c98544"/><circle cx="80" cy="46" r="3.2" fill="#2e3052"/><ellipse cx="90" cy="52" rx="3" ry="2.4" fill="#2e3052"/><ellipse cx="64" cy="76" rx="14" ry="12" fill="#f0d2a8"/><circle cx="82" cy="70" r="9" fill="#a9712f"/><path d="M42 90L50 84M64 90L72 84" stroke="#8a5a28" stroke-width="5" stroke-linecap="round"/></svg></button>
+  </section>
+
+  <!-- 4. Inside the guide: a glimpse -->
+  <section class="st car" data-st="st3" data-b="4" data-bc="b" data-c="#ff6319" style="--sc:#ff6319" aria-labelledby="hg">
+    <div class="in-w">
+      <h2 id="hg" class="one" data-r><span data-k="hg">Uma espiada por dentro</span></h2>
+      <p class="lead one" data-r style="--i:1"><span data-k="glead">Um gostinho do que vem no arquivo. Toque para folhear.</span></p>
+      <div class="viewer" id="viewer" data-r style="--i:2">
+        <div class="vstage">
+          <button type="button" class="vnav pv" id="vprev" aria-label="Anterior">‹</button>
+          <div class="vframe"><img id="vimg" src="img/g1.webp" width="800" height="500" alt="" loading="lazy" decoding="async"><span class="vhint"><span data-k="vhint">O resto está no guia</span></span></div>
+          <button type="button" class="vnav nx" id="vnext" aria-label="Próxima">›</button>
+        </div>
+        <p class="vcap" id="vcap" aria-live="polite"></p>
+        <div class="vthumbs" id="vthumbs">
+          <button type="button" class="on" data-i="0"><img src="img/g1.webp" width="160" height="100" alt="" loading="lazy" decoding="async"></button>
+          <button type="button" data-i="1"><img src="img/g2.webp" width="160" height="100" alt="" loading="lazy" decoding="async"></button>
+          <button type="button" data-i="2"><img src="img/g3.webp" width="160" height="100" alt="" loading="lazy" decoding="async"></button>
+          <button type="button" data-i="3"><img src="img/g4.webp" width="160" height="100" alt="" loading="lazy" decoding="async"></button>
+          <button type="button" data-i="4"><img src="img/g5.webp" width="160" height="100" alt="" loading="lazy" decoding="async"></button>
+          <button type="button" data-i="5"><img src="img/g6.webp" width="160" height="100" alt="" loading="lazy" decoding="async"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Two files: desktop + mobile -->
+  <section class="st two-files bg-pale" data-st="st4" data-b="5" data-bc="p" data-c="#b933ad" style="--sc:#b933ad" aria-labelledby="hf">
+    <div class="in-w">
+      
+      <h2 id="hf" class="one" data-r><span data-k="hf">Duas versões do mesmo guia</span></h2>
+      <p class="lead" data-r style="--i:1"><span data-k="flead">Você recebe os dois arquivos, com o mesmo conteúdo.</span></p>
+      <div class="fcards">
+        <article data-r>
+          <div class="dev lap" aria-hidden="true"><div class="scr"><img src="img/g2.webp" width="1094" height="684" alt="" loading="lazy" decoding="async"><i class="cur"></i></div><i class="base"></i></div>
+          <h3><span data-k="fd">Versão desktop</span></h3><p><span data-k="fdt">Para planejar com calma, no computador.</span></p></article>
+        <article data-r style="--i:1">
+          <div class="dev" aria-hidden="true"><div class="phn"><img src="img/phone.webp" width="390" height="2054" alt="" loading="lazy" decoding="async"><i class="fing"></i></div></div>
+          <h3><span data-k="fm">Versão celular</span></h3><p><span data-k="fmt">Para consultar durante a viagem, com uma mão só.</span></p></article>
+        <article data-r style="--i:2">
+          <div class="dev off" aria-hidden="true">
+            <svg viewBox="0 0 220 150"><path class="arc" d="M20 120Q110 -10 200 120" fill="none" stroke="#93b6be" stroke-width="3" stroke-dasharray="3 9" stroke-linecap="round"/><g class="plane"><path d="M-14 0L14 -5L-2 0L14 5Z" fill="#2e3052"/><path d="M-4 -1L-10 -11L-6 -11L2 -1ZM-4 1L-10 11L-6 11L2 1Z" fill="#2e3052"/></g>
+              <g transform="translate(88 78)"><path d="M0 24Q22 -2 44 24M9 33Q22 19 35 33" fill="none" stroke="#2e3052" stroke-width="5" stroke-linecap="round"/><circle cx="22" cy="42" r="4" fill="#2e3052"/><path class="slash" d="M2 4L42 46" stroke="#ee352e" stroke-width="6" stroke-linecap="round"/></g>
+</svg>
+          </div>
+          <h3><span data-k="fo">Offline</span></h3><p><span data-k="fot">Baixe o PDF e use sem internet.</span></p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Included: boxes that move -->
+  <section class="st incl" id="incluso" data-st="st5" data-b="6" data-bc="n" data-c="#fccc0a" style="--sc:#fccc0a" aria-labelledby="hi">
+    <div class="in-w">
+      
+      <h2 id="hi" class="one" data-r><span data-k="hi">O que está incluso?</span></h2>
+      <p class="lead one" data-r style="--i:1"><span data-k="ilead">Toque em um prédio para ver o que vem no guia.</span></p>
+      <div class="skywrap" id="skywrap">
+        <div class="heli" aria-hidden="true"><svg viewBox="0 0 90 44"><path d="M10 4H70M40 4V12" stroke="#2e3052" stroke-width="3" stroke-linecap="round" class="rotor"/><ellipse cx="42" cy="22" rx="24" ry="11" fill="#ee352e"/><path d="M62 20L88 14L88 20L64 28Z" fill="#ee352e"/><path d="M84 8L90 8L88 24L84 24Z" fill="#2e3052"/><ellipse cx="34" cy="20" rx="11" ry="7" fill="#d8e2e6"/><path d="M26 36H62" stroke="#2e3052" stroke-width="3" stroke-linecap="round"/></svg></div>
+        <div class="kong" id="kong" aria-hidden="true"><p class="kbub" id="kbub"><span data-k="kk">Toque em um prédio!</span></p>
+          <svg viewBox="0 0 120 130"><ellipse cx="60" cy="96" rx="36" ry="32" fill="#3a2f3d"/><ellipse cx="60" cy="100" rx="22" ry="22" fill="#5a4a5c"/><path class="karm l" d="M28 80Q6 96 10 124" fill="none" stroke="#3a2f3d" stroke-width="16" stroke-linecap="round"/><g class="karm r"><path d="M92 80Q116 66 108 38" fill="none" stroke="#3a2f3d" stroke-width="16" stroke-linecap="round"/><circle cx="108" cy="34" r="10" fill="#3a2f3d"/></g><circle cx="60" cy="48" r="28" fill="#3a2f3d"/><ellipse cx="60" cy="56" rx="18" ry="15" fill="#7a6578"/><path d="M40 38Q60 28 80 38L78 44Q60 36 42 44Z" fill="#241c27"/><circle cx="51" cy="46" r="4" fill="#fff"/><circle cx="69" cy="46" r="4" fill="#fff"/><circle cx="52" cy="47" r="2" fill="#241c27"/><circle cx="70" cy="47" r="2" fill="#241c27"/><ellipse cx="55" cy="58" rx="2.4" ry="1.6" fill="#241c27"/><ellipse cx="65" cy="58" rx="2.4" ry="1.6" fill="#241c27"/><path d="M50 66Q60 72 70 66" fill="none" stroke="#241c27" stroke-width="3" stroke-linecap="round"/></svg></div>
+      <div class="skyline" id="sky" data-r role="group" aria-label="Skyline">
+        <button type="button" class="sk b0" style="--h:310px" aria-expanded="false" data-i="0"><span class="ib"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2.2"/><circle cx="18" cy="20" r="2.2"/><path d="M8 6h6a3.5 3.5 0 0 1 0 7h-4a3.5 3.5 0 0 0 0 7h6"/></svg></span><span class="bt"><span data-k="b1">Roteiro por região</span></span><span class="bd"><span data-k="b1d">Manhã, tarde e noite, com paradas opcionais marcadas, para você montar o seu ritmo.</span></span></button>
+        <button type="button" class="sk b1" style="--h:380px" aria-expanded="false" data-i="1"><span class="ib"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg></span><span class="bt"><span data-k="b2">Mapa interativo</span></span><span class="bd"><span data-k="b2d">Mais de 200 locais: restaurantes, atrações, segredos e uma aba só de banheiros gratuitos.</span></span></button>
+        <button type="button" class="sk b2" style="--h:300px" aria-expanded="false" data-i="2"><span class="ib"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></span><span class="bt"><span data-k="b3">Segredos</span></span><span class="bd"><span data-k="b3d">Lugares e dicas que poucos turistas conhecem, com instruções exatas para achar cada um.</span></span></button>
+        <button type="button" class="sk b3" style="--h:420px" aria-expanded="false" data-i="3"><span class="ib"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 3c-2 2-2 6 0 8v10"/></svg></span><span class="bt"><span data-k="b4">Onde comer</span></span><span class="bd"><span data-k="b4d">Restaurantes, cafés e doces separados por região, com o que pedir.</span></span></button>
+        <button type="button" class="sk b4" style="--h:340px" aria-expanded="false" data-i="4"><span class="ib"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span><span class="bt"><span data-k="b5">Guia fotográfico</span></span><span class="bd"><span data-k="b5d">Ângulos e horários para fotografar lugares como a Times Square e a Ponte do Brooklyn.</span></span></button>
+        <button type="button" class="sk b5" style="--h:290px" aria-expanded="false" data-i="5"><span class="ib"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V3h9l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.4"/></svg></span><span class="bt"><span data-k="b6">Links de desconto</span></span><span class="bd"><span data-k="b6d">Links de reserva com desconto em ingressos e passeios.</span></span></button>
+        <button type="button" class="sk b6" style="--h:400px" aria-expanded="false" data-i="6"><span class="ib"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14"/><path d="M7 5v14M17 5v14M3 9h4M3 15h4M17 9h4M17 15h4"/></svg></span><span class="bt"><span data-k="b7">Locações de filmes</span></span><span class="bd"><span data-k="b7d">20 lugares de filmes e séries famosos, com endereço que abre no Google Maps.</span></span></button>
+        <button type="button" class="sk b7" style="--h:320px" aria-expanded="false" data-i="7"><span class="ib"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span class="bt"><span data-k="b8">Épocas do ano</span></span><span class="bd"><span data-k="b8d">Halloween, Thanksgiving, Black Friday e Natal, com o que fazer em cada um.</span></span></button>
+        <button type="button" class="sk b8" style="--h:360px" aria-expanded="false" data-i="8"><span class="ib"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14-4M4 4v4h4M4 13a8 8 0 0 0 14 4M20 20v-4h-4"/></svg></span><span class="bt"><span data-k="b9">Atualizações grátis</span></span><span class="bd"><span data-k="b9d">Sempre que eu conhecer um lugar novo, você recebe pelo mesmo link, sem pagar mais.</span></span></button>
+      </div>
+      </div>
+      <div class="skyground" aria-hidden="true"></div>
+      <div class="skycard" id="skycard" aria-live="polite"><h3 id="skt"></h3><p id="skd"></p></div>
+    </div>
+  </section>
+
+  <div class="band" aria-label="Atualizações">
+    <div class="msign" data-r>
+      <div class="mrow"><span class="bl n" data-s="0">1</span><span class="bl r" data-s="1">2</span><span class="bl g" data-s="2">3</span><b class="mt1"><span data-k="band1">Lugar novo? Chega no seu guia, de graça.</span></b></div>
+      <p class="mmsg" id="bmsg" aria-live="polite"><span data-k="band2">Sempre que eu conhecer um lugar novo, você vai saber.</span></p>
+      <div class="mrail" aria-hidden="true"><i></i></div>
+    </div>
+  </div>
+
+  <!-- 7. Vision board -->
+  <section class="st vision bg-navy" data-st="st6" data-b="7" data-bc="n" data-c="#fccc0a" style="--sc:#fccc0a" aria-labelledby="hv">
+    <div class="in-w">
+      
+      <h2 id="hv" data-r><span data-k="hv">Você já se vê lá?</span></h2>
+      <p class="lead" data-r style="--i:1"><span data-k="vlead">Os lugares que eu mostro no guia, do jeito que eu vivi cada um.</span></p>
+      <div class="vb" aria-hidden="true">
+        <img src="img/vb-bridge-walk.webp" width="280" height="280" alt="" loading="lazy" style="--r:-3deg">
+        <img src="img/vb-edge.webp" width="280" height="280" alt="" loading="lazy" style="--r:2deg">
+        <img src="img/vb-orange-table.webp" width="280" height="280" alt="" loading="lazy" style="--r:-2deg">
+        <img src="img/vb-dumbo.webp" width="280" height="280" alt="" loading="lazy" style="--r:3deg">
+        <img src="img/vb-taxis.webp" width="280" height="280" alt="" loading="lazy" style="--r:-1deg">
+        <img src="img/vb-radio-city.webp" width="280" height="280" alt="" loading="lazy" style="--r:2deg">
+        <img src="img/vb-rink.webp" width="280" height="280" alt="" loading="lazy" style="--r:-3deg">
+        <img src="img/vb-hudson.webp" width="280" height="280" alt="" loading="lazy" style="--r:1deg">
+        <img src="img/vb-empire-view.webp" width="280" height="280" alt="" loading="lazy" style="--r:-2deg">
+        <img src="img/vb-balloons.webp" width="280" height="280" alt="" loading="lazy" style="--r:3deg">
+        <img src="img/vb-brooklyn-bridge.webp" width="280" height="280" alt="" loading="lazy" style="--r:1deg">
+        <img src="img/vb-bridge-street.webp" width="280" height="280" alt="" loading="lazy" style="--r:3deg">
+      </div>
+    </div>
+  </section>
+
+  <!-- Real testimonials -->
+  <section class="st proof" data-st="st10b" data-b="8" data-bc="g" data-c="#00933c" style="--sc:#00933c" aria-labelledby="hpf">
+    <div class="in-w">
+      <h2 id="hpf" class="one" data-r><span data-k="hpf">Quem já usou o guia</span></h2>
+      <p class="lead one" data-r style="--i:1"><span data-k="pflead">Depoimentos reais de quem viajou com ele.</span></p>
+      <div class="tqwrap" data-r style="--i:2">
+        <button type="button" class="vnav" id="tqprev" aria-label="Anterior">‹</button>
+        <div class="tqtrack" id="tqtrack" tabindex="0">
+        <figure class="tq"><span class="bl n" aria-hidden="true">M</span><blockquote>“Esse guia é simplesmente maravilhoso! Tem tanta dica boa que parece que alguém reuniu tudo de melhor da internet em um lugar só. Economizei horas de pesquisa!”</blockquote><figcaption><b>Mariana S.</b><span>São Paulo, SP</span></figcaption></figure>
+        <figure class="tq"><span class="bl r" aria-hidden="true">J</span><blockquote>“Fui com meus dois filhos e o guia facilitou MUITO nossa viagem! Conseguimos organizar os passeios por região e aproveitar os dias sem aquela correria.”</blockquote><figcaption><b>Juliana M.</b><span>Belo Horizonte, MG</span></figcaption></figure>
+        <figure class="tq"><span class="bl g" aria-hidden="true">R</span><blockquote>“O que mais gostei foi a organização. As dicas são superpráticas e dá pra montar um roteiro sem ficar abrindo mil abas no celular. Vale muito a pena!”</blockquote><figcaption><b>Rafael C.</b><span>Curitiba, PR</span></figcaption></figure>
+        <figure class="tq"><span class="bl p" aria-hidden="true">F</span><blockquote>“Nova York sempre foi meu sonho e eu queria conhecer todos aqueles lugares que aparecem nos filmes. O guia me ajudou a encontrar vários deles. Foi mágico!”</blockquote><figcaption><b>Fernanda L.</b><span>Rio de Janeiro, RJ</span></figcaption></figure>
+        <figure class="tq"><span class="bl b" aria-hidden="true">C</span><blockquote>“Comprei principalmente pelas dicas de economia e não me arrependi. Descobri vários passeios gratuitos e consegui aproveitar Nova York sem gastar uma fortuna.”</blockquote><figcaption><b>Camila R.</b><span>Campinas, SP</span></figcaption></figure>
+        <figure class="tq"><span class="bl n" aria-hidden="true">B</span><blockquote>“Adoro explorar cidades caminhando e amei como o guia reúne atrações próximas. Conseguimos fazer muita coisa a pé e descobrir lugares incríveis pelo caminho.”</blockquote><figcaption><b>Bruno A.</b><span>Porto Alegre, RS</span></figcaption></figure>
+        <figure class="tq"><span class="bl r" aria-hidden="true">P</span><blockquote>“Além de lindo por dentro, é extremamente completo! Dá pra perceber o cuidado em cada detalhe. Tem dicas que eu nem tinha encontrado pesquisando no Google!”</blockquote><figcaption><b>Patrícia F.</b><span>Recife, PE</span></figcaption></figure>
+        <figure class="tq"><span class="bl g" aria-hidden="true">A</span><blockquote>“Queria viver a experiência completa de Nova York: andar de metrô, comer nos lugares típicos e conhecer os pontos famosos. O guia foi perfeito pra isso!”</blockquote><figcaption><b>Amanda T.</b><span>Brasília, DF</span></figcaption></figure>
+        <figure class="tq"><span class="bl p" aria-hidden="true">B</span><blockquote>“Já tinha salvo centenas de vídeos no Instagram e TikTok, mas estava tudo bagunçado. O guia trouxe a praticidade que faltava. Tudo organizado e fácil de encontrar!”</blockquote><figcaption><b>Beatriz N.</b><span>Salvador, BA</span></figcaption></figure>
+        <figure class="tq"><span class="bl b" aria-hidden="true">D</span><blockquote>“Foi uma das melhores coisas que planejei para a viagem! Economizei tempo, descobri lugares que não estavam no meu roteiro e aproveitei muito mais cada dia.”</blockquote><figcaption><b>Daniela P.</b><span>Florianópolis, SC</span></figcaption></figure>
+        </div>
+        <button type="button" class="vnav" id="tqnext" aria-label="Próximo">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost of not planning -->
+  <section class="st cost bg-pale" data-st="st8" data-b="9" data-bc="r" data-c="#ee352e" style="--sc:#ee352e" aria-labelledby="hco">
+    <div class="in-w">
+      <h2 id="hco" class="one" data-r><span data-k="hco">Quanto custa não se planejar?</span></h2>
+      <p class="lead" data-r style="--i:1"><span data-k="colead">Improvisar em Nova York costuma sair caro, em dinheiro e em horas.</span></p>
+      <div class="signs street" id="signs">
+        <article class="sgn" data-r style="--i:0"><span class="bl r">1</span><div><b><span data-k="cs1h">Bilhete errado</span></b><span><span data-k="cs1">Eu desperdicei US$ 200 na minha primeira viagem.</span></span></div></article>
+        <article class="sgn" data-r style="--i:1"><span class="bl n">2</span><div><b><span data-k="cs2h">Fila na hora errada</span></b><span><span data-k="cs2">Horas do seu dia perdidas em pé.</span></span></div></article>
+        <article class="sgn" data-r style="--i:2"><span class="bl g">3</span><div><b><span data-k="cs3h">Passeio mais caro</span></b><span><span data-k="cs3">Pagar por algo que tinha alternativa.</span></span></div></article>
+        <article class="sgn" data-r style="--i:3"><span class="bl p">4</span><div><b><span data-k="cs4h">Dia sem rota</span></b><span><span data-k="cs4">Ida e volta pela cidade, sem ordem.</span></span></div></article>
+      </div>
+      <p class="coend" data-r><span data-k="coend">No guia, tudo isso já vem resolvido.</span></p>
+    </div>
+  </section>
+
+  <!-- 10. Save time -->
+  <section class="st crowd" data-st="st9" data-b="10" data-bc="r" data-c="#ee352e" style="--sc:#ee352e" aria-labelledby="hr">
+    <div class="in-w">
+      <h2 id="hr" data-r><span data-k="hr">Economize tempo e <em>fuja das filas</em></span></h2>
+      <p class="lead" data-r style="--i:1"><span data-k="rlead">Sem plano, você pega fila e perde horas. Com o guia, cada parada tem o melhor horário. Arraste a hora e veja a diferença no vagão.</span></p>
+      <div class="clock" data-r style="--i:2"><label for="hour"><span data-k="hlabel">Hora do dia</span></label><input id="hour" type="range" min="6" max="23" step="1" value="8"><output id="hout" for="hour">08:00</output></div>
+      <div class="cars" data-r style="--i:3">
+        <figure class="car2"><div class="cv" id="dA" aria-hidden="true"></div><figcaption><b><span data-k="cA">Sem plano: fila e vagão lotado</span></b><span id="cA"></span></figcaption></figure>
+        <figure class="car2 ok"><div class="cv" id="dB" aria-hidden="true"></div><figcaption><b><span data-k="cB">Com o guia: horário certo</span></b><span id="cB"></span></figcaption></figure>
+      </div>
+      <p class="note" data-r><span data-k="rnote">Ilustração para brincar, não é dado real de lotação. No guia, as dicas de horário são reais, para cada parada.</span></p>
+    </div>
+  </section>
+
+  <!-- 11. Reels vs guide -->
+  <section class="st bg-pale" data-st="st10" data-b="11" data-bc="g" data-c="#00933c" style="--sc:#00933c" aria-label="Reels salvos ou roteiro pronto">
+    <div class="in-w">
+      <h2 class="one cmp-h" data-r><span data-k="hcmp">Pare de salvar reels. <em>Comece a planejar.</em></span></h2>
+      <div class="cmp">
+        <div class="a">
+          <h3 data-r><span data-k="cmpa">Como quase todo mundo planeja</span></h3>
+          <ul>
+            <li data-r><span data-k="ca1">Você salva dezenas de reels e posts no Instagram</span></li>
+            <li data-r style="--i:1"><span data-k="ca2">Anota links e dicas soltas em vários lugares</span></li>
+            <li data-r style="--i:2"><span data-k="ca3">Perde horas decidindo a ordem dos lugares</span></li>
+            <li data-r style="--i:3"><span data-k="ca4">Chega lá sem saber o que priorizar</span></li>
+            <li data-r style="--i:4"><span data-k="ca5">No fim, não sabe por onde começar o roteiro</span></li>
+          </ul>
+        </div>
+        <div class="b">
+          <h3 data-r><span data-k="cmpb">Com o guia</span></h3>
+          <ul>
+            <li data-r><span data-k="cb1">Tudo organizado por região, em um só arquivo</span></li>
+            <li data-r style="--i:1"><span data-k="cb2">Você já sabe o que fazer de manhã, tarde e noite</span></li>
+            <li data-r style="--i:2"><span data-k="cb3">Sabe o que é opcional e o que eu pularia</span></li>
+            <li data-r style="--i:3"><span data-k="cb4">Mapa interativo e vídeos tutoriais para você não se perder</span></li>
+            <li data-r style="--i:4"><span data-k="cb5">Começa a viagem sabendo exatamente por onde ir</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. About -->
+  <section class="st" data-st="st11" data-b="12" data-bc="b" data-c="#ff6319" style="--sc:#ff6319" aria-labelledby="ha">
+    <div class="in-w">
+      <div class="about">
+        <div class="collage" data-r aria-hidden="true">
+          <img class="c1" src="img/park.webp" width="640" height="853" alt="" loading="lazy" decoding="async">
+          <img class="c2" src="img/statue.webp" width="560" height="747" alt="" loading="lazy" decoding="async">
+          <img class="c3" src="img/vb-bridge-walk.webp" width="280" height="280" alt="" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <h2 id="ha" class="one" data-r><span data-k="ha">Quem é a sua guia?</span></h2>
+          <p data-r style="--i:1"><span data-k="ab1"><b>Cami</b> tem 32 anos, já conheceu 38 países e mora no Canadá há 4 anos. Já perdeu a conta de quantas vezes foi a Nova York.</span></p>
+          <p data-r style="--i:2"><span data-k="ab2">Seu amor por novas culturas e sabores faz a Cami explorar ao máximo os destinos e planejar os mínimos detalhes das viagens. Também leva grupos de viagem pelo mundo e ama compartilhar experiências!</span></p>
+          <ul class="stats3" data-r style="--i:2"><li><b>38</b><span><span data-k="as1">países visitados</span></span></li><li><b>600 mil+</b><span><span data-k="as2">seguidores nas redes</span></span></li><li><b>4 anos</b><span><span data-k="as3">morando em Montreal, no Canadá</span></span></li><li><b>NY</b><span><span data-k="as4">perdi a conta de quantas visitas</span></span></li></ul>
+          <div class="acts" data-r style="--i:3"><a class="btn" href="#preco"><span data-k="wantg">Eu quero o guia</span></a>
+            <div class="soc">
+              <a href="https://www.instagram.com/camilamontreal" class="bl p" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg></a>
+              <a href="https://www.tiktok.com/@camilamontreal" class="bl g" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M14 4v10.5a3.5 3.5 0 1 1-3.5-3.5M14 4c.4 2.4 2 4 4.5 4.2"/></svg></a>
+              <a href="https://www.youtube.com/@camilamontreal" class="bl r" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. For whom -->
+  <section class="st" data-st="st12" data-b="13" data-bc="r" data-c="#ee352e" style="--sc:#ee352e" aria-label="Para quem é">
+    <div class="in-w">
+      
+      <div class="who">
+        <div class="y"><h2 data-r><span data-k="wy">Embarque aqui se</span></h2>
+          <ul>
+            <li data-r><span class="bl chk" aria-hidden="true"></span><span data-k="wy1">Está planejando viajar para Nova York e quer um roteiro pronto para adaptar.</span></li>
+            <li data-r style="--i:1"><span class="bl chk" aria-hidden="true"></span><span data-k="wy2">Prefere ter tudo organizado em um lugar.</span></li>
+            <li data-r style="--i:2"><span class="bl chk" aria-hidden="true"></span><span data-k="wy3">Quer dicas práticas, com horário, endereço e preço.</span></li>
+            <li data-r style="--i:3"><span class="bl chk" aria-hidden="true"></span><span data-k="wy4">Quer um guia com opinião, não uma lista neutra.</span></li>
+          </ul></div>
+        <div class="n"><h2 data-r><span data-k="wn">Talvez não seja sua linha se</span></h2>
+          <ul>
+            <li data-r><span class="bl">–</span><span data-k="wn1">Prefere improvisar tudo e não quer um roteiro adaptável.</span></li>
+            <li data-r style="--i:1"><span class="bl">–</span><span data-k="wn2">Quer perder horas planejando e revisitando os reels salvos no Instagram.</span></li>
+            <li data-r style="--i:2"><span class="bl">–</span><span data-k="wn3">Espera atendimento individual. O guia é um material digital.</span></li>
+          </ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. Price -->
+  <section class="st gate bg-navy" id="preco" data-st="st13" data-b="14" data-bc="n" data-c="#fccc0a" style="--sc:#fccc0a" aria-labelledby="hp">
+    <div class="in-w">
+      <h2 id="hp" class="one" data-r><span data-k="hp">Garanta o seu guia</span></h2>
+      <p class="lead" data-r style="--i:1"><span data-k="plead">Menos tempo planejando, mais tempo em Nova York.</span></p>
+      <div class="pay" data-r style="--i:2">
+        <div class="pl">
+          <div class="pcomp">
+            <img class="pphoto" src="img/hero.webp" width="640" height="530" alt="" loading="lazy" decoding="async">
+
+          </div>
+          <ul class="get">
+            <li><span class="bl chk" aria-hidden="true"></span><span data-k="g1">PDF versão desktop e versão celular</span></li>
+            <li><span class="bl chk" aria-hidden="true"></span><span data-k="g2">Mapa interativo com +200 locais</span></li>
+            <li><span class="bl chk" aria-hidden="true"></span><span data-k="g3">Atualizações grátis, sempre que eu conhecer um lugar novo</span></li>
+            <li><span class="bl chk" aria-hidden="true"></span><span data-k="g4">Garantia de 7 dias</span></li>
+          </ul>
+        </div>
+        <div class="pr2">
+          <div class="mcard" id="mcard" aria-hidden="true">
+            <span class="mlogo">MetroCard</span>
+            <span class="msub"><span data-k="mc1">Nova York · o guia</span></span>
+            <span class="mband"><b><span data-k="mc2">PDF desktop + celular</span></b><i></i></span>
+            <span class="mnum">0123 4567 8901 2345</span>
+          </div>
+        <div class="gt" id="gt">
+          <p class="pk"><span data-k="pk">Guia completo de Nova York</span></p>
+          <p class="pr" id="mprice">R$ 67,90</p>
+          <p class="per" id="per"></p>
+          <figure class="mini"><blockquote>“Esse guia é simplesmente maravilhoso! Tem tanta dica boa que parece que alguém reuniu tudo de melhor da internet em um lugar só. Economizei horas de pesquisa!”</blockquote><figcaption>Mariana S. · São Paulo, SP</figcaption></figure>
+          <a class="btn" id="buy" href="#checkout"><span data-k="buy">Comprar o guia</span></a>
+          <ul class="pays" id="pays" aria-label="Formas de pagamento"></ul>
+          <p class="gar"><span data-k="gar">Garantia de 7 dias.</span></p>
+          <p class="inc"><span data-k="inc">Você recebe o link por e-mail, com a versão desktop e a celular do PDF.</span></p>
+          <p class="lg"><span data-k="lg">Site em português: preço em reais. Para ver em inglês, use o botão EN.</span></p>
+          <a class="help" id="help" href="https://ig.me/m/camilamontreal" target="_blank" rel="noopener"><span data-k="help">Dúvidas? Fale comigo no Instagram</span></a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. FAQ -->
+  <section class="st" id="faq" data-st="st14" data-b="15" data-bc="g" data-c="#00933c" style="--sc:#00933c" aria-labelledby="hq">
+    <div class="in-w">
+      
+      <div class="faq">
+        <h2 id="hq" data-r><span data-k="hq">Perguntas frequentes</span></h2>
+        <div>
+          <details name="q" open><summary><span class="bl g">?</span><span><span data-k="q1">Quando vou ter acesso ao guia?</span></span></summary><p><span data-k="r1">Assim que o pagamento for confirmado, você recebe um e-mail com o link do PDF interativo, com versão para desktop e versão para celular.</span></p></details>
+          <details name="q"><summary><span class="bl g">?</span><span><span data-k="q2">Qual a diferença entre a versão desktop e a versão celular?</span></span></summary><p><span data-k="r2">O conteúdo é o mesmo. A versão desktop é para planejar com calma no computador; a versão celular tem coluna única para consultar durante a viagem. Você recebe as duas.</span></p></details>
+          <details name="q"><summary><span class="bl g">?</span><span><span data-k="q3">Preciso ficar um número exato de dias?</span></span></summary><p><span data-k="r3">Não. O guia é organizado por região, então você monta o roteiro para quantos dias tiver. Se fica menos, escolha as regiões que combinam; se fica mais, há ideias extras como bate-voltas e passeios diferentes.</span></p></details>
+          <details name="q"><summary><span class="bl g">?</span><span><span data-k="q4">Funciona para quem não fala outra língua além do português?</span></span></summary><p><span data-k="r4">Sim! O guia foi feito todo em português e tem várias dicas para quem nunca foi ao destino, inclusive dicas culturais, além de dicas para ver musicais em português. Também existe a versão em inglês.</span></p></details>
+          <details name="q"><summary><span class="bl g">?</span><span><span data-k="q5">Preciso de internet na viagem para acessar o guia?</span></span></summary><p><span data-k="r5">Não! Tanto o roteiro quanto o mapa podem ser acessados offline. Menos uma coisa para você se preocupar durante a viagem.</span></p></details>
+          <details name="q"><summary><span class="bl g">?</span><span><span data-k="q6">16 paradas em um dia não é demais?</span></span></summary><p><span data-k="r6">É um menu organizado por região, não uma obrigação. Há paradas marcadas como opcionais e muitas são só uma passada ou uma foto. Você escolhe o ritmo.</span></p></details>
+          <details name="q"><summary><span class="bl g">?</span><span><span data-k="q7">Os preços e horários estão atualizados?</span></span></summary><p><span data-k="r7">Preços e horários em Nova York mudam. O guia recebe atualizações gratuitas pelo mesmo link, e eu recomendo conferir o site oficial antes de comprar ingressos.</span></p></details>
+          <details name="q"><summary><span class="bl g">?</span><span><span data-k="q8">O que são os links com desconto?</span></span></summary><p><span data-k="r8">São links de reserva de passeios, ingressos e serviços com o meu cupom. Alguns parceiros me pagam uma comissão quando você reserva pelo link, sem custo extra para você.</span></p></details>
+          <details name="q"><summary><span class="bl g">?</span><span><span data-k="q9">E se eu não gostar?</span></span></summary><p><span data-k="r9">Você pode pedir o reembolso em até 7 dias. Escreva para o contato que está no rodapé da página.</span></p></details>
+          <details name="q"><summary><span class="bl g">?</span><span><span data-k="q10">Existem roteiros para outros destinos?</span></span></summary><p><span data-k="r10">Sim! Você pode conferir todos os meus roteiros no meu site: <a href="https://camilamontreal.com/ebooks" target="_blank" rel="noopener">camilamontreal.com/ebooks</a>.</span></p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="st endl bg-navy" data-st="st15" data-b="16" data-bc="p" data-c="#b933ad" style="--sc:#b933ad" aria-labelledby="hz">
+    <div class="in-w">
+      
+      <h2 id="hz" data-r><span data-k="hz">Quer conhecer o melhor de NY?</span></h2>
+      <p data-r style="--i:1"><span data-k="zt">Você já escolheu o destino. Falta decidir como chegar lá: com 30 abas abertas ou com um guia na mão.</span></p>
+      <a class="btn" data-r style="--i:2" href="#preco"><span data-k="zb">Eu quero</span></a>
+    </div>
+  </section>
+
+  </main>
+
+  <div class="zoo"><button type="button" class="cart" id="cart" aria-label="Hot dog"><svg viewBox="0 0 150 110"><i></i><path class="steam" d="M40 28q-8-10 0-18M56 28q-8-10 0-18M72 28q-8-10 0-18" fill="none" stroke="#9aa1ad" stroke-width="3" stroke-linecap="round"/><path d="M14 50H128L118 82H24Z" fill="#ee352e"/><rect x="20" y="40" width="102" height="14" rx="4" fill="#fccc0a"/><path d="M26 20Q71 -2 116 20L118 40H24Z" fill="#fff" stroke="#2e3052" stroke-width="3"/><path d="M26 20Q71 -2 116 20" fill="none" stroke="#ee352e" stroke-width="8"/><rect x="34" y="82" width="6" height="18" fill="#2e3052"/><rect x="104" y="82" width="6" height="18" fill="#2e3052"/><circle cx="36" cy="102" r="8" fill="#2e3052"/><circle cx="108" cy="102" r="8" fill="#2e3052"/><rect x="56" y="58" width="40" height="14" rx="7" fill="#d9a05b"/><rect x="60" y="60" width="32" height="5" rx="2.5" fill="#ee352e"/></svg></button><button type="button" class="pg" id="pigeon" aria-label="Pombo / Pigeon"><svg viewBox="0 0 80 70"><g class="legs" stroke="#e08a5a" stroke-width="3" stroke-linecap="round"><path d="M34 52v14M46 52v14"/></g><ellipse cx="40" cy="38" rx="26" ry="16" fill="#8d96a6"/><path d="M20 36q-14 4-16 14 14-2 22-10z" fill="#6f7888"/><circle cx="62" cy="24" r="11" fill="#6a7ab0"/><path d="M72 24l9 3-9 3z" fill="#e08a5a"/><circle cx="65" cy="22" r="2.2" fill="#14161c"/><path d="M30 34q10-10 24 0" stroke="#aab2c0" stroke-width="3" fill="none" stroke-linecap="round"/></svg></button><button type="button" class="rt" id="rat" aria-label="Rato / Rat"><svg viewBox="0 0 110 60"><path d="M6 44q-6-18 12-14" fill="none" stroke="#c98f8f" stroke-width="3" stroke-linecap="round"/><ellipse cx="46" cy="40" rx="30" ry="15" fill="#6b6459"/><circle cx="76" cy="36" r="11" fill="#6b6459"/><circle cx="82" cy="28" r="6" fill="#8a8173"/><circle cx="80" cy="34" r="2" fill="#14161c"/><circle cx="88" cy="38" r="2.4" fill="#c98f8f"/><path d="M88 40l18 6-14 6z" fill="#fccc0a"/><circle cx="97" cy="46" r="2" fill="#ee352e"/><g stroke="#4a443c" stroke-width="3" stroke-linecap="round"><path d="M32 52v6M52 52v6"/></g></svg></button></div>
+  <div class="buybar" id="buybar"><span class="bbp" id="bbp"></span><a class="btn" id="bbtn" href="#checkout"><span data-k="bbuy">Comprar</span></a></div>
+  <p class="toast" id="toast" role="status" aria-live="polite"></p>
+
+  <footer>
+    <div class="row"><a class="link" href="https://www.instagram.com/camilamontreal">Instagram</a><a class="link" href="https://www.tiktok.com/@camilamontreal">TikTok</a><a class="link" href="https://www.youtube.com/@camilamontreal">YouTube</a><a class="link" href="termos.html"><span data-k="ft1">Termos de uso</span></a><a class="link" href="privacidade.html"><span data-k="ft2">Privacidade</span></a><a class="link" id="flink" href="https://ig.me/m/camilamontreal" target="_blank" rel="noopener"><span data-k="ft3">Contato</span></a></div>
+    <p class="fine"><span data-k="fine1">Preços, horários e disponibilidade de passeios mudam. Confira nos sites oficiais antes de reservar. Alguns links de reserva podem render comissão para mim, sem custo extra para você.</span></p>
+    <p class="fine">© 2026 Camila Montreal · @camilamontreal · <span data-k="fine2">dica: tem bicho solto no metrô, toque nele.</span></p>
+  </footer>
+</div>
+
+<script src="config.js"></script>
+<script>window.TXT={"pt": {"buy": "Comprar o guia", "k-next": "Próxima estação", "k-st0": "Início da linha", "h1": "O guia perfeito de Nova York", "lede": "roteiro completo, adaptado para quantos dias você tiver.", "meet": "Conhecer o guia", "seeprice": "Ver o preço", "hw": "O que é este guia?", "what1": "O meu guia pessoal de Nova York: um roteiro completo que se adapta à sua viagem, sem meses de pesquisa.", "what2": "Tudo que eu faria e recomendaria a uma amiga: bairros, horários, segredos, onde comer e links com desconto. No computador para planejar, no celular durante a viagem.", "f1": "locais no mapa interativo", "f2": "locações de filmes e séries", "f3": "paradas organizadas por região", "f4": "ideias extras para qualquer duração de viagem", "tl": "Dentro do guia", "tm0": "Tem um segredo escondido numa das estações mais famosas da cidade.", "tnext": "Mais dicas", "hd": "Por onde você quer começar?", "dlead": "Não importa quantos dias você tem: o guia é organizado por região, então sempre tem o que fazer. Escolha uma e espie.", "d1": "Midtown", "d2": "Central Park", "d3": "Downtown e Brooklyn", "d4": "Hudson Yards", "d5": "Além da cidade", "ptipk": "No guia, você encontra as melhores paradas, spots para foto, horários e links com desconto.", "hg": "Uma espiada por dentro", "glead": "Um gostinho do que vem no arquivo. Toque para folhear.", "vhint": "O resto está no guia", "hf": "Duas versões do mesmo guia", "flead": "Você recebe os dois arquivos, com o mesmo conteúdo.", "fd": "Versão desktop", "fdt": "Para planejar com calma, no computador.", "fm": "Versão celular", "fmt": "Para consultar durante a viagem, com uma mão só.", "fo": "Offline", "fot": "Baixe o PDF e use sem internet.", "hi": "O que está incluso?", "ilead": "Toque em um prédio para ver o que vem no guia.", "kk": "Toque em um prédio!", "b1": "Roteiro por região", "b1d": "Manhã, tarde e noite, com paradas opcionais marcadas, para você montar o seu ritmo.", "b2": "Mapa interativo", "b2d": "Mais de 200 locais: restaurantes, atrações, segredos e uma aba só de banheiros gratuitos.", "b3": "Segredos", "b3d": "Lugares e dicas que poucos turistas conhecem, com instruções exatas para achar cada um.", "b4": "Onde comer", "b4d": "Restaurantes, cafés e doces separados por região, com o que pedir.", "b5": "Guia fotográfico", "b5d": "Ângulos e horários para fotografar lugares como a Times Square e a Ponte do Brooklyn.", "b6": "Links de desconto", "b6d": "Links de reserva com desconto em ingressos e passeios.", "b7": "Locações de filmes", "b7d": "20 lugares de filmes e séries famosos, com endereço que abre no Google Maps.", "b8": "Épocas do ano", "b8d": "Halloween, Thanksgiving, Black Friday e Natal, com o que fazer em cada um.", "b9": "Atualizações grátis", "b9d": "Sempre que eu conhecer um lugar novo, você recebe pelo mesmo link, sem pagar mais.", "band1": "Lugar novo? Chega no seu guia, de graça.", "band2": "Sempre que eu conhecer um lugar novo, você vai saber.", "hv": "Você já se vê lá?", "vlead": "Os lugares que eu mostro no guia, do jeito que eu vivi cada um.", "hpf": "Quem já usou o guia", "pflead": "Depoimentos reais de quem viajou com ele.", "hco": "Quanto custa não se planejar?", "colead": "Improvisar em Nova York costuma sair caro, em dinheiro e em horas.", "cs1h": "Bilhete errado", "cs1": "Eu desperdicei US$ 200 na minha primeira viagem.", "cs2h": "Fila na hora errada", "cs2": "Horas do seu dia perdidas em pé.", "cs3h": "Passeio mais caro", "cs3": "Pagar por algo que tinha alternativa.", "cs4h": "Dia sem rota", "cs4": "Ida e volta pela cidade, sem ordem.", "coend": "No guia, tudo isso já vem resolvido.", "hr": "Economize tempo e <em>fuja das filas</em>", "rlead": "Sem plano, você pega fila e perde horas. Com o guia, cada parada tem o melhor horário. Arraste a hora e veja a diferença no vagão.", "hlabel": "Hora do dia", "cA": "Sem plano: fila e vagão lotado", "cB": "Com o guia: horário certo", "rnote": "Ilustração para brincar, não é dado real de lotação. No guia, as dicas de horário são reais, para cada parada.", "hcmp": "Pare de salvar reels. <em>Comece a planejar.</em>", "cmpa": "Como quase todo mundo planeja", "ca1": "Você salva dezenas de reels e posts no Instagram", "ca2": "Anota links e dicas soltas em vários lugares", "ca3": "Perde horas decidindo a ordem dos lugares", "ca4": "Chega lá sem saber o que priorizar", "ca5": "No fim, não sabe por onde começar o roteiro", "cmpb": "Com o guia", "cb1": "Tudo organizado por região, em um só arquivo", "cb2": "Você já sabe o que fazer de manhã, tarde e noite", "cb3": "Sabe o que é opcional e o que eu pularia", "cb4": "Mapa interativo e vídeos tutoriais para você não se perder", "cb5": "Começa a viagem sabendo exatamente por onde ir", "ha": "Quem é a sua guia?", "ab1": "<b>Cami</b> tem 32 anos, já conheceu 38 países e mora no Canadá há 4 anos. Já perdeu a conta de quantas vezes foi a Nova York.", "ab2": "Seu amor por novas culturas e sabores faz a Cami explorar ao máximo os destinos e planejar os mínimos detalhes das viagens. Também leva grupos de viagem pelo mundo e ama compartilhar experiências!", "as1": "países visitados", "as2": "seguidores nas redes", "as3": "morando em Montreal, no Canadá", "as4": "perdi a conta de quantas visitas", "wantg": "Eu quero o guia", "wy": "Embarque aqui se", "wy1": "Está planejando viajar para Nova York e quer um roteiro pronto para adaptar.", "wy2": "Prefere ter tudo organizado em um lugar.", "wy3": "Quer dicas práticas, com horário, endereço e preço.", "wy4": "Quer um guia com opinião, não uma lista neutra.", "wn": "Talvez não seja sua linha se", "wn1": "Prefere improvisar tudo e não quer um roteiro adaptável.", "wn2": "Quer perder horas planejando e revisitando os reels salvos no Instagram.", "wn3": "Espera atendimento individual. O guia é um material digital.", "hp": "Garanta o seu guia", "plead": "Menos tempo planejando, mais tempo em Nova York.", "g1": "PDF versão desktop e versão celular", "g2": "Mapa interativo com +200 locais", "g3": "Atualizações grátis, sempre que eu conhecer um lugar novo", "g4": "Garantia de 7 dias", "mc1": "Nova York · o guia", "mc2": "PDF desktop + celular", "pk": "Guia completo de Nova York", "gar": "Garantia de 7 dias.", "inc": "Você recebe o link por e-mail, com a versão desktop e a celular do PDF.", "lg": "Site em português: preço em reais. Para ver em inglês, use o botão EN.", "help": "Dúvidas? Fale comigo no Instagram", "hq": "Perguntas frequentes", "q1": "Quando vou ter acesso ao guia?", "r1": "Assim que o pagamento for confirmado, você recebe um e-mail com o link do PDF interativo, com versão para desktop e versão para celular.", "q2": "Qual a diferença entre a versão desktop e a versão celular?", "r2": "O conteúdo é o mesmo. A versão desktop é para planejar com calma no computador; a versão celular tem coluna única para consultar durante a viagem. Você recebe as duas.", "q3": "Preciso ficar um número exato de dias?", "r3": "Não. O guia é organizado por região, então você monta o roteiro para quantos dias tiver. Se fica menos, escolha as regiões que combinam; se fica mais, há ideias extras como bate-voltas e passeios diferentes.", "q4": "Funciona para quem não fala outra língua além do português?", "r4": "Sim! O guia foi feito todo em português e tem várias dicas para quem nunca foi ao destino, inclusive dicas culturais, além de dicas para ver musicais em português. Também existe a versão em inglês.", "q5": "Preciso de internet na viagem para acessar o guia?", "r5": "Não! Tanto o roteiro quanto o mapa podem ser acessados offline. Menos uma coisa para você se preocupar durante a viagem.", "q6": "16 paradas em um dia não é demais?", "r6": "É um menu organizado por região, não uma obrigação. Há paradas marcadas como opcionais e muitas são só uma passada ou uma foto. Você escolhe o ritmo.", "q7": "Os preços e horários estão atualizados?", "r7": "Preços e horários em Nova York mudam. O guia recebe atualizações gratuitas pelo mesmo link, e eu recomendo conferir o site oficial antes de comprar ingressos.", "q8": "O que são os links com desconto?", "r8": "São links de reserva de passeios, ingressos e serviços com o meu cupom. Alguns parceiros me pagam uma comissão quando você reserva pelo link, sem custo extra para você.", "q9": "E se eu não gostar?", "r9": "Você pode pedir o reembolso em até 7 dias. Escreva para o contato que está no rodapé da página.", "q10": "Existem roteiros para outros destinos?", "r10": "Sim! Você pode conferir todos os meus roteiros no meu site: <a href=\"https://camilamontreal.com/ebooks\" target=\"_blank\" rel=\"noopener\">camilamontreal.com/ebooks</a>.", "hz": "Quer conhecer o melhor de NY?", "zt": "Você já escolheu o destino. Falta decidir como chegar lá: com 30 abas abertas ou com um guia na mão.", "zb": "Eu quero", "ft1": "Termos de uso", "ft2": "Privacidade", "ft3": "Contato", "fine1": "Preços, horários e disponibilidade de passeios mudam. Confira nos sites oficiais antes de reservar. Alguns links de reserva podem render comissão para mim, sem custo extra para você.", "fine2": "dica: tem bicho solto no metrô, toque nele.", "st0": "Início", "st1": "O guia", "st2": "Roteiro por região", "st3": "Por dentro do guia", "st4": "Desktop e celular", "st5": "O que está incluso", "st6": "Inspiração", "st7": "Segredos", "st8": "Economize", "st9": "Tempo e filas", "st10": "Organização", "st11": "Quem é a Camila", "st12": "Para quem é", "st13": "Comprar", "st14": "Dúvidas", "st15": "Embarque", "st10b": "Depoimentos", "st0b": "Quem já usou"}, "en": {"k-next": "Next stop", "k-st0": "Start of the line", "st0": "Start", "h1": "The perfect New York guide", "lede": "a complete itinerary, adapted to however many days you have.", "meet": "Meet the guide", "seeprice": "See the price", "st1": "The guide", "hw": "What is this guide?", "what1": "It's my personal New York guide: a complete itinerary that adapts to your trip, without months of research.", "what2": "Everything I would do and recommend to a friend: neighborhoods, timing, secrets, where to eat and discount links. On your computer to plan, on your phone during the trip.", "f1": "places on the interactive map", "f2": "movie and TV locations", "f3": "stops organized by area", "f4": "extra ideas for any trip length", "tl": "Inside the guide", "tm0": "There's a secret hidden in one of the city's most famous stations.", "tnext": "More tips", "st2": "Route by area", "hd": "Where do you want to start?", "dlead": "It doesn't matter how many days you have: the guide is organized by area, so there's always something to do. Pick one and peek inside.", "d1": "Midtown", "d2": "Central Park", "d3": "Downtown & Brooklyn", "d4": "Hudson Yards", "d5": "Beyond the city", "st3": "Inside the guide", "hg": "A peek inside", "st4": "Desktop and mobile", "hf": "Two versions of the same guide", "flead": "You get both files, with the same content.", "fd": "Desktop version", "fdt": "To plan calmly, on your computer.", "fm": "Mobile version", "fmt": "To check during the trip, with one hand.", "fo": "Offline", "fot": "Download the PDF and use it without internet.", "st5": "What's included", "hi": "What's included?", "ilead": "Tap a building to see what comes in the guide.", "b1": "Route by area", "b1d": "Morning, afternoon and night, with optional stops marked, so you set your own pace.", "b2": "Interactive map", "b2d": "Over 200 places: restaurants, attractions, secrets and a tab just for free restrooms.", "b3": "Secrets", "b3d": "Places and tips few tourists know, with exact directions to find each one.", "b4": "Where to eat", "b4d": "Restaurants, cafés and sweets split by area, with what to order.", "b5": "Photo guide", "b5d": "Angles and times to photograph places like Times Square and the Brooklyn Bridge.", "b6": "Discount links", "b6d": "Booking links with discounts on tickets and tours.", "b7": "Movie locations", "b7d": "20 places from famous movies and series, with an address that opens in Google Maps.", "b8": "Seasons", "b8d": "Halloween, Thanksgiving, Black Friday and Christmas, with what to do in each.", "b9": "Free updates", "b9d": "Whenever I discover a new place, you get it in the same link, at no extra cost.", "band1": "New place? It lands in your guide, free.", "band2": "Whenever I discover a new place, you'll know.", "st6": "Inspiration", "hv": "Can you see yourself there?", "vlead": "The places I show in the guide, the way I lived each one.", "st7": "Secrets", "st8": "Save money", "st9": "Time and lines", "hr": "Save time and <em>skip the lines</em>", "rlead": "Without a plan, you stand in line and lose hours. With the guide, every stop has its best time. Drag the hour and see the difference in the car.", "hlabel": "Time of day", "cA": "No plan: lines and a packed car", "cB": "With the guide: the right time", "rnote": "An illustration to play with, not real crowding data. In the guide, the timing tips are real, for each stop.", "st10": "Organization", "hcmp": "Stop saving reels. <em>Start planning.</em>", "cmpa": "The way almost everyone plans", "ca1": "You save dozens of reels and posts on Instagram", "ca2": "You jot down loose links and tips in several places", "ca3": "You lose hours deciding the order of places", "ca4": "You get there without knowing what to prioritize", "ca5": "In the end, you don't know where to start", "cmpb": "With the guide", "cb1": "Everything organized by area, in a single file", "cb2": "You already know what to do in the morning, afternoon and night", "cb3": "You know what's optional and what I'd skip", "cb4": "Interactive map and tutorial videos so you don't get lost", "cb5": "You start the trip knowing exactly where to go", "st11": "Meet Camila", "ha": "Who is your guide?", "ab1": "<b>Cami</b> is 32, has visited 38 countries and has lived in Canada for 4 years. She has lost count of how many times she's been to New York.", "ab2": "Her love for new cultures and flavors makes Cami explore destinations to the fullest and plan every little detail of her trips. She also leads travel groups around the world and loves sharing experiences!", "wantg": "Get the guide", "st12": "Who it's for", "wy": "Board here if", "wn": "Maybe not your line if", "wy1": "You're planning a trip to New York and want a ready route to adapt.", "wy2": "You prefer everything organized in one place.", "wy3": "You want practical tips, with times, addresses and prices.", "wy4": "You want a guide with opinions, not a neutral list.", "wn1": "You prefer to improvise everything and don't want an adaptable itinerary.", "wn2": "You want to spend hours planning and revisiting the reels you saved on Instagram.", "wn3": "You expect one-on-one service. The guide is a digital product.", "st13": "Buy", "hp": "Get your guide", "mc1": "New York · the guide", "mc2": "desktop + mobile PDF", "inc": "You get the link by email, with the desktop and mobile versions of the PDF.", "lg": "Showing the site in English: price in dollars and English checkout. To switch, use the PT button.", "buy": "Buy the guide", "st14": "Questions", "hq": "Frequently asked questions", "q1": "When do I get access to the guide?", "r1": "As soon as the payment is confirmed, you receive an email with the link to the interactive PDF, with a desktop version and a mobile version.", "q2": "What's the difference between the desktop and mobile versions?", "r2": "The content is the same. The desktop version is for planning calmly on your computer; the mobile version has a single column to check during the trip. You get both.", "q3": "Do I have to stay an exact number of days?", "r3": "No. The guide is organized by area, so you build the itinerary for however many days you have. If you stay less, pick the areas that suit you; if you stay longer, there are extra ideas like day trips and different outings.", "q4": "Does it work if I only speak Portuguese?", "r4": "Yes! The guide is entirely in Portuguese and has many tips for people who've never been, including cultural tips, plus tips for watching musicals in Portuguese. There is also an English version.", "q5": "Do I need internet during the trip to open the guide?", "r5": "No! Both the route and the map can be accessed offline. One less thing to worry about during the trip.", "q6": "Aren't 16 stops in one day too many?", "r6": "It's a menu organized by area, not an obligation. Some stops are marked optional and many are just a quick pass or a photo. You choose the pace.", "q7": "Are prices and times up to date?", "r7": "Prices and times in New York change. The guide gets free updates through the same link, and I recommend checking the official website before buying tickets.", "q8": "What are the discount links?", "r8": "They are booking links for tours, tickets and services with my coupon. Some partners pay me a commission when you book through the link, at no extra cost to you.", "q9": "What if I don't like it?", "r9": "You can ask for a refund within 7 days. Write to the contact in the footer of the page.", "q10": "Are there guides for other destinations?", "r10": "Yes! You can see all my guides on my website: <a href=\"https://camilamontreal.com/ebooks\" target=\"_blank\" rel=\"noopener\">camilamontreal.com/ebooks</a>.", "st15": "All aboard", "hz": "Ready to see the best of NY?", "hpf": "Who already used the guide", "pflead": "Real reviews from people who traveled with it.", "kk": "Tap a building!", "zt": "You've already picked the destination. All that's left is how to get there: with 30 tabs open or with a guide in hand.", "zb": "Get it", "ft1": "Terms of use", "ft2": "Privacy", "ft3": "Contact", "fine1": "Prices, times and tour availability change. Check the official websites before booking. Some booking links may earn me a commission, at no extra cost to you.", "fine2": "tip: there are critters loose in the subway, tap them.", "ptipk": "In the guide, you find the best stops, photo spots, timing and discount links.", "glead": "A taste of what's in the file. Tap to flip through.", "as1": "countries visited", "as2": "followers online", "as3": "living in Montreal, Canada", "plead": "Less time planning, more time in New York.", "st10b": "Reviews", "vhint": "The rest is in the guide", "as4": "lost count of how many visits", "g1": "Desktop and mobile PDF", "g2": "Interactive map with +200 places", "g3": "Free updates, whenever I discover a new place", "g4": "7-day guarantee", "pk": "Complete New York guide", "gar": "7-day guarantee.", "st0b": "Reviews", "hco": "What does it cost not to plan?", "colead": "Improvising in New York usually costs money and hours.", "coend": "In the guide, all of this comes already solved.", "cs1h": "Wrong ticket", "cs1": "I wasted US$ 200 on my first trip.", "cs2h": "Line at the wrong time", "cs2": "Hours of your day lost standing.", "cs3h": "Pricier tour", "cs3": "Paying for something that had an alternative.", "cs4h": "Day with no route", "cs4": "Back and forth across the city, with no order.", "help": "Questions? Message me on Instagram"}};</script>
+<script src="app.min.js"></script>
+</body>
+</html>

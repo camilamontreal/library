@@ -751,3 +751,28 @@ html, body{overflow-x:clip}
 /* only the animated bits pause when off screen (no universal selector) */
 .off-screen .heli,.off-screen .kong .karm,.off-screen .sq,.off-screen .sq .tail,.off-screen .cart .steam,.off-screen .lap .cur,.off-screen .phn .fing,.off-screen .off .plane,.off-screen .off .slash,.off-screen .mrow .bl,.off-screen .mrail i,.off-screen .txi,.off-screen .rotor{animation-play-state:paused!important}
 .hero .bgc img{animation:none!important}
+
+/* ===== v17 ===== */
+.heli svg{transform:scaleX(-1)}
+.skycard{margin-top:10px}
+#buy{animation:buypulse 2.4s ease-in-out infinite}
+#buy>span::after{content:"→";display:inline-block;margin-left:10px;animation:buynudge 1.2s ease-in-out infinite}
+#buy:hover,#buy:focus-visible{animation:none}
+@keyframes buypulse{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+@keyframes buynudge{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+.off-screen #buy,.off-screen #buy>span::after{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){#buy,#buy>span::after{animation:none}}
+
+/* ===== v18: proof near the button, payment chips, mobile buy bar, help link ===== */
+.mini{margin:0;border-left:4px solid #31a593;padding:2px 0 2px 12px}
+.mini blockquote{margin:0;font-size:14px;line-height:1.4;color:#2e3052}
+.mini figcaption{margin-top:6px;font-size:12px;font-weight:800;color:#4f6f95}
+.pays{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
+.pays li{background:#e9eff1;color:#2e3052;font-weight:800;font-size:12px;padding:5px 10px;border-radius:999px}
+.help{font-size:12px;font-weight:700;color:#4f6f95;text-decoration:underline;text-underline-offset:3px}
+.buybar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:3px solid #2e3052;transform:translateY(110%);transition:transform .35s var(--ease)}
+.buybar.on{transform:none}
+.bbp{font-weight:800;font-size:22px;letter-spacing:-.03em;color:#2e3052}
+.buybar .btn{padding:12px 26px;font-size:16px}
+@media (max-width:860px){.buybar{display:flex}}
+@media (prefers-reduced-motion:reduce){.buybar{transition:none}}
