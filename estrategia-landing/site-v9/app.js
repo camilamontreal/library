@@ -10,11 +10,11 @@
   var DYN = {
     pt: {
       days: [
-        { t: "Midtown e Times Square", n: "16 paradas", s: ["Grand Central Terminal", "Summit One Vanderbilt", "Biblioteca Pública", "Bryant Park", "Times Square"], tip: "Segredo: Whispering Gallery, na Grand Central.", img: "img/gc.webp" },
-        { t: "Central Park, Upper West e Midtown", n: "11 paradas", s: ["Museu de História Natural", "Central Park", "Upper West Side"], tip: "Entre pelo Gilder Center às 10h: quase sem fila.", img: "img/park.webp" },
-        { t: "Estátua, Downtown e Brooklyn", n: "16 paradas", s: ["Staten Island Ferry", "Estátua da Liberdade", "Downtown", "Ponte do Brooklyn"], tip: "O Staten Island Ferry é gratuito e passa pertinho da Estátua.", img: "img/ferry.webp" },
-        { t: "Hudson Yards, Chelsea e Downtown", n: "14 paradas", s: ["Hudson Yards", "Vessel", "Chelsea", "Downtown"], tip: "Prédio de Friends: só a fachada, o Central Perk não existe.", img: "img/vessel.webp" },
-        { t: "Mais dias, mais ideias", n: "extras do guia", s: ["Bate-voltas: Washington, Filadélfia, Boston, Niagara Falls e Long Island", "Harlem", "Passeios pela cidade e arredores"], tip: "Cada dia é independente: se você fica menos, escolha os dias que combinam.", img: "img/aerial.webp" }
+        { t: "Midtown e Times Square", n: "16 paradas", s: ["Grand Central Terminal", "Summit One Vanderbilt", "Biblioteca Pública", "Bryant Park", "Times Square"], tip: "Segredo: Whispering Gallery, na Grand Central.", imgs: ["img/gc.webp","img/ts.webp","img/friends.webp"] },
+        { t: "Central Park, Upper West e Midtown", n: "11 paradas", s: ["Museu de História Natural", "Central Park", "Upper West Side"], tip: "Entre pelo Gilder Center às 10h: quase sem fila.", imgs: ["img/park.webp","img/vb-rink.webp","img/vb-empire-view.webp"] },
+        { t: "Estátua, Downtown e Brooklyn", n: "16 paradas", s: ["Staten Island Ferry", "Estátua da Liberdade", "Downtown", "Ponte do Brooklyn"], tip: "O Staten Island Ferry é gratuito e passa pertinho da Estátua.", imgs: ["img/ferry.webp","img/statue.webp","img/vb-brooklyn-bridge.webp"] },
+        { t: "Hudson Yards, Chelsea e Downtown", n: "14 paradas", s: ["Hudson Yards", "Vessel", "Chelsea", "Downtown"], tip: "Prédio de Friends: só a fachada, o Central Perk não existe.", imgs: ["img/vessel.webp","img/vb-hudson.webp","img/vb-edge.webp"] },
+        { t: "Mais dias, mais ideias", n: "extras do guia", s: ["Bate-voltas: Washington, Filadélfia, Boston, Niagara Falls e Long Island", "Harlem", "Passeios pela cidade e arredores"], tip: "Cada dia é independente: se você fica menos, escolha os dias que combinam.", imgs: ["img/aerial.webp","img/vb-bridge-walk.webp","img/vb-balloons.webp"] }
       ],
       tips: [
         "Tem um segredo escondido numa das estações mais famosas da cidade.",
@@ -22,7 +22,13 @@
         "Um horário que muda tudo em um dos museus mais cheios de Nova York.",
         "Um perrengue de US$ 200 na primeira hora que você vai poder evitar.",
         "Onde achar banheiro de graça, o que é raro em Manhattan.",
-        "Como assistir a um musical da Broadway mesmo sem falar inglês."
+        "Como assistir a um musical da Broadway mesmo sem falar inglês.",
+        "Spots de foto com o melhor ângulo, e a hora certa para cada um.",
+        "Onde comer bem sem cair em cilada de turista.",
+        "Qual cartão de transporte compensa para a sua viagem.",
+        "Quais bairros combinar no mesmo dia para não perder tempo.",
+        "O que muda no roteiro no inverno e no verão.",
+        "Locações de filmes e séries, com endereço direto no mapa."
       ],
       caps: ["Sumário: toque e vá direto para o dia ou a seção que você precisa.", "Dia 1: paradas da manhã com segredos e links de reserva.", "Dia 3: a Estátua da Liberdade, com a dica de economizar.", "Onde comer: bairro, endereço e o que pedir.", "Broadway em português e a loteria de ingressos.", "Locações de filmes, com endereço no Google Maps."],
       posters: [
@@ -34,15 +40,15 @@
       people: " pessoas", price: "R$ 67,90",
       per: "à vista, ou em até 9× de R$ 8,92 (parcelas com juros a partir de 2×). Cartão, Pix, boleto ou PayPal.",
       scrOk: "Liberado · bom embarque",
-      pigeon: "Cuu! Pombo de Nova York, dono da plataforma.", rat: "Pizza rat! Esse levou a fatia até a escada.", sndOn: "Som ligado", sndOff: "Som desligado"
+      pigeon: "Cuu! Pombo de Nova York, dono da plataforma.", rat: "Pizza rat! Esse levou a fatia até a escada."
     },
     en: {
       days: [
-        { t: "Midtown and Times Square", n: "16 stops", s: ["Grand Central Terminal", "Summit One Vanderbilt", "Public Library", "Bryant Park", "Times Square"], tip: "Secret: the Whispering Gallery, at Grand Central.", img: "img/gc.webp" },
-        { t: "Central Park, Upper West and Midtown", n: "11 stops", s: ["Natural History Museum", "Central Park", "Upper West Side"], tip: "Enter through the Gilder Center at 10am: almost no line.", img: "img/park.webp" },
-        { t: "Statue, Downtown and Brooklyn", n: "16 stops", s: ["Staten Island Ferry", "Statue of Liberty", "Downtown", "Brooklyn Bridge"], tip: "The Staten Island Ferry is free and passes close to the Statue.", img: "img/ferry.webp" },
-        { t: "Hudson Yards, Chelsea and Downtown", n: "14 stops", s: ["Hudson Yards", "Vessel", "Chelsea", "Downtown"], tip: "The Friends building: just the facade, Central Perk doesn't exist.", img: "img/vessel.webp" },
-        { t: "More days, more ideas", n: "guide extras", s: ["Day trips: Washington, Philadelphia, Boston, Niagara Falls and Long Island", "Harlem", "Outings around the city and nearby"], tip: "Each day is independent: if you stay less, pick the days that suit you.", img: "img/aerial.webp" }
+        { t: "Midtown and Times Square", n: "16 stops", s: ["Grand Central Terminal", "Summit One Vanderbilt", "Public Library", "Bryant Park", "Times Square"], tip: "Secret: the Whispering Gallery, at Grand Central.", imgs: ["img/gc.webp","img/ts.webp","img/friends.webp"] },
+        { t: "Central Park, Upper West and Midtown", n: "11 stops", s: ["Natural History Museum", "Central Park", "Upper West Side"], tip: "Enter through the Gilder Center at 10am: almost no line.", imgs: ["img/park.webp","img/vb-rink.webp","img/vb-empire-view.webp"] },
+        { t: "Statue, Downtown and Brooklyn", n: "16 stops", s: ["Staten Island Ferry", "Statue of Liberty", "Downtown", "Brooklyn Bridge"], tip: "The Staten Island Ferry is free and passes close to the Statue.", imgs: ["img/ferry.webp","img/statue.webp","img/vb-brooklyn-bridge.webp"] },
+        { t: "Hudson Yards, Chelsea and Downtown", n: "14 stops", s: ["Hudson Yards", "Vessel", "Chelsea", "Downtown"], tip: "The Friends building: just the facade, Central Perk doesn't exist.", imgs: ["img/vessel.webp","img/vb-hudson.webp","img/vb-edge.webp"] },
+        { t: "More days, more ideas", n: "guide extras", s: ["Day trips: Washington, Philadelphia, Boston, Niagara Falls and Long Island", "Harlem", "Outings around the city and nearby"], tip: "Each day is independent: if you stay less, pick the days that suit you.", imgs: ["img/aerial.webp","img/vb-bridge-walk.webp","img/vb-balloons.webp"] }
       ],
       tips: [
         "There's a secret hidden in one of the city's most famous stations.",
@@ -50,7 +56,13 @@
         "A time of day that changes everything at one of New York's busiest museums.",
         "A US$ 200 mishap in the first hour that you'll be able to avoid.",
         "Where to find a free restroom, which is rare in Manhattan.",
-        "How to watch a Broadway musical even if you don't speak English."
+        "How to watch a Broadway musical even if you don't speak English.",
+        "Photo spots with the best angle, and the right time for each one.",
+        "Where to eat well without falling into a tourist trap.",
+        "Which transit card is worth it for your trip.",
+        "Which neighborhoods to combine on the same day to save time.",
+        "What changes in the itinerary in winter and in summer.",
+        "Movie and series locations, with the address right on the map."
       ],
       caps: ["Contents: tap to jump straight to the day or section you need.", "Day 1: morning stops with secrets and booking links.", "Day 3: the Statue of Liberty, with the saving tip.", "Where to eat: neighborhood, address and what to order.", "Broadway in Portuguese and the ticket lottery.", "Movie locations, with an address on Google Maps."],
       posters: [
@@ -62,7 +74,7 @@
       people: " people", price: "CAD 21",
       per: "one-time payment, no subscription. Card, PayPal or Klarna.",
       scrOk: "Cleared · enjoy the ride",
-      pigeon: "Coo! New York pigeon, owner of the platform.", rat: "Pizza rat! This one carried the slice all the way to the stairs.", sndOn: "Sound on", sndOff: "Sound off"
+      pigeon: "Coo! New York pigeon, owner of the platform.", rat: "Pizza rat! This one carried the slice all the way to the stairs."
     }
   };
   function D() { return DYN[lang]; }
@@ -122,7 +134,7 @@
     var d = D().days[i];
     document.querySelectorAll("#btns button").forEach(function (b, q) { b.setAttribute("aria-selected", String(q === i)); });
     $("rt").textContent = d.t; $("rn").textContent = d.n;
-    $("ptt").textContent = d.t; $("pimg").src = d.img;
+    $("ptt").textContent = d.t; d.imgs.forEach(function (s, q) { $("pg" + q).src = s; });
     $("pls").innerHTML = d.s.map(function (n) { return "<li>" + n + "</li>"; }).join("");
     stns.innerHTML = ""; tr.setAttribute("cx", -20); tr.setAttribute("cy", -20);
     for (var q = 0; q < 4; q++) { $("L" + q).classList.toggle("on", i === 4 || q === i); }
@@ -131,7 +143,7 @@
     var items = d.s.map(function (name, q) {
       var f = (q + .5) / k, p = path.getPointAtLength(L * f), right = p.x < 560;
       var c = mk("circle", { class: "stn", cx: p.x, cy: p.y, r: 11 });
-      var t = mk("text", { class: "lab", x: p.x + (right ? 18 : -18), y: p.y - 14, "text-anchor": right ? "start" : "end" }, name);
+      var t = mk("text", { class: "lab", x: p.x + (right ? 18 : -18), y: p.y + (q % 2 ? 34 : -14), "text-anchor": right ? "start" : "end" }, name);
       stns.appendChild(c); stns.appendChild(t);
       return { f: f, c: c, t: t };
     });
@@ -151,14 +163,6 @@
     new IntersectionObserver(function (es) { if (es[0].isIntersecting && !started) { started = true; setDay(sel); } }, { threshold: .3 }).observe($("map"));
   } else { setDay(0); }
   setDay(0);
-
-  /* ---------- included boxes ---------- */
-  document.querySelectorAll(".bx").forEach(function (b) {
-    b.addEventListener("click", function () {
-      var open = b.getAttribute("aria-expanded") === "true";
-      b.setAttribute("aria-expanded", String(!open)); chime("tick");
-    });
-  });
 
   /* ---------- posters ---------- */
   var tabs = document.querySelectorAll(".tabs [data-t]"), pimgs = document.querySelectorAll(".poster .ph img"), pt = 0;
@@ -186,7 +190,7 @@
     var g = "";
     order.forEach(function (k, n) {
       var p = slots[k], col = PAL[(k * 3) % PAL.length], top = p.y - (p.seat ? 40 : 52);
-      g += '<g class="pp" data-n="' + n + '" transform="translate(' + p.x + ' 0)"><circle cx="0" cy="' + (top + 8) + '" r="9" fill="' + col + '"/><rect x="-11" y="' + (top + 19) + '" width="22" height="' + (p.seat ? 30 : 40) + '" rx="9" fill="' + col + '"/></g>';
+      g += '<g transform="translate(' + p.x + ' 0)"><g class="pp" data-n="' + n + '"><circle cx="0" cy="' + (top + 8) + '" r="9" fill="' + col + '"/><rect x="-11" y="' + (top + 19) + '" width="22" height="' + (p.seat ? 30 : 40) + '" rx="9" fill="' + col + '"/></g></g>';
     });
     el.innerHTML = s + g + "</svg>";
   }
@@ -214,25 +218,8 @@
   $("tnext").addEventListener("click", function () { nextTip(); chime("tick"); });
   if (!reduce) setInterval(nextTip, 7000);
 
-  /* ---------- sound (Web Audio, no files) ---------- */
-  var actx, soundOn = false, snd = $("snd");
-  function chime(kind) {
-    if (!soundOn) return;
-    try {
-      actx = actx || new (window.AudioContext || window.webkitAudioContext)();
-      var notes = kind === "tick" ? [988] : [880, 659], t = actx.currentTime;
-      notes.forEach(function (f, i) {
-        var o = actx.createOscillator(), g = actx.createGain();
-        o.type = "sine"; o.frequency.value = f;
-        g.gain.setValueAtTime(0.0001, t + i * 0.28);
-        g.gain.exponentialRampToValueAtTime(0.18, t + i * 0.28 + 0.02);
-        g.gain.exponentialRampToValueAtTime(0.0001, t + i * 0.28 + 0.5);
-        o.connect(g); g.connect(actx.destination); o.start(t + i * 0.28); o.stop(t + i * 0.28 + 0.55);
-      });
-    } catch (e) {}
-  }
-  function paintSnd() { snd.textContent = soundOn ? D().sndOn : D().sndOff; snd.setAttribute("aria-pressed", String(soundOn)); }
-  snd.addEventListener("click", function () { soundOn = !soundOn; paintSnd(); chime("door"); });
+  function chime() {}
+  function paintSnd() {}
 
   /* ---------- easter eggs ---------- */
   var toast = $("toast"), tt, pg = $("pigeon"), rat = $("rat");
@@ -247,7 +234,7 @@
   var busy = false, buy = $("buy");
   function paintPrice() {
     $("mprice").textContent = D().price; $("per").textContent = D().per;
-    $("buyp").textContent = " · " + D().price; buy.href = BUY[lang];
+    buy.href = BUY[lang];
   }
   buy.addEventListener("click", function (e) {
     chime("door");
@@ -258,6 +245,44 @@
     setTimeout(function () { window.location.href = BUY[lang]; busy = false; }, 1500);
   });
 
+  /* ---------- skyline (included) ---------- */
+  var sky = $("sky"), sks = Array.prototype.slice.call(sky.querySelectorAll(".sk")), skSel = -1;
+  function showSky(i) {
+    skSel = i;
+    sks.forEach(function (b, k) { b.setAttribute("aria-expanded", String(k === i)); });
+    var c = $("skycard");
+    if (i < 0) { c.classList.remove("on"); return; }
+    $("skt").textContent = sks[i].querySelector(".bt").textContent;
+    $("skd").textContent = sks[i].querySelector(".bd").textContent;
+    c.classList.add("on");
+  }
+  sks.forEach(function (b, i) { b.addEventListener("click", function () { showSky(skSel === i ? -1 : i); }); });
+  showSky(0);
+
+  /* ---------- guide viewer ---------- */
+  var VC = { pt: ["Sumário clicável: toque e vá direto para a seção.", "Roteiro por região, com paradas e segredos.", "Mais paradas, organizadas por região.", "Hudson Yards, Chelsea e Downtown.", "Épocas do ano e o que fazer em cada uma.", "Guia fotográfico: onde e quando fotografar."],
+             en: ["Clickable contents: tap to jump to a section.", "Itinerary by area, with stops and secrets.", "More stops, organized by area.", "Hudson Yards, Chelsea and Downtown.", "Seasons and what to do in each one.", "Photo guide: where and when to shoot."] };
+  var vimg = $("vimg"), vth = Array.prototype.slice.call(document.querySelectorAll("#vthumbs button")), vi = 0, vt;
+  function setV(i) {
+    vi = (i + vth.length) % vth.length;
+    vimg.classList.add("sw");
+    setTimeout(function () { vimg.src = "img/g" + (vi + 1) + ".webp"; vimg.classList.remove("sw"); }, reduce ? 0 : 160);
+    vth.forEach(function (b, k) { b.classList.toggle("on", k === vi); });
+    $("vcap").textContent = VC[lang][vi];
+  }
+  vth.forEach(function (b, i) { b.addEventListener("click", function () { setV(i); clearInterval(vt); }); });
+  $("vprev").addEventListener("click", function () { setV(vi - 1); clearInterval(vt); });
+  $("vnext").addEventListener("click", function () { setV(vi + 1); clearInterval(vt); });
+  if (!reduce) vt = setInterval(function () { setV(vi + 1); }, 4500);
+
+  /* ---------- update sign messages ---------- */
+  var BM = { pt: ["Sempre que eu conhecer um lugar novo, você vai saber.", "Você recebe pelo mesmo link do guia.", "Sem pagar nada a mais."], en: ["Whenever I discover a new place, you'll know.", "You get it through the same guide link.", "At no extra cost."] };
+  var bi = 0, bmsg = $("bmsg");
+  if (!reduce) setInterval(function () {
+    bi = (bi + 1) % 3; bmsg.classList.add("sw");
+    setTimeout(function () { bmsg.textContent = BM[lang][bi]; bmsg.classList.remove("sw"); }, 220);
+  }, 3800);
+
   /* ---------- language: PT / EN ---------- */
   function applyLang(l) {
     lang = l;
@@ -267,7 +292,7 @@
     try { localStorage.setItem("cm-lang", l); } catch (e) {}
     document.querySelector(".pay").classList.remove("go");
     tm.textContent = D().tips[ti];
-    paintLed(); paintSnd(); paintPrice(); setPoster(pt); setHour(); setDay(sel);
+    paintLed(); paintPrice(); setPoster(pt); setHour(); setDay(sel); showSky(skSel); $("vcap").textContent = VC[lang][vi]; bmsg.textContent = BM[lang][bi];
   }
   document.querySelectorAll(".lang button").forEach(function (b) { b.addEventListener("click", function () { applyLang(b.dataset.l); }); });
   var saved = null; try { saved = localStorage.getItem("cm-lang"); } catch (e) {}

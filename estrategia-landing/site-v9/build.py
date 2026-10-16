@@ -112,12 +112,33 @@ EN.update({
 for _k,_v in {"st0":"Início","st1":"O guia","st2":"Roteiro por região","st3":"Por dentro do guia","st4":"Desktop e celular","st5":"O que está incluso","st6":"Inspiração","st7":"Segredos","st8":"Economize","st9":"Tempo e filas","st10":"Organização","st11":"Quem é a Camila","st12":"Para quem é","st13":"Comprar","st14":"Dúvidas","st15":"Embarque"}.items(): EXTRA_PT[_k]=_v
 EN.update({"st0":"Start","st1":"The guide","st2":"Route by area","st3":"Inside the guide","st4":"Desktop and mobile","st5":"What's included","st6":"Inspiration","st7":"Secrets","st8":"Save money","st9":"Time and lines","st10":"Organization","st11":"Meet Camila","st12":"Who it's for","st13":"Buy","st14":"Questions","st15":"All aboard"})
 
+EN.update({
+"what1":"It's my personal New York guide: a complete itinerary that adapts to your trip, without months of research.",
+"what2":"Everything I would do and recommend to a friend: neighborhoods, timing, secrets, where to eat and discount links. On your computer to plan, on your phone during the trip.",
+"tnext":"More tips","ptipk":"In the guide: the best stops, photo spots, timing and discount links.",
+"glead":"A taste of what's in the file. Tap to flip through.","vhint":"The rest is in the guide",
+"flead":"You get both files, with the same content.","fdt":"To plan calmly, on your computer.","fmt":"To check during the trip, with one hand.","fo":"Offline","fot":"Download the PDF and use it without internet.",
+"ilead":"Tap a building to see what comes in the guide.",
+"band1":"Free updates","band2":"Whenever I discover a new place, you'll know.",
+"a1":"The wrong ticket gets expensive.","a2":"Not every tour has to be expensive.","a3":"You can pay less.","a4":"Where it's worth it and where it isn't.","a5":"Which one is worth it.","a6":"Finding a restroom is hard.",
+"hr":"Save time and <em>skip the lines</em>","rlead":"Without a plan, you stand in line and lose hours. With the guide, every stop has its best time. Drag the hour and see the difference in the car.",
+"hcmp":"Stop saving reels. <em>Start planning.</em>","cmpa":"The way almost everyone plans","cb4":"Interactive map and tutorial videos so you don't get lost",
+"ab1":"<b>Cami</b> is 32, has visited 38 countries and has lived in Canada for 4 years. She has lost count of how many times she's been to New York.",
+"ab2":"Her love for new cultures and flavors makes Cami explore destinations to the fullest and plan every little detail of her trips. She has a degree in Marketing, a postgraduate degree in Competitive Intelligence and Marketing Innovation, also leads travel groups around the world and loves sharing experiences!",
+"as3":"living in Canada","as4":"been countless times",
+"wn1":"You prefer to improvise everything and don't want an adaptable itinerary.","wn2":"You want to spend hours planning and revisiting the reels you saved on Instagram.",
+"g1":"Desktop and mobile PDF","g2":"Interactive map with +200 places","g3":"Free updates, whenever I discover a new place","g4":"7-day guarantee",
+"pk":"Complete New York guide","gar":"If you don't like it, ask for a refund within 7 days.","inc":"You get the link by email, with the desktop and mobile versions of the PDF.",
+"r10":"Yes! You can see all my guides on my website: <a href=\"https://camilamontreal.com/ebooks\" target=\"_blank\" rel=\"noopener\">camilamontreal.com/ebooks</a>.",
+"zt":"You've already picked the destination. All that's left is how to get there: with 30 tabs open or with a guide in hand.","buy":"Buy the guide"
+})
+
 tpl=open('index.tpl.html',encoding='utf-8').read()
 PT={}
 def rep(m):
     k,t=m.group(1),m.group(2); PT[k]=t
     return '<span data-k="%s">%s</span>'%(k,t)
-PT['buy']='Passar o cartão'
+PT['buy']='Comprar o guia'
 html=re.sub(r'\{\{([\w-]+)\|(.*?)\}\}',rep,tpl,flags=re.S)
 PT.update(EXTRA_PT)
 missing=[k for k in PT if k not in EN]
