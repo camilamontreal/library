@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nova York organizada · Camila Montreal</title>
+<meta name="description" content="Roteiro de 4 dias em Nova York, por região, com mapa interativo, dicas, segredos e links de reserva, em um só guia de Camila Montreal.">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#topo">Camila Montreal</a>
+  <nav aria-label="Principal"><ul>
+    <li><a href="#dentro">Por dentro</a></li>
+    <li><a href="#incluso">O que está incluso</a></li>
+    <li><a href="#preco">Preço</a></li>
+    <li><a href="#faq">Perguntas</a></li>
+  </ul></nav>
+  <a class="btn sm" href="#preco">Eu quero</a>
+</header>
+
+<main id="topo">
+
+<section class="hero" aria-labelledby="h1">
+  <div class="txt">
+    <h1 id="h1" data-r>Nova York organizada,</h1>
+    <p class="lede" data-r style="--i:1">para você aproveitar mais e planejar menos.</p>
+    <p class="sup" data-r style="--i:2">Um roteiro de 4 dias, dividido por região, com as minhas dicas, atalhos e links de reserva, tudo em um só guia.</p>
+    <div class="act" data-r style="--i:3">
+      <a class="btn" href="#preco">Eu quero o guia de Nova York</a>
+      <small>Pagamento seguro · Acesso por e-mail logo após a confirmação</small>
+    </div>
+  </div>
+  <div class="stagebox" data-r style="--i:2">
+    <img class="dev" src="img/devices.png" width="1366" height="768" alt="O guia de Nova York no notebook, no tablet e no celular, com o mapa interativo aberto">
+    <div class="note n1"><p class="script">mapa interativo com +200 locais!</p><svg viewBox="0 0 70 56" aria-hidden="true"><path d="M6 6 C34 -2 62 16 62 46"/><path d="M52 38 L62 48 L68 34"/></svg></div>
+    <div class="note n2"><p class="script">roteiro dia a dia!</p><svg viewBox="0 0 70 56" aria-hidden="true"><path d="M64 6 C36 -2 8 16 8 46"/><path d="M18 38 L8 48 L2 34"/></svg></div>
+    <div class="note n3"><p class="script">feito pra usar na viagem, até offline!</p><svg viewBox="0 0 70 56" aria-hidden="true"><path d="M6 50 C34 58 62 40 62 10"/><path d="M52 18 L62 8 L68 22"/></svg></div>
+  </div>
+</section>
+
+<section class="stickers" aria-label="O guia em números">
+  <p class="sticker" data-r><b>4</b> dias de roteiro</p>
+  <p class="sticker" data-r style="--i:1"><b>57</b> paradas por região</p>
+  <p class="sticker" data-r style="--i:2"><b>+200</b> locais no mapa</p>
+  <p class="sticker" data-r style="--i:3"><b>20</b> locações de filmes e séries</p>
+</section>
+
+<section class="band" aria-label="Atualizações">
+  <p data-r>Receba todas as atualizações gratuitamente!</p>
+  <p class="script" data-r style="--i:1">sempre que eu conhecer um lugar novo, você vai saber.</p>
+</section>
+
+<section class="deep" aria-labelledby="hs">
+  <div class="in">
+    <div>
+      <h2 id="hs" data-r>Quantos dias você fica em Nova York?</h2>
+      <div data-r style="--i:1">
+        <div class="days" role="group" aria-label="Número de dias">
+          <button type="button" aria-pressed="false" data-d="1">1 dia</button>
+          <button type="button" aria-pressed="false" data-d="2">2</button>
+          <button type="button" aria-pressed="false" data-d="3">3</button>
+          <button type="button" aria-pressed="true" data-d="4">4</button>
+        </div>
+        <p class="lab" id="dlabel">4 dias: Midtown, Central Park, Estátua, Brooklyn e Hudson Yards</p>
+      </div>
+    </div>
+    <div class="fig" data-r style="--i:2">
+      <div class="n" aria-live="polite"><span id="num">57</span><small>paradas</small></div>
+      <p>É a soma das paradas dos dias do guia que cabem na sua viagem: 16 no Dia 1, 11 no Dia 2, 16 no Dia 3 e 14 no Dia 4. As paradas marcadas como opcionais podem ficar de fora se faltar tempo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="prod" id="dentro" aria-labelledby="hg">
+  <div class="cap2">
+    <h2 id="hg" data-r>Veja o guia por dentro</h2>
+    <p data-r style="--i:1">Páginas reais: sumário clicável, paradas por período do dia, links de reserva e vídeos.</p>
+  </div>
+  <div class="persp" data-r style="--i:1">
+    <div class="tilt" id="tilt">
+      <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="frame" id="frame" tabindex="0" role="img" aria-label="Páginas do guia em sequência. Toque para avançar.">
+        <img class="on" src="img/guia-sumario.jpg" width="1334" height="834" alt="Página do Sumário do guia" data-c="Sumário: toque e vá direto para o dia ou a seção que você precisa.">
+        <img src="img/guia-dia1.jpg" width="1334" height="834" alt="Página do Dia 1 do guia" data-c="Dia 1: paradas da manhã com segredos e links de reserva." loading="lazy">
+        <img src="img/guia-dia3-estatua.jpg" width="1334" height="834" alt="Página do Dia 3 com a Estátua da Liberdade" data-c="Dia 3: a Estátua da Liberdade, com a dica de economizar." loading="lazy">
+        <img src="img/guia-onde-comer.jpg" width="1334" height="834" alt="Página Onde comer" data-c="Onde comer: bairro, endereço e o que pedir." loading="lazy">
+        <img src="img/guia-broadway.jpg" width="1334" height="834" alt="Página de Broadway em português" data-c="Broadway em português e a loteria de ingressos." loading="lazy">
+        <img src="img/guia-locacoes.jpg" width="1334" height="834" alt="Página de locações de filmes" data-c="Locações de filmes, com endereço no Google Maps." loading="lazy">
+      </div>
+    </div>
+  </div>
+  <p class="cap" id="cap" aria-live="off">Sumário: toque e vá direto para o dia ou a seção que você precisa.</p>
+</section>
+
+<section class="cards" aria-labelledby="hc2">
+  <h2 id="hc2" data-r>O que só quem já foi conta</h2>
+  <div class="seg" data-r style="--i:1"><div role="tablist" aria-label="Exemplos">
+    <button role="tab" aria-selected="true" data-t="0">Segredos</button>
+    <button role="tab" aria-selected="false" data-t="1">Economia</button>
+    <button role="tab" aria-selected="false" data-t="2">Broadway</button>
+    <button role="tab" aria-selected="false" data-t="3">Cinema</button>
+  </div></div>
+  <div class="big" data-r style="--i:2">
+    <img class="on" src="img/grand-central.jpg" width="1000" height="1333" alt="Camila no saguão da Grand Central Terminal" data-p="0">
+    <img src="img/ferry.jpg" width="1000" height="1333" alt="Camila de gorro olhando a Estátua da Liberdade da balsa" data-p="1" loading="lazy">
+    <img src="img/times-wide.jpg" width="936" height="775" alt="Camila olhando para cima na Times Square" data-p="2" loading="lazy">
+    <img src="img/friends.jpg" width="1000" height="1333" alt="Camila na cozinha do apartamento de Friends" data-p="3" loading="lazy">
+    <div class="scrim" aria-live="polite"><h3 id="st">Whispering Gallery</h3><p id="sp">De costas para o relógio, siga pelo arco à direita (saída Lexington), vire à direita e desça a rampa. Cada pessoa fala num canto do arco e a outra ouve do lado oposto.</p></div>
+  </div>
+  <div class="pager"><button type="button" id="prev" aria-label="Anterior">←</button><span id="pg">1 / 4</span><button type="button" id="next" aria-label="Próximo">→</button></div>
+</section>
+
+<section class="incl" id="incluso" aria-labelledby="hi">
+  <div class="ph" data-r><img src="img/bridge-walk.jpg" width="1000" height="1333" alt="Camila sentada na Ponte do Brooklyn" loading="lazy"></div>
+  <div class="ticket" data-r style="--i:1">
+    <h2 id="hi">O que está incluso?</h2>
+    <ul>
+      <li><span><b>Roteiro detalhado dia a dia</b>, com manhã, tarde e noite</span></li>
+      <li><span>Dicas de quem já foi a Nova York <b>inúmeras vezes</b></span></li>
+      <li><span><b>Segredos</b> que poucos turistas conhecem</span></li>
+      <li><span><b>Guia fotográfico</b> com os melhores ângulos</span></li>
+      <li><span><b>Mapa interativo</b> com +200 locais, restaurantes e banheiros gratuitos</span></li>
+      <li><span><b>Links de reserva</b> com desconto em ingressos e passeios</span></li>
+      <li><span>Lista de <b>20 locações</b> de filmes e séries famosas</span></li>
+      <li><span><b>Atualizações gratuitas</b> pelo mesmo link</span></li>
+    </ul>
+    <p class="note-s">Roteiro e mapa funcionam offline depois de baixados.</p>
+  </div>
+  <div class="ph" data-r style="--i:2"><img src="img/vessel.jpg" width="1000" height="1333" alt="Camila de óculos escuros em frente ao Vessel, em Hudson Yards" loading="lazy"></div>
+</section>
+
+<section class="list" aria-labelledby="hl">
+  <div class="hd"><h2 id="hl" data-r>Erros para evitar</h2><span>6 dicas do guia</span></div>
+  <ul>
+    <li data-r><img src="img/avenue.jpg" width="1000" height="1333" alt="" loading="lazy"><div><h3>Trem do aeroporto</h3><p>Eu comprei o bilhete errado, perdi o certo e gastei US$ 200 na primeira hora. O guia manda pesquisar o bilhete exato antes de embarcar.</p></div></li>
+    <li data-r style="--i:1"><img src="img/statue.jpg" width="1000" height="1333" alt="" loading="lazy"><div><h3>Estátua da Liberdade</h3><p>Sem desembarque na ilha, o Staten Island Ferry é gratuito. O guia diz como chegar e de que lado sentar.</p></div></li>
+    <li data-r><img src="img/times-square.jpg" width="1000" height="1333" alt="" loading="lazy"><div><h3>Ingresso de Broadway</h3><p>A loteria dá chance de ingressos bem mais baratos, e há áudio-guia e legendas em português para vários musicais.</p></div></li>
+    <li data-r style="--i:1"><img src="img/orange-table.jpg" width="1000" height="1333" alt="" loading="lazy"><div><h3>Café mais caro do que precisava</h3><p>Antes de pedir, procure promoções na porta. Eu paguei US$ 2 em vez de 4 só perguntando.</p></div></li>
+    <li data-r><img src="img/rink.jpg" width="1000" height="1333" alt="" loading="lazy"><div><h3>Patinação no gelo</h3><p>Preço de cada pista, e qual delas tem entrada grátis: no Bryant Park você paga só o aluguel dos patins.</p></div></li>
+    <li data-r style="--i:1"><img src="img/bull.jpg" width="1000" height="1333" alt="" loading="lazy"><div><h3>Banheiro público</h3><p>É quase impossível achar banheiro público em Nova York. O mapa interativo tem uma aba só com banheiros gratuitos.</p></div></li>
+  </ul>
+</section>
+
+<section class="cmp" aria-label="Dicas soltas e este guia">
+  <div class="a">
+    <h2 data-r>Dicas soltas ajudam</h2>
+    <ul>
+      <li data-r>Cada post fala de um lugar</li>
+      <li data-r style="--i:1">Você decide sozinha(o) a ordem</li>
+      <li data-r style="--i:2">Difícil de achar de novo</li>
+      <li data-r style="--i:3">Todo lugar parece imperdível</li>
+      <li data-r style="--i:4">Links espalhados pelas redes</li>
+    </ul>
+  </div>
+  <div class="b">
+    <h2 data-r>Este guia poupa tempo</h2>
+    <ul>
+      <li data-r>Roteiro de 4 dias, organizado por região</li>
+      <li data-r style="--i:1">Manhã, tarde e noite já sugeridos</li>
+      <li data-r style="--i:2">Sumário clicável</li>
+      <li data-r style="--i:3">Marco o que é opcional e o que eu pularia</li>
+      <li data-r style="--i:4">Links de reserva, mapa e vídeos no mesmo lugar</li>
+    </ul>
+    <p class="foot" data-r>Você continua usando as redes. Só não precisa montar tudo sozinha(o).</p>
+  </div>
+</section>
+
+<section class="how" aria-labelledby="hh">
+  <h2 id="hh" data-r>De caos para quatro dias</h2>
+  <p class="lead" data-r style="--i:1">Cada círculo é uma parada do guia: soltas, juntas e, por fim, em fila, uma fileira por dia.</p>
+  <svg class="dsk" viewBox="0 0 1200 267" role="img" aria-label="57 círculos soltos, juntando-se em uma faixa e se organizando em quatro fileiras, uma por dia do roteiro"><circle cx="129" cy="46" r="8" fill="#dcefeb"/><circle cx="35" cy="143" r="8" fill="#c4e3dc"/><circle cx="226" cy="236" r="8" fill="#dcefeb"/><circle cx="22" cy="117" r="8" fill="#dcefeb"/><circle cx="98" cy="146" r="8" fill="#dcefeb"/><circle cx="317" cy="39" r="8" fill="#dcefeb"/><circle cx="244" cy="154" r="8" fill="#dcefeb"/><circle cx="224" cy="108" r="8" fill="#dcefeb"/><circle cx="25" cy="223" r="8" fill="#c4e3dc"/><circle cx="165" cy="144" r="8" fill="#c4e3dc"/><circle cx="218" cy="179" r="8" fill="#dcefeb"/><circle cx="226" cy="168" r="8" fill="#c4e3dc"/><circle cx="44" cy="187" r="8" fill="#dcefeb"/><circle cx="240" cy="133" r="8" fill="#c4e3dc"/><circle cx="299" cy="125" r="8" fill="#c4e3dc"/><circle cx="143" cy="70" r="8" fill="#dcefeb"/><circle cx="269" cy="69" r="8" fill="#c4e3dc"/><circle cx="204" cy="228" r="8" fill="#c4e3dc"/><circle cx="116" cy="254" r="8" fill="#dcefeb"/><circle cx="199" cy="49" r="8" fill="#c4e3dc"/><circle cx="65" cy="131" r="8" fill="#dcefeb"/><circle cx="368" cy="27" r="8" fill="#c4e3dc"/><circle cx="135" cy="96" r="8" fill="#c4e3dc"/><circle cx="225" cy="123" r="8" fill="#dcefeb"/><circle cx="361" cy="127" r="8" fill="#dcefeb"/><circle cx="31" cy="184" r="8" fill="#c4e3dc"/><circle cx="114" cy="105" r="8" fill="#c4e3dc"/><circle cx="16" cy="124" r="8" fill="#dcefeb"/><circle cx="236" cy="132" r="8" fill="#dcefeb"/><circle cx="295" cy="40" r="8" fill="#dcefeb"/><circle cx="157" cy="238" r="8" fill="#c4e3dc"/><circle cx="38" cy="121" r="8" fill="#c4e3dc"/><circle cx="338" cy="214" r="8" fill="#c4e3dc"/><circle cx="272" cy="256" r="8" fill="#c4e3dc"/><circle cx="366" cy="46" r="8" fill="#dcefeb"/><circle cx="65" cy="173" r="8" fill="#dcefeb"/><circle cx="189" cy="156" r="8" fill="#c4e3dc"/><circle cx="113" cy="45" r="8" fill="#c4e3dc"/><circle cx="236" cy="88" r="8" fill="#dcefeb"/><circle cx="266" cy="137" r="8" fill="#dcefeb"/><circle cx="179" cy="227" r="8" fill="#c4e3dc"/><circle cx="157" cy="107" r="8" fill="#c4e3dc"/><circle cx="245" cy="24" r="8" fill="#dcefeb"/><circle cx="376" cy="119" r="8" fill="#dcefeb"/><circle cx="135" cy="21" r="8" fill="#dcefeb"/><circle cx="220" cy="143" r="8" fill="#c4e3dc"/><circle cx="238" cy="26" r="8" fill="#dcefeb"/><circle cx="238" cy="45" r="8" fill="#c4e3dc"/><circle cx="365" cy="159" r="8" fill="#c4e3dc"/><circle cx="54" cy="221" r="8" fill="#c4e3dc"/><circle cx="188" cy="86" r="8" fill="#dcefeb"/><circle cx="46" cy="94" r="8" fill="#c4e3dc"/><circle cx="187" cy="182" r="8" fill="#dcefeb"/><circle cx="85" cy="247" r="8" fill="#c4e3dc"/><circle cx="63" cy="144" r="8" fill="#dcefeb"/><circle cx="292" cy="83" r="8" fill="#dcefeb"/><circle cx="268" cy="74" r="8" fill="#c4e3dc"/><circle cx="420.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="440.5" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="461.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="481.5" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="502.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="522.5" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="543.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="563.5" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="584.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="604.5" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="625.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="645.5" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="666.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="686.5" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="707.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="727.5" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="748.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="768.5" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="789.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="420.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="440.5" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="461.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="481.5" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="502.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="522.5" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="543.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="563.5" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="584.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="604.5" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="625.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="645.5" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="666.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="686.5" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="707.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="727.5" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="748.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="768.5" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="789.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="420.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="440.5" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="461.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="481.5" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="502.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="522.5" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="543.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="563.5" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="584.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="604.5" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="625.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="645.5" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="666.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="686.5" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="707.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="727.5" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="748.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="768.5" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="789.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="830" cy="40" r="9" fill="#0e4b44"/><circle cx="852" cy="40" r="9" fill="#0e4b44"/><circle cx="874" cy="40" r="9" fill="#0e4b44"/><circle cx="896" cy="40" r="9" fill="#0e4b44"/><circle cx="918" cy="40" r="9" fill="#0e4b44"/><circle cx="940" cy="40" r="9" fill="#0e4b44"/><circle cx="962" cy="40" r="9" fill="#0e4b44"/><circle cx="984" cy="40" r="9" fill="#0e4b44"/><circle cx="1006" cy="40" r="9" fill="#0e4b44"/><circle cx="1028" cy="40" r="9" fill="#0e4b44"/><circle cx="1050" cy="40" r="9" fill="#0e4b44"/><circle cx="1072" cy="40" r="9" fill="#0e4b44"/><circle cx="1094" cy="40" r="9" fill="#0e4b44"/><circle cx="1116" cy="40" r="9" fill="#0e4b44"/><circle cx="1138" cy="40" r="9" fill="#0e4b44"/><circle cx="1160" cy="40" r="9" fill="#0e4b44"/><circle cx="830" cy="102" r="9" fill="#31a593"/><circle cx="852" cy="102" r="9" fill="#31a593"/><circle cx="874" cy="102" r="9" fill="#31a593"/><circle cx="896" cy="102" r="9" fill="#31a593"/><circle cx="918" cy="102" r="9" fill="#31a593"/><circle cx="940" cy="102" r="9" fill="#31a593"/><circle cx="962" cy="102" r="9" fill="#31a593"/><circle cx="984" cy="102" r="9" fill="#31a593"/><circle cx="1006" cy="102" r="9" fill="#31a593"/><circle cx="1028" cy="102" r="9" fill="#31a593"/><circle cx="1050" cy="102" r="9" fill="#31a593"/><circle cx="830" cy="164" r="9" fill="#7cc9bc"/><circle cx="852" cy="164" r="9" fill="#7cc9bc"/><circle cx="874" cy="164" r="9" fill="#7cc9bc"/><circle cx="896" cy="164" r="9" fill="#7cc9bc"/><circle cx="918" cy="164" r="9" fill="#7cc9bc"/><circle cx="940" cy="164" r="9" fill="#7cc9bc"/><circle cx="962" cy="164" r="9" fill="#7cc9bc"/><circle cx="984" cy="164" r="9" fill="#7cc9bc"/><circle cx="1006" cy="164" r="9" fill="#7cc9bc"/><circle cx="1028" cy="164" r="9" fill="#7cc9bc"/><circle cx="1050" cy="164" r="9" fill="#7cc9bc"/><circle cx="1072" cy="164" r="9" fill="#7cc9bc"/><circle cx="1094" cy="164" r="9" fill="#7cc9bc"/><circle cx="1116" cy="164" r="9" fill="#7cc9bc"/><circle cx="1138" cy="164" r="9" fill="#7cc9bc"/><circle cx="1160" cy="164" r="9" fill="#7cc9bc"/><circle cx="830" cy="226" r="9" fill="#b9ded7"/><circle cx="852" cy="226" r="9" fill="#b9ded7"/><circle cx="874" cy="226" r="9" fill="#b9ded7"/><circle cx="896" cy="226" r="9" fill="#b9ded7"/><circle cx="918" cy="226" r="9" fill="#b9ded7"/><circle cx="940" cy="226" r="9" fill="#b9ded7"/><circle cx="962" cy="226" r="9" fill="#b9ded7"/><circle cx="984" cy="226" r="9" fill="#b9ded7"/><circle cx="1006" cy="226" r="9" fill="#b9ded7"/><circle cx="1028" cy="226" r="9" fill="#b9ded7"/><circle cx="1050" cy="226" r="9" fill="#b9ded7"/><circle cx="1072" cy="226" r="9" fill="#b9ded7"/><circle cx="1094" cy="226" r="9" fill="#b9ded7"/><circle cx="1116" cy="226" r="9" fill="#b9ded7"/></svg>
+  <svg class="mob" viewBox="0 0 300 400" role="img" aria-label="57 círculos soltos, juntando-se em uma faixa e se organizando em quatro fileiras, uma por dia do roteiro"><circle cx="267" cy="45" r="7" fill="#dcefeb"/><circle cx="159" cy="90" r="7" fill="#c4e3dc"/><circle cx="189" cy="72" r="7" fill="#dcefeb"/><circle cx="238" cy="94" r="7" fill="#dcefeb"/><circle cx="64" cy="59" r="7" fill="#dcefeb"/><circle cx="290" cy="91" r="7" fill="#c4e3dc"/><circle cx="81" cy="80" r="7" fill="#c4e3dc"/><circle cx="135" cy="106" r="7" fill="#c4e3dc"/><circle cx="280" cy="46" r="7" fill="#dcefeb"/><circle cx="36" cy="57" r="7" fill="#c4e3dc"/><circle cx="65" cy="73" r="7" fill="#dcefeb"/><circle cx="144" cy="76" r="7" fill="#dcefeb"/><circle cx="246" cy="20" r="7" fill="#c4e3dc"/><circle cx="231" cy="87" r="7" fill="#c4e3dc"/><circle cx="261" cy="53" r="7" fill="#c4e3dc"/><circle cx="32" cy="107" r="7" fill="#c4e3dc"/><circle cx="139" cy="86" r="7" fill="#dcefeb"/><circle cx="214" cy="25" r="7" fill="#dcefeb"/><circle cx="15" cy="70" r="7" fill="#c4e3dc"/><circle cx="238" cy="22" r="7" fill="#c4e3dc"/><circle cx="195" cy="44" r="7" fill="#dcefeb"/><circle cx="13" cy="92" r="7" fill="#dcefeb"/><circle cx="158" cy="106" r="7" fill="#c4e3dc"/><circle cx="289" cy="28" r="7" fill="#dcefeb"/><circle cx="15" cy="30" r="7" fill="#dcefeb"/><circle cx="225" cy="42" r="7" fill="#c4e3dc"/><circle cx="246" cy="13" r="7" fill="#c4e3dc"/><circle cx="264" cy="77" r="7" fill="#c4e3dc"/><circle cx="244" cy="100" r="7" fill="#dcefeb"/><circle cx="159" cy="62" r="7" fill="#dcefeb"/><circle cx="257" cy="89" r="7" fill="#dcefeb"/><circle cx="229" cy="23" r="7" fill="#dcefeb"/><circle cx="142" cy="84" r="7" fill="#dcefeb"/><circle cx="100" cy="62" r="7" fill="#c4e3dc"/><circle cx="231" cy="18" r="7" fill="#dcefeb"/><circle cx="78" cy="36" r="7" fill="#dcefeb"/><circle cx="152" cy="67" r="7" fill="#dcefeb"/><circle cx="134" cy="72" r="7" fill="#dcefeb"/><circle cx="205" cy="55" r="7" fill="#c4e3dc"/><circle cx="152" cy="33" r="7" fill="#c4e3dc"/><circle cx="271" cy="102" r="7" fill="#dcefeb"/><circle cx="247" cy="22" r="7" fill="#dcefeb"/><circle cx="119" cy="40" r="7" fill="#dcefeb"/><circle cx="130" cy="30" r="7" fill="#c4e3dc"/><circle cx="231" cy="102" r="7" fill="#dcefeb"/><circle cx="276" cy="75" r="7" fill="#c4e3dc"/><circle cx="48" cy="101" r="7" fill="#c4e3dc"/><circle cx="70" cy="108" r="7" fill="#c4e3dc"/><circle cx="260" cy="24" r="7" fill="#dcefeb"/><circle cx="53" cy="53" r="7" fill="#c4e3dc"/><circle cx="104" cy="28" r="7" fill="#c4e3dc"/><circle cx="33" cy="46" r="7" fill="#c4e3dc"/><circle cx="165" cy="54" r="7" fill="#dcefeb"/><circle cx="117" cy="62" r="7" fill="#c4e3dc"/><circle cx="154" cy="14" r="7" fill="#dcefeb"/><circle cx="285" cy="18" r="7" fill="#c4e3dc"/><circle cx="85" cy="103" r="7" fill="#dcefeb"/><circle cx="100" cy="150.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="150.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="150.0" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="156.5" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="156.5" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="156.5" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="163.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="163.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="163.0" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="169.5" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="169.5" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="169.5" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="176.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="176.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="176.0" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="182.5" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="182.5" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="182.5" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="189.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="189.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="189.0" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="195.5" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="195.5" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="195.5" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="202.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="202.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="202.0" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="208.5" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="208.5" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="208.5" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="215.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="215.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="215.0" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="221.5" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="221.5" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="221.5" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="228.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="228.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="228.0" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="234.5" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="234.5" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="234.5" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="241.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="241.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="241.0" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="247.5" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="247.5" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="247.5" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="254.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="254.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="254.0" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="260.5" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="260.5" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="260.5" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="267.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="267.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="267.0" r="2.6" fill="#8fbdb4"/><circle cx="16.0" cy="300" r="7" fill="#0e4b44"/><circle cx="33.5" cy="300" r="7" fill="#0e4b44"/><circle cx="51.0" cy="300" r="7" fill="#0e4b44"/><circle cx="68.5" cy="300" r="7" fill="#0e4b44"/><circle cx="86.0" cy="300" r="7" fill="#0e4b44"/><circle cx="103.5" cy="300" r="7" fill="#0e4b44"/><circle cx="121.0" cy="300" r="7" fill="#0e4b44"/><circle cx="138.5" cy="300" r="7" fill="#0e4b44"/><circle cx="156.0" cy="300" r="7" fill="#0e4b44"/><circle cx="173.5" cy="300" r="7" fill="#0e4b44"/><circle cx="191.0" cy="300" r="7" fill="#0e4b44"/><circle cx="208.5" cy="300" r="7" fill="#0e4b44"/><circle cx="226.0" cy="300" r="7" fill="#0e4b44"/><circle cx="243.5" cy="300" r="7" fill="#0e4b44"/><circle cx="261.0" cy="300" r="7" fill="#0e4b44"/><circle cx="278.5" cy="300" r="7" fill="#0e4b44"/><circle cx="16.0" cy="326" r="7" fill="#31a593"/><circle cx="33.5" cy="326" r="7" fill="#31a593"/><circle cx="51.0" cy="326" r="7" fill="#31a593"/><circle cx="68.5" cy="326" r="7" fill="#31a593"/><circle cx="86.0" cy="326" r="7" fill="#31a593"/><circle cx="103.5" cy="326" r="7" fill="#31a593"/><circle cx="121.0" cy="326" r="7" fill="#31a593"/><circle cx="138.5" cy="326" r="7" fill="#31a593"/><circle cx="156.0" cy="326" r="7" fill="#31a593"/><circle cx="173.5" cy="326" r="7" fill="#31a593"/><circle cx="191.0" cy="326" r="7" fill="#31a593"/><circle cx="16.0" cy="352" r="7" fill="#7cc9bc"/><circle cx="33.5" cy="352" r="7" fill="#7cc9bc"/><circle cx="51.0" cy="352" r="7" fill="#7cc9bc"/><circle cx="68.5" cy="352" r="7" fill="#7cc9bc"/><circle cx="86.0" cy="352" r="7" fill="#7cc9bc"/><circle cx="103.5" cy="352" r="7" fill="#7cc9bc"/><circle cx="121.0" cy="352" r="7" fill="#7cc9bc"/><circle cx="138.5" cy="352" r="7" fill="#7cc9bc"/><circle cx="156.0" cy="352" r="7" fill="#7cc9bc"/><circle cx="173.5" cy="352" r="7" fill="#7cc9bc"/><circle cx="191.0" cy="352" r="7" fill="#7cc9bc"/><circle cx="208.5" cy="352" r="7" fill="#7cc9bc"/><circle cx="226.0" cy="352" r="7" fill="#7cc9bc"/><circle cx="243.5" cy="352" r="7" fill="#7cc9bc"/><circle cx="261.0" cy="352" r="7" fill="#7cc9bc"/><circle cx="278.5" cy="352" r="7" fill="#7cc9bc"/><circle cx="16.0" cy="378" r="7" fill="#b9ded7"/><circle cx="33.5" cy="378" r="7" fill="#b9ded7"/><circle cx="51.0" cy="378" r="7" fill="#b9ded7"/><circle cx="68.5" cy="378" r="7" fill="#b9ded7"/><circle cx="86.0" cy="378" r="7" fill="#b9ded7"/><circle cx="103.5" cy="378" r="7" fill="#b9ded7"/><circle cx="121.0" cy="378" r="7" fill="#b9ded7"/><circle cx="138.5" cy="378" r="7" fill="#b9ded7"/><circle cx="156.0" cy="378" r="7" fill="#b9ded7"/><circle cx="173.5" cy="378" r="7" fill="#b9ded7"/><circle cx="191.0" cy="378" r="7" fill="#b9ded7"/><circle cx="208.5" cy="378" r="7" fill="#b9ded7"/><circle cx="226.0" cy="378" r="7" fill="#b9ded7"/><circle cx="243.5" cy="378" r="7" fill="#b9ded7"/></svg>
+  <div class="thirds">
+    <div data-r><h3>Antes de viajar</h3><p>Leia o sumário, escolha os dias que quer, reserve o que precisa pelos links com desconto, baixe os mapas e configure o celular.</p></div>
+    <div data-r style="--i:1"><h3>Na cidade</h3><p>Abra o dia, siga manhã, tarde e noite e pule o que estiver marcado como opcional se faltar tempo.</p></div>
+    <div data-r style="--i:2"><h3>No celular</h3><p>Há uma versão pensada para a tela do celular, com rolagem vertical. Você pode baixar o PDF e abrir sem internet.</p></div>
+  </div>
+</section>
+
+<section class="about" aria-labelledby="ha">
+  <div class="ph" data-r><img src="img/central-park.jpg" width="1000" height="1333" alt="Camila sorrindo à beira do lago do Central Park" loading="lazy"></div>
+  <div>
+    <h2 id="ha" data-r>Quem é a sua guia?</h2>
+    <p data-r style="--i:1"><b>Cami</b> tem 30 anos, já conheceu 27 países e mora no Canadá há quase 3 anos. Já perdeu a conta de quantas vezes foi a Nova York.</p>
+    <p data-r style="--i:2">Seu amor por novas culturas e sabores faz a Cami explorar ao máximo os destinos e planejar os mínimos detalhes das viagens. É formada em Marketing, pós-graduada em Inteligência Competitiva e Inovação em Marketing, e soma mais de <b>600 mil seguidores</b> nas redes.</p>
+    <div class="acts" data-r style="--i:3"><a class="btn teal" href="#preco">Eu quero o guia</a>
+      <div class="soc"><a class="link" href="https://www.instagram.com/camilamontreal">Instagram</a><a class="link" href="https://www.tiktok.com/@camilamontreal">TikTok</a><a class="link" href="https://www.youtube.com/@camilamontreal">YouTube</a></div></div>
+  </div>
+</section>
+
+<section class="who" aria-label="Para quem é">
+  <div class="y"><h2 data-r>É para você se</h2>
+    <ul>
+      <li data-r>Está planejando viajar para Nova York e quer um roteiro pronto para adaptar.</li>
+      <li data-r style="--i:1">Prefere ter tudo organizado em um lugar.</li>
+      <li data-r style="--i:2">Quer dicas práticas, com horário, endereço e preço.</li>
+      <li data-r style="--i:3">Quer um guia com opinião, não uma lista neutra.</li>
+    </ul></div>
+  <div class="n"><h2 data-r>Talvez não seja se</h2>
+    <ul>
+      <li data-r>Prefere improvisar tudo e não gosta de roteiro.</li>
+      <li data-r style="--i:1">Procura um guia focado em compras ou vida noturna. O guia cobre os dois, mas o foco é turismo e experiências.</li>
+      <li data-r style="--i:2">Quer um roteiro de mais de 4 dias completos. Há ideias extras na seção "Tem mais dias?".</li>
+      <li data-r style="--i:3">Espera atendimento individual. O guia é um material digital.</li>
+    </ul></div>
+</section>
+
+<section class="price" id="preco" aria-labelledby="hp">
+  <div class="hd">
+    <h2 id="hp" data-r>Seu embarque</h2>
+    <div class="seg" data-r style="--i:1"><div role="tablist" aria-label="Onde você está comprando">
+      <button role="tab" aria-selected="true" data-pl="br">Brasil</button>
+      <button role="tab" aria-selected="false" data-pl="ca">Exterior</button>
+    </div></div>
+  </div>
+  <div class="pass" data-r style="--i:1">
+    <div class="main stg" data-s="br" role="tabpanel">
+      <p class="script">Nova York · o roteiro perfeito</p>
+      <span class="pr">R$ 67,90</span>
+      <span class="per">à vista, ou em até 9× de R$ 8,92 (parcelas com juros a partir de 2×)</span>
+      <p>Cartão de crédito, Pix, boleto ou PayPal.</p>
+      <p class="inc">Você recebe o link do PDF interativo (versões desktop e celular), o mapa interativo, atualizações gratuitas e garantia de 7 dias.</p>
+      <div><a class="btn" id="buy-br" href="#checkout-br">Comprar no Brasil</a></div>
+    </div>
+    <div class="main stg" data-s="ca" role="tabpanel" hidden>
+      <p class="script">Nova York · o roteiro perfeito</p>
+      <span class="pr">CAD 21</span>
+      <span class="per">pagamento único, sem mensalidade</span>
+      <p>Cartão de crédito, PayPal ou Klarna.</p>
+      <p class="inc">Você recebe o link do PDF interativo (versões desktop e celular), o mapa interativo, atualizações gratuitas e garantia de 7 dias.</p>
+      <div><a class="btn" id="buy-ca" href="#checkout-ca">Comprar do exterior</a></div>
+    </div>
+    <div class="stub" aria-hidden="true"><p class="script">Embarque</p><span>Dia 1 a 4<br>Nova York<br>Acesso por e-mail</span><span>Garantia de 7 dias</span></div>
+  </div>
+</section>
+
+<section class="faq" id="faq" aria-labelledby="hq">
+  <h2 id="hq" data-r>Perguntas frequentes</h2>
+  <div>
+    <details name="q" open><summary>Quando vou ter acesso ao guia?<i></i></summary><p>Assim que o pagamento for confirmado, você recebe um e-mail com o link do PDF interativo, com versão para desktop e versão para celular.</p></details>
+    <details name="q"><summary>O que vou receber?<i></i></summary><p>O PDF premium com o roteiro dia a dia, o acesso ao mapa interativo e vários links de desconto para ingressos, atividades e experiências.</p></details>
+    <details name="q"><summary>Funciona para quem não fala outra língua além do português?<i></i></summary><p>Sim! O guia foi feito todo em português e tem várias dicas para quem nunca foi ao destino, inclusive dicas culturais, além de dicas para ver musicais em português.</p></details>
+    <details name="q"><summary>Qual a diferença desse roteiro para qualquer outro?<i></i></summary><p>Além de especialidade no destino, o guia não mostra apenas atrações turísticas. Você encontra dicas que poucos turistas conhecem, experiências que poucos turistas fazem, dicas de aplicativos e sites, o que vestir, onde comer e onde tirar as melhores fotos.</p></details>
+    <details name="q"><summary>Preciso de internet na viagem para acessar o guia?<i></i></summary><p>Não! Tanto o roteiro quanto o mapa podem ser acessados offline. Menos uma coisa para você se preocupar durante a viagem.</p></details>
+    <details name="q"><summary>16 paradas em um dia não é demais?<i></i></summary><p>É um menu organizado por região, não uma obrigação. Há paradas marcadas como opcionais e muitas são só uma passada ou uma foto. Você escolhe o ritmo.</p></details>
+    <details name="q"><summary>Os preços e horários estão atualizados?<i></i></summary><p>Preços e horários em Nova York mudam. O guia recebe atualizações gratuitas pelo mesmo link, e eu recomendo conferir o site oficial antes de comprar ingressos.</p></details>
+    <details name="q"><summary>O que são os links com desconto?<i></i></summary><p>São links de reserva de passeios, ingressos e serviços com o meu cupom. Alguns parceiros me pagam uma comissão quando você reserva pelo link, sem custo extra para você.</p></details>
+    <details name="q"><summary>E se eu não gostar?<i></i></summary><p>Você pode pedir o reembolso em até 7 dias. Escreva para o contato que está no rodapé da página.</p></details>
+    <details name="q"><summary>Existem roteiros para outros destinos?<i></i></summary><p>Sim! Você pode conferir todos os meus roteiros nas minhas redes.</p></details>
+  </div>
+</section>
+
+<section class="cta" aria-labelledby="hz">
+  <img src="img/times-wide.jpg" width="936" height="775" alt="Camila sorrindo na Times Square" loading="lazy">
+  <div class="scr"></div>
+  <div class="c">
+    <h2 id="hz" data-r>Quer conhecer o melhor de NY?</h2>
+    <p data-r style="--i:1">Você já escolheu o destino. Falta só decidir como quer chegar lá: com 30 abas abertas ou com um guia na mão.</p>
+    <a class="btn teal" data-r style="--i:2" href="#preco">Eu quero</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="in">
+    <div class="fbrand" aria-hidden="true">Camila Montreal</div>
+    <div class="fcols">
+      <div><h3>O guia</h3><ul><li><a class="link" href="#dentro">Por dentro</a></li><li><a class="link" href="#incluso">O que está incluso</a></li><li><a class="link" href="#preco">Preço</a></li></ul></div>
+      <div><h3>Redes</h3><ul><li><a class="link" href="https://www.instagram.com/camilamontreal">Instagram</a></li><li><a class="link" href="https://www.tiktok.com/@camilamontreal">TikTok</a></li><li><a class="link" href="https://www.youtube.com/@camilamontreal">YouTube</a></li></ul></div>
+      <div><h3>Informações</h3><ul><li><a class="link" href="#termos">Termos de uso</a></li><li><a class="link" href="#privacidade">Privacidade</a></li><li><a class="link" href="#contato">Contato</a></li></ul></div>
+      <div><h3>Uma dúvida?</h3><p>Fale comigo pelo contato do guia. Respondo o mais rápido que der.</p></div>
+    </div>
+    <p class="fine">Preços, horários e disponibilidade de passeios mudam. Confira nos sites oficiais antes de reservar. Alguns links de reserva podem render comissão para mim, sem custo extra para você.</p>
+    <div class="last"><span>© 2026 Camila Montreal · @camilamontreal</span><a class="btn sm" href="#preco">Eu quero</a></div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nova York organizada · Camila Montreal</title>
+<meta name="description" content="Roteiro de 4 dias em Nova York, por região, com mapa interativo, dicas, segredos e links de reserva, em um só guia de Camila Montreal.">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#topo">Camila Montreal</a>
+  <nav aria-label="Principal"><ul>
+    <li><a href="#dentro">Por dentro</a></li>
+    <li><a href="#incluso">O que está incluso</a></li>
+    <li><a href="#preco">Preço</a></li>
+    <li><a href="#faq">Perguntas</a></li>
+  </ul></nav>
+  <a class="btn sm" href="#preco">Eu quero</a>
+</header>
+
+<main id="topo">
+
+<section class="hero" aria-labelledby="h1">
+  <div class="txt">
+    <h1 id="h1" data-r>Nova York organizada,</h1>
+    <p class="lede" data-r style="--i:1">para você aproveitar mais e planejar menos.</p>
+    <p class="sup" data-r style="--i:2">Um roteiro de 4 dias, dividido por região, com as minhas dicas, atalhos e links de reserva, tudo em um só guia.</p>
+    <div class="act" data-r style="--i:3">
+      <a class="btn" href="#preco">Eu quero o guia de Nova York</a>
+      <small>Pagamento seguro · Acesso por e-mail logo após a confirmação</small>
+    </div>
+  </div>
+  <div class="stagebox" data-r style="--i:2">
+    <img class="dev" src="img/devices.png" width="1366" height="768" alt="O guia de Nova York no notebook, no tablet e no celular, com o mapa interativo aberto">
+    <div class="note n1"><p class="script">mapa interativo com +200 locais!</p><svg viewBox="0 0 70 56" aria-hidden="true"><path d="M6 6 C34 -2 62 16 62 46"/><path d="M52 38 L62 48 L68 34"/></svg></div>
+    <div class="note n2"><p class="script">roteiro dia a dia!</p><svg viewBox="0 0 70 56" aria-hidden="true"><path d="M64 6 C36 -2 8 16 8 46"/><path d="M18 38 L8 48 L2 34"/></svg></div>
+    <div class="note n3"><p class="script">feito pra usar na viagem, até offline!</p><svg viewBox="0 0 70 56" aria-hidden="true"><path d="M6 50 C34 58 62 40 62 10"/><path d="M52 18 L62 8 L68 22"/></svg></div>
+  </div>
+</section>
+
+<section class="stickers" aria-label="O guia em números">
+  <p class="sticker" data-r><b>4</b> dias de roteiro</p>
+  <p class="sticker" data-r style="--i:1"><b>57</b> paradas por região</p>
+  <p class="sticker" data-r style="--i:2"><b>+200</b> locais no mapa</p>
+  <p class="sticker" data-r style="--i:3"><b>20</b> locações de filmes e séries</p>
+</section>
+
+<section class="band" aria-label="Atualizações">
+  <p data-r>Receba todas as atualizações gratuitamente!</p>
+  <p class="script" data-r style="--i:1">sempre que eu conhecer um lugar novo, você vai saber.</p>
+</section>
+
+<section class="deep" aria-labelledby="hs">
+  <div class="in">
+    <div>
+      <h2 id="hs" data-r>Quantos dias você fica em Nova York?</h2>
+      <div data-r style="--i:1">
+        <div class="days" role="group" aria-label="Número de dias">
+          <button type="button" aria-pressed="false" data-d="1">1 dia</button>
+          <button type="button" aria-pressed="false" data-d="2">2</button>
+          <button type="button" aria-pressed="false" data-d="3">3</button>
+          <button type="button" aria-pressed="true" data-d="4">4</button>
+        </div>
+        <p class="lab" id="dlabel">4 dias: Midtown, Central Park, Estátua, Brooklyn e Hudson Yards</p>
+      </div>
+    </div>
+    <div class="fig" data-r style="--i:2">
+      <div class="n" aria-live="polite"><span id="num">57</span><small>paradas</small></div>
+      <p>É a soma das paradas dos dias do guia que cabem na sua viagem: 16 no Dia 1, 11 no Dia 2, 16 no Dia 3 e 14 no Dia 4. As paradas marcadas como opcionais podem ficar de fora se faltar tempo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="prod" id="dentro" aria-labelledby="hg">
+  <div class="cap2">
+    <h2 id="hg" data-r>Veja o guia por dentro</h2>
+    <p data-r style="--i:1">Páginas reais: sumário clicável, paradas por período do dia, links de reserva e vídeos.</p>
+  </div>
+  <div class="persp" data-r style="--i:1">
+    <div class="tilt" id="tilt">
+      <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="frame" id="frame" tabindex="0" role="img" aria-label="Páginas do guia em sequência. Toque para avançar.">
+        <img class="on" src="img/guia-sumario.jpg" width="1334" height="834" alt="Página do Sumário do guia" data-c="Sumário: toque e vá direto para o dia ou a seção que você precisa.">
+        <img src="img/guia-dia1.jpg" width="1334" height="834" alt="Página do Dia 1 do guia" data-c="Dia 1: paradas da manhã com segredos e links de reserva." loading="lazy">
+        <img src="img/guia-dia3-estatua.jpg" width="1334" height="834" alt="Página do Dia 3 com a Estátua da Liberdade" data-c="Dia 3: a Estátua da Liberdade, com a dica de economizar." loading="lazy">
+        <img src="img/guia-onde-comer.jpg" width="1334" height="834" alt="Página Onde comer" data-c="Onde comer: bairro, endereço e o que pedir." loading="lazy">
+        <img src="img/guia-broadway.jpg" width="1334" height="834" alt="Página de Broadway em português" data-c="Broadway em português e a loteria de ingressos." loading="lazy">
+        <img src="img/guia-locacoes.jpg" width="1334" height="834" alt="Página de locações de filmes" data-c="Locações de filmes, com endereço no Google Maps." loading="lazy">
+      </div>
+    </div>
+  </div>
+  <p class="cap" id="cap" aria-live="off">Sumário: toque e vá direto para o dia ou a seção que você precisa.</p>
+</section>
+
+<section class="cards" aria-labelledby="hc2">
+  <h2 id="hc2" data-r>O que só quem já foi conta</h2>
+  <div class="seg" data-r style="--i:1"><div role="tablist" aria-label="Exemplos">
+    <button role="tab" aria-selected="true" data-t="0">Segredos</button>
+    <button role="tab" aria-selected="false" data-t="1">Economia</button>
+    <button role="tab" aria-selected="false" data-t="2">Broadway</button>
+    <button role="tab" aria-selected="false" data-t="3">Cinema</button>
+  </div></div>
+  <div class="big" data-r style="--i:2">
+    <img class="on" src="img/grand-central.jpg" width="1000" height="1333" alt="Camila no saguão da Grand Central Terminal" data-p="0">
+    <img src="img/ferry.jpg" width="1000" height="1333" alt="Camila de gorro olhando a Estátua da Liberdade da balsa" data-p="1" loading="lazy">
+    <img src="img/times-wide.jpg" width="936" height="775" alt="Camila olhando para cima na Times Square" data-p="2" loading="lazy">
+    <img src="img/friends.jpg" width="1000" height="1333" alt="Camila na cozinha do apartamento de Friends" data-p="3" loading="lazy">
+    <div class="scrim" aria-live="polite"><h3 id="st">Whispering Gallery</h3><p id="sp">De costas para o relógio, siga pelo arco à direita (saída Lexington), vire à direita e desça a rampa. Cada pessoa fala num canto do arco e a outra ouve do lado oposto.</p></div>
+  </div>
+  <div class="pager"><button type="button" id="prev" aria-label="Anterior">←</button><span id="pg">1 / 4</span><button type="button" id="next" aria-label="Próximo">→</button></div>
+</section>
+
+<section class="incl" id="incluso" aria-labelledby="hi">
+  <div class="ph" data-r><img src="img/bridge-walk.jpg" width="1000" height="1333" alt="Camila sentada na Ponte do Brooklyn" loading="lazy"></div>
+  <div class="ticket" data-r style="--i:1">
+    <h2 id="hi">O que está incluso?</h2>
+    <ul>
+      <li><span><b>Roteiro detalhado dia a dia</b>, com manhã, tarde e noite</span></li>
+      <li><span>Dicas de quem já foi a Nova York <b>inúmeras vezes</b></span></li>
+      <li><span><b>Segredos</b> que poucos turistas conhecem</span></li>
+      <li><span><b>Guia fotográfico</b> com os melhores ângulos</span></li>
+      <li><span><b>Mapa interativo</b> com +200 locais, restaurantes e banheiros gratuitos</span></li>
+      <li><span><b>Links de reserva</b> com desconto em ingressos e passeios</span></li>
+      <li><span>Lista de <b>20 locações</b> de filmes e séries famosas</span></li>
+      <li><span><b>Atualizações gratuitas</b> pelo mesmo link</span></li>
+    </ul>
+    <p class="note-s">Roteiro e mapa funcionam offline depois de baixados.</p>
+  </div>
+  <div class="ph" data-r style="--i:2"><img src="img/vessel.jpg" width="1000" height="1333" alt="Camila de óculos escuros em frente ao Vessel, em Hudson Yards" loading="lazy"></div>
+</section>
+
+<section class="list" aria-labelledby="hl">
+  <div class="hd"><h2 id="hl" data-r>Erros para evitar</h2><span>6 dicas do guia</span></div>
+  <ul>
+    <li data-r><img src="img/avenue.jpg" width="1000" height="1333" alt="" loading="lazy"><div><h3>Trem do aeroporto</h3><p>Eu comprei o bilhete errado, perdi o certo e gastei US$ 200 na primeira hora. O guia manda pesquisar o bilhete exato antes de embarcar.</p></div></li>
+    <li data-r style="--i:1"><img src="img/statue.jpg" width="1000" height="1333" alt="" loading="lazy"><div><h3>Estátua da Liberdade</h3><p>Sem desembarque na ilha, o Staten Island Ferry é gratuito. O guia diz como chegar e de que lado sentar.</p></div></li>
+    <li data-r><img src="img/times-square.jpg" width="1000" height="1333" alt="" loading="lazy"><div><h3>Ingresso de Broadway</h3><p>A loteria dá chance de ingressos bem mais baratos, e há áudio-guia e legendas em português para vários musicais.</p></div></li>
+    <li data-r style="--i:1"><img src="img/orange-table.jpg" width="1000" height="1333" alt="" loading="lazy"><div><h3>Café mais caro do que precisava</h3><p>Antes de pedir, procure promoções na porta. Eu paguei US$ 2 em vez de 4 só perguntando.</p></div></li>
+    <li data-r><img src="img/rink.jpg" width="1000" height="1333" alt="" loading="lazy"><div><h3>Patinação no gelo</h3><p>Preço de cada pista, e qual delas tem entrada grátis: no Bryant Park você paga só o aluguel dos patins.</p></div></li>
+    <li data-r style="--i:1"><img src="img/bull.jpg" width="1000" height="1333" alt="" loading="lazy"><div><h3>Banheiro público</h3><p>É quase impossível achar banheiro público em Nova York. O mapa interativo tem uma aba só com banheiros gratuitos.</p></div></li>
+  </ul>
+</section>
+
+<section class="cmp" aria-label="Dicas soltas e este guia">
+  <div class="a">
+    <h2 data-r>Dicas soltas ajudam</h2>
+    <ul>
+      <li data-r>Cada post fala de um lugar</li>
+      <li data-r style="--i:1">Você decide sozinha(o) a ordem</li>
+      <li data-r style="--i:2">Difícil de achar de novo</li>
+      <li data-r style="--i:3">Todo lugar parece imperdível</li>
+      <li data-r style="--i:4">Links espalhados pelas redes</li>
+    </ul>
+  </div>
+  <div class="b">
+    <h2 data-r>Este guia poupa tempo</h2>
+    <ul>
+      <li data-r>Roteiro de 4 dias, organizado por região</li>
+      <li data-r style="--i:1">Manhã, tarde e noite já sugeridos</li>
+      <li data-r style="--i:2">Sumário clicável</li>
+      <li data-r style="--i:3">Marco o que é opcional e o que eu pularia</li>
+      <li data-r style="--i:4">Links de reserva, mapa e vídeos no mesmo lugar</li>
+    </ul>
+    <p class="foot" data-r>Você continua usando as redes. Só não precisa montar tudo sozinha(o).</p>
+  </div>
+</section>
+
+<section class="how" aria-labelledby="hh">
+  <h2 id="hh" data-r>De caos para quatro dias</h2>
+  <p class="lead" data-r style="--i:1">Cada círculo é uma parada do guia: soltas, juntas e, por fim, em fila, uma fileira por dia.</p>
+  {{SVG_D}}
+  {{SVG_M}}
+  <div class="thirds">
+    <div data-r><h3>Antes de viajar</h3><p>Leia o sumário, escolha os dias que quer, reserve o que precisa pelos links com desconto, baixe os mapas e configure o celular.</p></div>
+    <div data-r style="--i:1"><h3>Na cidade</h3><p>Abra o dia, siga manhã, tarde e noite e pule o que estiver marcado como opcional se faltar tempo.</p></div>
+    <div data-r style="--i:2"><h3>No celular</h3><p>Há uma versão pensada para a tela do celular, com rolagem vertical. Você pode baixar o PDF e abrir sem internet.</p></div>
+  </div>
+</section>
+
+<section class="about" aria-labelledby="ha">
+  <div class="ph" data-r><img src="img/central-park.jpg" width="1000" height="1333" alt="Camila sorrindo à beira do lago do Central Park" loading="lazy"></div>
+  <div>
+    <h2 id="ha" data-r>Quem é a sua guia?</h2>
+    <p data-r style="--i:1"><b>Cami</b> tem 30 anos, já conheceu 27 países e mora no Canadá há quase 3 anos. Já perdeu a conta de quantas vezes foi a Nova York.</p>
+    <p data-r style="--i:2">Seu amor por novas culturas e sabores faz a Cami explorar ao máximo os destinos e planejar os mínimos detalhes das viagens. É formada em Marketing, pós-graduada em Inteligência Competitiva e Inovação em Marketing, e soma mais de <b>600 mil seguidores</b> nas redes.</p>
+    <div class="acts" data-r style="--i:3"><a class="btn teal" href="#preco">Eu quero o guia</a>
+      <div class="soc"><a class="link" href="https://www.instagram.com/camilamontreal">Instagram</a><a class="link" href="https://www.tiktok.com/@camilamontreal">TikTok</a><a class="link" href="https://www.youtube.com/@camilamontreal">YouTube</a></div></div>
+  </div>
+</section>
+
+<section class="who" aria-label="Para quem é">
+  <div class="y"><h2 data-r>É para você se</h2>
+    <ul>
+      <li data-r>Está planejando viajar para Nova York e quer um roteiro pronto para adaptar.</li>
+      <li data-r style="--i:1">Prefere ter tudo organizado em um lugar.</li>
+      <li data-r style="--i:2">Quer dicas práticas, com horário, endereço e preço.</li>
+      <li data-r style="--i:3">Quer um guia com opinião, não uma lista neutra.</li>
+    </ul></div>
+  <div class="n"><h2 data-r>Talvez não seja se</h2>
+    <ul>
+      <li data-r>Prefere improvisar tudo e não gosta de roteiro.</li>
+      <li data-r style="--i:1">Procura um guia focado em compras ou vida noturna. O guia cobre os dois, mas o foco é turismo e experiências.</li>
+      <li data-r style="--i:2">Quer um roteiro de mais de 4 dias completos. Há ideias extras na seção "Tem mais dias?".</li>
+      <li data-r style="--i:3">Espera atendimento individual. O guia é um material digital.</li>
+    </ul></div>
+</section>
+
+<section class="price" id="preco" aria-labelledby="hp">
+  <div class="hd">
+    <h2 id="hp" data-r>Seu embarque</h2>
+    <div class="seg" data-r style="--i:1"><div role="tablist" aria-label="Onde você está comprando">
+      <button role="tab" aria-selected="true" data-pl="br">Brasil</button>
+      <button role="tab" aria-selected="false" data-pl="ca">Exterior</button>
+    </div></div>
+  </div>
+  <div class="pass" data-r style="--i:1">
+    <div class="main stg" data-s="br" role="tabpanel">
+      <p class="script">Nova York · o roteiro perfeito</p>
+      <span class="pr">R$ 67,90</span>
+      <span class="per">à vista, ou em até 9× de R$ 8,92 (parcelas com juros a partir de 2×)</span>
+      <p>Cartão de crédito, Pix, boleto ou PayPal.</p>
+      <p class="inc">Você recebe o link do PDF interativo (versões desktop e celular), o mapa interativo, atualizações gratuitas e garantia de 7 dias.</p>
+      <div><a class="btn" id="buy-br" href="#checkout-br">Comprar no Brasil</a></div>
+    </div>
+    <div class="main stg" data-s="ca" role="tabpanel" hidden>
+      <p class="script">Nova York · o roteiro perfeito</p>
+      <span class="pr">CAD 21</span>
+      <span class="per">pagamento único, sem mensalidade</span>
+      <p>Cartão de crédito, PayPal ou Klarna.</p>
+      <p class="inc">Você recebe o link do PDF interativo (versões desktop e celular), o mapa interativo, atualizações gratuitas e garantia de 7 dias.</p>
+      <div><a class="btn" id="buy-ca" href="#checkout-ca">Comprar do exterior</a></div>
+    </div>
+    <div class="stub" aria-hidden="true"><p class="script">Embarque</p><span>Dia 1 a 4<br>Nova York<br>Acesso por e-mail</span><span>Garantia de 7 dias</span></div>
+  </div>
+</section>
+
+<section class="faq" id="faq" aria-labelledby="hq">
+  <h2 id="hq" data-r>Perguntas frequentes</h2>
+  <div>
+    <details name="q" open><summary>Quando vou ter acesso ao guia?<i></i></summary><p>Assim que o pagamento for confirmado, você recebe um e-mail com o link do PDF interativo, com versão para desktop e versão para celular.</p></details>
+    <details name="q"><summary>O que vou receber?<i></i></summary><p>O PDF premium com o roteiro dia a dia, o acesso ao mapa interativo e vários links de desconto para ingressos, atividades e experiências.</p></details>
+    <details name="q"><summary>Funciona para quem não fala outra língua além do português?<i></i></summary><p>Sim! O guia foi feito todo em português e tem várias dicas para quem nunca foi ao destino, inclusive dicas culturais, além de dicas para ver musicais em português.</p></details>
+    <details name="q"><summary>Qual a diferença desse roteiro para qualquer outro?<i></i></summary><p>Além de especialidade no destino, o guia não mostra apenas atrações turísticas. Você encontra dicas que poucos turistas conhecem, experiências que poucos turistas fazem, dicas de aplicativos e sites, o que vestir, onde comer e onde tirar as melhores fotos.</p></details>
+    <details name="q"><summary>Preciso de internet na viagem para acessar o guia?<i></i></summary><p>Não! Tanto o roteiro quanto o mapa podem ser acessados offline. Menos uma coisa para você se preocupar durante a viagem.</p></details>
+    <details name="q"><summary>16 paradas em um dia não é demais?<i></i></summary><p>É um menu organizado por região, não uma obrigação. Há paradas marcadas como opcionais e muitas são só uma passada ou uma foto. Você escolhe o ritmo.</p></details>
+    <details name="q"><summary>Os preços e horários estão atualizados?<i></i></summary><p>Preços e horários em Nova York mudam. O guia recebe atualizações gratuitas pelo mesmo link, e eu recomendo conferir o site oficial antes de comprar ingressos.</p></details>
+    <details name="q"><summary>O que são os links com desconto?<i></i></summary><p>São links de reserva de passeios, ingressos e serviços com o meu cupom. Alguns parceiros me pagam uma comissão quando você reserva pelo link, sem custo extra para você.</p></details>
+    <details name="q"><summary>E se eu não gostar?<i></i></summary><p>Você pode pedir o reembolso em até 7 dias. Escreva para o contato que está no rodapé da página.</p></details>
+    <details name="q"><summary>Existem roteiros para outros destinos?<i></i></summary><p>Sim! Você pode conferir todos os meus roteiros nas minhas redes.</p></details>
+  </div>
+</section>
+
+<section class="cta" aria-labelledby="hz">
+  <img src="img/times-wide.jpg" width="936" height="775" alt="Camila sorrindo na Times Square" loading="lazy">
+  <div class="scr"></div>
+  <div class="c">
+    <h2 id="hz" data-r>Quer conhecer o melhor de NY?</h2>
+    <p data-r style="--i:1">Você já escolheu o destino. Falta só decidir como quer chegar lá: com 30 abas abertas ou com um guia na mão.</p>
+    <a class="btn teal" data-r style="--i:2" href="#preco">Eu quero</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="in">
+    <div class="fbrand" aria-hidden="true">Camila Montreal</div>
+    <div class="fcols">
+      <div><h3>O guia</h3><ul><li><a class="link" href="#dentro">Por dentro</a></li><li><a class="link" href="#incluso">O que está incluso</a></li><li><a class="link" href="#preco">Preço</a></li></ul></div>
+      <div><h3>Redes</h3><ul><li><a class="link" href="https://www.instagram.com/camilamontreal">Instagram</a></li><li><a class="link" href="https://www.tiktok.com/@camilamontreal">TikTok</a></li><li><a class="link" href="https://www.youtube.com/@camilamontreal">YouTube</a></li></ul></div>
+      <div><h3>Informações</h3><ul><li><a class="link" href="#termos">Termos de uso</a></li><li><a class="link" href="#privacidade">Privacidade</a></li><li><a class="link" href="#contato">Contato</a></li></ul></div>
+      <div><h3>Uma dúvida?</h3><p>Fale comigo pelo contato do guia. Respondo o mais rápido que der.</p></div>
+    </div>
+    <p class="fine">Preços, horários e disponibilidade de passeios mudam. Confira nos sites oficiais antes de reservar. Alguns links de reserva podem render comissão para mim, sem custo extra para você.</p>
+    <div class="last"><span>© 2026 Camila Montreal · @camilamontreal</span><a class="btn sm" href="#preco">Eu quero</a></div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
