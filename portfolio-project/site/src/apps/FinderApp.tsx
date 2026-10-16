@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { content } from '../content'
 import { useOS } from '../store/os'
-import { useLang, ui, t, type UIKey } from '../lib/i18n'
+import { useLang, ui, t, tbc, type UIKey } from '../lib/i18n'
 import { Media } from '../ui/Media'
 import { Icon } from '../ui/icons'
 
@@ -46,9 +46,9 @@ export function FinderApp({ onOpen }: { onOpen?: (id: string) => void }) {
             <div className="fcard__body">
               <div className="fcard__client">{p.client}</div>
               <div className="fcard__title">{t(p.title, lang)}</div>
-              <div className="fcard__foot"><span className={`tag tag--${p.type}`}>{ui(p.type === 'publicado' ? 'typePublicado' : p.type === 'ugc' ? 'typeUgc' : 'typeProfissional', lang)}</span><span className="muted">{p.period}</span></div>
+              <div className="fcard__foot"><span className={`tag tag--${p.type}`}>{ui(p.type === 'publicado' ? 'typePublicado' : p.type === 'ugc' ? 'typeUgc' : 'typeProfissional', lang)}</span><span className="muted">{tbc(p.period, lang)}</span></div>
             </div>
-            {(p.headline ?? p.metrics[0]) && !p.confidential && <div className="fcard__num num">{(p.headline ?? p.metrics[0]).value}</div>}
+            {(p.headline ?? p.metrics[0]) && !p.confidential && <div className="fcard__num num">{tbc((p.headline ?? p.metrics[0]).value, lang)}</div>}
           </button>
         ))}
         {list.length === 0 && <p className="muted">—</p>}

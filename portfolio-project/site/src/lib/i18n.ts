@@ -24,6 +24,11 @@ export function t(text: I18nText | undefined, lang: Lang): string {
   return text[lang] ?? text.en
 }
 
+/** Valores de conteúdo escritos como "a confirmar" aparecem no idioma da interface. */
+export function tbc(s: string, lang: Lang): string {
+  return s.replace(/a confirmar/i, UI.tbc[lang])
+}
+
 /** Strings da interface. Adicione aqui, nunca dentro de componentes. */
 export const UI = {
   projects: { en: 'Projects', pt: 'Projetos', fr: 'Projets' },
@@ -77,6 +82,7 @@ export const UI = {
   dataFrom: { en: 'data from', pt: 'dados de', fr: 'données du' },
   followers: { en: 'followers', pt: 'seguidores', fr: 'abonnés' },
   exemplo: { en: 'EXAMPLE', pt: 'EXEMPLO', fr: 'EXEMPLE' },
+  tbc: { en: 'TBC', pt: 'a confirmar', fr: 'à confirmer' },
   photo: { en: 'PHOTO', pt: 'FOTO', fr: 'PHOTO' },
   now: { en: 'NOW', pt: 'AGORA', fr: 'MAINTENANT' },
   newMessage: { en: 'New message', pt: 'Nova mensagem', fr: 'Nouveau message' },

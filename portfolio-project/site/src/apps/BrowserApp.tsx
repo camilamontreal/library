@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { content } from '../content'
-import { useLang, ui, t } from '../lib/i18n'
+import { useLang, ui, t, tbc } from '../lib/i18n'
 import { Media } from '../ui/Media'
 import { MetricBlock } from '../ui/MetricBlock'
 import { AppIcon, Icon } from '../ui/icons'
@@ -52,7 +52,7 @@ function Profile({ n }: { n: NetworkT }) {
           <div className="muted">{n.handle}</div>
           {n.bio && <p className="profile__bio">{t(n.bio, lang)}</p>}
           <div className="profile__stats">
-            {n.stats.map((s, i) => <span key={i}><b className="num">{s.value}</b> {t(s.label, lang)}</span>)}
+            {n.stats.map((s, i) => <span key={i}><b className="num">{tbc(s.value, lang)}</b> {t(s.label, lang)}</span>)}
           </div>
           <div className="profile__updated muted">{ui('dataFrom', lang)} {n.updatedAt}{n.exemplo ? ` · ${ui('exemplo', lang)}` : ''}</div>
         </div>
@@ -64,7 +64,7 @@ function Profile({ n }: { n: NetworkT }) {
               <Media media={post.media} className="post__media" small />
               {post.media.kind === 'video' && <span className="post__play"><Icon.play width={16} height={16} /></span>}
               {post.caption && <span className="post__cap">{t(post.caption, lang)}</span>}
-              {post.metrics[0] && <span className="post__metric">{post.metrics[0].value} {t(post.metrics[0].label, lang)}</span>}
+              {post.metrics[0] && <span className="post__metric">{tbc(post.metrics[0].value, lang)} {t(post.metrics[0].label, lang)}</span>}
             </a>
           ))}
         </div>

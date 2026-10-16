@@ -1,6 +1,6 @@
 import { content } from '../content'
 import { useOS } from '../store/os'
-import { useLang, ui, t } from '../lib/i18n'
+import { useLang, ui, t, tbc } from '../lib/i18n'
 import { Media } from '../ui/Media'
 
 const KIND_LABEL = {
@@ -41,7 +41,7 @@ export function PassportApp({ onOpen }: { onOpen?: (id: string) => void }) {
             <div key={i} className={`edu ${e.kind === 'certificacao' ? 'edu--cert' : ''}`}>
               {e.image && <Media media={e.image} className="edu__img" small />}
               <div className="edu__title">{t(e.title, lang)}</div>
-              <div className="muted">{e.institution} · {e.year}</div>
+              <div className="muted">{tbc(e.institution, lang)} · {e.year}</div>
               {e.url && <a href={e.url} target="_blank" rel="noreferrer" className="edu__verify">verify ↗</a>}
               {e.exemplo && <span className="exemplo-badge">{ui('exemplo', lang)}</span>}
             </div>

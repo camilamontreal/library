@@ -1,6 +1,6 @@
 import { content, projectById } from '../content'
 import { useOS } from '../store/os'
-import { useLang, ui, t } from '../lib/i18n'
+import { useLang, ui, t, tbc } from '../lib/i18n'
 import { Media } from '../ui/Media'
 import { MetricBlock } from '../ui/MetricBlock'
 import { Icon } from '../ui/icons'
@@ -25,7 +25,7 @@ export function CaseApp({ id }: { id: string }) {
     <article className="case">
       <header className="case__cover">
         <Media media={p.cover} className="case__coverMedia" />
-        <div className="case__chip"><span className={`tag tag--${p.type}`} title={ui(TYPE_HELP[p.type], lang)}>{ui(TYPE_KEY[p.type], lang)}</span> · {t(p.role, lang)} · {p.period}</div>
+        <div className="case__chip"><span className={`tag tag--${p.type}`} title={ui(TYPE_HELP[p.type], lang)}>{ui(TYPE_KEY[p.type], lang)}</span> · {t(p.role, lang)} · {tbc(p.period, lang)}</div>
         <div className="case__coverText">
           <small>{p.client}</small>
           <h1>{t(p.title, lang)}</h1>
@@ -85,11 +85,11 @@ export function CaseApp({ id }: { id: string }) {
         <aside className="case__stub">
           <div>
             <div className="case__stubK">{ui('result', lang)}</div>
-            {headline && !p.confidential ? (<><div className={`num case__stubBig ${headline.value.length > 6 ? 'case__stubBig--long' : ''}`}>{headline.value}</div><div className="case__stubSl">{t(headline.label, lang)}{headline.period ? <><br />{headline.period}</> : null}</div></>) : (<div className="case__stubSl">{p.client}</div>)}
+            {headline && !p.confidential ? (<><div className={`num case__stubBig ${tbc(headline.value, lang).length > 6 ? 'case__stubBig--long' : ''}`}>{tbc(headline.value, lang)}</div><div className="case__stubSl">{t(headline.label, lang)}{headline.period ? <><br />{headline.period}</> : null}</div></>) : (<div className="case__stubSl">{p.client}</div>)}
           </div>
           <div className="case__stubMeta">
             <div><span className="case__stubK">{ui('role', lang)}</span>{t(p.role, lang)}</div>
-            <div><span className="case__stubK">{ui('period', lang)}</span>{p.period}</div>
+            <div><span className="case__stubK">{ui('period', lang)}</span>{tbc(p.period, lang)}</div>
             {headline && <div><span className="case__stubK">{ui('source', lang)}</span>{headline.source}</div>}
           </div>
           <div>

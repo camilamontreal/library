@@ -1,6 +1,6 @@
 import { content } from '../content'
 import { useOS } from '../store/os'
-import { useLang, ui, t } from '../lib/i18n'
+import { useLang, ui, t, tbc } from '../lib/i18n'
 import { MetricBlock } from '../ui/MetricBlock'
 import { AppIcon } from '../ui/icons'
 
@@ -35,7 +35,7 @@ export function MilesApp({ onOpen }: { onOpen?: (id: string) => void }) {
             const m = x.headline ?? x.metrics[0]
             return (
               <button key={x.id} className="miles__card" onClick={() => go(x.id)}>
-                <div className="num miles__big">{m.value}</div>
+                <div className="num miles__big">{tbc(m.value, lang)}</div>
                 <div className="miles__lab">{t(m.label, lang)}</div>
                 <div className="miles__client">{x.client} <span className={`tag tag--${x.type}`}>{ui(x.type === 'publicado' ? 'typePublicado' : x.type === 'ugc' ? 'typeUgc' : 'typeProfissional', lang)}</span></div>
                 <div className="metric__src">{m.source}{m.period ? ` · ${m.period}` : ''}</div>

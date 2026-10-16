@@ -1,6 +1,6 @@
 import { content } from '../content'
 import { useOS } from '../store/os'
-import { useLang, ui, t } from '../lib/i18n'
+import { useLang, ui, t, tbc } from '../lib/i18n'
 import { Media } from '../ui/Media'
 import { MetricBlock } from '../ui/MetricBlock'
 import { AppIcon } from '../ui/icons'
@@ -52,7 +52,7 @@ export function MediaKitApp() {
       <MetricBlock metrics={p.heroStats} />
       <div className="mediakit__nets">
         {content.networks.filter((n) => n.stats.length && n.id !== 'site').map((n) => (
-          <div key={n.id} className="mediakit__net"><AppIcon id={n.id} size={24} /><b>{n.stats[0].value}</b><span className="muted">{t(n.stats[0].label, lang)}</span></div>
+          <div key={n.id} className="mediakit__net"><AppIcon id={n.id} size={24} /><b>{tbc(n.stats[0].value, lang)}</b><span className="muted">{t(n.stats[0].label, lang)}</span></div>
         ))}
       </div>
       <div className="eyebrow">{t({ en: 'Formats', pt: 'Formatos', fr: 'Formats' }, lang)}</div>

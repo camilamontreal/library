@@ -1,6 +1,6 @@
 import { content, projectById } from '../content'
 import { useOS } from '../store/os'
-import { useLang, ui, t } from '../lib/i18n'
+import { useLang, ui, t, tbc } from '../lib/i18n'
 
 /** "Partidas": a experiência profissional como painel de aeroporto. Linha = cargo; status = em curso/concluído; clicar lista os cases. */
 export function DeparturesApp({ onOpen }: { onOpen?: (id: string) => void }) {
@@ -17,7 +17,7 @@ export function DeparturesApp({ onOpen }: { onOpen?: (id: string) => void }) {
           <div key={i} className={`board__row ${e.end ? '' : 'board__row--live'}`}>
             <div className="board__time num">{fmt(e.start)}<span className="board__to">→ {fmt(e.end)}</span></div>
             <div className="board__main">
-              <div className="board__company">{e.company} {e.exemplo && <span className="exemplo-badge" style={{ position: 'static' }}>{ui('exemplo', lang)}</span>}</div>
+              <div className="board__company">{tbc(e.company, lang)} {e.exemplo && <span className="exemplo-badge" style={{ position: 'static' }}>{ui('exemplo', lang)}</span>}</div>
               <div className="board__role">{t(e.role, lang)}{e.location ? <span className="muted"> · {e.location}</span> : null}</div>
               <ul className="board__hl">{e.highlights.map((h, j) => <li key={j}>{t(h, lang)}</li>)}</ul>
               {e.projectIds.length > 0 && (
