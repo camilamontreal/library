@@ -549,6 +549,8 @@ function chansOf(o){var r=[];if((o.emails||[]).length)r.push("email");if(o.insta
 function expStage(list){var best=-1;list.forEach(function(o){var p=pipeOf(o),i=PIDX[p];if(i!=null&&i>best)best=i});return best<0?"found":PIPE[best][0]}
 function expConfirmed(ex){return ex.status==="confirmed"||confirmedIt().some(function(x){return x.experienceId===ex._id})||expOpps(ex).some(function(o){return o.stage==="confirmada"})}
 function hasWord(s,re){return re.test(String(s||"").toLowerCase())}
+function ppOf(ex){return ex.pricePPEUR!=null?ex.pricePPEUR:(ex.price3EUR!=null?ex.price3EUR/3:null)}
+function isPrem(ex){var p=ppOf(ex);return p!=null&&p>=100?1:0}
 function huntFiltered(){var q=H.q.toLowerCase(),all=arr("ph_experiences");
   var list=all.filter(function(ex){var os=expOpps(ex),p3=ex.price3EUR;
     if(H.cat&&ex.category!==H.cat)return false;
@@ -565,7 +567,7 @@ function huntFiltered(){var q=H.q.toLowerCase(),all=arr("ph_experiences");
     if(q&&(ex.name+" "+(ex.supplierName||"")+" "+(ex.neighborhood||"")+" "+os.map(function(o){return o.name}).join(" ")).toLowerCase().indexOf(q)<0)return false;return true});
   var pr={high:0,medium:1,low:2};
   list.sort(function(a,b){if(H.sort==="preco")return (b.price3EUR||0)-(a.price3EUR||0);if(H.sort==="nome")return a.name.localeCompare(b.name);if(H.sort==="caminhos")return expOpps(b).length-expOpps(a).length;
-    var sa=Math.max.apply(null,[0].concat(expOpps(a).map(function(o){return score(o)||0}))),sb=Math.max.apply(null,[0].concat(expOpps(b).map(function(o){return score(o)||0})));return (pr[a.priority]!=null?pr[a.priority]:1)-(pr[b.priority]!=null?pr[b.priority]:1)||sb-sa});
+    var sa=Math.max.apply(null,[0].concat(expOpps(a).map(function(o){return score(o)||0}))),sb=Math.max.apply(null,[0].concat(expOpps(b).map(function(o){return score(o)||0})));return (pr[a.priority]!=null?pr[a.priority]:1)-(pr[b.priority]!=null?pr[b.priority]:1)||(isPrem(b)-isPrem(a))||sb-sa});
   return list}
 function expCard(ex){var os=expOpps(ex),roles={};os.forEach(function(o){roles[o.role]=(roles[o.role]||0)+1});
   var drafts=os.filter(function(o){return o.msg&&o.msg.status==="draft"}).length,appr=os.filter(function(o){return o.msg&&/approved/.test(o.msg.status)}).length,sent=os.filter(function(o){var p=pipeOf(o);return PIDX[p]>=PIDX.sent}).length;
@@ -574,7 +576,7 @@ function expCard(ex){var os=expOpps(ex),roles={};os.forEach(function(o){roles[o.
   return '<article class="opp'+(ex.priority==="high"?' pri':'')+'"><div style="position:relative" data-a="oexp" data-id="'+esc(ex._id)+'" role="button" tabindex="0">'+ph(fake)+'<div class="sc"></div><div class="ov"><span class="chipo">'+(CATG[ex.category]||"")+' '+esc(CAT[ex.category]||ex.category)+'</span>'+(ex.durationText?'<span class="chipo">'+esc(trunc(ex.durationText,22))+'</span>':'')+'</div></div><div class="ob">'+
    '<div class="row" style="justify-content:space-between"><span class="tag '+(conf?"ok":"")+'">'+(conf?"✅ Confirmada":esc((PIPE[PIDX[st]]||PIPE[0])[2]+" "+(PIPE[PIDX[st]]||PIPE[0])[1]))+'</span>'+(ex.priority==="high"?'<span class="tag gold">★ Prioridade</span>':'')+'</div>'+
    '<h3 data-a="oexp" data-id="'+esc(ex._id)+'">'+esc(ex.name)+'</h3><div class="ex">'+esc(ex.supplierName?"Operador: "+ex.supplierName:"")+(ex.neighborhood?" · "+esc(ex.neighborhood):"")+'</div>'+
-   '<div class="row"><span class="tag gold">'+(ex.price3EUR!=null?eur(ex.price3EUR)+' p/ 3':'preço n/d')+'</span>'+(ex.slotsCompat?'<span class="tag azul">'+esc(trunc(String(ex.slotsCompat).replace(/2026-11-0(\d)/g,"$1 nov").split("|")[0].trim(),26))+'</span>':'<span class="tag">datas a confirmar</span>')+'<span class="vd '+vs+'"><i></i>'+VER[vs]+'</span></div>'+
+   '<div class="row"><span class="tag gold">'+(ex.price3EUR!=null?eur(ex.price3EUR)+' p/ 3':'preço n/d')+'</span>'+(isPrem(ex)?'<span class="tag acc">✦ premium</span>':'')+(ex.slotsCompat?'<span class="tag azul">'+esc(trunc(String(ex.slotsCompat).replace(/2026-11-0(\d)/g,"$1 nov").split("|")[0].trim(),26))+'</span>':'<span class="tag">datas a confirmar</span>')+'<span class="vd '+vs+'"><i></i>'+VER[vs]+'</span></div>'+
    '<div class="row">'+Object.keys(roles).map(function(r){return '<span class="tag '+(ROLETAG[r]||"")+'">'+roles[r]+' '+esc(ROLE[r]||r)+'</span>'}).join("")+(os.length?'':'<span class="tag">sem caminhos ainda</span>')+'</div>'+
    '<div class="small mut">'+os.length+' caminho'+(os.length===1?'':'s')+' · '+drafts+' para aprovar · '+appr+' aprovad'+(appr===1?'o':'os')+' · '+sent+' enviad'+(sent===1?'o':'os')+'</div>'+
    '<div class="btns"><button class="btn" data-a="oexp" data-id="'+esc(ex._id)+'" type="button">Ver caminhos</button>'+(ex.gygUrl?'<a class="btn gh" href="'+esc(safeUrl(ex.gygUrl))+'" target="_blank" rel="noopener noreferrer">GetYourGuide</a>':'')+'</div></div></article>'}
