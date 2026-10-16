@@ -6,7 +6,7 @@
 <title>Nova York organizada</title>
 <meta name="description" content="Guia de Nova York da Camila Montreal: roteiro por região, mapa interativo com +200 locais, dicas, segredos e links de reserva.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500..800&display=swap">
 <style>/* The page is one subway line. Sections are stations on a rail at the left, a train rides it with the scroll, a LED sign names the next stop. Signage look: near-black, MTA line colours, Helvetica. No webfonts, no video. */
 :root{
   --bg:#f7f9fa;
@@ -1031,6 +1031,9 @@ html,body{overflow-x:clip}
 .tq figcaption{color:#aab2c0}
 .tq figcaption b{color:#fff;text-transform:uppercase;letter-spacing:.04em}
 .tq .bl{background:var(--tc,#00933c);color:#14161c}
+
+/* pause animations when a section is off screen */
+.off-screen,.off-screen *,.off-screen *::before,.off-screen *::after{animation-play-state:paused!important}
 </style>
 <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -1053,7 +1056,7 @@ html,body{overflow-x:clip}
 
   <!-- 1. Hero: the city behind -->
   <section class="st hero" data-st="st0" data-b="1" data-bc="t" data-c="#31a593" aria-labelledby="h1">
-    <div class="bgc" aria-hidden="true"><img src="img/aerial.webp" width="1000" height="1333" alt="" fetchpriority="high"></div>
+    <div class="bgc" aria-hidden="true"><img src="img/aerial.webp" srcset="img/aerial-m.webp 480w, img/aerial.webp 760w" sizes="100vw" width="760" height="1351" alt="" fetchpriority="high" decoding="async"></div>
     <div class="in-w">
       <h1 id="h1"><span data-k="h1">O guia perfeito de Nova York</span></h1>
       <p class="lede"><span data-k="lede">roteiro completo, adaptado para quantos dias você tiver.</span></p>
@@ -1118,7 +1121,7 @@ html,body{overflow-x:clip}
         </div>
         </div>
         <div class="prev" id="prev">
-          <div class="pph"><img id="pg0" src="img/gc.webp" width="560" height="747" alt="" loading="lazy"><img id="pg1" src="img/ts.webp" width="560" height="747" alt="" loading="lazy"><img id="pg2" src="img/friends.webp" width="560" height="747" alt="" loading="lazy"></div>
+          <div class="pph"><img id="pg0" src="img/gc.webp" width="560" height="747" alt="" loading="lazy" decoding="async"><img id="pg1" src="img/ts.webp" width="560" height="747" alt="" loading="lazy" decoding="async"><img id="pg2" src="img/friends.webp" width="560" height="747" alt="" loading="lazy" decoding="async"></div>
           <div class="ptx"><h3 id="ptt"></h3><p class="phook" id="phook"></p><ul id="pls"></ul><p class="ptip"><span data-k="ptipk">No guia, você encontra as melhores paradas, spots para foto, horários e links com desconto.</span></p></div>
         </div>
       </div>
@@ -1134,17 +1137,17 @@ html,body{overflow-x:clip}
       <div class="viewer" id="viewer" data-r style="--i:2">
         <div class="vstage">
           <button type="button" class="vnav pv" id="vprev" aria-label="Anterior">‹</button>
-          <div class="vframe"><img id="vimg" src="img/g1.webp" width="800" height="500" alt="" loading="lazy"><span class="vhint"><span data-k="vhint">O resto está no guia</span></span></div>
+          <div class="vframe"><img id="vimg" src="img/g1.webp" width="800" height="500" alt="" loading="lazy" decoding="async"><span class="vhint"><span data-k="vhint">O resto está no guia</span></span></div>
           <button type="button" class="vnav nx" id="vnext" aria-label="Próxima">›</button>
         </div>
         <p class="vcap" id="vcap" aria-live="polite"></p>
         <div class="vthumbs" id="vthumbs">
-          <button type="button" class="on" data-i="0"><img src="img/g1.webp" width="160" height="100" alt="" loading="lazy"></button>
-          <button type="button" data-i="1"><img src="img/g2.webp" width="160" height="100" alt="" loading="lazy"></button>
-          <button type="button" data-i="2"><img src="img/g3.webp" width="160" height="100" alt="" loading="lazy"></button>
-          <button type="button" data-i="3"><img src="img/g4.webp" width="160" height="100" alt="" loading="lazy"></button>
-          <button type="button" data-i="4"><img src="img/g5.webp" width="160" height="100" alt="" loading="lazy"></button>
-          <button type="button" data-i="5"><img src="img/g6.webp" width="160" height="100" alt="" loading="lazy"></button>
+          <button type="button" class="on" data-i="0"><img src="img/g1.webp" width="160" height="100" alt="" loading="lazy" decoding="async"></button>
+          <button type="button" data-i="1"><img src="img/g2.webp" width="160" height="100" alt="" loading="lazy" decoding="async"></button>
+          <button type="button" data-i="2"><img src="img/g3.webp" width="160" height="100" alt="" loading="lazy" decoding="async"></button>
+          <button type="button" data-i="3"><img src="img/g4.webp" width="160" height="100" alt="" loading="lazy" decoding="async"></button>
+          <button type="button" data-i="4"><img src="img/g5.webp" width="160" height="100" alt="" loading="lazy" decoding="async"></button>
+          <button type="button" data-i="5"><img src="img/g6.webp" width="160" height="100" alt="" loading="lazy" decoding="async"></button>
         </div>
       </div>
     </div>
@@ -1158,10 +1161,10 @@ html,body{overflow-x:clip}
       <p class="lead" data-r style="--i:1"><span data-k="flead">Você recebe os dois arquivos, com o mesmo conteúdo.</span></p>
       <div class="fcards">
         <article data-r>
-          <div class="dev lap" aria-hidden="true"><div class="scr"><img src="img/g2.webp" width="1094" height="684" alt="" loading="lazy"><i class="cur"></i></div><i class="base"></i></div>
+          <div class="dev lap" aria-hidden="true"><div class="scr"><img src="img/g2.webp" width="1094" height="684" alt="" loading="lazy" decoding="async"><i class="cur"></i></div><i class="base"></i></div>
           <h3><span data-k="fd">Versão desktop</span></h3><p><span data-k="fdt">Para planejar com calma, no computador.</span></p></article>
         <article data-r style="--i:1">
-          <div class="dev" aria-hidden="true"><div class="phn"><img src="img/phone.webp" width="390" height="2054" alt="" loading="lazy"><i class="fing"></i></div></div>
+          <div class="dev" aria-hidden="true"><div class="phn"><img src="img/phone.webp" width="390" height="2054" alt="" loading="lazy" decoding="async"><i class="fing"></i></div></div>
           <h3><span data-k="fm">Versão celular</span></h3><p><span data-k="fmt">Para consultar durante a viagem, com uma mão só.</span></p></article>
         <article data-r style="--i:2">
           <div class="dev off" aria-hidden="true">
@@ -1216,18 +1219,18 @@ html,body{overflow-x:clip}
       <h2 id="hv" data-r><span data-k="hv">Você já se vê lá?</span></h2>
       <p class="lead" data-r style="--i:1"><span data-k="vlead">Os lugares que eu mostro no guia, do jeito que eu vivi cada um.</span></p>
       <div class="vb" aria-hidden="true">
-        <img src="img/vb-bridge-walk.webp" width="380" height="507" alt="" loading="lazy" style="--r:-3deg">
-        <img src="img/vb-edge.webp" width="380" height="507" alt="" loading="lazy" style="--r:2deg">
-        <img src="img/vb-orange-table.webp" width="380" height="507" alt="" loading="lazy" style="--r:-2deg">
-        <img src="img/vb-dumbo.webp" width="380" height="507" alt="" loading="lazy" style="--r:3deg">
-        <img src="img/vb-taxis.webp" width="380" height="507" alt="" loading="lazy" style="--r:-1deg">
-        <img src="img/vb-radio-city.webp" width="380" height="507" alt="" loading="lazy" style="--r:2deg">
-        <img src="img/vb-rink.webp" width="380" height="507" alt="" loading="lazy" style="--r:-3deg">
-        <img src="img/vb-hudson.webp" width="380" height="507" alt="" loading="lazy" style="--r:1deg">
-        <img src="img/vb-empire-view.webp" width="380" height="507" alt="" loading="lazy" style="--r:-2deg">
-        <img src="img/vb-balloons.webp" width="380" height="507" alt="" loading="lazy" style="--r:3deg">
-        <img src="img/vb-brooklyn-bridge.webp" width="380" height="507" alt="" loading="lazy" style="--r:1deg">
-        <img src="img/vb-bridge-street.webp" width="380" height="507" alt="" loading="lazy" style="--r:3deg">
+        <img src="img/vb-bridge-walk.webp" width="280" height="280" alt="" loading="lazy" style="--r:-3deg">
+        <img src="img/vb-edge.webp" width="280" height="280" alt="" loading="lazy" style="--r:2deg">
+        <img src="img/vb-orange-table.webp" width="280" height="280" alt="" loading="lazy" style="--r:-2deg">
+        <img src="img/vb-dumbo.webp" width="280" height="280" alt="" loading="lazy" style="--r:3deg">
+        <img src="img/vb-taxis.webp" width="280" height="280" alt="" loading="lazy" style="--r:-1deg">
+        <img src="img/vb-radio-city.webp" width="280" height="280" alt="" loading="lazy" style="--r:2deg">
+        <img src="img/vb-rink.webp" width="280" height="280" alt="" loading="lazy" style="--r:-3deg">
+        <img src="img/vb-hudson.webp" width="280" height="280" alt="" loading="lazy" style="--r:1deg">
+        <img src="img/vb-empire-view.webp" width="280" height="280" alt="" loading="lazy" style="--r:-2deg">
+        <img src="img/vb-balloons.webp" width="280" height="280" alt="" loading="lazy" style="--r:3deg">
+        <img src="img/vb-brooklyn-bridge.webp" width="280" height="280" alt="" loading="lazy" style="--r:1deg">
+        <img src="img/vb-bridge-street.webp" width="280" height="280" alt="" loading="lazy" style="--r:3deg">
       </div>
     </div>
   </section>
@@ -1320,9 +1323,9 @@ html,body{overflow-x:clip}
     <div class="in-w">
       <div class="about">
         <div class="collage" data-r aria-hidden="true">
-          <img class="c1" src="img/park.webp" width="640" height="853" alt="" loading="lazy">
-          <img class="c2" src="img/statue.webp" width="560" height="747" alt="" loading="lazy">
-          <img class="c3" src="img/vb-bridge-walk.webp" width="380" height="507" alt="" loading="lazy">
+          <img class="c1" src="img/park.webp" width="640" height="853" alt="" loading="lazy" decoding="async">
+          <img class="c2" src="img/statue.webp" width="560" height="747" alt="" loading="lazy" decoding="async">
+          <img class="c3" src="img/vb-bridge-walk.webp" width="280" height="280" alt="" loading="lazy" decoding="async">
         </div>
         <div>
           <h2 id="ha" class="one" data-r><span data-k="ha">Quem é a sua guia?</span></h2>
@@ -1371,7 +1374,7 @@ html,body{overflow-x:clip}
       <div class="pay" data-r style="--i:2">
         <div class="pl">
           <div class="pcomp">
-            <img class="pphoto" src="img/hero.webp" width="640" height="530" alt="" loading="lazy">
+            <img class="pphoto" src="img/hero.webp" width="640" height="530" alt="" loading="lazy" decoding="async">
 <div class="mcard" id="mcard" aria-hidden="true">
             <span class="mlogo">MetroCard</span>
             <span class="msub"><span data-k="mc1">Nova York · o guia</span></span>
@@ -1525,6 +1528,16 @@ html,body{overflow-x:clip}
   function D() { return DYN[lang]; }
   function T(k) { return TXT[lang][k] || TXT.pt[k] || ""; }
 
+  /* ---------- pause what is off screen ---------- */
+  var visSet = new Set(), live = document.querySelectorAll(".st,.esc,.band,.zoo");
+  function inView(el) { return !document.hidden && (!("IntersectionObserver" in window) || visSet.has(el)); }
+  if ("IntersectionObserver" in window) {
+    var lio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) visSet.add(e.target); else visSet.delete(e.target); e.target.classList.toggle("off-screen", !e.isIntersecting); });
+    }, { rootMargin: "80px 0px" });
+    live.forEach(function (s) { lio.observe(s); });
+  }
+
   /* ---------- reveal ---------- */
   var targets = document.querySelectorAll("[data-r],.peek");
   if ("IntersectionObserver" in window && !reduce) {
@@ -1646,6 +1659,7 @@ html,body{overflow-x:clip}
   /* ---------- station announcements ---------- */
   var ti = 0, tm = $("tmsg");
   function nextTip() {
+    if (!inView(document.querySelector(".esc"))) return;
     var n; do { n = Math.floor(Math.random() * D().tips.length); } while (n === ti);
     ti = n; tm.classList.add("sw");
     setTimeout(function () { tm.textContent = D().tips[ti]; tm.classList.remove("sw"); }, reduce ? 0 : 220);
@@ -1721,7 +1735,7 @@ html,body{overflow-x:clip}
   vth.forEach(function (b, i) { b.addEventListener("click", function () { setV(i); clearInterval(vt); }); });
   $("vprev").addEventListener("click", function () { setV(vi - 1); clearInterval(vt); });
   $("vnext").addEventListener("click", function () { setV(vi + 1); clearInterval(vt); });
-  if (!reduce) vt = setInterval(function () { setV(vi + 1); }, 4500);
+  if (!reduce) vt = setInterval(function () { if (inView($("viewer").closest(".st"))) setV(vi + 1); }, 4500);
 
   /* ---------- update sign messages ---------- */
   var BM = { pt: ["Sempre que eu conhecer um lugar novo, você vai saber.", "Você recebe pelo mesmo link do guia.", "Sem pagar nada a mais."], en: ["Whenever I discover a new place, you'll know.", "You get it through the same guide link.", "At no extra cost."] };
@@ -1729,6 +1743,7 @@ html,body{overflow-x:clip}
   function bulb() { bbl.forEach(function (b, k) { b.classList.toggle("on", k === bi); }); }
   bulb();
   if (!reduce) setInterval(function () {
+    if (!inView(document.querySelector(".band"))) return;
     bi = (bi + 1) % 3; bulb(); bmsg.classList.add("sw");
     setTimeout(function () { bmsg.textContent = BM[lang][bi]; placeKong(skSel); bmsg.classList.remove("sw"); }, 220);
   }, 3800);
@@ -1739,7 +1754,7 @@ html,body{overflow-x:clip}
   $("tqprev").addEventListener("click", function () { tqmove(-1); });
   $("tqnext").addEventListener("click", function () { tqmove(1); });
   var tqh = false; tqt.addEventListener("pointerenter", function () { tqh = true; }); tqt.addEventListener("pointerleave", function () { tqh = false; });
-  if (!reduce) setInterval(function () { if (!tqh) tqmove(1); }, 6500);
+  if (!reduce) setInterval(function () { if (!tqh && inView(tqt.closest(".st"))) tqmove(1); }, 6500);
 
   /* ---------- wanderers ---------- */
   var taxi = $("taxi"), esc = document.querySelector(".esc");

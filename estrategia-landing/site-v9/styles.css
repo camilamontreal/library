@@ -1022,3 +1022,6 @@ html,body{overflow-x:clip}
 .tq figcaption{color:#aab2c0}
 .tq figcaption b{color:#fff;text-transform:uppercase;letter-spacing:.04em}
 .tq .bl{background:var(--tc,#00933c);color:#14161c}
+
+/* pause animations when a section is off screen */
+.off-screen,.off-screen *,.off-screen *::before,.off-screen *::after{animation-play-state:paused!important}

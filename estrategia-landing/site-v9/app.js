@@ -80,6 +80,16 @@
   function D() { return DYN[lang]; }
   function T(k) { return TXT[lang][k] || TXT.pt[k] || ""; }
 
+  /* ---------- pause what is off screen ---------- */
+  var visSet = new Set(), live = document.querySelectorAll(".st,.esc,.band,.zoo");
+  function inView(el) { return !document.hidden && (!("IntersectionObserver" in window) || visSet.has(el)); }
+  if ("IntersectionObserver" in window) {
+    var lio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) visSet.add(e.target); else visSet.delete(e.target); e.target.classList.toggle("off-screen", !e.isIntersecting); });
+    }, { rootMargin: "80px 0px" });
+    live.forEach(function (s) { lio.observe(s); });
+  }
+
   /* ---------- reveal ---------- */
   var targets = document.querySelectorAll("[data-r],.peek");
   if ("IntersectionObserver" in window && !reduce) {
@@ -201,6 +211,7 @@
   /* ---------- station announcements ---------- */
   var ti = 0, tm = $("tmsg");
   function nextTip() {
+    if (!inView(document.querySelector(".esc"))) return;
     var n; do { n = Math.floor(Math.random() * D().tips.length); } while (n === ti);
     ti = n; tm.classList.add("sw");
     setTimeout(function () { tm.textContent = D().tips[ti]; tm.classList.remove("sw"); }, reduce ? 0 : 220);
@@ -276,7 +287,7 @@
   vth.forEach(function (b, i) { b.addEventListener("click", function () { setV(i); clearInterval(vt); }); });
   $("vprev").addEventListener("click", function () { setV(vi - 1); clearInterval(vt); });
   $("vnext").addEventListener("click", function () { setV(vi + 1); clearInterval(vt); });
-  if (!reduce) vt = setInterval(function () { setV(vi + 1); }, 4500);
+  if (!reduce) vt = setInterval(function () { if (inView($("viewer").closest(".st"))) setV(vi + 1); }, 4500);
 
   /* ---------- update sign messages ---------- */
   var BM = { pt: ["Sempre que eu conhecer um lugar novo, você vai saber.", "Você recebe pelo mesmo link do guia.", "Sem pagar nada a mais."], en: ["Whenever I discover a new place, you'll know.", "You get it through the same guide link.", "At no extra cost."] };
@@ -284,6 +295,7 @@
   function bulb() { bbl.forEach(function (b, k) { b.classList.toggle("on", k === bi); }); }
   bulb();
   if (!reduce) setInterval(function () {
+    if (!inView(document.querySelector(".band"))) return;
     bi = (bi + 1) % 3; bulb(); bmsg.classList.add("sw");
     setTimeout(function () { bmsg.textContent = BM[lang][bi]; placeKong(skSel); bmsg.classList.remove("sw"); }, 220);
   }, 3800);
@@ -294,7 +306,7 @@
   $("tqprev").addEventListener("click", function () { tqmove(-1); });
   $("tqnext").addEventListener("click", function () { tqmove(1); });
   var tqh = false; tqt.addEventListener("pointerenter", function () { tqh = true; }); tqt.addEventListener("pointerleave", function () { tqh = false; });
-  if (!reduce) setInterval(function () { if (!tqh) tqmove(1); }, 6500);
+  if (!reduce) setInterval(function () { if (!tqh && inView(tqt.closest(".st"))) tqmove(1); }, 6500);
 
   /* ---------- wanderers ---------- */
   var taxi = $("taxi"), esc = document.querySelector(".esc");
