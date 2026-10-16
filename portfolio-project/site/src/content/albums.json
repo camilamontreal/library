@@ -1,5 +1,67 @@
 [
   {
+    "id": "retratos",
+    "title": {
+      "en": "Portraits",
+      "pt": "Retratos",
+      "fr": "Portraits"
+    },
+    "year": "2026",
+    "photos": [
+      {
+        "src": "albums/retratos/01.jpg",
+        "kind": "image",
+        "tone": "#E4E2E3",
+        "alt": {
+          "en": "Studio portrait holding a laptop",
+          "pt": "Retrato de estúdio segurando um notebook",
+          "fr": "Portrait de studio avec un ordinateur portable"
+        }
+      },
+      {
+        "src": "albums/retratos/02.jpg",
+        "kind": "image",
+        "tone": "#C6B3A5",
+        "alt": {
+          "en": "Portrait in a beige blazer",
+          "pt": "Retrato de blazer bege",
+          "fr": "Portrait en blazer beige"
+        }
+      },
+      {
+        "src": "albums/retratos/03.jpg",
+        "kind": "image",
+        "tone": "#B7ADA9",
+        "alt": {
+          "en": "Selfie with a phone",
+          "pt": "Selfie com um celular",
+          "fr": "Selfie avec un téléphone"
+        }
+      },
+      {
+        "src": "albums/retratos/04.jpg",
+        "kind": "image",
+        "tone": "#8C7561",
+        "alt": {
+          "en": "Portrait on a bench among autumn leaves",
+          "pt": "Retrato em um banco entre folhas de outono",
+          "fr": "Portrait sur un banc parmi les feuilles d'automne"
+        }
+      },
+      {
+        "src": "albums/retratos/05.jpg",
+        "kind": "image",
+        "tone": "#957B67",
+        "alt": {
+          "en": "Smiling on a bench in autumn",
+          "pt": "Sorrindo em um banco no outono",
+          "fr": "Souriante sur un banc en automne"
+        }
+      }
+    ],
+    "exemplo": false
+  },
+  {
     "id": "montreal",
     "title": {
       "en": "Montréal",

@@ -1,6 +1,7 @@
 /* ---------- Mesa ---------- */
 .desk { position: fixed; inset: 0; overflow: hidden; background: #0F1629; }
 .desk__wall { position: absolute; inset: 0; }
+.desk[data-daypart="night"] .desk__wall > img, .desk[data-daypart="night"] .desk__wall > video { filter: brightness(.5) saturate(.85); }
 .desk__wall::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.22), transparent 25%, rgba(0,0,0,.28)); pointer-events: none; }
 .desk__wall .media__label { top: 52px; left: 400px; transform: none; }
 .desk__wall .exemplo-badge { top: 40px; left: 400px; }
@@ -45,7 +46,7 @@
 /* ---------- Ícones de pasta ---------- */
 .desk__icons { position: absolute; inset: 0; pointer-events: none; z-index: 4; }
 .dicon-wrap { position: absolute; pointer-events: auto; }
-.dicon { position: relative; width: 118px; display: flex; flex-direction: column; align-items: center; gap: 4px; color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,.7); font-size: 12px; font-weight: 600; line-height: 1.2; text-align: center; touch-action: none; user-select: none; }
+.dicon { position: relative; width: 118px; display: flex; flex-direction: column; align-items: center; gap: 4px; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.85), 0 0 12px rgba(0,0,0,.55); font-size: 12px; font-weight: 600; line-height: 1.2; text-align: center; touch-action: none; user-select: none; }
 .dicon__art { position: relative; width: 76px; height: 60px; filter: drop-shadow(0 4px 8px rgba(0,0,0,.3)); }
 .dicon__cover { position: absolute; left: 7px; right: 7px; top: 22px; bottom: 6px; border-radius: 4px; }
 .dicon:hover .dicon__art { transform: scale(1.04); } .dicon:focus-visible { outline: none; }

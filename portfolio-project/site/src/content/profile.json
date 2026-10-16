@@ -17,14 +17,14 @@
   "languages": ["Português", "English", "Español", "Français"],
   "email": "hello@camilamontreal.com",
   "whatsapp": "",
-  "avatar": { "src": "profile/avatar.jpg", "kind": "image", "tone": "#7A6A5E", "exemplo": true, "alt": { "en": "Cami smiling with sunglasses", "pt": "Cami sorrindo de óculos escuros" } },
+  "avatar": { "src": "profile/avatar.jpg", "kind": "image", "tone": "#856D5F", "alt": { "en": "Camila smiling, resting her head on her hand among autumn leaves", "pt": "Camila sorrindo, apoiada na mão entre folhas de outono", "fr": "Camila souriante, la tête appuyée sur la main parmi les feuilles d'automne" } },
   "wallpapers": {
-    "morning":   { "src": "wallpapers/morning.jpg",   "kind": "image", "tone": "#DCE9F0", "exemplo": true, "alt": { "en": "Morning at Lake Louise", "pt": "Manhã no Lago Louise" } },
-    "afternoon": { "src": "wallpapers/afternoon.jpg", "kind": "image", "tone": "#9FD6DB", "exemplo": true, "alt": { "en": "Turquoise sea", "pt": "Mar turquesa" } },
-    "evening":   { "src": "wallpapers/evening.jpg",   "kind": "image", "tone": "#F3C9A6", "exemplo": true, "alt": { "en": "Sunset in Lisbon", "pt": "Pôr do sol em Lisboa" } },
-    "night":     { "src": "wallpapers/night.jpg",     "kind": "image", "tone": "#1A2250", "exemplo": true, "alt": { "en": "Montreal at night", "pt": "Montreal à noite" } }
+    "morning": { "src": "wallpapers/morning.jpg", "kind": "image", "tone": "#957B67", "alt": { "en": "Camila on a bench in autumn light", "pt": "Camila em um banco sob a luz do outono", "fr": "Camila sur un banc dans la lumière d'automne" } },
+    "afternoon": { "src": "wallpapers/afternoon.jpg", "kind": "image", "tone": "#8C7561", "alt": { "en": "Camila on a bench among golden leaves", "pt": "Camila em um banco entre folhas douradas", "fr": "Camila sur un banc parmi les feuilles dorées" } },
+    "evening": { "src": "wallpapers/evening.jpg", "kind": "image", "tone": "#8C7561", "alt": { "en": "Camila on a bench among golden leaves", "pt": "Camila em um banco entre folhas douradas", "fr": "Camila sur un banc parmi les feuilles dorées" } },
+    "night": { "src": "wallpapers/night.jpg", "kind": "image", "tone": "#957B67", "alt": { "en": "Camila on a bench in autumn light", "pt": "Camila em um banco sob a luz do outono", "fr": "Camila sur un banc dans la lumière d'automne" } }
   },
-  "lockscreen": { "src": "wallpapers/lockscreen.jpg", "kind": "image", "tone": "#6D5B8E", "exemplo": true },
+  "lockscreen": { "src": "wallpapers/lockscreen.jpg", "kind": "image", "tone": "#C6B3A5" },
   "heroStats": [
     { "value": "600K+", "label": { "en": "community", "pt": "comunidade", "fr": "communauté" }, "source": "Mídia kit 2026", "period": "jun/2026" },
     { "value": "290M+", "label": { "en": "views", "pt": "views", "fr": "vues" }, "source": "Mídia kit 2026", "period": "jun/2026" },

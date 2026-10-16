@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { content, featuredProjects } from '../../content'
 import { useOS } from '../../store/os'
 import { useLang, ui, t } from '../../lib/i18n'
-import { useWallpaper, useClock, fmtTime, fmtDate } from '../../lib/hooks'
+import { useWallpaper, useClock, fmtTime, fmtDate, dayPart } from '../../lib/hooks'
 import { Media } from '../../ui/Media'
 import { AppIcon, Icon } from '../../ui/icons'
 import { Window } from './Window'
@@ -24,7 +24,7 @@ export function Desktop() {
   useEffect(() => { if (booted) return; const id = setTimeout(() => { setBooted(true); try { sessionStorage.setItem('camios.booted', '1') } catch { /* */ } }, 1500); return () => clearTimeout(id) }, [booted])
 
   return (
-    <div className="desk" data-audience={audience}>
+    <div className="desk" data-audience={audience} data-daypart={dayPart(useClock())}>
       <Media media={wall} className="desk__wall" label={`${ui('photo', lang)} · ${t(wall.alt, lang)}`} />
       <AnimatePresence>
         {!booted && (
