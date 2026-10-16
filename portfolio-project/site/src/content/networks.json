@@ -1,68 +1,374 @@
 [
   {
-    "id": "instagram", "handle": "@camilamontreal", "url": "https://www.instagram.com/camilamontreal", "displayName": "Camila Montreal",
-    "bio": { "en": "A passport, a lens, a story. Montreal 🇨🇦 · Brazil 🇧🇷", "pt": "Um passaporte, uma lente, uma história. Montreal 🇨🇦 · Brasil 🇧🇷" },
-    "updatedAt": "2026-06-30",
+    "id": "instagram",
+    "handle": "@camilamontreal",
+    "url": "https://www.instagram.com/camilamontreal",
+    "displayName": "Camila Montreal",
+    "bio": {
+      "en": "A passport, a lens, a story. Montreal 🇨🇦 · Brazil 🇧🇷",
+      "pt": "Um passaporte, uma lente, uma história. Montreal 🇨🇦 · Brasil 🇧🇷"
+    },
+    "updatedAt": "2026-10-16",
     "stats": [
-      { "value": "116K+", "label": { "en": "followers", "pt": "seguidores", "fr": "abonnés" }, "source": "Mídia kit 2026", "period": "jun/2026" },
-      { "value": "7.4M+", "label": { "en": "reach", "pt": "alcance", "fr": "portée" }, "source": "Mídia kit 2026", "period": "abr–jun/2026" },
-      { "value": "589K+", "label": { "en": "engagement", "pt": "engajamento", "fr": "engagement" }, "source": "Mídia kit 2026", "period": "abr–jun/2026" }
+      {
+        "value": "113K",
+        "label": {
+          "en": "followers",
+          "pt": "seguidores",
+          "fr": "followers"
+        },
+        "source": "Informado por Camila (out/2026)",
+        "period": "out/2026"
+      },
+      {
+        "value": "7.4M+",
+        "label": {
+          "en": "reach",
+          "pt": "alcance",
+          "fr": "portée"
+        },
+        "source": "Mídia kit 2026",
+        "period": "abr–jun/2026"
+      },
+      {
+        "value": "589K+",
+        "label": {
+          "en": "engagement",
+          "pt": "engajamento",
+          "fr": "engagement"
+        },
+        "source": "Mídia kit 2026",
+        "period": "abr–jun/2026"
+      },
+      {
+        "value": "6K",
+        "label": {
+          "en": "followers @mundodacami",
+          "pt": "seguidores @mundodacami",
+          "fr": "followers @mundodacami"
+        },
+        "source": "Informado por Camila (out/2026)",
+        "period": "out/2026"
+      }
     ],
     "posts": [
-      { "media": { "src": "networks/instagram/01.jpg", "tone": "#9FD6DB", "exemplo": true }, "caption": { "en": "Caribbean water (exemplo)", "pt": "Água do Caribe (exemplo)" }, "metrics": [ { "value": "1.2M", "label": { "en": "views", "pt": "views" }, "source": "Instagram Insights", "exemplo": true } ] },
-      { "media": { "src": "networks/instagram/02.jpg", "tone": "#F3C9A6", "exemplo": true }, "metrics": [] },
-      { "media": { "src": "networks/instagram/03.jpg", "tone": "#6D5B8E", "exemplo": true }, "metrics": [] },
-      { "media": { "src": "networks/instagram/04.jpg", "tone": "#DCE9F0", "exemplo": true }, "metrics": [] },
-      { "media": { "src": "networks/instagram/05.jpg", "tone": "#E7569A", "exemplo": true }, "metrics": [] },
-      { "media": { "src": "networks/instagram/06.jpg", "tone": "#3F6B3A", "exemplo": true }, "metrics": [] }
+      {
+        "media": {
+          "src": "networks/instagram/01.jpg",
+          "tone": "#9FD6DB",
+          "exemplo": true
+        },
+        "caption": {
+          "en": "Caribbean water (exemplo)",
+          "pt": "Água do Caribe (exemplo)"
+        },
+        "metrics": [
+          {
+            "value": "1.2M",
+            "label": {
+              "en": "views",
+              "pt": "views"
+            },
+            "source": "Instagram Insights",
+            "exemplo": true
+          }
+        ]
+      },
+      {
+        "media": {
+          "src": "networks/instagram/02.jpg",
+          "tone": "#F3C9A6",
+          "exemplo": true
+        },
+        "metrics": []
+      },
+      {
+        "media": {
+          "src": "networks/instagram/03.jpg",
+          "tone": "#6D5B8E",
+          "exemplo": true
+        },
+        "metrics": []
+      },
+      {
+        "media": {
+          "src": "networks/instagram/04.jpg",
+          "tone": "#DCE9F0",
+          "exemplo": true
+        },
+        "metrics": []
+      },
+      {
+        "media": {
+          "src": "networks/instagram/05.jpg",
+          "tone": "#E7569A",
+          "exemplo": true
+        },
+        "metrics": []
+      },
+      {
+        "media": {
+          "src": "networks/instagram/06.jpg",
+          "tone": "#3F6B3A",
+          "exemplo": true
+        },
+        "metrics": []
+      }
     ]
   },
   {
-    "id": "tiktok", "handle": "@camilamontreal", "url": "https://www.tiktok.com/@camilamontreal", "displayName": "camilamontreal",
-    "updatedAt": "2026-06-30",
+    "id": "tiktok",
+    "handle": "@camilamontreal",
+    "url": "https://www.tiktok.com/@camilamontreal",
+    "displayName": "camilamontreal",
+    "updatedAt": "2026-10-16",
     "stats": [
-      { "value": "327K+", "label": { "en": "followers", "pt": "seguidores", "fr": "abonnés" }, "source": "Mídia kit 2026", "period": "jun/2026" },
-      { "value": "610K+", "label": { "en": "likes", "pt": "curtidas", "fr": "j'aime" }, "source": "Mídia kit 2026", "period": "abr–jun/2026" },
-      { "value": "5.6M+", "label": { "en": "views", "pt": "views", "fr": "vues" }, "source": "Mídia kit 2026", "period": "abr–jun/2026" }
+      {
+        "value": "326K",
+        "label": {
+          "en": "followers",
+          "pt": "seguidores",
+          "fr": "followers"
+        },
+        "source": "Informado por Camila (out/2026)",
+        "period": "out/2026"
+      },
+      {
+        "value": "610K+",
+        "label": {
+          "en": "likes",
+          "pt": "curtidas",
+          "fr": "j'aime"
+        },
+        "source": "Mídia kit 2026",
+        "period": "abr–jun/2026"
+      },
+      {
+        "value": "5.6M+",
+        "label": {
+          "en": "views",
+          "pt": "views",
+          "fr": "vues"
+        },
+        "source": "Mídia kit 2026",
+        "period": "abr–jun/2026"
+      }
     ],
     "posts": [
-      { "media": { "src": "networks/tiktok/01.mp4", "kind": "video", "poster": "networks/tiktok/01.jpg", "tone": "#1A2250", "exemplo": true }, "metrics": [] },
-      { "media": { "src": "networks/tiktok/02.jpg", "tone": "#F6DFA8", "exemplo": true }, "metrics": [] },
-      { "media": { "src": "networks/tiktok/03.jpg", "tone": "#1E6E7E", "exemplo": true }, "metrics": [] },
-      { "media": { "src": "networks/tiktok/04.jpg", "tone": "#E8D9C8", "exemplo": true }, "metrics": [] },
-      { "media": { "src": "networks/tiktok/05.jpg", "tone": "#B39BE0", "exemplo": true }, "metrics": [] },
-      { "media": { "src": "networks/tiktok/06.jpg", "tone": "#F0A35C", "exemplo": true }, "metrics": [] }
+      {
+        "media": {
+          "src": "networks/tiktok/01.mp4",
+          "kind": "video",
+          "poster": "networks/tiktok/01.jpg",
+          "tone": "#1A2250",
+          "exemplo": true
+        },
+        "metrics": []
+      },
+      {
+        "media": {
+          "src": "networks/tiktok/02.jpg",
+          "tone": "#F6DFA8",
+          "exemplo": true
+        },
+        "metrics": []
+      },
+      {
+        "media": {
+          "src": "networks/tiktok/03.jpg",
+          "tone": "#1E6E7E",
+          "exemplo": true
+        },
+        "metrics": []
+      },
+      {
+        "media": {
+          "src": "networks/tiktok/04.jpg",
+          "tone": "#E8D9C8",
+          "exemplo": true
+        },
+        "metrics": []
+      },
+      {
+        "media": {
+          "src": "networks/tiktok/05.jpg",
+          "tone": "#B39BE0",
+          "exemplo": true
+        },
+        "metrics": []
+      },
+      {
+        "media": {
+          "src": "networks/tiktok/06.jpg",
+          "tone": "#F0A35C",
+          "exemplo": true
+        },
+        "metrics": []
+      }
     ]
   },
   {
-    "id": "youtube", "handle": "camilamontreal", "url": "https://www.youtube.com/camilamontreal", "displayName": "Camila Montreal",
-    "updatedAt": "2026-06-30",
+    "id": "youtube",
+    "handle": "camilamontreal",
+    "url": "https://www.youtube.com/camilamontreal",
+    "displayName": "Camila Montreal",
+    "updatedAt": "2026-10-16",
     "stats": [
-      { "value": "140K+", "label": { "en": "subscribers", "pt": "inscritos", "fr": "abonnés" }, "source": "Mídia kit 2026", "period": "jun/2026" },
-      { "value": "270K+", "label": { "en": "impressions", "pt": "impressões", "fr": "impressions" }, "source": "Mídia kit 2026", "period": "abr–jun/2026" }
+      {
+        "value": "139K",
+        "label": {
+          "en": "subscribers",
+          "pt": "inscritos",
+          "fr": "subscribers"
+        },
+        "source": "Informado por Camila (out/2026)",
+        "period": "out/2026"
+      },
+      {
+        "value": "270K+",
+        "label": {
+          "en": "impressions",
+          "pt": "impressões",
+          "fr": "impressions"
+        },
+        "source": "Mídia kit 2026",
+        "period": "abr–jun/2026"
+      },
+      {
+        "value": "15K",
+        "label": {
+          "en": "Shorts channel followers",
+          "pt": "seguidores no Shorts",
+          "fr": "Shorts channel followers"
+        },
+        "source": "Informado por Camila (out/2026)",
+        "period": "out/2026"
+      }
     ],
     "posts": [
-      { "media": { "src": "networks/youtube/01.jpg", "tone": "#DCE9F0", "exemplo": true }, "caption": { "en": "Moving to Canada: what nobody tells you (exemplo)", "pt": "Mudar para o Canadá: o que ninguém conta (exemplo)" }, "metrics": [] },
-      { "media": { "src": "networks/youtube/02.jpg", "tone": "#F3C9A6", "exemplo": true }, "caption": { "en": "48 hours in Lisbon (exemplo)", "pt": "48 horas em Lisboa (exemplo)" }, "metrics": [] },
-      { "media": { "src": "networks/youtube/03.jpg", "tone": "#1E6E7E", "exemplo": true }, "caption": { "en": "Montreal winter survival guide (exemplo)", "pt": "Guia de sobrevivência no inverno de Montreal (exemplo)" }, "metrics": [] }
+      {
+        "media": {
+          "src": "networks/youtube/01.jpg",
+          "tone": "#DCE9F0",
+          "exemplo": true
+        },
+        "caption": {
+          "en": "Moving to Canada: what nobody tells you (exemplo)",
+          "pt": "Mudar para o Canadá: o que ninguém conta (exemplo)"
+        },
+        "metrics": []
+      },
+      {
+        "media": {
+          "src": "networks/youtube/02.jpg",
+          "tone": "#F3C9A6",
+          "exemplo": true
+        },
+        "caption": {
+          "en": "48 hours in Lisbon (exemplo)",
+          "pt": "48 horas em Lisboa (exemplo)"
+        },
+        "metrics": []
+      },
+      {
+        "media": {
+          "src": "networks/youtube/03.jpg",
+          "tone": "#1E6E7E",
+          "exemplo": true
+        },
+        "caption": {
+          "en": "Montreal winter survival guide (exemplo)",
+          "pt": "Guia de sobrevivência no inverno de Montreal (exemplo)"
+        },
+        "metrics": []
+      }
     ]
   },
   {
-    "id": "linkedin", "handle": "camilamontreal", "url": "https://www.linkedin.com/in/camilamontreal", "displayName": "Camila Monteiro",
-    "bio": { "en": "Digital Marketing Specialist & Content Creator · Montreal", "pt": "Especialista em Marketing Digital & Criadora de Conteúdo · Montreal" },
+    "id": "linkedin",
+    "handle": "camilamontreal",
+    "url": "https://www.linkedin.com/in/camilamontreal",
+    "displayName": "Camila Monteiro",
+    "bio": {
+      "en": "Digital Marketing Specialist & Content Creator · Montreal",
+      "pt": "Especialista em Marketing Digital & Criadora de Conteúdo · Montreal"
+    },
     "updatedAt": "2026-06-30",
-    "stats": [ { "value": "a confirmar", "label": { "en": "followers", "pt": "seguidores", "fr": "abonnés" }, "source": "LinkedIn", "exemplo": true } ],
+    "stats": [
+      {
+        "value": "a confirmar",
+        "label": {
+          "en": "followers",
+          "pt": "seguidores",
+          "fr": "abonnés"
+        },
+        "source": "LinkedIn",
+        "exemplo": true
+      }
+    ],
     "posts": []
   },
   {
-    "id": "site", "handle": "camilamontreal.com", "url": "https://www.camilamontreal.com", "displayName": "Camila Montreal",
-    "bio": { "en": "Itineraries, planners, presets, e-books and the Montreal guide.", "pt": "Roteiros, planners, presets, e-books e o guia de Montreal." },
+    "id": "site",
+    "handle": "camilamontreal.com",
+    "url": "https://www.camilamontreal.com",
+    "displayName": "Camila Montreal",
+    "bio": {
+      "en": "Itineraries, planners, presets, e-books and the Montreal guide.",
+      "pt": "Roteiros, planners, presets, e-books e o guia de Montreal."
+    },
     "updatedAt": "2026-10-15",
-    "stats": [ { "value": "100+", "label": { "en": "places in the Montreal guide", "pt": "lugares no guia de Montreal", "fr": "lieux dans le guide" }, "source": "camilamontreal.com" } ],
+    "stats": [
+      {
+        "value": "100+",
+        "label": {
+          "en": "places in the Montreal guide",
+          "pt": "lugares no guia de Montreal",
+          "fr": "lieux dans le guide"
+        },
+        "source": "camilamontreal.com"
+      }
+    ],
     "posts": [
-      { "media": { "src": "networks/site/roteiros.jpg", "tone": "#9FD6DB", "exemplo": true }, "caption": { "en": "Itineraries & checklists", "pt": "Roteiros e checklists" }, "url": "https://www.camilamontreal.com/roteiros", "metrics": [] },
-      { "media": { "src": "networks/site/presets.jpg", "tone": "#F3C9A6", "exemplo": true }, "caption": { "en": "Presets", "pt": "Presets" }, "url": "https://www.camilamontreal.com/presets", "metrics": [] },
-      { "media": { "src": "networks/site/montreal.jpg", "tone": "#1A2250", "exemplo": true }, "caption": { "en": "Montreal guide", "pt": "Guia de Montreal" }, "url": "https://www.camilamontreal.com/montreal", "metrics": [] }
+      {
+        "media": {
+          "src": "networks/site/roteiros.jpg",
+          "tone": "#9FD6DB",
+          "exemplo": true
+        },
+        "caption": {
+          "en": "Itineraries & checklists",
+          "pt": "Roteiros e checklists"
+        },
+        "url": "https://www.camilamontreal.com/roteiros",
+        "metrics": []
+      },
+      {
+        "media": {
+          "src": "networks/site/presets.jpg",
+          "tone": "#F3C9A6",
+          "exemplo": true
+        },
+        "caption": {
+          "en": "Presets",
+          "pt": "Presets"
+        },
+        "url": "https://www.camilamontreal.com/presets",
+        "metrics": []
+      },
+      {
+        "media": {
+          "src": "networks/site/montreal.jpg",
+          "tone": "#1A2250",
+          "exemplo": true
+        },
+        "caption": {
+          "en": "Montreal guide",
+          "pt": "Guia de Montreal"
+        },
+        "url": "https://www.camilamontreal.com/montreal",
+        "metrics": []
+      }
     ]
   }
 ]

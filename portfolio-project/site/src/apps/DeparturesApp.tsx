@@ -30,6 +30,18 @@ export function DeparturesApp({ onOpen }: { onOpen?: (id: string) => void }) {
           </div>
         ))}
       </div>
+      <h2 className="app__h">{ui('education', lang)}</h2>
+      <div className="passport__edu">
+        {content.education.map((e, i) => (
+          <div key={i} className={`edu ${e.kind === 'certificacao' ? 'edu--cert' : ''}`}>
+            <div className="edu__title">{t(e.title, lang)}</div>
+            <div className="muted">{tbc(e.institution, lang)} · {e.year}</div>
+          </div>
+        ))}
+      </div>
+      <h2 className="app__h">{ui('skills', lang)}</h2>
+      <div className="about__tools">{content.profile.tools.map((x) => <span key={x} className="about__tool">{x}</span>)}</div>
+      <p className="muted">{ui('languages', lang)}: {content.profile.languages.join(' · ')}</p>
     </div>
   )
 }
