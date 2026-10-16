@@ -28,20 +28,12 @@ export function Desktop() {
   })
 
   const [booted, setBooted] = useState(() => { try { return sessionStorage.getItem('camios.booted') === '1' } catch { return false } })
-  useEffect(() => { if (booted) return; const id = setTimeout(() => { setBooted(true); try { sessionStorage.setItem('camios.booted', '1') } catch { /* */ } }, 1500); return () => clearTimeout(id) }, [booted])
+  useEffect(() => { if (booted) try { sessionStorage.setItem('camios.booted', '1') } catch { /* */ } }, [booted])
 
   return (
     <div className="desk" data-audience={audience} data-daypart={dayPart(useClock())}>
       <Media media={wall} className="desk__wall" label={`${ui('photo', lang)} · ${t(wall.alt, lang)}`} />
-      <AnimatePresence>
-        {!booted && (
-          <motion.button className="boot" onClick={() => setBooted(true)} initial={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} aria-label={ui('skipIntro', lang)}>
-            <motion.span className="boot__logo" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }}>{content.profile.brandName}</motion.span>
-            <motion.span className="boot__bar"><motion.i initial={{ width: '0%' }} animate={{ width: '100%' }} transition={{ duration: 1.3, ease: 'easeInOut' }} /></motion.span>
-            <span className="boot__skip">{ui('skipIntro', lang)}</span>
-          </motion.button>
-        )}
-      </AnimatePresence>
+      <AnimatePresence>{!booted && <Login onEnter={() => setBooted(true)} />}</AnimatePresence>
       <MenuBar />
       <Widgets />
       <motion.div className="desk__icons" role="group" aria-label={ui('projects', lang)} initial="hidden" animate={booted ? 'show' : 'hidden'} variants={{ show: { transition: { staggerChildren: 0.06 } } }}>
@@ -161,5 +153,40 @@ function ClockPop({ now, onClose }: { now: Date; onClose: () => void }) {
     <div className="pop pop--clock glass" role="dialog" onMouseLeave={onClose}>
       {rows.map(([k, v]) => <div key={k} className="pop__row"><span>{k}</span><b className="num">{v}</b></div>)}
     </div>
+  )
+}
+
+/** Tela de login do Mac: foto, nome e campo de senha de brincadeira. Enter, clique ou qualquer tecla entram. */
+function Login({ onEnter }: { onEnter: () => void }) {
+  const lang = useLang((s) => s.lang)
+  const now = useClock()
+  const p = content.profile
+  const [dots, setDots] = useState(0)
+  const [leaving, setLeaving] = useState(false)
+  const go = () => { if (leaving) return; setLeaving(true); setDots(8); setTimeout(onEnter, 450) }
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Enter') return go()
+      if (e.key === 'Backspace') return setDots((d) => Math.max(0, d - 1))
+      if (e.key.length === 1 && !e.metaKey && !e.ctrlKey) setDots((d) => Math.min(12, d + 1))
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  })
+  return (
+    <motion.div className="login" initial={{ opacity: 1 }} exit={{ opacity: 0, scale: 1.04 }} transition={{ duration: 0.45 }} role="dialog" aria-label={p.brandName}>
+      <Media media={p.lockscreen} className="login__wall" label={`${ui('photo', lang)} · login`} />
+      <div className="login__top"><span className="num">{fmtDate(now, lang)}</span> <span className="num">{fmtTime(now, lang)}</span></div>
+      <div className="login__card">
+        <Media media={p.avatar} className="login__avatar" label={t(p.avatar.alt, lang)} />
+        <div className="login__name">{p.brandName}</div>
+        <form className="login__field" onSubmit={(e) => { e.preventDefault(); go() }}>
+          <span className="login__dots" aria-hidden>{dots ? '•'.repeat(dots) : <i>{ui('loginPass', lang)}</i>}</span>
+          <button type="submit" className="login__go" aria-label={ui('loginHint', lang)}>→</button>
+        </form>
+        <div className="login__hint">{ui('loginTip', lang)}</div>
+      </div>
+      <div className="login__foot">{ui('loginHint', lang)}</div>
+    </motion.div>
   )
 }

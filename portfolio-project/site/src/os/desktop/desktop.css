@@ -106,11 +106,22 @@
 }
 
 /* ---------- Boot (1,5 s, pulável, só na primeira visita da sessão) ---------- */
-.boot { position: absolute; inset: 0; z-index: 100; background: #0F1629; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; cursor: pointer; }
-.boot__logo { font-size: 28px; font-weight: 800; letter-spacing: -.03em; }
-.boot__bar { width: 180px; height: 5px; border-radius: 3px; background: rgba(255,255,255,.18); overflow: hidden; display: block; }
-.boot__bar i { display: block; height: 100%; background: #fff; }
-.boot__skip { position: absolute; bottom: 28px; font-size: 12px; opacity: .55; font-weight: 600; }
+.login { position: absolute; inset: 0; z-index: 100; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.login__wall { position: absolute; inset: 0; filter: blur(22px) saturate(1.1); transform: scale(1.1); }
+.login::before { content: ""; position: absolute; inset: 0; z-index: 1; background: rgba(0,0,0,.28); }
+.login > * { position: relative; z-index: 2; }
+.login__wall { position: absolute !important; z-index: 0 !important; }
+.login__top { position: absolute !important; top: 14px; right: 22px; font-size: 13px; font-weight: 600; display: flex; gap: 10px; text-shadow: 0 1px 6px rgba(0,0,0,.4); }
+.login__card { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.login__avatar { width: 112px; height: 112px; border-radius: 50%; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,.4), 0 0 0 2px rgba(255,255,255,.35); }
+.login__name { font-size: 20px; font-weight: 700; text-shadow: 0 1px 8px rgba(0,0,0,.4); }
+.login__field { display: flex; align-items: center; width: 220px; height: 34px; border-radius: 17px; background: rgba(255,255,255,.22); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,.3); padding: 0 4px 0 14px; }
+.login__dots { flex: 1; text-align: left; font-size: 15px; letter-spacing: .12em; overflow: hidden; white-space: nowrap; }
+.login__dots i { font-style: normal; font-size: 13px; letter-spacing: 0; opacity: .75; }
+.login__go { width: 26px; height: 26px; border-radius: 50%; border: 1px solid rgba(255,255,255,.5); background: rgba(255,255,255,.18); color: #fff; font-size: 14px; cursor: pointer; }
+.login__go:hover { background: rgba(255,255,255,.35); }
+.login__hint { font-size: 12px; opacity: .85; }
+.login__foot { position: absolute !important; bottom: 26px; font-size: 12px; opacity: .7; font-weight: 600; }
 
 /* ---------- Popovers da barra de menu (Sobre / Relógio) ---------- */
 .menubar__brand { padding: 4px 6px; border-radius: 6px; } .menubar__brand:hover { background: rgba(127,127,127,.18); }

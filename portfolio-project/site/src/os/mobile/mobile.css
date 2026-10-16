@@ -8,9 +8,13 @@
 .lock__time { position: relative; z-index: 2; margin-top: 12vh; text-shadow: 0 2px 20px rgba(0,0,0,.45); }
 .lock__date { font-size: 16px; font-weight: 600; text-transform: capitalize; }
 .lock__clock { font-size: 78px; font-weight: 700; letter-spacing: -.04em; }
-.lock__notif { position: relative; z-index: 2; margin-top: 28px; width: 100%; max-width: 360px; display: flex; gap: 12px; align-items: center; text-align: left; padding: 12px 14px; border-radius: 20px; }
-.lock__notif b { display: block; font-size: 13px; } .lock__notif span { font-size: 13px; opacity: .9; display: block; margin-top: 2px; }
-.lock__avatar { width: 40px; height: 40px; border-radius: 10px; flex: none; }
+.lock__notifs { position: relative; z-index: 2; margin-top: 22px; width: 100%; max-width: 360px; display: flex; flex-direction: column; gap: 8px; }
+.lock__notif { position: relative; z-index: 2; margin-top: 0; width: 100%; max-width: 360px; display: flex; gap: 12px; align-items: center; text-align: left; padding: 12px 14px; border-radius: 20px; }
+.lock__notif em { display: flex; justify-content: space-between; font-style: normal; font-size: 11px; font-weight: 600; opacity: .75; text-transform: uppercase; letter-spacing: .02em; } .lock__notif em small { font-size: 11px; text-transform: none; }
+.lock__notif > div { flex: 1; min-width: 0; } .lock__notif b { display: block; font-size: 13px; } .lock__notif span { font-size: 13px; opacity: .9; display: block; margin-top: 2px; }
+.lock__avatar img, .lock__avatar > * { width: 100%; height: 100%; object-fit: cover; }
+.lock__avatar { width: 40px !important; height: 40px !important; min-height: 0; border-radius: 10px; flex: none; overflow: hidden; position: relative; }
+.lock__notif b, .lock__notif span { display: -webkit-box !important; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
 .lock__hint { position: absolute; bottom: 34px; z-index: 2; font-size: 14px; font-weight: 600; opacity: .9; }
 .lock__hint::after { content: ""; display: block; width: 120px; height: 5px; border-radius: 3px; background: #fff; margin: 14px auto 0; }
 

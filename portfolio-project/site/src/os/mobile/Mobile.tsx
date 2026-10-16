@@ -55,13 +55,26 @@ function LockScreen({ onUnlock }: { onUnlock: () => void }) {
   const lang = useLang((s) => s.lang)
   const now = useClock()
   const p = content.profile
+  const audience = useOS((s) => s.audience)
+  const [first, second] = featuredProjects(audience)
+  const [s0, s1] = p.heroStats
+  const notifs: { app: string; title: string; body: string; media?: typeof p.avatar; icon?: AppIconId }[] = [
+    { app: 'Mensagens', title: p.brandName, body: t(p.tagline, lang), media: p.avatar },
+    ...(first ? [{ app: 'Fotos', title: first.client, body: t(first.title, lang), icon: 'photos' as AppIconId }] : []),
+    ...(second ? [{ app: 'Passaporte', title: second.client, body: t(second.title, lang), icon: 'passport' as AppIconId }] : []),
+    { app: 'Analytics', title: `${s0.value} ${t(s0.label, lang)}`, body: `${s1.value} ${t(s1.label, lang)}`, icon: 'miles' as AppIconId },
+  ]
   return (
     <motion.button className="lock" onClick={onUnlock} initial={{ opacity: 1 }} exit={{ opacity: 0, y: -40 }} transition={{ duration: 0.3 }} aria-label={ui('unlock', lang)}>
       <Media media={p.lockscreen} className="lock__wall" label={`${ui('photo', lang)} · lockscreen`} />
       <div className="lock__time"><div className="lock__date">{fmtDate(now, lang)}</div><div className="num lock__clock">{fmtTime(now, lang)}</div></div>
-      <div className="lock__notif glass">
-        <Media media={p.avatar} className="lock__avatar" small />
-        <div><b>{p.brandName}</b><span>{t(p.positioning, lang)}</span></div>
+      <div className="lock__notifs">
+        {notifs.map((n, i) => (
+          <motion.div key={i} className="lock__notif glass" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 + i * 0.25, duration: 0.4 }}>
+            {n.media ? <span className="lock__avatar"><Media media={n.media} small /></span> : <AppIcon id={n.icon!} size={40} />}
+            <div><em>{n.app}<small>{ui('notifNow', lang)}</small></em><b>{n.title}</b><span>{n.body}</span></div>
+          </motion.div>
+        ))}
       </div>
       <div className="lock__hint">{ui('unlock', lang)}</div>
     </motion.button>
