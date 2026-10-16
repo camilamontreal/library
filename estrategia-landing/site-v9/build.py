@@ -144,6 +144,8 @@ EN.update({
 "as4":"lost count of how many visits","mc2":"desktop + mobile PDF"
 })
 
+EN.update({"gar":"7-day guarantee.","lg":"Showing the site in English: price in dollars and English checkout. To switch, use the PT button.","as3":"living in Montreal, Canada","band1":"New place? It lands in your guide, free.","cs1":"I paid US$ 200 on my first trip.","ptipk":"In the guide, you find the best stops, photo spots, timing and discount links.","mc2":"desktop + mobile PDF"})
+
 tpl=open('index.tpl.html',encoding='utf-8').read()
 PT={}
 def rep(m):

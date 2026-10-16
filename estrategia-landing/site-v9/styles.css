@@ -985,3 +985,40 @@ html,body{overflow-x:clip}
 .pcomp .mband{font-size:clamp(12px,1.3vw,15px);bottom:31%;left:9%}
 .pcomp .mnum{font-size:clamp(9px,.9vw,11px);letter-spacing:.08em}
 .pcomp .marr{border-left-width:26px;border-top-width:14px;border-bottom-width:14px}
+
+/* ===== v13 ===== */
+.gt .gar{font-size:12px;font-weight:600;color:var(--soft);display:block}
+.gt .gar::before{display:none}
+.gt .lg{font-size:11px;line-height:1.35;padding-top:8px;opacity:.85}
+.gt .inc{font-size:13px}
+/* metrocard clean */
+.mcard::before{display:none}
+.mcard::after{content:"";position:absolute;right:0;top:0;width:40px;height:40px;background:#2e3052;clip-path:polygon(0 0,100% 0,100% 100%);display:block}
+.mlogo{left:6%;top:8%;font-size:clamp(26px,5vw,48px)}
+.msub{left:6.5%;top:30%;font-size:clamp(11px,1.5vw,16px);color:#0b2d6b}
+.mband{display:flex;align-items:center;justify-content:space-between;left:0;right:0;bottom:17%;height:27%;padding:0 6%;background:#0039a6;color:#fff;transform:none}
+.mband b{font-size:clamp(11px,1.7vw,18px);font-weight:800;white-space:nowrap}
+.mband i{flex:none;width:0;height:0;border-left:clamp(14px,2.2vw,24px) solid #ffd21f;border-top:clamp(8px,1.2vw,13px) solid transparent;border-bottom:clamp(8px,1.2vw,13px) solid transparent}
+.mnum{left:6%;bottom:5%;font-size:clamp(9px,1.2vw,13px);color:#0b2d6b;letter-spacing:.1em}
+.marr{display:none}
+.pcomp .mlogo{font-size:clamp(20px,3.2vw,34px)}
+.pcomp .msub{font-size:clamp(10px,1.1vw,12px)}
+.pcomp .mband b{font-size:clamp(10px,1.2vw,14px)}
+.pcomp .mnum{font-size:clamp(8px,.9vw,10px)}
+/* desktop full page */
+.lap .scr{aspect-ratio:1094/684}
+.lap .scr img{position:static;width:100%;height:100%;animation:none;filter:none}
+.vframe img,.vthumbs img{filter:none}
+/* skyline icons at the base */
+.sk{justify-content:flex-end;padding-bottom:16px}
+.sk .ib{margin-top:0;order:2}
+.sk::before{inset:34px 8px 82px}
+@media (max-width:600px){.sk{padding-bottom:10px}.sk::before{inset:22px 4px 50px}}
+/* testimonials: black subway entrance signs */
+.tq{position:relative;background:#14161c;color:#fff;border-radius:8px;border-top:0;border-left:10px solid var(--tc,#00933c);padding:22px 22px 22px 20px}
+.tq:nth-child(3n+2){--tc:#ee352e}.tq:nth-child(3n){--tc:#fccc0a}
+.tq::after{content:"";position:absolute;right:16px;top:16px;width:14px;height:14px;border-radius:50%;background:var(--tc,#00933c)}
+.tq blockquote{color:#fff}
+.tq figcaption{color:#aab2c0}
+.tq figcaption b{color:#fff;text-transform:uppercase;letter-spacing:.04em}
+.tq .bl{background:var(--tc,#00933c);color:#14161c}
