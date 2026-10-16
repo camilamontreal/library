@@ -5,7 +5,7 @@ import { useOS, type AppId } from '../../store/os'
 import { useLang, ui, t } from '../../lib/i18n'
 import { useClock, fmtTime, fmtDate } from '../../lib/hooks'
 import { Media } from '../../ui/Media'
-import { AppIcon, Icon } from '../../ui/icons'
+import { AppIcon, Icon, type AppIconId } from '../../ui/icons'
 import { renderApp, appTitle } from '../../apps'
 import './mobile.css'
 
@@ -76,7 +76,7 @@ function HomeScreen({ onOpen }: { onOpen: (app: AppId, payload?: string) => void
   const featured = featuredProjects(audience)
   const [cc, setCc] = useState(false)
   const setSpotlight = useOS((s) => s.setSpotlight)
-  const apps: { id: AppId; payload?: string; label: string; icon: Parameters<typeof AppIcon>[0]['id'] }[] = [
+  const apps: { id: AppId; payload?: string; label: string; icon: AppIconId }[] = [
     { id: 'browser', payload: 'instagram', label: 'Instagram', icon: 'instagram' },
     { id: 'browser', payload: 'tiktok', label: 'TikTok', icon: 'tiktok' },
     { id: 'browser', payload: 'youtube', label: 'YouTube', icon: 'youtube' },
@@ -93,7 +93,7 @@ function HomeScreen({ onOpen }: { onOpen: (app: AppId, payload?: string) => void
     { id: 'about', label: ui('about', lang), icon: 'about' },
     { id: 'mediakit', label: ui('mediaKit', lang), icon: 'mediakit' },
     { id: 'miles', label: ui('miles', lang), icon: 'miles' },
-    { id: 'trash', label: ui('trash', lang), icon: 'trash' },
+    { id: 'trash', label: ui('trash', lang), icon: 'trashTile' },
     { id: 'browser', payload: 'site', label: 'Site', icon: 'site' },
   ]
   return (
@@ -120,7 +120,7 @@ function HomeScreen({ onOpen }: { onOpen: (app: AppId, payload?: string) => void
       <nav className="home__dock glass" aria-label="Dock">
         <button onClick={() => onOpen('contact')} aria-label={ui('contact', lang)}><AppIcon id="contact" size={58} /></button>
         <button onClick={() => onOpen('browser')} aria-label={ui('browser', lang)}><AppIcon id="browser" size={58} /></button>
-        <button onClick={() => onOpen('finder')} aria-label={ui('allProjects', lang)}><AppIcon id="finder" size={58} /></button>
+        <button onClick={() => onOpen('finder')} aria-label={ui('allProjects', lang)}><AppIcon id="files" size={58} /></button>
         <button onClick={() => onOpen('miles')} aria-label={ui('miles', lang)}><AppIcon id="miles" size={58} /></button>
       </nav>
     </div>

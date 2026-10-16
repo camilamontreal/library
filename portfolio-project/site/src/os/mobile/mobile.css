@@ -76,3 +76,6 @@
 .cc__seg { display: flex; gap: 4px; background: rgba(127,127,127,.2); padding: 3px; border-radius: 12px; }
 .cc__seg button { flex: 1; min-height: 40px; border-radius: 10px; font-weight: 700; font-size: 13px; color: var(--ink-2); }
 .cc__seg button.on { background: var(--paper); color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.2); }
+
+/* ---------- Ícones do iPhone: sem sombra pesada, só um leve destaque ---------- */
+.happ .appicon, .home__dock .appicon { display: block; filter: drop-shadow(0 1px 1.6px rgba(0,0,0,.22)); }

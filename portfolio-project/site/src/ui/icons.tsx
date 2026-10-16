@@ -1,5 +1,4 @@
 /** Ícones do sistema. Todos em SVG inline, cor por `currentColor`, para funcionar no claro e no escuro. */
-import type { AppId } from '../store/os'
 
 type P = React.SVGProps<SVGSVGElement>
 const base = { width: 22, height: 22, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.9, strokeLinecap: 'round', strokeLinejoin: 'round' } as const
@@ -37,41 +36,8 @@ export const Icon = {
   list: (p: P = {}) => <svg {...base} {...p}><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.5M3.5 12h.5M3.5 18h.5"/></svg>,
 }
 
-/** Ícone colorido estilo app (quadrado arredondado com gradiente), usado no dock e na tela inicial. */
-export const APP_META: Record<AppId | 'instagram' | 'tiktok' | 'youtube' | 'linkedin' | 'site', { a: string; b: string; icon: keyof typeof Icon }> = {
-  browser: { a: '#5AC8FA', b: '#007AFF', icon: 'compass' },
-  miles: { a: '#8E9BF0', b: '#5B6BD5', icon: 'plane' },
-  passport: { a: '#3A3F58', b: '#0F1629', icon: 'passport' },
-  departures: { a: '#FFD60A', b: '#FF9F0A', icon: 'departures' },
-  about: { a: '#FFB3C7', b: '#FF2D55', icon: 'person' },
-  mediakit: { a: '#C7D2FE', b: '#8E9BF0', icon: 'doc' },
-  contact: { a: '#5AC8FA', b: '#007AFF', icon: 'mail' },
-  trash: { a: '#E5E5EA', b: '#AEAEB2', icon: 'trash' },
-  notes: { a: '#FFE680', b: '#FFC21A', icon: 'notes' },
-  messages: { a: '#6EE07F', b: '#1FB84A', icon: 'chat' },
-  photos: { a: '#FFB88A', b: '#E8548F', icon: 'photos' },
-  maps: { a: '#7FD1AE', b: '#2E9E78', icon: 'map' },
-  music: { a: '#FF8FA3', b: '#E5254B', icon: 'music' },
-  calendar: { a: '#FF8A80', b: '#E5352B', icon: 'calendar' },
-  ticket: { a: '#9AA8F5', b: '#4A5AC4', icon: 'ticket' },
-  finder: { a: '#8FC0F2', b: '#5E9BE0', icon: 'folder' },
-  case: { a: '#8FC0F2', b: '#5E9BE0', icon: 'folder' },
-  instagram: { a: '#F58529', b: '#DD2A7B', icon: 'instagram' },
-  tiktok: { a: '#3A3F58', b: '#0F1629', icon: 'tiktok' },
-  youtube: { a: '#FF4E45', b: '#E53935', icon: 'youtube' },
-  linkedin: { a: '#2E8BE6', b: '#0A66C2', icon: 'linkedin' },
-  site: { a: '#5AC8FA', b: '#007AFF', icon: 'globe' },
-}
-
-export function AppIcon({ id, size = 52 }: { id: keyof typeof APP_META; size?: number }) {
-  const m = APP_META[id]
-  const I = Icon[m.icon]
-  return (
-    <span className="appicon" style={{ width: size, height: size, borderRadius: size * 0.24, background: `linear-gradient(180deg, ${m.a}, ${m.b})` }} aria-hidden="true">
-      <I width={size * 0.5} height={size * 0.5} stroke={m.icon === 'passport' || m.icon === 'tiktok' ? '#fff' : '#fff'} />
-    </span>
-  )
-}
+/** Ícones de app (SVG vetorial, desenho original): ver ui/appicons.tsx */
+export { AppIcon, type AppIconId } from './appicons'
 
 /** Pasta azul do macOS, com capa de foto opcional. */
 export function FolderIcon({ size = 72 }: { size?: number }) {

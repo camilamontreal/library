@@ -65,15 +65,26 @@
 .win__title { margin-left: 10px; font-size: 13px; font-weight: 600; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .win__body { flex: 1; overflow: auto; overscroll-behavior: contain; }
 
-/* ---------- Dock ---------- */
-.dock { position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%); display: flex; align-items: flex-end; gap: 6px; padding: 8px 10px; border-radius: 22px; z-index: 40; }
-.dock__app { position: relative; display: flex; flex-direction: column; align-items: center; width: 56px; transition: transform var(--dur) var(--ease); }
-.dock__app:hover { transform: translateY(-6px) scale(1.08); }
-.dock__label { position: absolute; top: -34px; font-size: 12px; font-weight: 600; color: var(--glass-ink); background: var(--glass-strong); padding: 4px 9px; border-radius: 8px; opacity: 0; pointer-events: none; white-space: nowrap; transition: opacity var(--dur); }
-.dock__app:hover .dock__label, .dock__app:focus-visible .dock__label { opacity: 1; }
-.dock__dot { position: absolute; bottom: -7px; width: 4px; height: 4px; border-radius: 50%; background: var(--glass-ink); opacity: .7; }
-.dock__sep { width: .5px; height: 46px; background: rgba(127,127,127,.5); margin: 0 4px 3px; }
-.appicon { display: inline-flex; align-items: center; justify-content: center; box-shadow: var(--shadow-icon), 0 0 0 .5px rgba(0,0,0,.08) inset; color: #fff; }
+/* ---------- Dock (macOS) ---------- */
+.desk { --dock-glass: rgba(255,255,255,.26); --dock-edge: rgba(255,255,255,.5); --dock-dot: rgba(30,30,34,.6); --dock-sep: rgba(255,255,255,.42);
+  --tip-bg: rgba(48,48,52,.84); --tip-ink: #fff; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .desk { --dock-glass: rgba(34,34,40,.4); --dock-edge: rgba(255,255,255,.16); --dock-dot: rgba(255,255,255,.78); --dock-sep: rgba(255,255,255,.22); --tip-bg: rgba(70,70,76,.86); } }
+:root[data-theme="dark"] .desk { --dock-glass: rgba(34,34,40,.4); --dock-edge: rgba(255,255,255,.16); --dock-dot: rgba(255,255,255,.78); --dock-sep: rgba(255,255,255,.22); --tip-bg: rgba(70,70,76,.86); }
+.dock { position: absolute; left: 50%; bottom: 8px; transform: translateX(-50%); z-index: 40; display: flex; align-items: flex-end; gap: 5px;
+  height: calc(var(--dock-base, 58px) + 15px); padding: 7px 8px 8px; border-radius: 24px; box-sizing: border-box;
+  background: var(--dock-glass); backdrop-filter: blur(26px) saturate(1.9); -webkit-backdrop-filter: blur(26px) saturate(1.9);
+  border: .5px solid var(--dock-edge); box-shadow: 0 0 0 .5px rgba(0,0,0,.2), 0 14px 30px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.34); }
+.dock__app { position: relative; flex: none; display: block; border-radius: 22%; outline-offset: 3px; }
+.dock__bounce { display: block; width: 100%; height: 100%; }
+.dock .appicon { width: 100%; height: 100%; display: block; filter: drop-shadow(0 2px 2.5px rgba(0,0,0,.3)) drop-shadow(0 .5px .5px rgba(0,0,0,.28)); }
+.dock .appicon--trash { filter: drop-shadow(0 1px 1.5px rgba(0,0,0,.25)); }
+.dock__label { position: absolute; bottom: calc(100% + 14px); left: 50%; transform: translateX(-50%) translateY(4px); opacity: 0; pointer-events: none; white-space: nowrap; z-index: 3;
+  font-size: 13px; font-weight: 500; letter-spacing: .005em; color: var(--tip-ink); background: var(--tip-bg); padding: 4px 12px 5px; border-radius: 8px;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 0 0 .5px rgba(255,255,255,.14), 0 4px 14px rgba(0,0,0,.3); transition: opacity .14s ease .08s, transform .14s ease .08s; }
+.dock__label::after { content: ""; position: absolute; left: 50%; top: 100%; margin-left: -6px; border: 6px solid transparent; border-top-color: var(--tip-bg); border-bottom: 0; }
+.dock__app:hover .dock__label, .dock__app:focus-visible .dock__label { opacity: 1; transform: translateX(-50%) translateY(0); }
+.dock__dot { position: absolute; left: 50%; bottom: -6px; width: 4.5px; height: 4.5px; margin-left: -2.25px; border-radius: 50%; background: var(--dock-dot); }
+.dock__sep { flex: none; width: 1px; height: calc(var(--dock-base, 58px) * .78); align-self: center; margin: 0 4px; background: var(--dock-sep); border-radius: 1px; }
 
 /* ---------- Notificação ---------- */
 .toast { position: absolute; right: 20px; bottom: 100px; width: 330px; display: flex; align-items: center; gap: 6px; padding: 10px 10px 10px 12px; border-radius: 18px; z-index: 45; }
@@ -92,9 +103,6 @@
   .widget__route { font-size: 18px; }
   .desk__wall .media__label, .desk__wall .exemplo-badge { left: 270px; }
   .dicon { width: 100px; }
-  .dock .appicon { width: 42px !important; height: 42px !important; }
-  .dock { gap: 2px; padding: 8px 8px; }
-  .dock__app { width: 48px; }
 }
 
 /* ---------- Boot (1,5 s, pulável, só na primeira visita da sessão) ---------- */

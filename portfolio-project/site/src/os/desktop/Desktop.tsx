@@ -5,12 +5,13 @@ import { useOS } from '../../store/os'
 import { useLang, ui, t } from '../../lib/i18n'
 import { useWallpaper, useClock, fmtTime, fmtDate, dayPart } from '../../lib/hooks'
 import { Media } from '../../ui/Media'
-import { AppIcon, Icon } from '../../ui/icons'
+import { Icon } from '../../ui/icons'
 import { Window } from './Window'
 import { Widgets } from './Widgets'
 import { DesktopIcon } from './DesktopIcon'
 import { renderApp, appTitle } from '../../apps'
-import { APP_LABEL, DOCK, ALL_APPS } from '../../apps/registry'
+import { APP_LABEL, ALL_APPS } from '../../apps/registry'
+import { Dock } from './Dock'
 import './desktop.css'
 
 
@@ -53,19 +54,7 @@ export function Desktop() {
       </AnimatePresence>
 
       <Toast />
-      <nav className="dock glass" aria-label="Dock">
-        {DOCK.map((id) => (
-          <button key={id} className="dock__app" onClick={() => open(id)} aria-label={ui(APP_LABEL[id], lang)}>
-            <AppIcon id={id} />
-            <span className="dock__label">{ui(APP_LABEL[id], lang)}</span>
-            {windows.some((w) => w.app === id) && <i className="dock__dot" />}
-          </button>
-        ))}
-        <span className="dock__sep" />
-        <button className="dock__app" onClick={() => open('trash')} aria-label={ui('trash', lang)}>
-          <AppIcon id="trash" /><span className="dock__label">{ui('trash', lang)}</span>
-        </button>
-      </nav>
+      <Dock />
     </div>
   )
 }
