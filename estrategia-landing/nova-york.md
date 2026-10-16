@@ -2,6 +2,7 @@
 ### Estratégia comercial, estrutura e copy (versão 1 para aprovação)
 
 > **Decisões aprovadas:** headline A · estrutura de 15 seções · garantia de 7 dias · links com comissão "depende do parceiro" (aviso genérico de transparência no rodapé e no FAQ; detalhar por parceiro).
+> **Dados confirmados:** entrega por link com PDF interativo (desktop e celular) · Camila já foi a NYC "inúmeras vezes" e mora perto (sem número exato: usar "já perdi a conta de quantas vezes fui").
 > Status: rascunho para aprovação. Nenhum design ou código foi iniciado.
 > Tudo que aparece entre `[colchetes]` é informação que **eu não tenho** e que precisa ser confirmada ou preenchida por você.
 
@@ -257,7 +258,7 @@ Três abordagens distintas. Cada uma vem com subheadline.
 **Botão principal:** Quero o guia de Nova York
 **Botão secundário (texto):** Ver o que tem dentro ↓
 
-**Microcopy sob o botão:** `[Pagamento seguro · Acesso imediato por e-mail · A CONFIRMAR]`
+**Microcopy sob o botão:** `[Pagamento seguro · Acesso imediato por link após a confirmação]`
 
 **Imagem:** capa do guia ("Nova York · O roteiro perfeito") + uma página interna aberta ao lado.
 
@@ -417,7 +418,7 @@ Eu viajo e mostro minhas viagens no Instagram, no YouTube e no TikTok como **@ca
 
 Eu coloquei aqui o que eu gostaria de ter lido antes de ir: o horário certo, o lugar que decepciona, o jeito mais barato, o erro que eu cometi.
 
-`[Quantas vezes já foi a NY / se mora lá / há quanto tempo cria conteúdo / número de seguidores]`
+Já perdi a conta de quantas vezes fui a Nova York. Moro por perto e volto sempre, então o guia é atualizado pela minha experiência real, não por pesquisa de longe. `[Ajustar "moro por perto" com a cidade/país exato; número de seguidores: A CONFIRMAR]`
 
 **Links:** Instagram · YouTube · TikTok · Vlogs em Nova York
 
@@ -484,7 +485,7 @@ Eu coloquei aqui o que eu gostaria de ter lido antes de ir: o horário certo, o 
 ### 14. PERGUNTAS FREQUENTES
 
 **O guia é um PDF? Como eu acesso?**
-`[A CONFIRMAR formato e entrega]`. O guia tem uma versão para desktop e outra para celular, com sumário clicável, botões, vídeos e mapa interativo.
+Você recebe um link para o PDF interativo, com versão para desktop e versão para celular. O guia tem uma versão para desktop e outra para celular, com sumário clicável, botões, vídeos e mapa interativo.
 
 **Quantos dias de roteiro tem?**
 Quatro dias, por região: Midtown e Times Square; Central Park, Upper West e Midtown; Estátua, Downtown e Brooklyn; Hudson Yards, Chelsea e Downtown. Além disso, há uma seção "Tem mais dias?" com ideias extras.
