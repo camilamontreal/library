@@ -7,6 +7,8 @@
 > - **Brasil:** R$ 67,90 à vista (1×). Parcelamento em até 9×: 2× R$ 35,74 · 3× R$ 24,23 · 4× R$ 18,48 · 5× R$ 15,03 · 6× R$ 12,74 · 7× R$ 11,10 · 8× R$ 9,87 · 9× R$ 8,92. **De 2× em diante há asterisco (*) = parcelas com juros: NÃO escrever "sem juros".** Formas de pagamento no Brasil (print do checkout): cartão de crédito (opção de dois cartões), **Pix**, **boleto**, **PayPal** e "Mostrar mais" (há outras opções ocultas: confirmar quais).
 > - **Exterior/Canadá:** CAD 21,00 (confirmado). Opções: cartão de crédito, Klarna (Pay Over Time), PayPal e dois cartões.
 > **Atualizações:** gratuitas, pelo mesmo link. **Offline:** o PDF pode ser baixado (links e vídeos precisam de internet).
+> **Autoria e audiência (informado por Camila, out/2026):** mora em Montreal (Canadá). Instagram @camilamontreal 113 mil · TikTok 326 mil · YouTube 139 mil inscritos (+ canal de Shorts 15 mil e @mundodacami 6 mil). Soma dos três canais principais ≈ 578 mil; usar **"mais de 570 mil seguidores"** (ou "+600 mil" só se somar todos os canais e confirmar). Métricas de alcance/views do mídia kit não entram na landing (são de período, não de público).
+> **Checkout:** dois links (Brasil em R$ e exterior em CAD); o botão muda conforme o país.
 > Status: rascunho para aprovação. Nenhum design ou código foi iniciado.
 > Tudo que aparece entre `[colchetes]` é informação que **eu não tenho** e que precisa ser confirmada ou preenchida por você.
 
@@ -422,7 +424,7 @@ Eu viajo e mostro minhas viagens no Instagram, no YouTube e no TikTok como **@ca
 
 Eu coloquei aqui o que eu gostaria de ter lido antes de ir: o horário certo, o lugar que decepciona, o jeito mais barato, o erro que eu cometi.
 
-Já perdi a conta de quantas vezes fui a Nova York. Moro por perto e volto sempre, então o guia é atualizado pela minha experiência real, não por pesquisa de longe. `[Ajustar "moro por perto" com a cidade/país exato; número de seguidores: A CONFIRMAR]`
+Já perdi a conta de quantas vezes fui a Nova York. Moro em Montreal, no Canadá, a algumas horas da cidade, então o guia vem da minha experiência real, não de pesquisa de longe. Mais de 570 mil pessoas me acompanham no Instagram, no TikTok e no YouTube.
 
 **Links:** Instagram · YouTube · TikTok · Vlogs em Nova York
 
