@@ -83,11 +83,18 @@
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
     }, { threshold: 0.1, rootMargin: "0px 0px -6% 0px" });
     targets.forEach(function (t) { io.observe(t); });
-    setTimeout(function () { targets.forEach(function (t) { t.classList.add("in"); }); }, 6000);
+    /* fast flings can skip an element entirely: anything already above the fold counts as seen */
+    var pend = Array.prototype.slice.call(targets);
+    window.addEventListener("scroll", function () {
+      if (!pend.length) return;
+      var lim = window.innerHeight * 0.95;
+      pend = pend.filter(function (t) { if (t.getBoundingClientRect().top < lim) { t.classList.add("in"); return false; } return true; });
+    }, { passive: true });
+    setTimeout(function () { targets.forEach(function (t) { t.classList.add("in"); }); pend = []; }, 6000);
   } else { targets.forEach(function (t) { t.classList.add("in"); }); }
 
   /* ---------- train on the rail + LED ---------- */
-  var line = $("line"), train = $("train"), prog = $("prog"), ledt = $("ledt"), ledb = $("ledb"), ledn = $("ledn");
+  var line = $("line"), train = $("train"), ledt = $("ledt"), ledb = $("ledb"), ledn = $("ledn");
   var sts = Array.prototype.slice.call(document.querySelectorAll(".st"));
   var tops = [], lineTop = 0, cur = -1, ticking = false;
   var lineH = 0, railH = 1, lastIdx = -1, lastNear = false;
@@ -111,8 +118,6 @@
     var vh = window.innerHeight, y = window.scrollY + vh * 0.38;
     var h = lineH - 64 - 46;
     var ty = Math.max(0, Math.min(y - lineTop - 46 - 32, h));
-    train.style.transform = "translate3d(0," + (ty + 46) + "px,0)";
-    prog.style.transform = "scaleY(" + Math.min(1, (ty + 32) / railH).toFixed(4) + ")";
     var idx = 0, near = false;
     for (var i = 0; i < tops.length; i++) { if (tops[i] - 40 <= y) idx = i; if (Math.abs(tops[i] - y) < 70) near = true; }
     if (near !== lastNear) { lastNear = near; train.classList.toggle("open", near); }
@@ -301,6 +306,10 @@
   }
   $("squirrel").addEventListener("click", function () { say(D().squirrel); });
   $("cart").addEventListener("click", function () { say(D().cart); });
+
+  /* ---------- warm up the lazy images so they are never blank ---------- */
+  function warm() { document.querySelectorAll("img[loading=lazy]").forEach(function (m) { m.loading = "eager"; }); }
+  if (document.readyState === "complete") setTimeout(warm, 600); else window.addEventListener("load", function () { setTimeout(warm, 600); });
 
   /* ---------- language: PT / EN ---------- */
   function applyLang(l) {

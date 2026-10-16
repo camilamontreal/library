@@ -729,7 +729,6 @@ html, body{overflow-x:clip}
 .tq figcaption{color:#aab2c0}
 .tq figcaption b{color:#fff;text-transform:uppercase;letter-spacing:.04em}
 .tq .bl{background:var(--tc,#00933c);color:#14161c}
-.off-screen, .off-screen *, .off-screen *::before, .off-screen *::after{animation-play-state:paused!important}
 .rail i{height:100%;transform-origin:top;transform:scaleY(0);will-change:transform}
 .train{transform:translate3d(0,0,0)}
 .led .lang{margin-left:auto;padding:4px;gap:4px}
@@ -743,3 +742,12 @@ html, body{overflow-x:clip}
 .mband{bottom:20%;height:25%}
 .mnum{left:7%;bottom:6%}
 @media (max-width:860px){.pr2 .mcard{width:min(100%,340px)}}
+/* ===== v16: train follows the scroll on the compositor (sticky), no JS lag ===== */
+.rail i{display:none}
+.trainwrap{position:absolute;left:var(--rail);top:46px;bottom:0;width:34px;margin-left:-17px;overflow-x:visible;overflow-y:clip;z-index:6;pointer-events:none}
+.train{position:sticky;top:calc(38vh - 32px);left:auto;margin:0;transform:none;will-change:auto;width:34px;height:64px;z-index:6}
+.train::before{content:"";position:absolute;left:50%;bottom:32px;width:8px;margin-left:-4px;height:30000px;background:var(--line);border-radius:4px;z-index:-1;transition:background-color .4s ease}
+@media (max-width:860px){.trainwrap,.train{width:26px}.trainwrap{margin-left:-13px}.train{height:48px;top:calc(38vh - 24px)}.train::before{bottom:24px}}
+/* only the animated bits pause when off screen (no universal selector) */
+.off-screen .heli,.off-screen .kong .karm,.off-screen .sq,.off-screen .sq .tail,.off-screen .cart .steam,.off-screen .lap .cur,.off-screen .phn .fing,.off-screen .off .plane,.off-screen .off .slash,.off-screen .mrow .bl,.off-screen .mrail i,.off-screen .txi,.off-screen .rotor{animation-play-state:paused!important}
+.hero .bgc img{animation:none!important}

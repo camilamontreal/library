@@ -738,7 +738,6 @@ html, body{overflow-x:clip}
 .tq figcaption{color:#aab2c0}
 .tq figcaption b{color:#fff;text-transform:uppercase;letter-spacing:.04em}
 .tq .bl{background:var(--tc,#00933c);color:#14161c}
-.off-screen, .off-screen *, .off-screen *::before, .off-screen *::after{animation-play-state:paused!important}
 .rail i{height:100%;transform-origin:top;transform:scaleY(0);will-change:transform}
 .train{transform:translate3d(0,0,0)}
 .led .lang{margin-left:auto;padding:4px;gap:4px}
@@ -751,7 +750,17 @@ html, body{overflow-x:clip}
 .msub{left:7.5%;top:36%;font-size:clamp(11px,1.5vw,15px)}
 .mband{bottom:20%;height:25%}
 .mnum{left:7%;bottom:6%}
-@media (max-width:860px){.pr2 .mcard{width:min(100%,340px)}}</style>
+@media (max-width:860px){.pr2 .mcard{width:min(100%,340px)}}
+/* ===== v16: train follows the scroll on the compositor (sticky), no JS lag ===== */
+.rail i{display:none}
+.trainwrap{position:absolute;left:var(--rail);top:46px;bottom:0;width:34px;margin-left:-17px;overflow-x:visible;overflow-y:clip;z-index:6;pointer-events:none}
+.train{position:sticky;top:calc(38vh - 32px);left:auto;margin:0;transform:none;will-change:auto;width:34px;height:64px;z-index:6}
+.train::before{content:"";position:absolute;left:50%;bottom:32px;width:8px;margin-left:-4px;height:30000px;background:var(--line);border-radius:4px;z-index:-1;transition:background-color .4s ease}
+@media (max-width:860px){.trainwrap,.train{width:26px}.trainwrap{margin-left:-13px}.train{height:48px;top:calc(38vh - 24px)}.train::before{bottom:24px}}
+/* only the animated bits pause when off screen (no universal selector) */
+.off-screen .heli,.off-screen .kong .karm,.off-screen .sq,.off-screen .sq .tail,.off-screen .cart .steam,.off-screen .lap .cur,.off-screen .phn .fing,.off-screen .off .plane,.off-screen .off .slash,.off-screen .mrow .bl,.off-screen .mrail i,.off-screen .txi,.off-screen .rotor{animation-play-state:paused!important}
+.hero .bgc img{animation:none!important}
+</style>
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
@@ -763,9 +772,11 @@ html, body{overflow-x:clip}
 </div>
 
 <div class="wrapline" id="line">
-  <div class="rail" aria-hidden="true"><i id="prog"></i></div>
-  <div class="train" id="train" aria-hidden="true">
+  <div class="rail" aria-hidden="true"></div>
+  <div class="trainwrap" aria-hidden="true">
+  <div class="train" id="train">
     <svg viewBox="0 0 34 64"><rect class="body" x="2" y="0" width="30" height="64" rx="10"/><rect class="stripe" x="2" y="26" width="30" height="6"/><rect class="win" x="7" y="6" width="20" height="14" rx="4"/><rect class="win" x="7" y="42" width="20" height="14" rx="4"/><rect class="door" x="15" y="33" width="4" height="8"/></svg>
+  </div>
   </div>
 
   <main id="topo">
@@ -1249,11 +1260,18 @@ html, body{overflow-x:clip}
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
     }, { threshold: 0.1, rootMargin: "0px 0px -6% 0px" });
     targets.forEach(function (t) { io.observe(t); });
-    setTimeout(function () { targets.forEach(function (t) { t.classList.add("in"); }); }, 6000);
+    /* fast flings can skip an element entirely: anything already above the fold counts as seen */
+    var pend = Array.prototype.slice.call(targets);
+    window.addEventListener("scroll", function () {
+      if (!pend.length) return;
+      var lim = window.innerHeight * 0.95;
+      pend = pend.filter(function (t) { if (t.getBoundingClientRect().top < lim) { t.classList.add("in"); return false; } return true; });
+    }, { passive: true });
+    setTimeout(function () { targets.forEach(function (t) { t.classList.add("in"); }); pend = []; }, 6000);
   } else { targets.forEach(function (t) { t.classList.add("in"); }); }
 
   /* ---------- train on the rail + LED ---------- */
-  var line = $("line"), train = $("train"), prog = $("prog"), ledt = $("ledt"), ledb = $("ledb"), ledn = $("ledn");
+  var line = $("line"), train = $("train"), ledt = $("ledt"), ledb = $("ledb"), ledn = $("ledn");
   var sts = Array.prototype.slice.call(document.querySelectorAll(".st"));
   var tops = [], lineTop = 0, cur = -1, ticking = false;
   var lineH = 0, railH = 1, lastIdx = -1, lastNear = false;
@@ -1277,8 +1295,6 @@ html, body{overflow-x:clip}
     var vh = window.innerHeight, y = window.scrollY + vh * 0.38;
     var h = lineH - 64 - 46;
     var ty = Math.max(0, Math.min(y - lineTop - 46 - 32, h));
-    train.style.transform = "translate3d(0," + (ty + 46) + "px,0)";
-    prog.style.transform = "scaleY(" + Math.min(1, (ty + 32) / railH).toFixed(4) + ")";
     var idx = 0, near = false;
     for (var i = 0; i < tops.length; i++) { if (tops[i] - 40 <= y) idx = i; if (Math.abs(tops[i] - y) < 70) near = true; }
     if (near !== lastNear) { lastNear = near; train.classList.toggle("open", near); }
@@ -1467,6 +1483,10 @@ html, body{overflow-x:clip}
   }
   $("squirrel").addEventListener("click", function () { say(D().squirrel); });
   $("cart").addEventListener("click", function () { say(D().cart); });
+
+  /* ---------- warm up the lazy images so they are never blank ---------- */
+  function warm() { document.querySelectorAll("img[loading=lazy]").forEach(function (m) { m.loading = "eager"; }); }
+  if (document.readyState === "complete") setTimeout(warm, 600); else window.addEventListener("load", function () { setTimeout(warm, 600); });
 
   /* ---------- language: PT / EN ---------- */
   function applyLang(l) {
