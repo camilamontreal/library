@@ -3,6 +3,8 @@
 
 > **Decisões aprovadas:** headline A · estrutura de 15 seções · garantia de 7 dias · links com comissão "depende do parceiro" (aviso genérico de transparência no rodapé e no FAQ; detalhar por parceiro).
 > **Dados confirmados:** entrega por link com PDF interativo (desktop e celular) · Camila já foi a NYC "inúmeras vezes" e mora perto (sem número exato: usar "já perdi a conta de quantas vezes fui").
+> **Preço atual:** R$ 67,90 (Brasil) e $ 21 (Canadá; moeda a confirmar, provavelmente CAD). Prints das opções de pagamento BR/CA serão enviados.
+> **Atualizações:** gratuitas, pelo mesmo link. **Offline:** o PDF pode ser baixado (links e vídeos precisam de internet).
 > Status: rascunho para aprovação. Nenhum design ou código foi iniciado.
 > Tudo que aparece entre `[colchetes]` é informação que **eu não tenho** e que precisa ser confirmada ou preenchida por você.
 
@@ -405,7 +407,7 @@ Sugestões de bate-volta (Washington, Filadélfia, Boston, Niagara Falls, Long I
 2. **Na cidade:** abra o dia, siga manhã, tarde e noite, e pule o que estiver marcado como opcional se faltar tempo.
 3. **No celular:** há uma versão pensada para a tela do celular, com rolagem vertical.
 
-**Microcopy:** `[Funciona offline? A CONFIRMAR]`
+**Microcopy:** Você pode baixar o PDF e abrir sem internet. Links, vídeos e mapa precisam de conexão.
 
 ---
 
@@ -466,10 +468,10 @@ Já perdi a conta de quantas vezes fui a Nova York. Moro por perto e volto sempr
 - ✔ **Economia**, **transporte**, **celular e apps**, **checklists**
 - ✔ **Halloween, Thanksgiving, Black Friday e Natal**
 - ✔ **Links de reserva com desconto** `[detalhar o que o cupom cobre]`
-- ✔ `[Atualizações: A CONFIRMAR]`
+- ✔ **Atualizações gratuitas** pelo mesmo link
 - ✔ `[Bônus: A CONFIRMAR]`
 
-**Preço:** `[R$ XX]` ou `[N× de R$ XX]`
+**Preço:** R$ 67,90 (Brasil) · `$ 21 [CAD? A CONFIRMAR]` (Canadá). `[Parcelamento e formas de pagamento: aguardando prints]`
 **Texto sob o preço:** `[Pagamento único. Acesso por e-mail logo após a confirmação. A CONFIRMAR]`
 
 **Botão:** Quero o guia de Nova York
@@ -509,7 +511,7 @@ São links de reserva de passeios, ingressos e serviços com meu cupom. Alguns p
 Não é pré-requisito. O guia está em português, inclui dicas para ver musicais em português e orienta a baixar mapa offline e tradutor. Ainda assim, algumas situações exigem uma comunicação básica.
 
 **Funciona no celular?**
-Sim. Há uma versão pensada para a tela do celular. `[Offline: A CONFIRMAR]`.
+Sim. Há uma versão pensada para a tela do celular. Você pode baixar o PDF. Links, vídeos e mapa precisam de internet..
 
 **Serve para quem vai com criança?**
 O guia não é focado em crianças, mas inclui lugares como FAO Schwarz e M&M's World, além de atrações de Natal. `[Ajustar se houver conteúdo específico]`.
