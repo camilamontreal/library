@@ -40,7 +40,7 @@
       people: " pessoas", price: "R$ 67,90",
       per: "à vista, ou em até 9× de R$ 8,92 (parcelas com juros a partir de 2×). Cartão, Pix, boleto ou PayPal.",
       scrOk: "Liberado · bom embarque",
-      pigeon: "Cuu! Pombo de Nova York, dono da plataforma.", taxi: "Beep beep! Táxi amarelo livre.", squirrel: "O esquilo do Central Park achou uma noz!", cart: "Hot dog de carrinho: parada obrigatória em NY.", bln: "Parada de Thanksgiving! Olha o balão gigante.", lady: ["Bem-vinda a Nova York!", "Já pensou no roteiro?", "A tocha é minha, o guia é da Cami.", "Psiu, role a página!"], hi: "Oi! Clique em mim.", kk: "Toque em um prédio!", rat: "Pizza rat! Esse levou a fatia até a escada."
+      pigeon: "Cuu! Pombo de Nova York, dono da plataforma.", taxi: "Beep beep! Táxi amarelo livre.", squirrel: "O esquilo do Central Park achou uma noz!", cart: "Hot dog de carrinho: parada obrigatória em NY.", lady: ["Bem-vinda a Nova York!", "Já pensou no roteiro?", "A tocha é minha, o guia é da Cami.", "Psiu, role a página!"], hi: "Oi! Clique em mim.", kk: "Toque em um prédio!", rat: "Pizza rat! Esse levou a fatia até a escada."
     },
     en: {
       days: [
@@ -74,7 +74,7 @@
       people: " people", price: "CAD 21",
       per: "one-time payment, no subscription. Card, PayPal or Klarna.",
       scrOk: "Cleared · enjoy the ride",
-      pigeon: "Coo! New York pigeon, owner of the platform.", taxi: "Beep beep! Yellow cab available.", squirrel: "The Central Park squirrel found a nut!", cart: "Street hot dog: a must-stop in NYC.", bln: "Thanksgiving parade! Look at the giant balloon.", lady: ["Welcome to New York!", "Thought about your itinerary yet?", "The torch is mine, the guide is Cami's.", "Psst, keep scrolling!"], hi: "Hi! Click me.", kk: "Tap a building!", rat: "Pizza rat! This one carried the slice all the way to the stairs."
+      pigeon: "Coo! New York pigeon, owner of the platform.", taxi: "Beep beep! Yellow cab available.", squirrel: "The Central Park squirrel found a nut!", cart: "Street hot dog: a must-stop in NYC.", lady: ["Welcome to New York!", "Thought about your itinerary yet?", "The torch is mine, the guide is Cami's.", "Psst, keep scrolling!"], hi: "Hi! Click me.", kk: "Tap a building!", rat: "Pizza rat! This one carried the slice all the way to the stairs."
     }
   };
   function D() { return DYN[lang]; }
@@ -163,16 +163,6 @@
     new IntersectionObserver(function (es) { if (es[0].isIntersecting && !started) { started = true; setDay(sel); } }, { threshold: .3 }).observe($("map"));
   } else { setDay(0); }
   setDay(0);
-
-  /* ---------- posters ---------- */
-  var tabs = document.querySelectorAll(".tabs [data-t]"), pimgs = document.querySelectorAll(".poster .ph img"), pt = 0;
-  function setPoster(i) {
-    pt = i;
-    tabs.forEach(function (b, k) { b.setAttribute("aria-selected", String(k === i)); });
-    pimgs.forEach(function (m, k) { m.classList.toggle("on", k === i); });
-    $("st1h").textContent = D().posters[i][0]; $("sp1").textContent = D().posters[i][1];
-  }
-  tabs.forEach(function (t, i) { t.addEventListener("click", function () { setPoster(i); }); });
 
   /* ---------- crowd slider: a real subway car (illustration) ---------- */
   var hour = $("hour"), dA = $("dA"), dB = $("dB");
@@ -320,8 +310,18 @@
   if (!reduce) setTimeout(function () { ladySay(D().hi); }, 2800);
 
   /* ---------- wanderers ---------- */
-  $("taxi").addEventListener("click", function () { say(D().taxi); });
-  $("bln").addEventListener("click", function () { say(D().bln); });
+  var taxi = $("taxi"), esc = document.querySelector(".esc");
+  taxi.addEventListener("click", function () { say(D().taxi); });
+  if ("IntersectionObserver" in window && !reduce) {
+    new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { setTimeout(function () { esc.classList.add("go"); }, 400); o.disconnect(); } }, { threshold: .5 }).observe(esc);
+  }
+  var sgn = $("signs");
+  document.querySelectorAll(".styl button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      sgn.className = "signs " + b.dataset.m;
+      document.querySelectorAll(".styl button").forEach(function (x) { x.classList.toggle("on", x === b); });
+    });
+  });
   $("squirrel").addEventListener("click", function () { say(D().squirrel); });
   $("cart").addEventListener("click", function () { say(D().cart); });
 
@@ -334,7 +334,7 @@
     try { localStorage.setItem("cm-lang", l); } catch (e) {}
     document.querySelector(".pay").classList.remove("go");
     tm.textContent = D().tips[ti];
-    paintLed(); paintPrice(); setPoster(pt); setHour(); setDay(sel); showSky(skSel); $("vcap").textContent = VC[lang][vi]; bmsg.textContent = BM[lang][bi];
+    paintLed(); paintPrice(); setHour(); setDay(sel); showSky(skSel); $("vcap").textContent = VC[lang][vi]; bmsg.textContent = BM[lang][bi];
   }
   document.querySelectorAll(".lang button").forEach(function (b) { b.addEventListener("click", function () { applyLang(b.dataset.l); }); });
   var saved = null; try { saved = localStorage.getItem("cm-lang"); } catch (e) {}

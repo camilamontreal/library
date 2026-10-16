@@ -910,3 +910,78 @@ footer .fine{font-size:12px}
 .mcard .mn{left:auto;right:8%;top:47%;text-align:right;color:#0b2d6b}
 .vnav{display:grid;place-items:center;padding:0 0 3px}
 html,body{overflow-x:clip}
+
+/* ===== v12 ===== */
+/* road with taxi */
+.esc{background-color:#555b68;background-image:none;padding-bottom:78px;border-top:6px solid #9aa1ad}
+.esc::after{display:none}
+.road{position:absolute;left:0;right:0;bottom:12px;height:50px;overflow:hidden}
+.road::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:4px dashed #fccc0a}
+.txi{position:absolute;left:0;bottom:2px;width:96px;z-index:2;translate:-140px 0;animation:none}
+.txi svg{display:block;width:100%;height:auto}
+.esc.go .txi{animation:taxi1 7s linear 1 forwards}
+@keyframes taxi1{from{translate:-140px 0}to{translate:calc(100vw + 40px) 0}}
+@media (prefers-reduced-motion:reduce){.esc .txi{display:none}}
+/* skyline: icon only */
+.sk .bt{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;margin:0;padding:0}
+.sk .ib{width:48px;height:48px;margin-top:26px}
+.sk .ib svg{width:26px;height:26px}
+.sk::before{inset:120px 8px 14px}
+.skyline{min-height:440px}
+@media (max-width:600px){.sk .ib{width:26px;height:26px;margin-top:22px}.sk .ib svg{width:15px;height:15px}.sk::before{inset:64px 4px 14px}.skyline{min-height:380px}}
+/* two files: 3 small squares */
+.fcards{grid-template-columns:repeat(3,minmax(0,210px));justify-content:start;gap:12px;margin-top:20px}
+.fcards article{padding:12px 12px 14px;border-radius:18px}
+.fcards h3{font-size:16px}
+.fcards p{font-size:13px;line-height:1.3}
+.dev{height:96px;margin-bottom:2px}
+.lap .scr{width:84%;border-width:4px}
+.lap .base{height:6px}
+.lap .cur{width:10px;height:10px;border-width:2px}
+@keyframes cur{0%{translate:0 0;scale:1}45%{translate:44px 16px;scale:1}55%{translate:44px 16px;scale:.6}65%{translate:44px 16px;scale:1}100%{translate:0 0}}
+.phn{width:50px;height:92px;border-width:4px;border-radius:12px}
+.phn .fing{width:14px;height:14px;margin-left:-7px;border-width:2px}
+@keyframes scrollp{from{transform:translateY(0)}to{transform:translateY(calc(-100% + 84px))}}
+.off svg{max-width:140px}
+@media (max-width:600px){.fcards{grid-template-columns:repeat(3,1fr);gap:6px}.fcards article{padding:8px 6px 10px}.fcards h3{font-size:13px}.fcards p{font-size:11px}.dev{height:76px}.phn{width:40px;height:74px}}
+/* vision: squares */
+.vb{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;columns:auto;padding:4px}
+.vb img{aspect-ratio:1/1;object-fit:cover;margin:0;height:100%}
+@media (max-width:860px){.vb{grid-template-columns:repeat(3,1fr)}}
+/* early proof */
+.early{padding-block:clamp(30px,5vw,56px)}
+.early .eh{font-weight:800;font-size:clamp(18px,2.2vw,24px);text-align:center}
+.eq{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.eq .tq{flex:none;padding:18px}
+.eq .tq blockquote{font-size:15px}
+@media (max-width:860px){.eq{grid-template-columns:1fr}}
+/* cost signs */
+.styl{display:inline-flex;gap:4px;background:#fff;border-radius:999px;padding:4px;margin-top:20px}
+.styl button{padding:8px 16px;border-radius:999px;font-weight:800;font-size:14px;color:#2e3052}
+.styl button.on{background:#2e3052;color:#fff}
+.signs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.sgn{display:flex;align-items:center;gap:14px;padding:18px 22px;color:#fff}
+.sgn b{display:block;font-size:clamp(18px,2vw,24px);letter-spacing:.02em}
+.sgn span:not(.bl){display:block;font-size:15px;font-weight:600;margin-top:2px}
+.signs.street .sgn{background:#0b6b3a;border:3px solid #fff;outline:5px solid #0b6b3a;margin:5px;border-radius:8px}
+.signs.street .sgn b{text-transform:uppercase}
+.signs.street .sgn .bl{display:none}
+.signs.street .sgn::after{content:"→";margin-left:auto;font-size:28px;font-weight:800}
+.signs.metro .sgn{background:#1c1f2e;border-radius:10px;border-bottom:8px solid var(--c1,#ee352e)}
+.signs.metro .sgn:nth-child(2){--c1:#fccc0a}.signs.metro .sgn:nth-child(3){--c1:#00933c}.signs.metro .sgn:nth-child(4){--c1:#b933ad}
+.signs.metro .sgn .bl{width:40px;height:40px;font-size:22px;flex:none}
+.coend{margin-top:22px;font-weight:800;font-size:clamp(18px,2vw,24px)}
+@media (max-width:700px){.signs{grid-template-columns:1fr}}
+/* price composite */
+.pcomp{position:relative;width:100%;max-width:520px;aspect-ratio:1.12}
+.pphoto{position:absolute;left:0;top:0;width:76%;height:84%;object-fit:cover;border-radius:22px}
+.pphone{position:absolute;right:0;top:6%;width:30%;aspect-ratio:9/18.5;border:5px solid #fff;border-radius:22px;overflow:hidden;background:#fff}
+.pphone img{display:block;width:100%;height:auto;animation:scrollp2 12s ease-in-out infinite alternate}
+@keyframes scrollp2{from{transform:translateY(0)}to{transform:translateY(-70%)}}
+.pcomp .mcard{position:absolute;left:-3%;bottom:0;width:60%;max-width:none;min-width:0}
+@media (prefers-reduced-motion:reduce){.pphone img{animation:none}}
+.pcomp .mlogo{font-size:clamp(24px,3.4vw,38px)}
+.pcomp .msub{font-size:clamp(11px,1.1vw,13px);top:33%}
+.pcomp .mband{font-size:clamp(12px,1.3vw,15px);bottom:31%;left:9%}
+.pcomp .mnum{font-size:clamp(9px,.9vw,11px);letter-spacing:.08em}
+.pcomp .marr{border-left-width:26px;border-top-width:14px;border-bottom-width:14px}

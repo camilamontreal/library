@@ -110,7 +110,7 @@ EN.update({
 "q3":"Do I have to stay an exact number of days?","r3":"No. The guide is organized by area, so you build the itinerary for however many days you have. If you stay less, pick the areas that suit you; if you stay longer, there are extra ideas like day trips and different outings.",
 "t0":"Secrets","t1":"Savings","t2":"Broadway","t3":"Movies"
 })
-for _k,_v in {"st0":"Início","st1":"O guia","st2":"Roteiro por região","st3":"Por dentro do guia","st4":"Desktop e celular","st5":"O que está incluso","st6":"Inspiração","st7":"Segredos","st8":"Economize","st9":"Tempo e filas","st10":"Organização","st11":"Quem é a Camila","st12":"Para quem é","st13":"Comprar","st14":"Dúvidas","st15":"Embarque","st10b":"Depoimentos"}.items(): EXTRA_PT[_k]=_v
+for _k,_v in {"st0":"Início","st1":"O guia","st2":"Roteiro por região","st3":"Por dentro do guia","st4":"Desktop e celular","st5":"O que está incluso","st6":"Inspiração","st7":"Segredos","st8":"Economize","st9":"Tempo e filas","st10":"Organização","st11":"Quem é a Camila","st12":"Para quem é","st13":"Comprar","st14":"Dúvidas","st15":"Embarque","st10b":"Depoimentos","st0b":"Quem já usou"}.items(): EXTRA_PT[_k]=_v
 EN.update({"st0":"Start","st1":"The guide","st2":"Route by area","st3":"Inside the guide","st4":"Desktop and mobile","st5":"What's included","st6":"Inspiration","st7":"Secrets","st8":"Save money","st9":"Time and lines","st10":"Organization","st11":"Meet Camila","st12":"Who it's for","st13":"Buy","st14":"Questions","st15":"All aboard","st10b":"Reviews"})
 
 EN.update({
@@ -132,6 +132,16 @@ EN.update({
 "pk":"Complete New York guide","gar":"If you don't like it, ask for a refund within 7 days.","inc":"You get the link by email, with the desktop and mobile versions of the PDF.",
 "r10":"Yes! You can see all my guides on my website: <a href=\"https://camilamontreal.com/ebooks\" target=\"_blank\" rel=\"noopener\">camilamontreal.com/ebooks</a>.",
 "zt":"You've already picked the destination. All that's left is how to get there: with 30 tabs open or with a guide in hand.","buy":"Buy the guide"
+})
+
+EN.update({
+"st0b":"Reviews","hv":"Can you see yourself there?",
+"eh":"Travelers from all over Brazil have used the guide",
+"hco":"What does it cost not to plan?","colead":"Planning takes little time. Improvising in New York usually costs money and hours.",
+"sty1":"Street sign","sty2":"Subway sign","coend":"In the guide, all of this comes already solved.",
+"cs1h":"Wrong ticket","cs1":"I paid US$ 200 in the first hour.","cs2h":"Line at the wrong time","cs2":"Hours of your day lost standing.",
+"cs3h":"Pricier tour","cs3":"Paying for something that had an alternative.","cs4h":"Day with no route","cs4":"Back and forth across the city, with no order.",
+"as4":"lost count of how many visits","mc2":"desktop + mobile PDF"
 })
 
 tpl=open('index.tpl.html',encoding='utf-8').read()
