@@ -132,17 +132,21 @@
       "fr": "Stratégie médias sociaux et contenu"
     },
     "challenge": {
-      "en": "A short-form TikTok account handled in my Goalcast role.",
-      "pt": "Uma conta de TikTok em vídeo curto atendida no meu cargo no Goalcast."
+      "en": "Grow a short-form TikTok account handled in my Goalcast role.",
+      "pt": "Fazer crescer uma conta de TikTok em vídeo curto atendida no meu cargo no Goalcast."
     },
     "actions": [
       {
-        "en": "Part of my work as Social Media Manager and Micro Content Manager at Goalcast.",
-        "pt": "Parte do meu trabalho como Social Media Manager e Micro Content Manager no Goalcast."
+        "en": "Owned content strategy and distribution for the short-form channels, from the editorial calendar to publishing and community management.",
+        "pt": "Responsável pela estratégia e distribuição dos canais de vídeo curto, do calendário editorial à publicação e à comunidade."
       },
       {
-        "en": "Details of what was done on this account: to be confirmed by Cami.",
-        "pt": "Detalhes do que foi feito nesta conta: a confirmar pela Cami."
+        "en": "Turned analytics, audience sentiment and platform trends into recommendations for the editorial and content teams.",
+        "pt": "Transformei análises, sentimento da audiência e tendências das plataformas em recomendações para as equipes editorial e de conteúdo."
+      },
+      {
+        "en": "Ran A/B creative tests to improve reach and engagement and reported results against KPIs.",
+        "pt": "Conduzi testes A/B de criativos para melhorar alcance e engajamento e reportei os resultados contra KPIs."
       }
     ],
     "cover": {
@@ -189,8 +193,7 @@
     "links": [],
     "tools": [],
     "featured": 80,
-    "audience": "recrutador",
-    "exemplo": true
+    "audience": "recrutador"
   },
   {
     "id": "life-stories",
@@ -213,17 +216,21 @@
       "fr": "Contenu storytelling pour TikTok"
     },
     "challenge": {
-      "en": "A short-form TikTok account handled in my Goalcast role.",
-      "pt": "Uma conta de TikTok em vídeo curto atendida no meu cargo no Goalcast."
+      "en": "Grow a short-form TikTok account handled in my Goalcast role.",
+      "pt": "Fazer crescer uma conta de TikTok em vídeo curto atendida no meu cargo no Goalcast."
     },
     "actions": [
       {
-        "en": "Part of my work as Social Media Manager and Micro Content Manager at Goalcast.",
-        "pt": "Parte do meu trabalho como Social Media Manager e Micro Content Manager no Goalcast."
+        "en": "Owned content strategy and distribution for the short-form channels, from the editorial calendar to publishing and community management.",
+        "pt": "Responsável pela estratégia e distribuição dos canais de vídeo curto, do calendário editorial à publicação e à comunidade."
       },
       {
-        "en": "Details of what was done on this account: to be confirmed by Cami.",
-        "pt": "Detalhes do que foi feito nesta conta: a confirmar pela Cami."
+        "en": "Turned analytics, audience sentiment and platform trends into recommendations for the editorial and content teams.",
+        "pt": "Transformei análises, sentimento da audiência e tendências das plataformas em recomendações para as equipes editorial e de conteúdo."
+      },
+      {
+        "en": "Ran A/B creative tests to improve reach and engagement and reported results against KPIs.",
+        "pt": "Conduzi testes A/B de criativos para melhorar alcance e engajamento e reportei os resultados contra KPIs."
       }
     ],
     "cover": {
@@ -279,8 +286,7 @@
     "links": [],
     "tools": [],
     "featured": 70,
-    "audience": "recrutador",
-    "exemplo": true
+    "audience": "recrutador"
   },
   {
     "id": "disney-universal-media",
