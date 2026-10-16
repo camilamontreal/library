@@ -30,17 +30,10 @@
         "O que muda no roteiro no inverno e no verão.",
         "Locações de filmes e séries, com endereço direto no mapa."
       ],
-      caps: ["Sumário: toque e vá direto para o dia ou a seção que você precisa.", "Dia 1: paradas da manhã com segredos e links de reserva.", "Dia 3: a Estátua da Liberdade, com a dica de economizar.", "Onde comer: bairro, endereço e o que pedir.", "Broadway em português e a loteria de ingressos.", "Locações de filmes, com endereço no Google Maps."],
-      posters: [
-        ["Um segredo numa estação famosa", "Existe um lugar escondido numa das estações mais famosas de Nova York. No guia, mostro o caminho exato até ele."],
-        ["Os cartões-postais, gastando menos", "Alguns dos passeios mais famosos têm alternativas gratuitas ou mais baratas. O guia mostra quais, e como fazer."],
-        ["Musicais em português", "Dá para assistir a um musical da Broadway mesmo sem falar inglês, e tentar pagar menos pelo ingresso. Eu explico como."],
-        ["20 locações de filmes e séries", "Lugares de filmes e séries famosos, cada um com endereço que abre direto no Google Maps."]
-      ],
       people: " pessoas", price: "R$ 67,90",
       per: "à vista, ou em até 9× de R$ 8,92 (parcelas com juros a partir de 2×). Cartão, Pix, boleto ou PayPal.",
-      scrOk: "Liberado · bom embarque",
-      pigeon: "Cuu! Pombo de Nova York, dono da plataforma.", taxi: "Beep beep! Táxi amarelo livre.", squirrel: "O esquilo do Central Park achou uma noz!", cart: "Hot dog de carrinho: parada obrigatória em NY.", lady: ["Bem-vinda a Nova York!", "Já pensou no roteiro?", "A tocha é minha, o guia é da Cami.", "Psiu, role a página!"], hi: "Oi! Clique em mim.", kk: "Toque em um prédio!", rat: "Pizza rat! Esse levou a fatia até a escada."
+     
+      pigeon: "Cuu! Pombo de Nova York, dono da plataforma.", taxi: "Beep beep! Táxi amarelo livre.", squirrel: "O esquilo do Central Park achou uma noz!", cart: "Hot dog de carrinho: parada obrigatória em NY.", kk: "Toque em um prédio!", rat: "Pizza rat! Esse levou a fatia até a escada."
     },
     en: {
       days: [
@@ -64,17 +57,10 @@
         "What changes in the itinerary in winter and in summer.",
         "Movie and series locations, with the address right on the map."
       ],
-      caps: ["Contents: tap to jump straight to the day or section you need.", "Day 1: morning stops with secrets and booking links.", "Day 3: the Statue of Liberty, with the saving tip.", "Where to eat: neighborhood, address and what to order.", "Broadway in Portuguese and the ticket lottery.", "Movie locations, with an address on Google Maps."],
-      posters: [
-        ["Um segredo numa estação famosa", "Existe um lugar escondido numa das estações mais famosas de Nova York. No guia, mostro o caminho exato até ele."],
-        ["Os cartões-postais, gastando menos", "Alguns dos passeios mais famosos têm alternativas gratuitas ou mais baratas. O guia mostra quais, e como fazer."],
-        ["Musicais em português", "Dá para assistir a um musical da Broadway mesmo sem falar inglês, e tentar pagar menos pelo ingresso. Eu explico como."],
-        ["20 locações de filmes e séries", "Lugares de filmes e séries famosos, cada um com endereço que abre direto no Google Maps."]
-      ],
       people: " people", price: "CAD 21",
       per: "one-time payment, no subscription. Card, PayPal or Klarna.",
-      scrOk: "Cleared · enjoy the ride",
-      pigeon: "Coo! New York pigeon, owner of the platform.", taxi: "Beep beep! Yellow cab available.", squirrel: "The Central Park squirrel found a nut!", cart: "Street hot dog: a must-stop in NYC.", lady: ["Welcome to New York!", "Thought about your itinerary yet?", "The torch is mine, the guide is Cami's.", "Psst, keep scrolling!"], hi: "Hi! Click me.", kk: "Tap a building!", rat: "Pizza rat! This one carried the slice all the way to the stairs."
+     
+      pigeon: "Coo! New York pigeon, owner of the platform.", taxi: "Beep beep! Yellow cab available.", squirrel: "The Central Park squirrel found a nut!", cart: "Street hot dog: a must-stop in NYC.", kk: "Tap a building!", rat: "Pizza rat! This one carried the slice all the way to the stairs."
     }
   };
   function D() { return DYN[lang]; }
@@ -104,7 +90,9 @@
   var line = $("line"), train = $("train"), prog = $("prog"), ledt = $("ledt"), ledb = $("ledb"), ledn = $("ledn");
   var sts = Array.prototype.slice.call(document.querySelectorAll(".st"));
   var tops = [], lineTop = 0, cur = -1, ticking = false;
+  var lineH = 0, railH = 1, lastIdx = -1, lastNear = false;
   function measure() {
+    lineH = line.offsetHeight; railH = Math.max(1, lineH - 46);
     lineTop = line.getBoundingClientRect().top + window.scrollY;
     tops = sts.map(function (s) { return s.getBoundingClientRect().top + window.scrollY + parseFloat(getComputedStyle(s).paddingTop) + 6; });
   }
@@ -121,18 +109,19 @@
   function update() {
     ticking = false;
     var vh = window.innerHeight, y = window.scrollY + vh * 0.38;
-    var h = line.offsetHeight - 64 - 46;
+    var h = lineH - 64 - 46;
     var ty = Math.max(0, Math.min(y - lineTop - 46 - 32, h));
-    train.style.setProperty("--ty", (ty + 46) + "px");
-    prog.style.setProperty("--prog", (ty + 32) + "px");
+    train.style.transform = "translate3d(0," + (ty + 46) + "px,0)";
+    prog.style.transform = "scaleY(" + Math.min(1, (ty + 32) / railH).toFixed(4) + ")";
     var idx = 0, near = false;
     for (var i = 0; i < tops.length; i++) { if (tops[i] - 40 <= y) idx = i; if (Math.abs(tops[i] - y) < 70) near = true; }
-    train.classList.toggle("open", near);
+    if (near !== lastNear) { lastNear = near; train.classList.toggle("open", near); }
     setLed(idx);
-    sts.forEach(function (s, k) { s.classList.toggle("in", k <= idx); });
+    if (idx !== lastIdx) { lastIdx = idx; sts.forEach(function (s, k) { s.classList.toggle("in", k <= idx); }); }
   }
   function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
   window.addEventListener("scroll", onScroll, { passive: true });
+  if ("ResizeObserver" in window) { var rmt; new ResizeObserver(function () { clearTimeout(rmt); rmt = setTimeout(function () { measure(); onScroll(); }, 120); }).observe(line); }
   window.addEventListener("resize", function () { measure(); update(); });
   window.addEventListener("load", function () { measure(); update(); });
 
@@ -167,7 +156,7 @@
       if (p < 1) anim = requestAnimationFrame(step);
     })(t0);
   }
-  document.querySelectorAll("#btns button").forEach(function (b) { b.addEventListener("click", function () { setDay(+b.dataset.i); chime("tick"); }); });
+  document.querySelectorAll("#btns button").forEach(function (b) { b.addEventListener("click", function () { setDay(+b.dataset.i); }); });
   var started = false;
   if ("IntersectionObserver" in window) {
     new IntersectionObserver(function (es) { if (es[0].isIntersecting && !started) { started = true; setDay(sel); } }, { threshold: .3 }).observe($("map"));
@@ -216,11 +205,8 @@
     ti = n; tm.classList.add("sw");
     setTimeout(function () { tm.textContent = D().tips[ti]; tm.classList.remove("sw"); }, reduce ? 0 : 220);
   }
-  $("tnext").addEventListener("click", function () { nextTip(); chime("tick"); });
+  $("tnext").addEventListener("click", function () { nextTip(); });
   if (!reduce) setInterval(nextTip, 7000);
-
-  function chime() {}
-  function paintSnd() {}
 
   /* ---------- easter eggs ---------- */
   var toast = $("toast"), tt, pg = $("pigeon"), rat = $("rat");
@@ -238,7 +224,6 @@
     buy.href = BUY[lang];
   }
   buy.addEventListener("click", function (e) {
-    chime("door");
     if (reduce || busy) return;
     e.preventDefault(); busy = true;
     document.querySelector(".pay").classList.add("go");
