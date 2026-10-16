@@ -549,14 +549,24 @@ function chansOf(o){var r=[];if((o.emails||[]).length)r.push("email");if(o.insta
 function expStage(list){var best=-1;list.forEach(function(o){var p=pipeOf(o),i=PIDX[p];if(i!=null&&i>best)best=i});return best<0?"found":PIPE[best][0]}
 function expConfirmed(ex){return ex.status==="confirmed"||confirmedIt().some(function(x){return x.experienceId===ex._id})||expOpps(ex).some(function(o){return o.stage==="confirmada"})}
 function hasWord(s,re){return re.test(String(s||"").toLowerCase())}
-var IMP=null,IMPORTING=false,IMPST="";
+var IMP=null,IMPORTING=false,IMPST="",IMPERR="";
 function loadImp(){if(IMP!==null)return;IMP=false;try{fetch("import_v3.json").then(function(r){return r.ok?r.json():null}).then(function(j){IMP=j&&j.docs?j.docs:false;render()}).catch(function(){IMP=false})}catch(e){IMP=false}}
 function impMissing(){if(!IMP)return[];var have={};COLS.forEach(function(c){var m={};(S[c]||[]).forEach(function(d){m[d._id]=1});have[c]=m});return IMP.filter(function(d){return !(have[d[0]]&&have[d[0]][d[1]])})}
-function runImp(){var miss=impMissing();if(!miss.length||IMPORTING)return;IMPORTING=true;var i=0,done=0,ok=0,bad=0,total=miss.length,inflight=0;
-  function fin(){IMPORTING=false;IMPST="";toast("Importação concluída: "+ok+" itens"+(bad?" ("+bad+" falharam, rode de novo)":""),9000);render()}
-  function pump(){while(inflight<6&&i<total){var d=miss[i++];inflight++;put(d[0],d[1],d[2]).then(function(){ok++},function(){bad++}).then(function(){inflight--;done++;if(done%50===0){IMPST="Importando "+done+" de "+total;var e=$("#impst");if(e)e.textContent=IMPST}if(done>=total)fin();else pump()})}}
-  IMPST="Importando 0 de "+total;render();pump()}
-function impBanner(){if(!IMP)return"";var n=impMissing().length;if(!n&&!IMPORTING)return"";return '<div class="card row" style="justify-content:space-between"><div><b>'+(IMPORTING?'Importando experiências novas':n+' itens novos prontos para entrar no hub')+'</b><div class="small mut" id="impst">'+esc(IMPORTING?IMPST:"Experiências, empresas e caminhos da terceira varredura. Nada é enviado e nada é sobrescrito.")+'</div></div>'+(IMPORTING?'':'<button class="btn ok" data-a="imp" type="button">Importar agora</button>')+'</div>'}
+function runImp(){var miss=impMissing();if(!miss.length||IMPORTING)return;IMPORTING=true;var i=0,done=0,ok=0,bad=0,total=miss.length,inflight=0,firstErr="";
+  function fin(){IMPORTING=false;IMPST="";IMPERR=bad?firstErr:"";toast("Importação "+(bad?"parcial: ":"concluída: ")+ok+" itens"+(bad?" ("+bad+" falharam: "+firstErr+"). Clique em Importar de novo.":""),12000);render()}
+  function one(d,n){return put(d[0],d[1],d[2]).then(function(){ok++},function(e){if(n<3)return new Promise(function(r){setTimeout(r,600*(n+1))}).then(function(){return one(d,n+1)});bad++;if(!firstErr)firstErr=String(e&&e.message||e).slice(0,140)})}
+  function pump(){while(inflight<3&&i<total){var d=miss[i++];inflight++;one(d,0).then(function(){inflight--;done++;if(done%25===0){IMPST="Importando "+done+" de "+total;var e=$("#impst");if(e)e.textContent=IMPST}if(done>=total)fin();else pump()})}}
+  IMPST="Importando 0 de "+total;IMPERR="";render();pump()}
+var PAT=null,PATING=false;
+function loadPat(){if(PAT!==null)return;PAT=false;try{fetch("patch_pitches.json").then(function(r){return r.ok?r.json():null}).then(function(j){PAT=j||false;render()}).catch(function(){PAT=false})}catch(e){PAT=false}}
+function patMissing(){if(!PAT)return[];var m={};(S.ph_opps||[]).forEach(function(o){m[o._id]=o});return PAT.filter(function(p){var o=m[p[1]];return o&&!o.msg})}
+function runPat(){var miss=patMissing();if(!miss.length||PATING)return;PATING=true;var i=0,done=0,ok=0,bad=0,inflight=0,firstErr="",total=miss.length;
+  function fin(){PATING=false;toast("Rascunhos: "+ok+" criados"+(bad?" ("+bad+" falharam: "+firstErr+")":""),9000);render()}
+  function one(p,n){return upd(p[0],p[1],JSON.parse(JSON.stringify(p[2]))).then(function(){ok++},function(e){if(n<3)return new Promise(function(r){setTimeout(r,600*(n+1))}).then(function(){return one(p,n+1)});bad++;if(!firstErr)firstErr=String(e&&e.message||e).slice(0,120)})}
+  function pump(){while(inflight<3&&i<total){var p=miss[i++];inflight++;one(p,0).then(function(){inflight--;done++;if(done>=total)fin();else pump()})}}
+  toast("Criando "+total+" rascunhos...",6000);pump()}
+function patBanner(){if(!PAT)return"";var n=patMissing().length;if(!n)return"";return '<div class="card row" style="justify-content:space-between"><div><b>'+n+' rascunhos de e-mail prontos para entrar</b><div class="small mut">Um por empresa, só para empresas com e-mail visto no site oficial. Entram como rascunho: nada é aprovado nem enviado.</div></div><button class="btn ok" data-a="pat" type="button"'+(PATING?' disabled':'')+'>Criar rascunhos</button></div>'}
+function impBanner(){if(!IMP)return"";var n=impMissing().length;if(!n&&!IMPORTING)return"";return '<div class="card row" style="justify-content:space-between"><div><b>'+(IMPORTING?'Importando experiências novas':n+' itens novos prontos para entrar no hub')+'</b><div class="small mut" id="impst">'+esc(IMPORTING?IMPST:(IMPERR?"Último erro: "+IMPERR:"Experiências, empresas e caminhos da terceira varredura. Nada é enviado e nada é sobrescrito."))+'</div></div>'+(IMPORTING?'':'<button class="btn ok" data-a="imp" type="button">Importar agora</button>')+'</div>'}
 function isPlat(ex){return !ex.operatorOrgId}
 function ppOf(ex){return ex.pricePPEUR!=null?ex.pricePPEUR:(ex.price3EUR!=null?ex.price3EUR/3:null)}
 function isPrem(ex){var p=ppOf(ex);return p!=null&&p>=100?1:0}
@@ -601,7 +611,7 @@ function coverageBox(){var cv=meta("gyg_coverage"),op=companies();
   var rows=[["Resultados do GetYourGuide na sua lista",cv.gygVisible!=null?cv.gygVisible:"indisponível: o site bloqueia acesso automático"],["Atividades analisadas individualmente",cv.analyzed!=null?cv.analyzed:"—"],["Experiências únicas cadastradas",arr("ph_experiences").length],["Propostas prontas (rascunhos)",op.filter(function(o){return o.msg&&o.msg.status==="draft"}).length],["Ainda faltam analisar",cv.pending!=null?cv.pending:"não dá para saber sem a lista exata"]];
   return '<details class="card"><summary style="cursor:pointer;font-weight:700">Cobertura da pesquisa</summary><dl class="facts" style="margin-top:10px">'+rows.map(function(r){return '<div><dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd></div>'}).join("")+'</dl><p class="small mut">'+esc(cv.note||"A página filtrada do GetYourGuide retorna erro 403 para acesso automático. As experiências abaixo vêm de buscas públicas e de outras plataformas, e aproximam seus filtros. Cole os links da sua lista para eu cobrir exatamente os mesmos resultados.")+'</p>'+((cv.pendingList||[]).length?'<p class="small"><b>Pendentes:</b> '+cv.pendingList.map(esc).join(" · ")+'</p>':'')+'</details>'}
 function viewHunt(){var all=arr("ph_experiences"),list=huntFiltered();
-  var h='<div class="pagehead"><div><h2>🎟️ <span class="serif">GetYourGuide</span> Experience Hunter</h2><p class="lead">Cada experiência reúne todos os caminhos comerciais: operador, revendedores, agências e PR. Cada contato tem o seu pitch e a sua aprovação.</p></div></div>'+impBanner()+huntKpis()+coverageBox();
+  var h='<div class="pagehead"><div><h2>🎟️ <span class="serif">GetYourGuide</span> Experience Hunter</h2><p class="lead">Cada experiência reúne todos os caminhos comerciais: operador, revendedores, agências e PR. Cada contato tem o seu pitch e a sua aprovação.</p></div></div>'+impBanner()+patBanner()+huntKpis()+coverageBox();
   var cats={};all.forEach(function(e){cats[e.category]=(cats[e.category]||0)+1});
   h+='<div class="row">'+Object.keys(cats).map(function(k){return '<button class="chip" data-a="hcat" data-v="'+esc(k)+'" aria-pressed="'+(H.cat===k)+'" type="button">'+(CATG[k]||"")+' '+esc(CAT[k]||k)+' <span class="n">'+cats[k]+'</span></button>'}).join("")+'</div>';
   h+='<div class="fbar"><input type="search" id="h_q" placeholder="Buscar experiência, operador ou empresa" value="'+esc(H.q)+'" aria-label="Buscar"><select data-h="slot" aria-label="Data">'+opt([["2","2 nov"],["3","3 nov"],["4","4 nov"]],H.slot,"Qualquer data")+'</select><select data-h="hour" aria-label="Horário">'+opt([["m","Manhã"],["t","Tarde / dia"],["n","Noite"]],H.hour,"Qualquer horário")+'</select><select data-h="price" aria-label="Preço para 3">'+opt([["a","até €150"],["b","€150 a €300"],["c","€300 a €600"],["d","acima de €600"]],H.price,"Preço p/ 3")+'</select><select data-h="sort" aria-label="Ordenar">'+opt([["prio","Prioridade"],["preco","Maior preço"],["caminhos","Mais caminhos"],["nome","Nome"]],H.sort,"Ordenar")+'</select>'+
@@ -657,6 +667,7 @@ document.addEventListener("click",function(e){var t=e.target.closest("[data-a]")
   else if(a==="hcat"){H.cat=H.cat===t.getAttribute("data-v")?"":t.getAttribute("data-v");H.lim=60;render()}
   else if(a==="hmore"){H.lim+=60;render()}
   else if(a==="imp"){runImp()}
+  else if(a==="pat"){runPat()}
   else if(a==="dtab")openCompany(DID,tt);
   else if(a==="approve")doApprove(id);
   else if(a==="edit")editSheet(id);
@@ -695,7 +706,7 @@ function boot(claude){
     render()},function(){setLive(false,"sem banco");render()});
   claude.use("mcp").then(function(m){MCP=m},function(){MCP=null});
 }
-F.view="decisao";render();loadImp();
+F.view="decisao";render();loadImp();loadPat();
 if(window.claude&&window.claude.use)boot(window.claude);else setLive(false,"fora do Claude");
 })();
 </script>
