@@ -144,7 +144,7 @@
   }
   var bar = $("buybar"), precoSec = document.getElementById("preco"), seenPrice = false;
   function barUpdate() {
-    var show = window.scrollY > window.innerHeight * 0.9 && !inView(precoSec);
+    var pi = sts.indexOf(precoSec), show = cur >= 4 && cur < pi;
     bar.classList.toggle("on", show);
     if (!seenPrice && inView(precoSec)) { seenPrice = true; track("view_price"); }
   }

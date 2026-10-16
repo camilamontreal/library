@@ -776,3 +776,14 @@ html, body{overflow-x:clip}
 .buybar .btn{padding:12px 26px;font-size:16px}
 @media (max-width:860px){.buybar{display:flex}}
 @media (prefers-reduced-motion:reduce){.buybar{transition:none}}
+
+/* ===== v18: taxi-light buy bar ===== */
+.buybar{background:#fccc0a;border-top:0;padding:18px 14px calc(10px + env(safe-area-inset-bottom));gap:10px;position:fixed}
+.buybar .cks{position:absolute;left:0;right:0;top:0;height:10px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Crect width='10' height='10' fill='%23fff'/%3E%3Crect width='5' height='5' fill='%23000'/%3E%3Crect x='5' y='5' width='5' height='5' fill='%23000'/%3E%3C/svg%3E") repeat-x}
+.buybar .lamp{display:inline-flex;align-items:center;gap:6px;background:#14161c;color:#fccc0a;font-weight:800;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:8px}
+.buybar .lamp b{width:9px;height:9px;border-radius:50%;background:#4ade80;animation:lampblink 1.8s ease-in-out infinite}
+@keyframes lampblink{0%,100%{opacity:1}50%{opacity:.3}}
+.buybar .bbp{color:#14161c;font-size:22px;margin-right:auto}
+.buybar .btn{background:#2e3052;color:#fff;padding:12px 20px;font-size:15px;animation:buypulse 2.4s ease-in-out infinite}
+.buybar .btn:hover{animation:none}
+@media (prefers-reduced-motion:reduce){.buybar .lamp b,.buybar .btn{animation:none}}
