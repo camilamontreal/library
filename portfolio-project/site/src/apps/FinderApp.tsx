@@ -5,19 +5,19 @@ import { useLang, ui, t, tbc, type UIKey } from '../lib/i18n'
 import { Media } from '../ui/Media'
 import { Icon } from '../ui/icons'
 
-const AREAS: { id: string; key: UIKey }[] = [
-  { id: 'all', key: 'all' }, { id: 'conteudo', key: 'areaConteudo' }, { id: 'ugc', key: 'areaUgc' }, { id: 'social-media', key: 'areaSocial' },
-  { id: 'parcerias', key: 'areaParcerias' }, { id: 'estrategia', key: 'areaEstrategia' }, { id: 'empreendedora', key: 'areaEmpreendedora' },
+export const AREAS: { id: string; key: UIKey }[] = [
+  { id: 'all', key: 'all' }, { id: 'content', key: 'areaContent' }, { id: 'ugc', key: 'areaUgc' }, { id: 'events', key: 'areaEvents' },
+  { id: 'social', key: 'areaSocial' }, { id: 'marketing', key: 'areaMarketing' }, { id: 'design', key: 'areaDesign' },
 ]
 const TYPES = [
   { id: 'all', key: 'all' as UIKey }, { id: 'publicado', key: 'typePublicado' as UIKey }, { id: 'ugc', key: 'typeUgc' as UIKey }, { id: 'profissional', key: 'typeProfissional' as UIKey },
 ]
 
 /** "Todos os projetos": barra lateral por área (um projeto aparece em várias áreas sem existir duas vezes) + filtro por tipo. */
-export function FinderApp({ onOpen }: { onOpen?: (id: string) => void }) {
+export function FinderApp({ onOpen, initialArea }: { onOpen?: (id: string) => void; initialArea?: string }) {
   const lang = useLang((s) => s.lang)
   const open = useOS((s) => s.open)
-  const [area, setArea] = useState('all')
+  const [area, setArea] = useState(initialArea && AREAS.some((a) => a.id === initialArea) ? initialArea : 'all')
   const [type, setType] = useState('all')
   const list = content.projects.filter((p) => (area === 'all' || p.areas.includes(area as never)) && (type === 'all' || p.type === type))
   const go = (id: string) => (onOpen ? onOpen(id) : open('case', id))

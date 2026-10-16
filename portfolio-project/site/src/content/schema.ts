@@ -38,7 +38,7 @@ export const Metric = z.object({
 export type MetricT = z.infer<typeof Metric>
 
 export const ProjectType = z.enum(['publicado', 'ugc', 'profissional'])
-export const Area = z.enum(['conteudo', 'ugc', 'social-media', 'parcerias', 'estrategia', 'empreendedora'])
+export const Area = z.enum(['content', 'ugc', 'events', 'social', 'marketing', 'design'])
 export const Template = z.enum(['campanha', 'estrategia', 'ugc'])
 
 export const Project = z.object({

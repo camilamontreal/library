@@ -2,7 +2,7 @@ import type { Win } from '../store/os'
 import { type Lang, ui, t } from '../lib/i18n'
 import { content, projectById } from '../content'
 import { CaseApp } from './CaseApp'
-import { FinderApp } from './FinderApp'
+import { FinderApp, AREAS } from './FinderApp'
 import { BrowserApp } from './BrowserApp'
 import { MilesApp } from './MilesApp'
 import { PassportApp } from './PassportApp'
@@ -23,7 +23,7 @@ import './extra.css'
 export function renderApp(win: Pick<Win, 'app' | 'payload'>) {
   switch (win.app) {
     case 'case': return <CaseApp id={win.payload ?? content.projects[0].id} />
-    case 'finder': return <FinderApp />
+    case 'finder': return <FinderApp initialArea={win.payload} />
     case 'browser': return <BrowserApp initial={win.payload} />
     case 'miles': return <MilesApp />
     case 'passport': return <PassportApp />
@@ -45,7 +45,7 @@ export function renderApp(win: Pick<Win, 'app' | 'payload'>) {
 export function appTitle(win: Pick<Win, 'app' | 'payload'>, lang: Lang): string {
   switch (win.app) {
     case 'case': { const p = projectById(win.payload ?? ''); return p ? `${p.client} — ${ui('boardingPass', lang)}` : ui('projects', lang) }
-    case 'finder': return ui('allProjects', lang)
+    case 'finder': return win.payload ? ui(AREAS.find((a) => a.id === win.payload)?.key ?? 'allProjects', lang) : ui('allProjects', lang)
     case 'browser': return ui('browser', lang)
     case 'miles': return ui('miles', lang)
     case 'passport': return ui('passport', lang)

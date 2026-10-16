@@ -1,50 +1,123 @@
 [
   {
-    "company": "Camila Montreal",
-    "role": { "en": "Content creator and social media strategist", "pt": "Criadora de conteúdo e estrategista de social media", "fr": "Créatrice de contenu et stratège médias sociaux" },
-    "start": "2019-01", "location": "Montreal, Canada",
+    "company": "@camilamontreal",
+    "role": {
+      "en": "Content creator and digital strategist",
+      "pt": "Criadora de conteúdo e estrategista digital",
+      "fr": "Créatrice de contenu et stratège numérique"
+    },
+    "start": "2018-01",
+    "location": "Montreal, Canada",
     "highlights": [
-      { "en": "600K+ community across Instagram, TikTok and YouTube; 290M+ views.", "pt": "600K+ de comunidade no Instagram, TikTok e YouTube; 290M+ views." },
-      { "en": "50+ brand partners including Disney, Universal, Air Canada, Warner Bros., MSC, Hard Rock.", "pt": "50+ marcas parceiras, entre elas Disney, Universal, Air Canada, Warner Bros., MSC, Hard Rock." },
-      { "en": "Social media management for 50+ clients; 'Best Reel of the Year' 2024.", "pt": "Gestão de social media para 50+ clientes; 'Best Reel of the Year' 2024." }
+      {
+        "en": "600K+ community across Instagram, TikTok and YouTube; 290M+ views.",
+        "pt": "600K+ de comunidade no Instagram, TikTok e YouTube; 290M+ views."
+      },
+      {
+        "en": "Sponsored campaigns and UGC for destinations, hospitality and travel brands; active CrowdRiff creator.",
+        "pt": "Campanhas patrocinadas e UGC para destinos, hotelaria e marcas de viagem; creator ativa na CrowdRiff."
+      },
+      {
+        "en": "Official media correspondent at D23, Florida Cup, theme park press events and airline route launches.",
+        "pt": "Correspondente oficial de mídia no D23, Florida Cup, eventos de parques e lançamentos de rotas aéreas."
+      }
     ],
-    "projectIds": ["disney-universal-media", "air-canada-austin", "quebec-nickelodeon-ugc", "produtos-proprios"]
+    "projectIds": [
+      "disney-universal-media",
+      "air-canada-austin",
+      "hard-rock",
+      "quebec-nickelodeon-ugc",
+      "produtos-proprios"
+    ]
   },
   {
     "company": "Goalcast",
-    "role": { "en": "Social Media Manager", "pt": "Social Media Manager", "fr": "Gestionnaire médias sociaux" },
-    "start": "2022-10", "end": "2024-03", "location": "Montreal, Canada",
+    "role": {
+      "en": "Social Media Manager and Micro Content Manager",
+      "pt": "Social Media Manager e Micro Content Manager"
+    },
+    "start": "2023-02",
+    "end": "2024-07",
+    "location": "Montreal, Canada",
     "highlights": [
-      { "en": "146M TikTok views in 60 days; 140M+ views for a single client.", "pt": "146M de views no TikTok em 60 dias; 140M+ views para um único cliente." },
-      { "en": "Daily short-form storytelling production and reporting.", "pt": "Produção diária de storytelling em vídeo curto e relatórios." }
+      {
+        "en": "Owned content strategy and distribution for short-form channels, from editorial calendar to community.",
+        "pt": "Estratégia de conteúdo e distribuição dos canais de vídeo curto, do calendário editorial à comunidade."
+      },
+      {
+        "en": "A/B creative tests reported against KPIs; analytics and sentiment turned into editorial recommendations.",
+        "pt": "Testes A/B de criativos reportados contra KPIs; análises e sentimento viram recomendações editoriais."
+      }
     ],
-    "projectIds": ["goalcast"],
-    "exemplo": true
+    "projectIds": [
+      "goalcast",
+      "paradigm-studios",
+      "life-stories"
+    ]
   },
   {
-    "company": "Agência própria (Brasil)",
-    "role": { "en": "Founder, digital marketing agency", "pt": "Fundadora, agência de marketing digital", "fr": "Fondatrice, agence de marketing numérique" },
-    "start": "2019-06", "location": "São Paulo, Brasil",
+    "company": "Agência Buzz Marketing",
+    "role": {
+      "en": "Co-founder and Marketing Director",
+      "pt": "Cofundadora e diretora de marketing"
+    },
+    "start": "2019-10",
+    "end": "2022-12",
+    "location": "São Paulo, Brasil",
     "highlights": [
-      { "en": "Social media management for travel agencies, retail, clinics, e-commerce and digital businesses.", "pt": "Gestão de social media para agências de viagem, varejo, clínicas, e-commerce e negócios digitais." },
-      { "en": "+25K followers in 2 months and +35% online sales for clients.", "pt": "+25 mil seguidores em 2 meses e +35% de vendas online para clientes." }
+      {
+        "en": "Led a creative team and client relationships end to end.",
+        "pt": "Liderou equipe criativa e a relação com clientes de ponta a ponta."
+      },
+      {
+        "en": "Social media and campaigns for travel agencies, retail, clinics and e-commerce.",
+        "pt": "Social media e campanhas para agências de viagem, varejo, clínicas e e-commerce."
+      }
     ],
-    "projectIds": ["house-inn-orlando", "mundo-magico", "paradigm-studios", "life-stories"]
+    "projectIds": [
+      "agencia-buzz",
+      "house-inn-orlando"
+    ]
   },
   {
-    "company": "Coordenação de marketing (empresa a confirmar)",
-    "role": { "en": "Marketing coordinator, led and trained teams", "pt": "Coordenadora de marketing, liderou e treinou equipes", "fr": "Coordonnatrice marketing" },
-    "start": "2019-01", "end": "2020-12", "location": "Brasil",
-    "highlights": [ { "en": "Team leadership and training; first sponsored trips as a creator.", "pt": "Liderança e treinamento de equipe; primeiras viagens patrocinadas como criadora." } ],
-    "projectIds": [],
-    "exemplo": true
+    "company": "Mundo Mágico Store",
+    "role": {
+      "en": "Marketing Manager",
+      "pt": "Marketing Manager"
+    },
+    "start": "2019-11",
+    "end": "2021-09",
+    "location": "São Paulo, Brasil",
+    "highlights": [
+      {
+        "en": "Large promotional activations in Brazilian airports, including one with LATAM Airlines.",
+        "pt": "Grandes ativações promocionais em aeroportos do Brasil, incluindo uma com a LATAM Airlines."
+      },
+      {
+        "en": "Owned budgets and KPIs; reported to marketing, sales, PR and IT.",
+        "pt": "Orçamento e KPIs sob sua responsabilidade; reporte a marketing, vendas, PR e TI."
+      }
+    ],
+    "projectIds": [
+      "mundo-magico-latam",
+      "mundo-magico"
+    ]
   },
   {
-    "company": "Cruise ships",
-    "role": { "en": "Crew member at sea", "pt": "Tripulante em navios de cruzeiro", "fr": "Membre d'équipage en mer" },
-    "start": "2014-01", "end": "2015-12", "location": "9 países",
-    "highlights": [ { "en": "Left alone at 20 without English; learned two languages at sea.", "pt": "Partiu sozinha aos 20 sem inglês; aprendeu dois idiomas no mar." } ],
-    "projectIds": [],
-    "exemplo": true
+    "company": "Mundo Mágico Store",
+    "role": {
+      "en": "Marketing Coordinator",
+      "pt": "Coordenadora de marketing"
+    },
+    "start": "2017-10",
+    "end": "2019-11",
+    "location": "São Paulo, Brasil",
+    "highlights": [
+      {
+        "en": "Planned and ran events, promotions and ad campaigns; surveys, reports and sales forecasts.",
+        "pt": "Planejou e executou eventos, promoções e campanhas; pesquisas, relatórios e previsões de vendas."
+      }
+    ],
+    "projectIds": []
   }
 ]

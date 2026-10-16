@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { content, featuredProjects } from '../../content'
+import { content, areasFor } from '../../content'
+import { AREAS } from '../../apps/FinderApp'
 import { useOS } from '../../store/os'
 import { useLang, ui, t } from '../../lib/i18n'
 import { useWallpaper, useClock, fmtTime, fmtDate, dayPart } from '../../lib/hooks'
@@ -19,7 +20,12 @@ export function Desktop() {
   const lang = useLang((s) => s.lang)
   const wall = useWallpaper()
   const { windows, open, audience, tidy } = useOS()
-  const projects = featuredProjects(audience)
+  const areaFolders = areasFor(audience).map((id) => {
+    const key = AREAS.find((a) => a.id === id)!.key
+    const inArea = content.projects.filter((p) => p.areas.includes(id as never))
+    const top = [...inArea].sort((a, b) => b.featured - a.featured)[0]
+    return { id, key, count: inArea.length, cover: top?.cover }
+  })
 
   const [booted, setBooted] = useState(() => { try { return sessionStorage.getItem('camios.booted') === '1' } catch { return false } })
   useEffect(() => { if (booted) return; const id = setTimeout(() => { setBooted(true); try { sessionStorage.setItem('camios.booted', '1') } catch { /* */ } }, 1500); return () => clearTimeout(id) }, [booted])
@@ -39,11 +45,10 @@ export function Desktop() {
       <MenuBar />
       <Widgets />
       <motion.div className="desk__icons" role="group" aria-label={ui('projects', lang)} initial="hidden" animate={booted ? 'show' : 'hidden'} variants={{ show: { transition: { staggerChildren: 0.06 } } }}>
-        {projects.map((p, i) => (
-          <DesktopIcon key={p.id} id={p.id} index={i} label={p.folderName ? t(p.folderName, lang) : p.client} sub={t(p.title, lang)}
-            tag={p.type} onOpen={() => open('case', p.id)} cover={p.cover} />
+        {areaFolders.map((f, i) => (
+          <DesktopIcon key={f.id} id={`area-${f.id}`} index={i} label={ui(f.key, lang)} sub={`${f.count}`} onOpen={() => open('finder', f.id)} cover={f.cover} />
         ))}
-        <DesktopIcon id="finder" index={projects.length} label={ui('allProjects', lang)} sub={`${content.projects.length} · ${ui('baggage', lang)}`} onOpen={() => open('finder')} />
+        <DesktopIcon id="finder" index={areaFolders.length} label={ui('allProjects', lang)} sub={`${content.projects.length} · ${ui('baggage', lang)}`} onOpen={() => open('finder')} />
       </motion.div>
       <button className="desk__tidy" onClick={tidy}>{ui('tidyDesk', lang)}</button>
 

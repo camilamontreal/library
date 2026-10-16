@@ -1,8 +1,66 @@
 [
-  { "institution": "a confirmar", "title": { "en": "Bachelor's degree in Marketing", "pt": "Graduação em Marketing", "fr": "Baccalauréat en marketing" }, "year": "2019", "kind": "formacao", "exemplo": true },
-  { "institution": "a confirmar", "title": { "en": "Postgraduate in Innovation Marketing", "pt": "Pós-graduação em Marketing de Inovação", "fr": "Études supérieures en marketing de l'innovation" }, "year": "2021", "kind": "formacao", "exemplo": true },
-  { "institution": "UNESP", "title": { "en": "Music (classical training, 10+ years)", "pt": "Música (formação clássica, 10+ anos)", "fr": "Musique (formation classique)" }, "year": "2012", "kind": "formacao", "exemplo": true },
-  { "institution": "Meta Blueprint", "title": { "en": "Certification (exemplo)", "pt": "Certificação (exemplo)" }, "year": "2024", "kind": "certificacao", "exemplo": true },
-  { "institution": "Google", "title": { "en": "Google Analytics certification (exemplo)", "pt": "Certificação Google Analytics (exemplo)" }, "year": "2023", "kind": "certificacao", "exemplo": true },
-  { "institution": "HubSpot Academy", "title": { "en": "Social Media Marketing (exemplo)", "pt": "Social Media Marketing (exemplo)" }, "year": "2023", "kind": "certificacao", "exemplo": true }
+  {
+    "institution": "Greystone College",
+    "title": {
+      "en": "International Business Management (AEC)",
+      "pt": "Gestão de Negócios Internacionais (AEC)",
+      "fr": "Gestion des affaires internationales (AEC)"
+    },
+    "year": "2024",
+    "kind": "formacao"
+  },
+  {
+    "institution": "Estácio",
+    "title": {
+      "en": "MBA, Competitive Intelligence and Marketing Innovation",
+      "pt": "MBA em Inteligência Competitiva e Inovação em Marketing"
+    },
+    "year": "2021",
+    "kind": "formacao"
+  },
+  {
+    "institution": "Estácio",
+    "title": {
+      "en": "Marketing (higher education)",
+      "pt": "Marketing (ensino superior)"
+    },
+    "year": "2019",
+    "kind": "formacao"
+  },
+  {
+    "institution": "Microsoft",
+    "title": {
+      "en": "Microsoft Copilot 365",
+      "pt": "Microsoft Copilot 365"
+    },
+    "year": "2026",
+    "kind": "certificacao"
+  },
+  {
+    "institution": "Mailchimp",
+    "title": {
+      "en": "Email Marketing Professional Certificate",
+      "pt": "Certificado Profissional de Email Marketing"
+    },
+    "year": "2026",
+    "kind": "certificacao"
+  },
+  {
+    "institution": "HubSpot",
+    "title": {
+      "en": "HubSpot CRM",
+      "pt": "HubSpot CRM"
+    },
+    "year": "2026",
+    "kind": "certificacao"
+  },
+  {
+    "institution": "LinkedIn Learning",
+    "title": {
+      "en": "Project Management Foundations",
+      "pt": "Fundamentos de Gerenciamento de Projetos"
+    },
+    "year": "2026",
+    "kind": "certificacao"
+  }
 ]

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { content, featuredProjects, projectById } from './index'
+import { content, featuredProjects, projectById, areasFor } from './index'
 
 describe('conteúdo', () => {
   it('valida contra o schema (se este teste falhar, o erro aponta o campo errado no JSON)', () => {
@@ -25,5 +25,15 @@ describe('conteúdo', () => {
     expect(rec.length).toBeLessThanOrEqual(6)
     expect(marca[0].audience === 'marca' || marca[0].audience === 'ambos').toBe(true)
     expect(rec[0].audience === 'recrutador' || rec[0].audience === 'ambos').toBe(true)
+  })
+  it('as 6 áreas aparecem para os dois públicos (só a ordem muda) e todas têm projetos', () => {
+    const a = areasFor('marca'), b = areasFor('recrutador')
+    expect([...a].sort()).toEqual([...b].sort())
+    expect(a).toHaveLength(6)
+    for (const id of a) expect(content.projects.some((p) => p.areas.includes(id as never)), id).toBe(true)
+    expect(a[0]).not.toBe(b[0])
+  })
+  it('nenhum projeto fica sem pasta: toda área do projeto existe na lista', () => {
+    for (const p of content.projects) for (const id of p.areas) expect(areasFor('marca')).toContain(id)
   })
 })

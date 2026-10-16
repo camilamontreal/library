@@ -29,3 +29,10 @@ export function featuredProjects(audience: 'marca' | 'recrutador') {
     })
     .slice(0, 6)
 }
+
+/** Ordem das pastas de área na mesa: muda com o público, mas todas aparecem. */
+export function areasFor(audience: 'marca' | 'recrutador'): string[] {
+  return audience === 'marca'
+    ? ['content', 'events', 'ugc', 'social', 'marketing', 'design']
+    : ['social', 'marketing', 'events', 'design', 'content', 'ugc']
+}

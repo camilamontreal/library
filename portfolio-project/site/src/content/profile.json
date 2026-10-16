@@ -29,10 +29,10 @@
     { "value": "600K+", "label": { "en": "community", "pt": "comunidade", "fr": "communauté" }, "source": "Mídia kit 2026", "period": "jun/2026" },
     { "value": "290M+", "label": { "en": "views", "pt": "views", "fr": "vues" }, "source": "Mídia kit 2026", "period": "jun/2026" },
     { "value": "50+", "label": { "en": "brand partners", "pt": "marcas parceiras", "fr": "marques partenaires" }, "source": "Mídia kit 2026" },
-    { "value": "27", "label": { "en": "countries", "pt": "países", "fr": "pays" }, "source": "camilamontreal.com/sobremim" }
+    { "value": "38", "label": { "en": "countries", "pt": "países", "fr": "pays" }, "source": "Currículo 2026 (38 países)" }
   ],
-  "countries": 27,
-  "since": 2017,
+  "countries": 38,
+  "since": 2018,
   "tools": ["Canva", "CapCut", "Meta Business Suite", "TikTok Studio", "YouTube Studio", "Google Analytics", "Lightroom", "Filmora", "Notion", "Trello", "Asana", "Hootsuite", "Buffer", "AirTable", "Wix", "Google Workspace"],
   "trash": [
     { "en": "A 40-minute vlog nobody finished (exemplo)", "pt": "Um vlog de 40 minutos que ninguém terminou (exemplo)" },
