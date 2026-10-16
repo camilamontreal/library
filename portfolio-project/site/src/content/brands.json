@@ -1,60 +1,265 @@
 [
-  { "name": "Walt Disney World", "kind": "evento", "projectId": "disney-universal-media" },
-  { "name": "Universal Studios", "kind": "evento", "projectId": "disney-universal-media" },
-  { "name": "SeaWorld", "kind": "evento", "projectId": "disney-universal-media" },
-  { "name": "Busch Gardens", "kind": "evento", "projectId": "disney-universal-media" },
-  { "name": "D23 Anaheim", "kind": "evento", "year": "2024", "projectId": "disney-universal-media" },
-  { "name": "D23 Brasil", "kind": "evento", "year": "2024" },
-  { "name": "Air Canada", "kind": "evento", "projectId": "air-canada-austin" },
-  { "name": "Visit Austin", "kind": "evento", "projectId": "air-canada-austin" },
-  { "name": "BermudAir", "kind": "evento" },
-  { "name": "LATAM Airlines", "kind": "evento" },
-  { "name": "Warner Bros.", "kind": "evento" },
-  { "name": "ScreenX", "kind": "evento" },
-  { "name": "Cetaphil", "kind": "evento" },
-  { "name": "Visit Morocco", "kind": "evento" },
-  { "name": "Fairmont", "kind": "evento" },
-  { "name": "WTM", "kind": "evento" },
-  { "name": "Mud Girl", "kind": "evento" },
-  { "name": "Hard Rock", "kind": "parceria" },
-  { "name": "Avianca", "kind": "parceria" },
-  { "name": "Nomad", "kind": "parceria" },
-  { "name": "Outbound Hotel", "kind": "parceria" },
-  { "name": "Yadoya Tokyo", "kind": "parceria" },
-  { "name": "Visit Madeira", "kind": "parceria" },
-  { "name": "Turo", "kind": "parceria" },
-  { "name": "Québec Cité Tourism", "kind": "parceria" },
-  { "name": "GetYourGuide", "kind": "parceria" },
-  { "name": "Revolution Rail", "kind": "parceria" },
-  { "name": "Museum Imaginarium", "kind": "parceria" },
-  { "name": "Montérégie Tourism", "kind": "parceria" },
-  { "name": "Ontario", "kind": "parceria" },
-  { "name": "Best Western", "kind": "parceria" },
-  { "name": "Québec Tourism", "kind": "ugc", "projectId": "quebec-nickelodeon-ugc" },
-  { "name": "Nickelodeon", "kind": "ugc", "projectId": "quebec-nickelodeon-ugc" },
-  { "name": "Temu", "kind": "ugc" },
-  { "name": "MSC Cruises", "kind": "ugc" },
-  { "name": "Spa Scandinave", "kind": "ugc" },
-  { "name": "Selina Hotels", "kind": "ugc" },
-  { "name": "Visit California", "kind": "ugc" },
-  { "name": "Rosen Inn", "kind": "ugc" },
-  { "name": "Big Bounce Canada", "kind": "ugc" },
-  { "name": "BDA Water Sports", "kind": "ugc" },
-  { "name": "Western Union", "kind": "ugc" },
-  { "name": "CrowdRiff", "kind": "ugc", "projectId": "crowdriff" },
-  { "name": "Goalcast", "kind": "gestao", "projectId": "goalcast" },
-  { "name": "Paradigm Studios", "kind": "gestao", "projectId": "paradigm-studios" },
-  { "name": "Life Stories", "kind": "gestao", "projectId": "life-stories" },
-  { "name": "House Inn Orlando", "kind": "gestao", "projectId": "house-inn-orlando" },
-  { "name": "Mundo Mágico Store", "kind": "gestao", "projectId": "mundo-magico" },
-  { "name": "Basquete Urbano", "kind": "gestao" },
-  { "name": "Clínica Yoshizum", "kind": "gestao" },
-  { "name": "Encanto Turismo", "kind": "gestao" },
-  { "name": "Embarcaê", "kind": "gestao" },
-  { "name": "E-Safer", "kind": "gestao" },
-  { "name": "Orlando At Home", "kind": "gestao" },
-  { "name": "Magical Turismo", "kind": "gestao" },
-  { "name": "Buzz Marketing Agency", "kind": "gestao" },
-  { "name": "Caca Magic Imports", "kind": "gestao" },
-  { "name": "Rabaterapia", "kind": "gestao" }
+  {
+    "name": "Walt Disney World",
+    "kind": "evento",
+    "projectId": "disney-universal-media"
+  },
+  {
+    "name": "Universal Studios",
+    "kind": "evento",
+    "projectId": "disney-universal-media"
+  },
+  {
+    "name": "SeaWorld",
+    "kind": "evento",
+    "projectId": "disney-universal-media"
+  },
+  {
+    "name": "Busch Gardens",
+    "kind": "evento",
+    "projectId": "disney-universal-media"
+  },
+  {
+    "name": "D23 Anaheim",
+    "kind": "evento",
+    "year": "2024",
+    "projectId": "disney-universal-media"
+  },
+  {
+    "name": "D23 Brasil",
+    "kind": "evento",
+    "year": "2024"
+  },
+  {
+    "name": "Air Canada",
+    "kind": "evento",
+    "projectId": "air-canada-austin"
+  },
+  {
+    "name": "Visit Austin",
+    "kind": "evento",
+    "projectId": "air-canada-austin"
+  },
+  {
+    "name": "BermudAir",
+    "kind": "evento"
+  },
+  {
+    "name": "LATAM Airlines",
+    "kind": "evento"
+  },
+  {
+    "name": "Warner Bros.",
+    "kind": "evento"
+  },
+  {
+    "name": "ScreenX",
+    "kind": "evento"
+  },
+  {
+    "name": "Cetaphil",
+    "kind": "evento"
+  },
+  {
+    "name": "Visit Morocco",
+    "kind": "evento"
+  },
+  {
+    "name": "Fairmont",
+    "kind": "evento"
+  },
+  {
+    "name": "WTM",
+    "kind": "evento"
+  },
+  {
+    "name": "Mud Girl",
+    "kind": "evento"
+  },
+  {
+    "name": "Hard Rock",
+    "kind": "parceria"
+  },
+  {
+    "name": "Avianca",
+    "kind": "parceria"
+  },
+  {
+    "name": "Nomad",
+    "kind": "parceria"
+  },
+  {
+    "name": "Outbound Hotel",
+    "kind": "parceria"
+  },
+  {
+    "name": "Yadoya Tokyo",
+    "kind": "parceria"
+  },
+  {
+    "name": "Visit Madeira",
+    "kind": "parceria"
+  },
+  {
+    "name": "Turo",
+    "kind": "parceria"
+  },
+  {
+    "name": "Québec Cité Tourism",
+    "kind": "parceria"
+  },
+  {
+    "name": "GetYourGuide",
+    "kind": "parceria"
+  },
+  {
+    "name": "Revolution Rail",
+    "kind": "parceria"
+  },
+  {
+    "name": "Museum Imaginarium",
+    "kind": "parceria"
+  },
+  {
+    "name": "Montérégie Tourism",
+    "kind": "parceria"
+  },
+  {
+    "name": "Ontario",
+    "kind": "parceria"
+  },
+  {
+    "name": "Best Western",
+    "kind": "parceria"
+  },
+  {
+    "name": "Québec Tourism",
+    "kind": "ugc",
+    "projectId": "quebec-nickelodeon-ugc"
+  },
+  {
+    "name": "Nickelodeon",
+    "kind": "ugc",
+    "projectId": "quebec-nickelodeon-ugc"
+  },
+  {
+    "name": "Temu",
+    "kind": "ugc"
+  },
+  {
+    "name": "MSC Cruises",
+    "kind": "ugc"
+  },
+  {
+    "name": "Spa Scandinave",
+    "kind": "ugc"
+  },
+  {
+    "name": "Selina Hotels",
+    "kind": "ugc"
+  },
+  {
+    "name": "Visit California",
+    "kind": "ugc"
+  },
+  {
+    "name": "Rosen Inn",
+    "kind": "ugc"
+  },
+  {
+    "name": "Big Bounce Canada",
+    "kind": "ugc"
+  },
+  {
+    "name": "BDA Water Sports",
+    "kind": "ugc"
+  },
+  {
+    "name": "Western Union",
+    "kind": "ugc"
+  },
+  {
+    "name": "CrowdRiff",
+    "kind": "ugc",
+    "projectId": "crowdriff"
+  },
+  {
+    "name": "Goalcast",
+    "kind": "gestao",
+    "projectId": "goalcast"
+  },
+  {
+    "name": "Paradigm Studios",
+    "kind": "gestao",
+    "projectId": "paradigm-studios"
+  },
+  {
+    "name": "Life Stories",
+    "kind": "gestao",
+    "projectId": "life-stories"
+  },
+  {
+    "name": "House Inn Orlando",
+    "kind": "gestao",
+    "projectId": "house-inn-orlando"
+  },
+  {
+    "name": "Mundo Mágico Store",
+    "kind": "gestao",
+    "projectId": "mundo-magico"
+  },
+  {
+    "name": "Basquete Urbano",
+    "kind": "gestao",
+    "projectId": "clientes-gestao"
+  },
+  {
+    "name": "Clínica Yoshizumi",
+    "kind": "gestao",
+    "projectId": "clientes-gestao"
+  },
+  {
+    "name": "Encanto Turismo",
+    "kind": "gestao",
+    "projectId": "clientes-gestao"
+  },
+  {
+    "name": "Embarcaê",
+    "kind": "gestao",
+    "projectId": "embarcae"
+  },
+  {
+    "name": "E-Safer",
+    "kind": "gestao",
+    "projectId": "clientes-gestao"
+  },
+  {
+    "name": "Orlando At Home",
+    "kind": "gestao",
+    "projectId": "clientes-gestao"
+  },
+  {
+    "name": "Magical Turismo",
+    "kind": "gestao",
+    "projectId": "clientes-gestao"
+  },
+  {
+    "name": "Buzz Marketing Agency",
+    "kind": "gestao"
+  },
+  {
+    "name": "Caca Magic Imports",
+    "kind": "gestao",
+    "projectId": "clientes-gestao"
+  },
+  {
+    "name": "Rabaterapia",
+    "kind": "gestao",
+    "projectId": "clientes-gestao"
+  },
+  {
+    "name": "Stone Lain",
+    "kind": "gestao",
+    "projectId": "stone-lain"
+  }
 ]

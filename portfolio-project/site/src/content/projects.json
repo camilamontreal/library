@@ -1028,5 +1028,155 @@
     "featured": 74,
     "audience": "recrutador",
     "exemplo": true
+  },
+  {
+    "id": "embarcae",
+    "title": {
+      "en": "Social media for a family travel agency in Orlando",
+      "pt": "Social media para uma agência de viagens em família em Orlando"
+    },
+    "client": "Embarcaê (Natália Bruel)",
+    "type": "profissional",
+    "areas": [
+      "social"
+    ],
+    "template": "estrategia",
+    "period": "~2 anos, em andamento",
+    "role": {
+      "en": "Content strategy and social media management",
+      "pt": "Estratégia de conteúdo e gestão de social media"
+    },
+    "challenge": {
+      "en": "Turn Instagram into a business card and proof of authority for a travel specialist.",
+      "pt": "Transformar o Instagram em cartão de visitas e prova de autoridade de uma especialista em viagens."
+    },
+    "actions": [
+      {
+        "en": "Content strategy and editorial planning around the agency's main themes.",
+        "pt": "Estratégia de conteúdo e planejamento editorial em torno dos temas principais da agência."
+      },
+      {
+        "en": "Reel scripts, captions and a production spreadsheet.",
+        "pt": "Roteiros de Reels, legendas e planilha de produção."
+      },
+      {
+        "en": "Coordination with the video editor and the person who posts, plus strategy meetings.",
+        "pt": "Coordenação com o editor de vídeo e com quem posta, e reuniões estratégicas."
+      },
+      {
+        "en": "About two pieces of content per week, planned in series.",
+        "pt": "Cerca de 2 conteúdos por semana, planejados em séries."
+      }
+    ],
+    "cover": {
+      "src": "projects/embarcae/cover.jpg",
+      "kind": "image",
+      "tone": "#2F6FA3",
+      "exemplo": true
+    },
+    "gallery": [],
+    "metrics": [],
+    "links": [],
+    "tools": [
+      "Canva",
+      "Google Workspace"
+    ],
+    "featured": 0,
+    "audience": "recrutador",
+    "exemplo": true
+  },
+  {
+    "id": "stone-lain",
+    "title": {
+      "en": "Part-time social media management for a dinnerware brand",
+      "pt": "Gestão de social media part-time para uma marca de louças"
+    },
+    "client": "Stone Lain",
+    "type": "profissional",
+    "areas": [
+      "social"
+    ],
+    "template": "estrategia",
+    "period": "em andamento",
+    "role": {
+      "en": "Social Media Manager (part-time, ongoing contract)",
+      "pt": "Social Media Manager (part-time, contrato em andamento)"
+    },
+    "challenge": {
+      "en": "Keep a product brand consistent across Instagram, TikTok and YouTube Shorts.",
+      "pt": "Manter uma marca de produto consistente no Instagram, TikTok e YouTube Shorts."
+    },
+    "actions": [
+      {
+        "en": "Organic strategy and creative direction.",
+        "pt": "Estratégia orgânica e direção criativa."
+      },
+      {
+        "en": "Creator briefs for short-form content.",
+        "pt": "Briefings para criadores de conteúdo em vídeo curto."
+      }
+    ],
+    "cover": {
+      "src": "projects/stone-lain/cover.jpg",
+      "kind": "image",
+      "tone": "#8A6F58",
+      "exemplo": true
+    },
+    "gallery": [],
+    "metrics": [],
+    "links": [],
+    "tools": [
+      "Instagram",
+      "TikTok",
+      "YouTube Shorts"
+    ],
+    "featured": 0,
+    "audience": "recrutador",
+    "exemplo": true
+  },
+  {
+    "id": "clientes-gestao",
+    "title": {
+      "en": "Other social media clients",
+      "pt": "Outros clientes de social media"
+    },
+    "client": "Clientes de gestão de social media",
+    "type": "profissional",
+    "areas": [
+      "social"
+    ],
+    "template": "estrategia",
+    "period": "2019–2022 e em andamento",
+    "role": {
+      "en": "Social media management",
+      "pt": "Gestão de social media"
+    },
+    "challenge": {
+      "en": "Run social media for small and mid-size businesses in different sectors.",
+      "pt": "Cuidar do social media de pequenos e médios negócios de setores diferentes."
+    },
+    "actions": [
+      {
+        "en": "Basquete Urbano, Clínica Yoshizumi, Encanto Turismo, E-Safer.",
+        "pt": "Basquete Urbano, Clínica Yoshizumi, Encanto Turismo, E-Safer."
+      },
+      {
+        "en": "Orlando At Home, Magical Turismo, Caca Magic Imports, Rabaterapia.",
+        "pt": "Orlando At Home, Magical Turismo, Caca Magic Imports, Rabaterapia."
+      }
+    ],
+    "cover": {
+      "src": "projects/clientes-gestao/cover.jpg",
+      "kind": "image",
+      "tone": "#5B6BD5",
+      "exemplo": true
+    },
+    "gallery": [],
+    "metrics": [],
+    "links": [],
+    "tools": [],
+    "featured": 0,
+    "audience": "recrutador",
+    "exemplo": true
   }
 ]
