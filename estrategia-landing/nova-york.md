@@ -1,6 +1,7 @@
 # Landing page — NYC · O Roteiro Perfeito
 ### Estratégia comercial, estrutura e copy (versão 1 para aprovação)
 
+> **Decisões aprovadas:** headline A · estrutura de 15 seções · garantia de 7 dias · links com comissão "depende do parceiro" (aviso genérico de transparência no rodapé e no FAQ; detalhar por parceiro).
 > Status: rascunho para aprovação. Nenhum design ou código foi iniciado.
 > Tudo que aparece entre `[colchetes]` é informação que **eu não tenho** e que precisa ser confirmada ou preenchida por você.
 
@@ -471,10 +472,10 @@ Eu coloquei aqui o que eu gostaria de ter lido antes de ir: o horário certo, o 
 **Texto sob o preço:** `[Pagamento único. Acesso por e-mail logo após a confirmação. A CONFIRMAR]`
 
 **Botão:** Quero o guia de Nova York
-**Microcopy:** `[Pagamento seguro · Cartão, Pix `[confirmar]` · Garantia de [X dias] `[A CONFIRMAR]`]`
+**Microcopy:** `[Pagamento seguro · Cartão, Pix `[confirmar]` · Garantia de 7 dias]`
 
 **Garantia (texto sugerido, só publicar se for verdadeiro):**
-> Se o guia não for o que você esperava, você pode pedir o reembolso em até `[X dias]`. Basta enviar um e-mail para `[e-mail]`. Sem perguntas complicadas.
+> Se o guia não for o que você esperava, você pode pedir o reembolso em até 7 dias. Basta enviar um e-mail para `[e-mail]`. Sem perguntas complicadas.
 
 *(Nota: em compras online no Brasil existe o direito de arrependimento de 7 dias previsto no Código de Defesa do Consumidor. Confirme com sua plataforma de venda/contador como isso se aplica ao seu produto digital.)*
 
@@ -501,7 +502,7 @@ Sim. Há uma seção de estações do ano e guias específicos para Halloween, T
 Preços e horários em Nova York mudam. `[Última revisão: mês/ano. Política de atualização: A CONFIRMAR]`. Sempre recomendo conferir o site oficial antes de comprar ingressos.
 
 **O que são os links com desconto?**
-São links de reserva de passeios, ingressos e serviços com meu cupom. `[Explicar se há comissão: A CONFIRMAR]`.
+São links de reserva de passeios, ingressos e serviços com meu cupom. Alguns parceiros me pagam uma comissão quando você reserva pelo meu link, sem custo extra para você. `[Detalhar por parceiro]`.
 
 **Preciso saber inglês?**
 Não é pré-requisito. O guia está em português, inclui dicas para ver musicais em português e orienta a baixar mapa offline e tradutor. Ainda assim, algumas situações exigem uma comunicação básica.
@@ -530,7 +531,7 @@ Escreva para `[e-mail/WhatsApp]`.
 **Texto:** Você já escolheu o destino. Falta só decidir como quer chegar lá: com 30 abas abertas ou com um guia na mão.
 
 **Botão:** Quero o guia de Nova York
-**Microcopy:** `[Pagamento seguro · Acesso por e-mail · Garantia de X dias]`
+**Microcopy:** `Pagamento seguro · Acesso por e-mail · Garantia de 7 dias`
 
 ---
 
