@@ -2,6 +2,8 @@ import { useMediaQuery } from './lib/hooks'
 import { Desktop } from './os/desktop/Desktop'
 import { Mobile } from './os/mobile/Mobile'
 import { Spotlight } from './os/Spotlight'
+import { Intro, introSeen } from './os/Intro'
+import { useState } from 'react'
 
 /**
  * < 768 px: experiência de iPhone (tela de bloqueio + tela inicial + apps em tela cheia).
@@ -10,5 +12,6 @@ import { Spotlight } from './os/Spotlight'
  */
 export default function App() {
   const mobile = useMediaQuery('(max-width: 767px)')
-  return <>{mobile ? <Mobile /> : <Desktop />}<Spotlight /></>
+  const [intro, setIntro] = useState(() => !introSeen())
+  return <>{mobile ? <Mobile /> : <Desktop />}<Spotlight />{intro && <Intro onDone={() => setIntro(false)} />}</>
 }

@@ -31,7 +31,7 @@ for (const s of shots) {
   const errors = []
   page.on('pageerror', (e) => errors.push(e.message))
   page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()) })
-  await page.goto(`http://localhost:${port}/`, { waitUntil: 'networkidle' })
+  await page.goto(`http://localhost:${port}/?nointro`, { waitUntil: 'networkidle' })
   await page.waitForTimeout(300)
   if (!s.mobile) { await page.screenshot({ path: `${out}/${s.name}-boot.png` }); await page.locator('.boot').click().catch(() => {}) }
   await page.waitForTimeout(900)
