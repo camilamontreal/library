@@ -1,600 +1,612 @@
 <title>Nova York organizada</title>
 <meta name="description" content="Roteiro de 4 dias em Nova York, por região, com mapa interativo, dicas, segredos e links de reserva, em um só guia de Camila Montreal.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cookie&family=Montserrat:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cookie&family=Courier+Prime:wght@400;700&family=Nunito:wght@600;800;900&family=Patrick+Hand&display=swap">
 <style>
 
-/* Layout: pale ground, one deep-teal chapter that rises with a rounded top, tilted product, ticket motifs, handwritten notes in the brand script. */
+/* Camila's world: a deep-teal room, cream paper cards, stickers you can throw, a chat thread, a receipt for a price. Reference: Julia Alvarenga's links page, in Camila's colours. */
 :root{
-  --ground:#f4f8f7;
-  --ink:#2f2f30;
-  --muted:#4a4d4c;
+  --room:#0c403a;
+  --room-2:#0a3631;
+  --cream:#fff6e2;
+  --paper:#fffbf0;
+  --ink:#1b1b1b;
+  --soft:#4b4a46;
   --teal:#31a593;
-  --deep:#0e4b44;
-  --mint:#dcefeb;
-  --white:#ffffff;
-  --m:clamp(16px,3vw,48px);
-  --gap:clamp(10px,1.2vw,16px);
-  --r:28px;
-  --ease-out:cubic-bezier(.22,1,.36,1);
-  --f-display:Montserrat,system-ui,sans-serif;
+  --butter:#ffe27a;
+  --pink:#ff8fb1;
+  --blue:#0766d6;
+  --gray:#e9e9eb;
+  --mint:#bfe6df;
+  --f-body:Nunito,system-ui,sans-serif;
+  --f-hand:"Patrick Hand","Comic Sans MS",cursive;
+  --f-mono:"Courier Prime","Courier New",monospace;
   --f-script:Cookie,cursive;
-  --t-display:clamp(46px,6.4vw,96px);
-  --t-h2:clamp(32px,4vw,56px);
+  --pop:cubic-bezier(.34,1.56,.64,1);
+  --ease-out:cubic-bezier(.22,1,.36,1);
+  --m:clamp(16px,4vw,56px);
+  --r:26px;
+  --t-display:clamp(44px,7vw,92px);
+  --t-h2:clamp(34px,4.4vw,60px);
   --t-h3:22px;
   --t-body:17px;
   --t-small:15px;
-  --t-script:clamp(26px,2.4vw,34px);
-  --t-statement:clamp(24px,2.5vw,36px);
+  --t-hand:clamp(24px,2.3vw,30px);
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--f-display);font-weight:500;font-size:var(--t-body);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;background:var(--room);color:var(--cream);font-family:var(--f-body);font-weight:600;font-size:var(--t-body);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit}
 h1,h2,h3,p,ul,ol,figure{margin:0}
 ul,ol{padding:0;list-style:none}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left}
-:focus-visible{outline:3px solid var(--deep);outline-offset:3px}
-::selection{background:var(--deep);color:var(--white)}
-.wrap{padding-inline:var(--m);max-width:1440px;margin-inline:auto}
-h1,h2{font-weight:800;letter-spacing:-.035em;line-height:1;text-wrap:balance}
-h2{font-size:var(--t-h2);color:var(--deep)}
-h3{font-size:var(--t-h3);font-weight:700;line-height:1.25;letter-spacing:-.01em}
-.script{font-family:var(--f-script);font-size:var(--t-script);line-height:1.05;color:var(--teal);font-weight:400}
-.muted{color:var(--muted)}
-.small{font-size:var(--t-small)}
+:focus-visible{outline:3px solid var(--butter);outline-offset:3px}
+::selection{background:var(--butter);color:var(--ink)}
+h1,h2{font-weight:900;letter-spacing:-.03em;line-height:1;text-wrap:balance;color:var(--butter)}
+h2{font-size:var(--t-h2)}
+h3{font-size:var(--t-h3);font-weight:800;line-height:1.25;letter-spacing:-.01em}
+.hand{font-family:var(--f-hand);font-weight:400;font-size:var(--t-hand);line-height:1.1}
+.wrap{max-width:1100px;margin-inline:auto;padding-inline:var(--m)}
+.sec{padding-block:clamp(72px,10vw,150px)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 32px;border-radius:999px;background:var(--deep);color:var(--white);font-weight:800;font-size:17px;text-decoration:none;white-space:nowrap;transition:transform .16s var(--ease-out),background-color .2s ease}
-.btn:hover{background:var(--teal);color:var(--ink)}
-.btn:active{transform:scale(.97)}
-.btn.teal{background:var(--teal);color:var(--ink)}
-.btn.teal:hover{background:var(--white)}
-.btn.sm{min-height:44px;padding:0 22px;font-size:15px}
-.btn.ghost{background:var(--white);color:var(--deep)}
-.btn.ghost:hover{background:var(--mint)}
-.link{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
-
-/* nav: a plain solid pill */
-.nav{position:sticky;top:12px;z-index:20;margin:12px var(--m) 0;max-width:1360px;margin-inline:auto;padding:0 8px 0 24px;height:60px;border-radius:999px;background:var(--white);display:flex;align-items:center;gap:24px;width:calc(100% - 2 * var(--m))}
-.brand{font-family:var(--f-script);font-size:34px;line-height:1;color:var(--deep);text-decoration:none;white-space:nowrap}
-.nav nav{margin:0 auto}
-.nav ul{display:flex;gap:30px;font-size:15px;font-weight:700}
-.nav ul a{text-decoration:none}
-.nav ul a:hover{color:var(--teal)}
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px var(--m);max-width:1280px;margin-inline:auto}
+.top .brand{font-family:var(--f-script);font-size:36px;line-height:1;color:var(--butter);text-decoration:none}
+.top nav{display:flex;gap:26px;font-weight:800;font-size:15px}
+.top nav a{text-decoration:none}
+.top nav a:hover{color:var(--butter)}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;background:var(--ink);color:var(--cream);font-weight:900;font-size:17px;text-decoration:none;white-space:nowrap;transition:transform .35s var(--pop),background-color .2s ease,color .2s ease}
+.pill:hover{background:var(--pink);color:var(--ink);transform:scale(1.04) rotate(-1deg)}
+.pill:active{transform:scale(.96)}
+.pill.cream{background:var(--cream);color:var(--ink)}
+.pill.cream:hover{background:var(--butter)}
+.pill.sm{min-height:42px;padding:0 18px;font-size:15px}
 
 /* hero */
-.hero{padding:clamp(32px,6vw,80px) var(--m) clamp(48px,7vw,96px);display:grid;grid-template-columns:5fr 6fr;gap:40px;align-items:center;max-width:1440px;margin-inline:auto}
-.hero h1{font-size:var(--t-display);letter-spacing:-.045em;line-height:.95;color:var(--deep)}
-.hero .lede{font-size:var(--t-statement);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-top:22px;max-width:20ch;color:var(--ink)}
-.hero .sup{margin-top:22px;max-width:42ch}
-.hero .act{margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
-.hero .act small{font-size:var(--t-small);color:var(--muted);max-width:24ch;line-height:1.35}
-.stagebox{position:relative;border-radius:44px;background:var(--teal);aspect-ratio:1.08;display:grid;place-items:center;padding:7% 5%}
-.stagebox .dev{width:112%;max-width:none;margin-inline:-6%}
-.note{position:absolute;display:flex;gap:8px;align-items:flex-end;color:var(--white)}
-.note .script{color:var(--white);max-width:11ch}
-.note svg{width:70px;height:56px;flex:none;stroke:var(--white);fill:none;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
-.n1{left:4%;top:5%;background:var(--ground);padding:4px 22px 6px 18px;border-radius:24px;transform:rotate(-4deg)}
-.n1 .script{color:var(--deep)}
-.n1 svg{stroke:var(--deep)}
-.n2{right:4%;top:6%;background:var(--ground);padding:4px 22px 6px 18px;border-radius:24px;transform:rotate(3deg)}
-.n2 .script{color:var(--deep)}.n2 svg{stroke:var(--deep)}
-.n3{left:4%;bottom:5%;background:var(--ground);padding:4px 22px 6px 18px;border-radius:24px;transform:rotate(-2deg)}
-.n3 .script{color:var(--deep)}.n3 svg{stroke:var(--deep)}
+.hero{text-align:center;padding:clamp(16px,3vw,40px) var(--m) clamp(56px,8vw,110px);max-width:960px;margin-inline:auto;position:relative}
+.cluster{position:relative;height:clamp(300px,42vw,420px);max-width:760px;margin:0 auto 24px}
+.avatar{position:absolute;left:50%;top:50%;width:clamp(150px,22vw,230px);aspect-ratio:1;margin:calc(clamp(150px,22vw,230px) / -2) 0 0 calc(clamp(150px,22vw,230px) / -2);border-radius:50%;border:6px solid var(--cream);overflow:hidden;background:var(--teal);z-index:2}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.stk{position:absolute;z-index:3;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none;rotate:var(--rot,0deg);transition:rotate .4s var(--pop)}
+.stk:hover{rotate:calc(var(--rot,0deg) + 4deg)}
+.stk.drag{cursor:grabbing;z-index:9}
+.poly{background:var(--paper);padding:7px 7px 24px;width:clamp(86px,13vw,130px);border-radius:6px;color:var(--ink)}
+.poly img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:3px;pointer-events:none}
+.poly span{display:block;margin-top:4px;font-family:var(--f-hand);font-size:15px;line-height:1;text-align:center}
+.poly::before{content:"";position:absolute;left:50%;top:-9px;width:46px;height:18px;margin-left:-23px;background:rgba(255,226,122,.85);rotate:-3deg}
+.taxi{background:var(--butter);color:var(--ink);border-radius:14px;padding:6px 16px;font-weight:900;font-size:clamp(16px,2vw,22px);letter-spacing:.02em;text-transform:uppercase}
+.bul{width:clamp(48px,7vw,68px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:clamp(22px,3vw,32px);color:var(--cream)}
+.stamp{width:clamp(78px,11vw,112px);aspect-ratio:1;border-radius:50%;border:4px solid var(--pink);color:var(--pink);display:grid;place-items:center;text-align:center;font-family:var(--f-mono);font-weight:700;font-size:clamp(12px,1.5vw,16px);line-height:1.1;background:var(--room)}
+.tick{background:var(--cream);color:var(--ink);border-radius:12px;padding:8px 18px 8px 26px;font-weight:900;font-size:clamp(15px,1.8vw,19px);position:relative}
+.tick::before{content:"";position:absolute;left:-9px;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:var(--room)}
+.star{width:clamp(40px,6vw,64px)}
+.star svg{width:100%;height:auto;fill:var(--butter)}
+.p1{left:2%;top:6%;--rot:-8deg}.p2{right:3%;top:2%;--rot:7deg}.p3{left:12%;bottom:-2%;--rot:5deg}
+.s-taxi{right:14%;bottom:2%;--rot:-6deg}
+.s-b1{left:30%;top:0;--rot:0deg;background:#1d5ed6}
+.s-b2{right:26%;bottom:0;background:#e8453c}
+.s-stamp{left:0;top:48%;--rot:-12deg}
+.s-tick{right:0;top:58%;--rot:6deg}
+.s-star{left:28%;bottom:2%;--rot:12deg}
+.s-star2{right:22%;top:6%;--rot:-10deg}
+.tap{position:absolute;left:50%;bottom:-30px;transform:translateX(-50%);color:var(--pink);white-space:nowrap}
+.hero h1{margin-top:clamp(22px,3vw,36px);font-size:var(--t-display);letter-spacing:-.045em;line-height:.95}
+.hero .lede{margin-top:16px;font-weight:900;font-size:clamp(24px,2.5vw,34px);letter-spacing:-.02em;line-height:1.15;color:var(--cream)}
 
-/* stickers */
-.stickers{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--gap);row-gap:clamp(28px,3vw,36px);padding:0 var(--m) clamp(48px,6vw,80px);max-width:1440px;margin-inline:auto}
-.sticker{background:var(--white);border-radius:24px;padding:16px 26px;font-size:var(--t-small);font-weight:700;line-height:1.2;max-width:16ch;transition:transform .3s var(--ease-out)}
-.sticker b{display:inline-block;font-size:var(--t-h2);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--deep);margin-right:8px;vertical-align:middle}
-.sticker:nth-child(1){transform:rotate(-3deg)}.sticker:nth-child(2){transform:rotate(2deg)}.sticker:nth-child(3){transform:rotate(-1.5deg)}.sticker:nth-child(4){transform:rotate(3deg)}
-.sticker:hover{transform:rotate(0) scale(1.04)}
+/* chat */
+.chat{max-width:440px;margin:clamp(28px,4vw,48px) auto 0;display:grid;gap:6px;text-align:left}
+.b{max-width:82%;padding:10px 16px;border-radius:22px;font-size:17px;line-height:1.3;font-weight:600}
+.b.in{background:var(--gray);color:var(--ink);justify-self:start;border-bottom-left-radius:6px}
+.b.out{background:var(--blue);color:#fff;justify-self:end;border-bottom-right-radius:6px}
+.b.big{font-size:clamp(20px,2.4vw,26px)}
+.deliv{justify-self:end;font-size:14px;color:#cfe8e3;margin-top:-2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-self:end;margin-top:6px}
+.chips button{padding:10px 20px;border-radius:999px;background:var(--cream);color:var(--blue);font-weight:800;border:2px solid var(--blue);transition:background-color .2s ease,color .2s ease,transform .3s var(--pop)}
+.chips button:hover{transform:scale(1.07)}
+.chips button[aria-pressed=true]{background:var(--blue);color:#fff}
 
-/* updates band */
-.band{background:var(--teal);color:var(--ink);padding:28px var(--m);text-align:center}
-.band p{font-weight:800;font-size:var(--t-h3);letter-spacing:-.02em;line-height:1.2}
-.band p.script{color:var(--white);margin-top:6px;font-weight:400;font-size:var(--t-script);letter-spacing:0}
+/* link cards (Julia's card language) */
+.cards{max-width:520px;margin:clamp(26px,4vw,40px) auto 0;display:grid;gap:12px;text-align:left}
+.card{display:flex;align-items:center;gap:16px;background:var(--cream);color:var(--ink);border-radius:var(--r);padding:14px 16px;text-decoration:none;rotate:var(--tilt,0deg);transition:rotate .4s var(--pop),transform .4s var(--pop)}
+.card:hover{rotate:0deg;transform:translateY(-4px) scale(1.015)}
+.card:active{transform:scale(.98)}
+.card .ic{width:64px;height:64px;border-radius:18px;overflow:hidden;flex:none;background:var(--mint)}
+.card .ic img{width:100%;height:100%;object-fit:cover}
+.card b{display:block;font-size:19px;font-weight:900;line-height:1.15}
+.card .pill{display:inline-flex;color:var(--cream);font-size:16px;margin-top:0}
+.card span:not(.go):not(.pill):not(.pr){display:block;font-size:var(--t-small);color:var(--soft);font-weight:600;line-height:1.3;margin-top:2px}
+.card .go{margin-left:auto;width:42px;height:42px;border-radius:50%;background:var(--ink);color:var(--cream);display:grid;place-items:center;flex:none;font-size:18px;font-weight:900;transition:background-color .2s ease,color .2s ease}
+.card:hover .go{background:var(--pink);color:var(--ink)}
+.card.feat{flex-wrap:wrap;padding:20px;--tilt:-.7deg}
+.card.feat .dev{width:100%;border-radius:16px;background:var(--teal);padding:10px 10px 0}
+.card.feat .dev img{width:100%}
+.card.feat .row{display:flex;align-items:center;gap:14px;width:100%}
+.card.feat .pr{font-size:28px;font-weight:900;letter-spacing:-.03em}
+.card:nth-child(3){--tilt:.6deg}.card:nth-child(5){--tilt:-.5deg}
 
-/* deep chapter: the days slider */
-.deep{background:var(--deep);color:var(--white);border-radius:56px 56px 0 0;margin-top:clamp(56px,8vw,110px);padding:clamp(64px,9vw,130px) var(--m) clamp(64px,9vw,120px)}
-.deep h2{color:var(--white);max-width:18ch}
-.deep .in{max-width:1440px;margin-inline:auto;min-height:60svh;display:flex;flex-direction:column;justify-content:space-between;gap:56px}
-.days{display:inline-flex;gap:8px;margin-top:32px;background:rgba(255,255,255,.12);padding:6px;border-radius:999px}
-.days button{min-width:72px;height:56px;border-radius:999px;display:grid;place-items:center;font-weight:800;font-size:20px;transition:background-color .2s ease,color .2s ease}
-.days button[aria-pressed=true]{background:var(--white);color:var(--deep)}
-.days button:hover{background:rgba(255,255,255,.22)}
-.days button[aria-pressed=true]:hover{background:var(--white)}
-.deep .lab{margin-top:14px;font-size:var(--t-small);color:var(--mint)}
-.fig{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap}
-.fig .n{font-size:clamp(150px,19vw,300px);font-weight:800;letter-spacing:-.06em;line-height:.8;font-variant-numeric:tabular-nums;display:flex;align-items:baseline;gap:.08em;color:var(--white)}
-.fig .n small{font-size:var(--t-h2);letter-spacing:-.02em;font-weight:700;color:var(--teal)}
-.fig p{max-width:36ch;color:var(--mint)}
+/* numbers strip */
+.strip{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:0 var(--m) clamp(56px,8vw,100px);max-width:960px;margin-inline:auto}
+.strip p{background:var(--butter);color:var(--ink);border-radius:999px;padding:10px 20px;font-weight:900;font-size:17px;rotate:var(--rot,0deg)}
+.strip p:nth-child(odd){--rot:-2deg}.strip p:nth-child(even){--rot:2deg}
 
-/* product, tilted */
-.prod{background:var(--deep);padding:0 var(--m) clamp(80px,10vw,150px)}
-.prod .cap2{max-width:1440px;margin-inline:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;color:var(--white)}
-.prod h2{color:var(--white);max-width:12ch}
-.prod .cap2 p{max-width:34ch;color:var(--mint)}
-.persp{max-width:1100px;margin:clamp(40px,6vw,80px) auto 0;perspective:1600px}
-.tilt{border-radius:28px;background:var(--ground);padding:14px;transform:rotateX(14deg) rotateZ(-2deg) scale(.96);transition:transform .8s var(--ease-out)}
-.persp:hover .tilt,.tilt.flat{transform:rotateX(0) rotateZ(0) scale(1)}
-.tilt .bar{display:flex;gap:7px;padding:4px 10px 12px}
-.tilt .bar i{width:12px;height:12px;border-radius:50%;background:var(--mint)}
-.frame{position:relative;aspect-ratio:1334/834;border-radius:18px;overflow:hidden;background:var(--mint);cursor:pointer}
-.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease}
+/* quiz thread */
+.quiz{background:var(--room-2);padding-block:clamp(72px,10vw,140px)}
+.quiz .wrap{max-width:760px;text-align:center}
+.quiz h2{margin-bottom:clamp(28px,4vw,48px)}
+.quiz .chat{max-width:520px;margin-top:0}
+.quiz .b.in.big strong{display:block;font-size:clamp(64px,10vw,110px);font-weight:900;letter-spacing:-.05em;line-height:.9;font-variant-numeric:tabular-nums}
+.quiz .fine{margin-top:14px;font-size:var(--t-small);color:#cfe8e3;max-width:46ch;margin-inline:auto}
+
+/* guide pages: a taped card */
+.pages{text-align:center}
+.pages p.hand{color:var(--pink);margin-bottom:10px}
+.tape{position:relative;max-width:980px;margin:clamp(32px,5vw,56px) auto 0;background:var(--paper);padding:14px 14px 22px;border-radius:14px;rotate:-1.2deg;transition:rotate .5s var(--pop)}
+.tape:hover{rotate:0deg}
+.tape::before{content:"";position:absolute;left:50%;top:-16px;width:120px;height:32px;margin-left:-60px;background:rgba(255,226,122,.9);rotate:2deg}
+.frame{position:relative;aspect-ratio:1334/834;border-radius:8px;overflow:hidden;background:var(--mint);cursor:pointer}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease}
 .frame img.on{opacity:1}
-.cap{margin:18px auto 0;max-width:1100px;font-size:var(--t-small);color:var(--mint);min-height:1.5em}
+.tape .cap{margin-top:12px;font-family:var(--f-hand);font-size:20px;color:var(--ink);min-height:1.3em;text-align:center}
 
-/* tabs + big photo card */
-.cards{padding:clamp(80px,10vw,150px) var(--m);max-width:1440px;margin-inline:auto}
-.cards h2{max-width:14ch;margin-inline:auto;text-align:center}
-.seg{display:flex;justify-content:center;margin-top:36px}
-.seg div{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:4px;background:var(--white);padding:6px;border-radius:999px}
-.seg button{padding:12px 22px;border-radius:999px;font-weight:700;font-size:16px;transition:background-color .2s ease,color .2s ease}
-.seg button[aria-selected=true]{background:var(--deep);color:var(--white)}
-.seg button:hover{background:var(--mint)}
-.seg button[aria-selected=true]:hover{background:var(--deep)}
-.big{position:relative;margin:36px auto 0;max-width:980px;aspect-ratio:16/10;border-radius:36px;overflow:hidden;background:var(--deep)}
-.big img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease}
-.big img.on{opacity:1}
-.big .scrim{position:absolute;inset:auto 0 0 0;padding:clamp(20px,3vw,40px);background:rgba(14,75,68,.88);color:var(--white);display:grid;gap:8px}
-.big .scrim h3{font-size:var(--t-h3);letter-spacing:-.02em;font-weight:800}
-.big .scrim p{max-width:60ch;color:var(--white)}
-.pager{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:22px}
-.pager button{width:48px;height:48px;border-radius:50%;background:var(--white);display:grid;place-items:center;font-size:20px;font-weight:800;transition:background-color .2s ease,transform .16s var(--ease-out)}
-.pager button:hover{background:var(--mint)}.pager button:active{transform:scale(.92)}
-.pager span{font-size:var(--t-small);font-weight:700;min-width:48px;text-align:center}
+/* tabs card */
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:30px}
+.tabs button{padding:10px 20px;border-radius:999px;background:rgba(255,246,226,.12);font-weight:800;transition:background-color .2s ease,color .2s ease,transform .3s var(--pop)}
+.tabs button:hover{transform:scale(1.06)}
+.tabs button[aria-selected=true]{background:var(--butter);color:var(--ink)}
+.pane{display:grid;grid-template-columns:5fr 7fr;gap:clamp(20px,4vw,56px);align-items:center;max-width:900px;margin:clamp(28px,4vw,48px) auto 0;background:var(--cream);color:var(--ink);border-radius:var(--r);padding:clamp(16px,3vw,36px);rotate:.5deg}
+.pane .ph{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:var(--mint)}
+.pane .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease}
+.pane .ph img.on{opacity:1}
+.pane h3{font-size:clamp(26px,3vw,38px);font-weight:900;letter-spacing:-.03em;line-height:1.05}
+.pane p{margin-top:14px;max-width:44ch;font-weight:600}
 
-/* ticket: what is included */
-.incl{padding:0 var(--m) clamp(80px,10vw,150px);max-width:1440px;margin-inline:auto;display:grid;grid-template-columns:4fr 6fr 4fr;gap:var(--gap);align-items:stretch}
-.incl .ph{border-radius:var(--r);overflow:hidden;min-height:420px}
-.incl .ph img{width:100%;height:100%;object-fit:cover}
-.ticket{position:relative;background:var(--white);border-radius:var(--r);padding:clamp(28px,3.4vw,52px)}
-.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:36px;height:36px;margin-top:-18px;border-radius:50%;background:var(--ground)}
-.ticket::before{left:-18px}.ticket::after{right:-18px}
-.ticket h2{font-size:var(--t-h2)}
-.ticket ul{margin-top:28px;display:grid;gap:14px}
-.ticket li{display:flex;gap:14px;align-items:flex-start}
-.ticket li::before{content:"";flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:var(--teal);box-shadow:none}
-.ticket li b{font-weight:800}
-.ticket .note-s{margin-top:26px;font-size:var(--t-small);color:var(--muted)}
+/* included */
+.incl{display:grid;grid-template-columns:7fr 5fr;gap:clamp(24px,5vw,72px);align-items:center}
+.incl h2{margin-bottom:26px}
+.incl li{display:flex;gap:14px;align-items:flex-start;padding:7px 0}
+.incl li::before{content:"";flex:none;width:26px;height:26px;margin-top:1px;border-radius:50%;background:var(--butter) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%231b1b1b' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/70% no-repeat}
+.incl li b{font-weight:900}
+.incl p.hand{margin-top:20px;color:var(--pink)}
+.incl .poly{position:relative;width:min(100%,360px);margin-inline:auto;padding:12px 12px 40px;--rot:3deg;rotate:var(--rot)}
+.incl .poly span{font-size:26px;margin-top:10px;color:var(--ink)}
 
-/* errors list */
-.list{padding:clamp(40px,6vw,90px) var(--m) clamp(80px,10vw,140px);max-width:1440px;margin-inline:auto}
-.list .hd{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:40px;flex-wrap:wrap}
-.list .hd span{font-size:var(--t-small);color:var(--muted)}
-.list ul{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
-.list li{display:flex;gap:20px;align-items:flex-start;background:var(--white);border-radius:var(--r);padding:22px}
-.list li img{width:84px;height:84px;border-radius:18px;object-fit:cover;flex:none}
-.list li p{font-size:var(--t-small);color:var(--muted);margin-top:6px;max-width:42ch}
+/* errors: sticky notes */
+.errs h2{text-align:center}
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,26px);margin-top:clamp(36px,5vw,64px)}
+.note{position:relative;background:var(--cream);color:var(--ink);border-radius:8px;padding:30px 22px 24px;rotate:var(--rot,0deg);transition:rotate .4s var(--pop),transform .4s var(--pop)}
+.note:nth-child(3n+1){--rot:-1.6deg}.note:nth-child(3n+2){--rot:1.2deg}.note:nth-child(3n){--rot:-.8deg}
+.note:nth-child(even){background:var(--butter)}
+.note:hover{rotate:0deg;transform:translateY(-6px)}
+.note::before{content:"";position:absolute;left:50%;top:-12px;width:78px;height:24px;margin-left:-39px;background:rgba(49,165,147,.85);rotate:-2deg}
+.note img{width:64px;height:64px;border-radius:50%;object-fit:cover;margin-bottom:12px;border:3px solid var(--paper)}
+.note h3{font-family:var(--f-hand);font-weight:400;font-size:28px;line-height:1.05}
+.note p{margin-top:8px;font-size:16px;line-height:1.4;font-weight:600}
 
 /* compare */
-.cmp{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);padding:0 var(--m) clamp(80px,10vw,140px);max-width:1440px;margin-inline:auto}
-.cmp>div{border-radius:var(--r);padding:clamp(32px,4vw,64px)}
-.cmp .a{background:var(--mint)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,26px)}
+.cmp>div{border-radius:var(--r);padding:clamp(26px,4vw,52px)}
+.cmp .a{background:var(--room-2);box-shadow:inset 0 0 0 2px rgba(255,246,226,.25)}
 .cmp .b{background:var(--teal);color:var(--ink)}
-.cmp .b h2{color:var(--deep)}
-.cmp h2{font-size:var(--t-h2)}
-.cmp ul{margin-top:32px;display:grid;gap:16px}
-.cmp li{display:flex;gap:14px;align-items:flex-start;font-weight:700}
-.cmp li::before{content:"";flex:none;width:20px;height:20px;margin-top:3px;border-radius:50%;background:var(--white)}
-.cmp .a li::before{background:var(--ground)}
-.cmp .foot{margin-top:36px;font-weight:800;font-size:var(--t-statement);line-height:1.2;letter-spacing:-.02em;max-width:22ch;color:var(--deep)}
+.cmp .b h2{color:var(--ink)}
+.cmp h2{font-size:clamp(28px,3vw,42px)}
+.cmp ul{margin-top:26px;display:grid;gap:14px}
+.cmp li{display:flex;gap:12px;align-items:flex-start;font-weight:800}
+.cmp li::before{content:"";flex:none;width:18px;height:18px;margin-top:4px;border-radius:50%;background:var(--cream)}
+.cmp .a li::before{background:rgba(255,246,226,.35)}
+.cmp .foot{margin-top:28px;font-family:var(--f-hand);font-weight:400;font-size:24px;line-height:1.15;max-width:34ch}
 
 /* how */
-.how{padding:clamp(40px,6vw,90px) var(--m) clamp(80px,10vw,140px);max-width:1440px;margin-inline:auto}
-.how h2{max-width:10ch}
-.how .lead{margin-top:20px;max-width:44ch}
-.how svg{display:block;width:100%;height:auto;margin-top:48px}
+.how h2{max-width:11ch}
+.how .lead{margin-top:18px;max-width:44ch;color:#d9ece8}
+.how svg{display:block;width:100%;height:auto;margin-top:44px}
 .how .mob{display:none}
-.thirds{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:32px}
-.thirds p{margin-top:8px;max-width:32ch}
+.thirds{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:30px}
+.thirds p{margin-top:8px;max-width:32ch;color:#d9ece8}
 
 /* about */
-.about{margin:0 var(--m);max-width:1360px;margin-inline:auto;width:calc(100% - 2 * var(--m));background:var(--deep);color:var(--white);border-radius:48px;display:grid;grid-template-columns:5fr 6fr;gap:clamp(24px,4vw,64px);padding:clamp(28px,4vw,64px);align-items:center}
-.about .ph{border-radius:32px;overflow:hidden;aspect-ratio:4/5}
-.about .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
-.about h2{color:var(--white);max-width:12ch}
-.about p{margin-top:18px;max-width:52ch;color:var(--mint)}
-.about p b{color:var(--white)}
-.about .acts{margin-top:28px;display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center}
-.about .soc{display:flex;gap:20px;font-weight:700;font-size:15px}
+.about{display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,5vw,72px);align-items:center;background:var(--cream);color:var(--ink);border-radius:36px;padding:clamp(24px,4vw,64px);max-width:1100px;margin-inline:auto}
+.about .poly{position:relative;width:min(100%,380px);margin-inline:auto;padding:12px 12px 44px;--rot:-3deg;rotate:var(--rot)}
+.about .poly span{font-size:28px;margin-top:10px}
+.about h2{color:var(--ink)}
+.about p{margin-top:16px;max-width:52ch;font-weight:600}
+.about .hand{color:#d4558a;margin-top:18px}
+.about .acts{margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.about .soc{display:flex;gap:18px;font-weight:800;font-size:15px}
+.link{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
 
-/* for whom */
-.who{padding:clamp(80px,10vw,140px) var(--m);max-width:1440px;margin-inline:auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px)}
-.who h2{font-size:var(--t-h2)}
-.who ul{margin-top:28px;display:grid;gap:16px}
-.who li{display:flex;gap:16px;align-items:flex-start;max-width:46ch}
+/* who */
+.who{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px)}
+.who h2{font-size:clamp(30px,3.4vw,46px)}
+.who ul{margin-top:26px;display:grid;gap:14px}
+.who li{display:flex;gap:14px;align-items:flex-start;max-width:46ch}
 .who li::before{content:"";flex:none;width:22px;height:22px;margin-top:3px;border-radius:50%}
-.who .y li::before{background:var(--teal)}
-.who .n li::before{background:var(--mint)}
+.who .y li::before{background:var(--butter)}
+.who .n li::before{background:rgba(255,246,226,.3)}
 
-/* boarding pass */
-.price{padding:clamp(56px,8vw,110px) var(--m) clamp(80px,10vw,140px);background:var(--mint)}
-.price .hd{max-width:1100px;margin-inline:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
-.price .seg{margin:0}
-.pass{position:relative;max-width:1100px;margin:36px auto 0;display:grid;grid-template-columns:1fr 280px;background:var(--white);border-radius:var(--r);overflow:hidden}
-.pass .main{padding:clamp(28px,4vw,56px);display:grid;gap:18px}
-.pass .pr{font-size:var(--t-display);font-weight:800;letter-spacing:-.05em;line-height:.9;color:var(--deep);font-variant-numeric:tabular-nums}
-.pass .per{font-size:var(--t-body);font-weight:700}
-.pass .inc{max-width:46ch;color:var(--muted)}
-.pass .stub{background:var(--teal);color:var(--ink);padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;justify-content:space-between;gap:24px;position:relative}
-.pass .stub::before,.pass .stub::after{content:"";position:absolute;left:-18px;width:36px;height:36px;border-radius:50%;background:var(--mint)}
-.pass .stub::before{top:-18px}.pass .stub::after{bottom:-18px}
-.pass .stub p.script{color:var(--deep)}
-.pass .stub span{font-size:var(--t-small);font-weight:700}
+/* receipt */
+.price{background:var(--room-2);padding-block:clamp(72px,10vw,150px)}
+.price .wrap{max-width:560px;text-align:center}
+.price h2{margin-bottom:22px}
+.seg{display:inline-flex;gap:4px;background:rgba(255,246,226,.12);padding:5px;border-radius:999px;margin-bottom:34px}
+.seg button{padding:10px 24px;border-radius:999px;font-weight:900;transition:background-color .2s ease,color .2s ease}
+.seg button[aria-selected=true]{background:var(--butter);color:var(--ink)}
+.receipt{position:relative;background:var(--paper);color:var(--ink);font-family:var(--f-mono);font-weight:400;text-align:left;padding:34px 30px 40px;rotate:-1deg;transition:rotate .5s var(--pop)}
+.receipt:hover{rotate:0deg}
+.receipt::after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:14px;background:var(--paper);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 14' preserveAspectRatio='none'%3E%3Cpath d='M0 0h20L10 14z'/%3E%3C/svg%3E") repeat-x left top/20px 14px;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 14' preserveAspectRatio='none'%3E%3Cpath d='M0 0h20L10 14z'/%3E%3C/svg%3E") repeat-x left top/20px 14px}
+.receipt .hd{text-align:center;font-weight:700;letter-spacing:.16em;font-size:18px}
+.receipt .sub{text-align:center;font-size:14px;margin-top:2px;color:var(--soft)}
+.receipt dl{margin:22px 0 0;display:grid;gap:8px;font-size:15px}
+.receipt dl div{display:flex;justify-content:space-between;gap:16px}
+.receipt dt{flex:1}
+.receipt dd{margin:0;text-align:right;white-space:nowrap}
+.receipt .tot{margin-top:22px;padding-top:16px;border-top:2px dashed var(--ink);display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.receipt .tot b{font-size:18px}
+.receipt .tot strong{font-size:clamp(34px,6vw,48px);letter-spacing:-.04em;font-weight:700}
+.receipt .pay{margin-top:10px;font-size:14px;color:var(--soft)}
+.receipt .bar{display:flex;gap:2px;height:46px;margin-top:22px;justify-content:center}
+.receipt .bar i{display:block;background:var(--ink);width:2px}
+.receipt .go{margin-top:22px;display:flex;justify-content:center}
+.receipt .pink{display:block;text-align:center;margin-top:16px;font-family:var(--f-hand);font-size:24px;color:#d4558a}
 .stg[hidden]{display:none}
 
-
 /* faq */
-.faq{padding:clamp(80px,10vw,140px) var(--m);max-width:1440px;margin-inline:auto;display:grid;grid-template-columns:4fr 8fr;gap:48px;align-items:start}
-.faq h2{position:sticky;top:110px;max-width:10ch}
-.faq details{background:var(--white);border-radius:var(--r);margin-bottom:8px;overflow:hidden;transition:background-color .25s ease}
-.faq summary{list-style:none;cursor:pointer;min-height:72px;padding:20px 26px;display:flex;align-items:center;justify-content:space-between;gap:24px;font-weight:800;font-size:var(--t-h3);line-height:1.25}
+.faq{display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,5vw,64px);align-items:start}
+.faq h2{position:sticky;top:30px;max-width:9ch}
+.faq details{background:var(--cream);color:var(--ink);border-radius:22px;margin-bottom:8px;transition:background-color .25s ease}
+.faq summary{list-style:none;cursor:pointer;min-height:68px;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-weight:900;font-size:19px;line-height:1.25}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary i{position:relative;width:16px;height:16px;flex:none}
-.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:0;top:6.5px;width:16px;height:3px;background:currentColor;transition:transform .25s var(--ease-out)}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:0;top:6.5px;width:16px;height:3px;border-radius:2px;background:currentColor;transition:transform .3s var(--pop)}
 .faq summary i::after{transform:rotate(90deg)}
-.faq details[open]{background:var(--teal)}
+.faq details[open]{background:var(--butter)}
 .faq details[open] summary i::after{transform:rotate(0)}
-.faq details p{padding:0 26px 26px;max-width:56ch}
+.faq details p{padding:0 24px 22px;max-width:56ch;font-weight:600}
 
 /* cta */
-.cta{position:relative;margin:0 var(--m);max-width:1360px;margin-inline:auto;width:calc(100% - 2 * var(--m));border-radius:48px;overflow:hidden;min-height:80svh;display:grid;place-items:center;text-align:center;color:var(--white)}
-.cta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.cta .scr{position:absolute;inset:0;background:rgba(14,75,68,.62)}
-.cta .c{position:relative;padding:48px 24px;max-width:860px}
-.cta h2{font-size:clamp(32px,5.6vw,84px);color:var(--white);letter-spacing:-.045em}
-.cta p{margin-top:22px;max-width:44ch;margin-inline:auto}
-.cta .btn{margin-top:30px}
+.cta{text-align:center;padding-block:clamp(80px,12vw,170px);position:relative;overflow:hidden}
+.cta h2{font-size:var(--t-display);max-width:14ch;margin-inline:auto;letter-spacing:-.045em}
+.cta p{margin:22px auto 0;max-width:42ch;color:#d9ece8}
+.cta .pill{margin-top:30px}
 
 /* footer */
-footer{margin-top:clamp(64px,9vw,120px);background:var(--teal);color:var(--ink);padding:clamp(48px,7vw,90px) var(--m) 36px}
-footer .in{max-width:1440px;margin-inline:auto}
-.fbrand{font-family:var(--f-script);font-size:clamp(72px,12vw,180px);line-height:.9;color:var(--deep)}
-.fcols{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:40px;font-size:var(--t-small)}
-.fcols ul{display:grid;gap:8px}
-.fcols h3{font-size:var(--t-small);margin-bottom:12px;font-weight:800}
-.fine{margin-top:36px;font-size:var(--t-small);max-width:90ch}
-.last{margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:24px;font-size:var(--t-small);flex-wrap:wrap}
+footer{background:var(--room-2);padding:clamp(48px,7vw,90px) var(--m) 32px;text-align:center}
+.fbrand{font-family:var(--f-script);font-size:clamp(64px,13vw,170px);line-height:.9;color:var(--butter)}
+.fcols{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 32px;margin-top:28px;font-size:15px;font-weight:800}
+.fine{margin:28px auto 0;font-size:14px;max-width:80ch;color:#cfe8e3}
+.fine.hand{font-size:24px;color:var(--pink);margin-top:16px}
 
 /* motion */
-.js [data-r]{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);transition-delay:calc(var(--i,0) * 80ms)}
+.js [data-r]{opacity:0;transform:translateY(26px) scale(.98);transition:opacity .7s var(--ease-out),transform .8s var(--pop);transition-delay:calc(var(--i,0) * 80ms)}
 .js [data-r].in{opacity:1;transform:none}
-.js .sticker[data-r]{transform:translateY(24px) rotate(0)}
-.js .sticker[data-r].in:nth-child(1){transform:rotate(-3deg)}
-.js .sticker[data-r].in:nth-child(2){transform:rotate(2deg)}
-.js .sticker[data-r].in:nth-child(3){transform:rotate(-1.5deg)}
-.js .sticker[data-r].in:nth-child(4){transform:rotate(3deg)}
-.js .stagebox[data-r]{transform:scale(.94)}
-.js .stagebox[data-r].in{transform:none}
-@keyframes bob{from{transform:translateY(0)}to{transform:translateY(-6px)}}
-.note{animation:bob 3.2s ease-in-out infinite alternate}
-.n2{animation-delay:.6s}.n3{animation-delay:1.2s}
+@keyframes bob{from{translate:0 0}to{translate:0 -8px}}
+.stk:not(.drag){animation:bob 3.6s ease-in-out infinite alternate}
+.stk:nth-child(3n){animation-delay:-1.2s}.stk:nth-child(3n+1){animation-delay:-2.4s}
+.stk.drag{animation:none}
+.avatar{animation:pulse 6s ease-in-out infinite alternate}
+@keyframes pulse{from{scale:1}to{scale:1.035}}
 @media (prefers-reduced-motion:reduce){
   .js [data-r]{opacity:1;transform:none;transition:none}
-  .note{animation:none}
-  .tilt{transition:none;transform:none}
+  .stk,.avatar{animation:none!important}
   html{scroll-behavior:auto}
 }
 
 /* phone */
-@media (max-width:900px){
+@media (max-width:860px){
   :root{--t-body:16px}
-  .nav ul{display:none}
-  .nav{padding-left:18px;top:0;margin:0;width:100%;max-width:none;border-radius:0;height:64px}
-  .brand{font-size:30px}
-  .hero{grid-template-columns:1fr;gap:56px;padding-top:28px}
-  .hero h1{font-size:15vw}
-  .stagebox{aspect-ratio:1;border-radius:32px}
-  .stagebox .dev{width:118%;margin-inline:-9%}
-  .note svg{display:none}
-  .note .script{font-size:24px}
-  .n1{left:4%;top:3%}.n2{right:4%;top:auto;bottom:4%}.n3{display:none}
-  .sticker{flex:1 1 44%;padding:12px 14px}
-  .sticker b{font-size:var(--t-h3)}
-  .deep{border-radius:36px 36px 0 0}
-  .deep .in{min-height:0;gap:48px}
-  .fig{flex-direction:column;align-items:flex-start;gap:22px}
-  .fig .n{font-size:30vw}
-  .tilt{transform:rotateX(8deg) rotateZ(-1deg) scale(.98);padding:8px}
-  .frame{aspect-ratio:4/5}.frame img{object-position:0 0}
-  .seg div{border-radius:28px}
-  .seg button{padding:10px 16px;font-size:15px}
-  .big{aspect-ratio:4/5;border-radius:28px}
+  .top nav{display:none}
+  .cluster{height:clamp(300px,86vw,380px)}
+  .s-b1,.s-star2,.s-star{display:none}
+  .tap{bottom:-34px;font-size:22px}
+  .cluster{margin-bottom:44px}
+  .s-b2{right:auto;left:46%;bottom:2%}
+  .p1{left:0;top:4%}.p2{right:0;top:0}.p3{left:6%;bottom:2%}
+  .s-stamp{top:44%;left:-2%}.s-tick{top:40%;right:-2%}
+  .s-taxi{right:4%;bottom:0}
   .incl{grid-template-columns:1fr}
-  .incl .ph{min-height:300px}
-  .incl .ph:last-child{display:none}
-  .ticket::before,.ticket::after{display:none}
-  .list ul{grid-template-columns:1fr}
-  .list li img{width:64px;height:64px}
+  .card.feat .dev{padding:8px 8px 0}
+  .notes{grid-template-columns:1fr}
   .cmp{grid-template-columns:1fr}
   .how .dsk{display:none}.how .mob{display:block;max-width:420px}
-  .thirds{grid-template-columns:1fr;gap:24px}
-  .about{grid-template-columns:1fr;border-radius:32px;margin:0 var(--m)}
-  .who{grid-template-columns:1fr;gap:48px}
-  .pass{grid-template-columns:1fr}
-  .pass .stub{flex-direction:row;align-items:center}
-  .pass .stub::before,.pass .stub::after{display:none}
-  .faq{grid-template-columns:1fr;gap:28px}
+  .thirds{grid-template-columns:1fr;gap:22px}
+  .about{grid-template-columns:1fr;border-radius:28px}
+  .who{grid-template-columns:1fr;gap:44px}
+  .faq{grid-template-columns:1fr}
   .faq h2{position:static;max-width:none}
-  .faq summary{font-size:18px;min-height:64px}
-  .cta{border-radius:32px;min-height:70svh}
-  .fcols{grid-template-columns:1fr 1fr}
+  .faq summary{font-size:18px}
+  .pane{grid-template-columns:1fr}
+  .pane .ph{aspect-ratio:1}
+  .frame{aspect-ratio:4/5}.frame img{object-position:0 0}
 }
 
 </style>
 <script>document.documentElement.classList.add("js")</script>
 
 
-<header class="nav">
+<header class="top">
   <a class="brand" href="#topo">Camila Montreal</a>
-  <nav aria-label="Principal"><ul>
-    <li><a href="#dentro">Por dentro</a></li>
-    <li><a href="#incluso">O que está incluso</a></li>
-    <li><a href="#preco">Preço</a></li>
-    <li><a href="#faq">Perguntas</a></li>
-  </ul></nav>
-  <a class="btn sm" href="#preco">Eu quero</a>
+  <nav aria-label="Principal"><a href="#dentro">por dentro</a><a href="#incluso">incluso</a><a href="#preco">preço</a><a href="#faq">perguntas</a></nav>
+  <a class="pill sm cream" href="#preco">eu quero</a>
 </header>
 
 <main id="topo">
 
 <section class="hero" aria-labelledby="h1">
-  <div class="txt">
-    <h1 id="h1" data-r>Nova York organizada,</h1>
-    <p class="lede" data-r style="--i:1">para você aproveitar mais e planejar menos.</p>
-    <p class="sup" data-r style="--i:2">Um roteiro de 4 dias, dividido por região, com as minhas dicas, atalhos e links de reserva, tudo em um só guia.</p>
-    <div class="act" data-r style="--i:3">
-      <a class="btn" href="#preco">Eu quero o guia de Nova York</a>
-      <small>Pagamento seguro · Acesso por e-mail logo após a confirmação</small>
-    </div>
+  <div class="cluster" id="cluster">
+    <div class="avatar"><img src="img/times-wide.jpg" width="936" height="775" alt="Camila sorrindo na Times Square, de gorro"></div>
+    <div class="stk poly p1" style="--rot:-8deg"><img src="img/empire-view.jpg" width="1000" height="1333" alt="" draggable="false"><span>mirante</span></div>
+    <div class="stk poly p2" style="--rot:7deg"><img src="img/brooklyn-bridge.jpg" width="1000" height="1333" alt="" draggable="false"><span>ponte</span></div>
+    <div class="stk poly p3" style="--rot:5deg"><img src="img/grand-central.jpg" width="1000" height="1333" alt="" draggable="false"><span>grand central</span></div>
+    <div class="stk taxi s-taxi" style="--rot:-6deg">4 dias</div>
+    <div class="stk bul s-b1" style="--rot:0deg">N</div>
+    <div class="stk bul s-b2" style="--rot:8deg">4</div>
+    <div class="stk stamp s-stamp" style="--rot:-12deg">NYC<br>DIA 1<br>16 PARADAS</div>
+    <div class="stk tick s-tick" style="--rot:6deg">+200 locais</div>
+    <div class="stk star s-star" style="--rot:12deg"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 0c1.8 11 9 18.2 20 20-11 1.8-18.2 9-20 20-1.8-11-9-18.2-20-20C11 18.2 18.2 11 20 0z"/></svg></div>
+    <div class="stk star s-star2" style="--rot:-10deg"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 0c1.8 11 9 18.2 20 20-11 1.8-18.2 9-20 20-1.8-11-9-18.2-20-20C11 18.2 18.2 11 20 0z"/></svg></div>
+    <p class="hand tap">arrasta as figurinhas</p>
   </div>
-  <div class="stagebox" data-r style="--i:2">
-    <img class="dev" src="img/devices.png" width="1366" height="768" alt="O guia de Nova York no notebook, no tablet e no celular, com o mapa interativo aberto">
-    <div class="note n1"><p class="script">mapa interativo com +200 locais!</p><svg viewBox="0 0 70 56" aria-hidden="true"><path d="M6 6 C34 -2 62 16 62 46"/><path d="M52 38 L62 48 L68 34"/></svg></div>
-    <div class="note n2"><p class="script">roteiro dia a dia!</p><svg viewBox="0 0 70 56" aria-hidden="true"><path d="M64 6 C36 -2 8 16 8 46"/><path d="M18 38 L8 48 L2 34"/></svg></div>
-    <div class="note n3"><p class="script">feito pra usar na viagem, até offline!</p><svg viewBox="0 0 70 56" aria-hidden="true"><path d="M6 50 C34 58 62 40 62 10"/><path d="M52 18 L62 8 L68 22"/></svg></div>
+  <h1 id="h1" data-r>Nova York organizada,</h1>
+  <p class="lede" data-r style="--i:1">para você aproveitar mais e planejar menos.</p>
+
+  <div class="chat" data-r style="--i:2">
+    <p class="b in">Oi Mundo, tudo bem? :)</p>
+    <p class="b in">montei Nova York inteira pra você: roteiro de 4 dias, mapa interativo e as dicas de quem já foi inúmeras vezes</p>
+    <p class="b out">me mostra!</p>
+    <span class="deliv">Entregue</span>
+  </div>
+
+  <div class="cards" data-r style="--i:3">
+    <a class="card feat" href="#preco">
+      <div class="dev"><img src="img/devices.png" width="1366" height="768" alt="O guia de Nova York no notebook, no tablet e no celular, com o mapa interativo aberto"></div>
+      <div class="row"><div><b>Nova York · o roteiro perfeito</b><span>roteiro de 4 dias, mapa com +200 locais e links de reserva</span></div><span class="go" aria-hidden="true">↗</span></div>
+      <div class="row"><span class="pr">R$ 67,90</span><span class="pill" style="margin-left:auto">eu quero o guia</span></div>
+    </a>
+    <a class="card" href="#dentro"><div class="ic"><img src="img/guia-sumario.jpg" width="1334" height="834" alt=""></div><div><b>veja o guia por dentro</b><span>páginas reais, do sumário aos segredos</span></div><span class="go" aria-hidden="true">↗</span></a>
+    <a class="card" href="#incluso"><div class="ic"><img src="img/bridge-walk.jpg" width="1000" height="1333" alt=""></div><div><b>o que está incluso</b><span>tudo que vem no guia</span></div><span class="go" aria-hidden="true">↗</span></a>
+    <a class="card" href="#faq"><div class="ic"><img src="img/orange-table.jpg" width="1000" height="1333" alt=""></div><div><b>perguntas frequentes</b><span>acesso, offline, reembolso e mais</span></div><span class="go" aria-hidden="true">↗</span></a>
   </div>
 </section>
 
-<section class="stickers" aria-label="O guia em números">
-  <p class="sticker" data-r><b>4</b> dias de roteiro</p>
-  <p class="sticker" data-r style="--i:1"><b>57</b> paradas por região</p>
-  <p class="sticker" data-r style="--i:2"><b>+200</b> locais no mapa</p>
-  <p class="sticker" data-r style="--i:3"><b>20</b> locações de filmes e séries</p>
-</section>
+<div class="strip" aria-label="O guia em números">
+  <p data-r>4 dias de roteiro</p><p data-r style="--i:1">57 paradas por região</p><p data-r style="--i:2">+200 locais no mapa</p><p data-r style="--i:3">20 locações de filmes e séries</p>
+</div>
 
-<section class="band" aria-label="Atualizações">
-  <p data-r>Receba todas as atualizações gratuitamente!</p>
-  <p class="script" data-r style="--i:1">sempre que eu conhecer um lugar novo, você vai saber.</p>
-</section>
-
-<section class="deep" aria-labelledby="hs">
-  <div class="in">
-    <div>
-      <h2 id="hs" data-r>Quantos dias você fica em Nova York?</h2>
-      <div data-r style="--i:1">
-        <div class="days" role="group" aria-label="Número de dias">
-          <button type="button" aria-pressed="false" data-d="1">1 dia</button>
-          <button type="button" aria-pressed="false" data-d="2">2</button>
-          <button type="button" aria-pressed="false" data-d="3">3</button>
-          <button type="button" aria-pressed="true" data-d="4">4</button>
-        </div>
-        <p class="lab" id="dlabel">4 dias: Midtown, Central Park, Estátua, Brooklyn e Hudson Yards</p>
+<section class="quiz" aria-labelledby="hs">
+  <div class="wrap">
+    <h2 id="hs" data-r>Quantos dias você fica?</h2>
+    <div class="chat" data-r style="--i:1">
+      <p class="b in">quantos dias você fica em Nova York?</p>
+      <div class="chips" role="group" aria-label="Número de dias">
+        <button type="button" aria-pressed="false" data-d="1">1 dia</button>
+        <button type="button" aria-pressed="false" data-d="2">2 dias</button>
+        <button type="button" aria-pressed="false" data-d="3">3 dias</button>
+        <button type="button" aria-pressed="true" data-d="4">4 dias</button>
       </div>
+      <p class="b out" id="sent">4 dias</p>
+      <span class="deliv">Lida</span>
+      <p class="b in big" aria-live="polite"><span id="lab">então são</span><strong id="num">57</strong>paradas pra você</p>
     </div>
-    <div class="fig" data-r style="--i:2">
-      <div class="n" aria-live="polite"><span id="num">57</span><small>paradas</small></div>
-      <p>É a soma das paradas dos dias do guia que cabem na sua viagem: 16 no Dia 1, 11 no Dia 2, 16 no Dia 3 e 14 no Dia 4. As paradas marcadas como opcionais podem ficar de fora se faltar tempo.</p>
-    </div>
+    <p class="fine" data-r style="--i:2">É a soma das paradas dos dias do guia que cabem na sua viagem: 16 no Dia 1, 11 no Dia 2, 16 no Dia 3 e 14 no Dia 4. As paradas marcadas como opcionais podem ficar de fora se faltar tempo.</p>
   </div>
 </section>
 
-<section class="prod" id="dentro" aria-labelledby="hg">
-  <div class="cap2">
-    <h2 id="hg" data-r>Veja o guia por dentro</h2>
-    <p data-r style="--i:1">Páginas reais: sumário clicável, paradas por período do dia, links de reserva e vídeos.</p>
-  </div>
-  <div class="persp" data-r style="--i:1">
-    <div class="tilt" id="tilt">
-      <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<section class="sec pages" id="dentro" aria-labelledby="hg">
+  <div class="wrap">
+    <p class="hand" data-r>toca na página pra ver a próxima</p>
+    <h2 id="hg" data-r style="--i:1">Veja o guia por dentro</h2>
+    <div class="tape" data-r style="--i:2">
       <div class="frame" id="frame" tabindex="0" role="img" aria-label="Páginas do guia em sequência. Toque para avançar.">
-        <img class="on" src="img/guia-sumario.jpg" width="1334" height="834" alt="Página do Sumário do guia" data-c="Sumário: toque e vá direto para o dia ou a seção que você precisa.">
-        <img src="img/guia-dia1.jpg" width="1334" height="834" alt="Página do Dia 1 do guia" data-c="Dia 1: paradas da manhã com segredos e links de reserva." loading="lazy">
-        <img src="img/guia-dia3-estatua.jpg" width="1334" height="834" alt="Página do Dia 3 com a Estátua da Liberdade" data-c="Dia 3: a Estátua da Liberdade, com a dica de economizar." loading="lazy">
-        <img src="img/guia-onde-comer.jpg" width="1334" height="834" alt="Página Onde comer" data-c="Onde comer: bairro, endereço e o que pedir." loading="lazy">
-        <img src="img/guia-broadway.jpg" width="1334" height="834" alt="Página de Broadway em português" data-c="Broadway em português e a loteria de ingressos." loading="lazy">
-        <img src="img/guia-locacoes.jpg" width="1334" height="834" alt="Página de locações de filmes" data-c="Locações de filmes, com endereço no Google Maps." loading="lazy">
+        <img class="on" src="img/guia-sumario.jpg" width="1334" height="834" alt="Página do Sumário do guia" data-c="sumário: toque e vá direto para o dia ou a seção que você precisa">
+        <img src="img/guia-dia1.jpg" width="1334" height="834" alt="Página do Dia 1 do guia" data-c="dia 1: paradas da manhã com segredos e links de reserva" loading="lazy">
+        <img src="img/guia-dia3-estatua.jpg" width="1334" height="834" alt="Página do Dia 3 com a Estátua da Liberdade" data-c="dia 3: a Estátua da Liberdade, com a dica de economizar" loading="lazy">
+        <img src="img/guia-onde-comer.jpg" width="1334" height="834" alt="Página Onde comer" data-c="onde comer: bairro, endereço e o que pedir" loading="lazy">
+        <img src="img/guia-broadway.jpg" width="1334" height="834" alt="Página de Broadway em português" data-c="Broadway em português e a loteria de ingressos" loading="lazy">
+        <img src="img/guia-locacoes.jpg" width="1334" height="834" alt="Página de locações de filmes" data-c="locações de filmes, com endereço no Google Maps" loading="lazy">
+      </div>
+      <p class="cap" id="cap" aria-live="off">sumário: toque e vá direto para o dia ou a seção que você precisa</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="hc2">
+  <div class="wrap" style="text-align:center">
+    <h2 id="hc2" data-r>O que só quem já foi conta</h2>
+    <div class="tabs" role="tablist" aria-label="Exemplos" data-r style="--i:1">
+      <button role="tab" aria-selected="true" data-t="0">segredos</button>
+      <button role="tab" aria-selected="false" data-t="1">economia</button>
+      <button role="tab" aria-selected="false" data-t="2">Broadway</button>
+      <button role="tab" aria-selected="false" data-t="3">cinema</button>
+    </div>
+    <div class="pane" data-r style="--i:2">
+      <div class="ph">
+        <img class="on" src="img/grand-central.jpg" width="1000" height="1333" alt="Camila no saguão da Grand Central Terminal" data-p="0">
+        <img src="img/ferry.jpg" width="1000" height="1333" alt="Camila de gorro olhando a Estátua da Liberdade da balsa" data-p="1" loading="lazy">
+        <img src="img/times-square.jpg" width="1000" height="1333" alt="Camila de saia rosa na Times Square" data-p="2" loading="lazy">
+        <img src="img/friends.jpg" width="1000" height="1333" alt="Camila na cozinha do apartamento de Friends" data-p="3" loading="lazy">
+      </div>
+      <div style="text-align:left" aria-live="polite"><h3 id="st">Whispering Gallery</h3><p id="sp">De costas para o relógio, siga pelo arco à direita (saída Lexington), vire à direita e desça a rampa. Cada pessoa fala num canto do arco e a outra ouve do lado oposto.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="incluso" aria-labelledby="hi">
+  <div class="wrap incl">
+    <div>
+      <h2 id="hi" data-r>O que está incluso?</h2>
+      <ul>
+        <li data-r><span><b>Roteiro detalhado dia a dia</b>, com manhã, tarde e noite</span></li>
+        <li data-r style="--i:1"><span>Dicas de quem já foi a Nova York <b>inúmeras vezes</b></span></li>
+        <li data-r style="--i:2"><span><b>Segredos</b> que poucos turistas conhecem</span></li>
+        <li data-r style="--i:3"><span><b>Guia fotográfico</b> com os melhores ângulos</span></li>
+        <li data-r style="--i:4"><span><b>Mapa interativo</b> com +200 locais, restaurantes e banheiros gratuitos</span></li>
+        <li data-r style="--i:5"><span><b>Links de reserva</b> com desconto em ingressos e passeios</span></li>
+        <li data-r style="--i:6"><span>Lista de <b>20 locações</b> de filmes e séries famosas</span></li>
+        <li data-r style="--i:7"><span><b>Atualizações gratuitas</b> pelo mesmo link</span></li>
+      </ul>
+      <p class="hand" data-r>roteiro e mapa funcionam offline depois de baixados.</p>
+    </div>
+    <div class="poly" data-r style="--i:2"><img src="img/vessel.jpg" width="1000" height="1333" alt="Camila de óculos escuros em frente ao Vessel, em Hudson Yards" loading="lazy"><span>hudson yards</span></div>
+  </div>
+</section>
+
+<section class="sec errs" aria-labelledby="hl">
+  <div class="wrap">
+    <h2 id="hl" data-r>Erros para evitar</h2>
+    <div class="notes">
+      <div class="note" data-r><img src="img/avenue.jpg" width="1000" height="1333" alt="" loading="lazy"><h3>trem do aeroporto</h3><p>Eu comprei o bilhete errado, perdi o certo e gastei US$ 200 na primeira hora. O guia manda pesquisar o bilhete exato antes de embarcar.</p></div>
+      <div class="note" data-r style="--i:1"><img src="img/statue.jpg" width="1000" height="1333" alt="" loading="lazy"><h3>Estátua da Liberdade</h3><p>Sem desembarque na ilha, o Staten Island Ferry é gratuito. O guia diz como chegar e de que lado sentar.</p></div>
+      <div class="note" data-r style="--i:2"><img src="img/times-square.jpg" width="1000" height="1333" alt="" loading="lazy"><h3>ingresso de Broadway</h3><p>A loteria dá chance de ingressos bem mais baratos, e há áudio-guia e legendas em português para vários musicais.</p></div>
+      <div class="note" data-r><img src="img/orange-table.jpg" width="1000" height="1333" alt="" loading="lazy"><h3>café mais caro</h3><p>Antes de pedir, procure promoções na porta. Eu paguei US$ 2 em vez de 4 só perguntando.</p></div>
+      <div class="note" data-r style="--i:1"><img src="img/rink.jpg" width="1000" height="1333" alt="" loading="lazy"><h3>patinação no gelo</h3><p>Preço de cada pista, e qual delas tem entrada grátis: no Bryant Park você paga só o aluguel dos patins.</p></div>
+      <div class="note" data-r style="--i:2"><img src="img/bull.jpg" width="1000" height="1333" alt="" loading="lazy"><h3>banheiro público</h3><p>É quase impossível achar banheiro público em Nova York. O mapa interativo tem uma aba só com banheiros gratuitos.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-label="Dicas soltas e este guia">
+  <div class="wrap cmp">
+    <div class="a">
+      <h2 data-r>Dicas soltas ajudam</h2>
+      <ul>
+        <li data-r>Cada post fala de um lugar</li>
+        <li data-r style="--i:1">Você decide sozinha(o) a ordem</li>
+        <li data-r style="--i:2">Difícil de achar de novo</li>
+        <li data-r style="--i:3">Todo lugar parece imperdível</li>
+        <li data-r style="--i:4">Links espalhados pelas redes</li>
+      </ul>
+    </div>
+    <div class="b">
+      <h2 data-r>Este guia poupa tempo</h2>
+      <ul>
+        <li data-r>Roteiro de 4 dias, organizado por região</li>
+        <li data-r style="--i:1">Manhã, tarde e noite já sugeridos</li>
+        <li data-r style="--i:2">Sumário clicável</li>
+        <li data-r style="--i:3">Marco o que é opcional e o que eu pularia</li>
+        <li data-r style="--i:4">Links de reserva, mapa e vídeos no mesmo lugar</li>
+      </ul>
+      <p class="foot" data-r>Você continua usando as redes. Só não precisa montar tudo sozinha(o).</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec how" aria-labelledby="hh">
+  <div class="wrap">
+    <h2 id="hh" data-r>De caos para quatro dias</h2>
+    <p class="lead" data-r style="--i:1">Cada círculo é uma parada do guia: soltas, juntas e, por fim, em fila, uma fileira por dia.</p>
+    <svg class="dsk" viewBox="0 0 1200 267" role="img" aria-label="57 círculos soltos, juntando-se em uma faixa e se organizando em quatro fileiras, uma por dia do roteiro"><circle cx="177" cy="149" r="8" fill="#357a70"/><circle cx="177" cy="223" r="8" fill="#2b6a62"/><circle cx="77" cy="136" r="8" fill="#2b6a62"/><circle cx="43" cy="84" r="8" fill="#2b6a62"/><circle cx="209" cy="231" r="8" fill="#2b6a62"/><circle cx="231" cy="107" r="8" fill="#357a70"/><circle cx="253" cy="163" r="8" fill="#2b6a62"/><circle cx="241" cy="217" r="8" fill="#2b6a62"/><circle cx="30" cy="56" r="8" fill="#2b6a62"/><circle cx="232" cy="203" r="8" fill="#357a70"/><circle cx="173" cy="219" r="8" fill="#2b6a62"/><circle cx="247" cy="133" r="8" fill="#2b6a62"/><circle cx="179" cy="78" r="8" fill="#2b6a62"/><circle cx="273" cy="87" r="8" fill="#2b6a62"/><circle cx="200" cy="15" r="8" fill="#2b6a62"/><circle cx="158" cy="220" r="8" fill="#357a70"/><circle cx="33" cy="12" r="8" fill="#2b6a62"/><circle cx="88" cy="241" r="8" fill="#2b6a62"/><circle cx="184" cy="254" r="8" fill="#357a70"/><circle cx="165" cy="150" r="8" fill="#2b6a62"/><circle cx="299" cy="76" r="8" fill="#2b6a62"/><circle cx="124" cy="12" r="8" fill="#357a70"/><circle cx="292" cy="38" r="8" fill="#2b6a62"/><circle cx="272" cy="11" r="8" fill="#357a70"/><circle cx="306" cy="53" r="8" fill="#2b6a62"/><circle cx="175" cy="56" r="8" fill="#2b6a62"/><circle cx="165" cy="104" r="8" fill="#357a70"/><circle cx="165" cy="61" r="8" fill="#357a70"/><circle cx="331" cy="253" r="8" fill="#357a70"/><circle cx="381" cy="13" r="8" fill="#2b6a62"/><circle cx="155" cy="222" r="8" fill="#2b6a62"/><circle cx="24" cy="45" r="8" fill="#357a70"/><circle cx="105" cy="202" r="8" fill="#357a70"/><circle cx="319" cy="105" r="8" fill="#2b6a62"/><circle cx="42" cy="154" r="8" fill="#2b6a62"/><circle cx="14" cy="101" r="8" fill="#357a70"/><circle cx="56" cy="155" r="8" fill="#2b6a62"/><circle cx="332" cy="54" r="8" fill="#2b6a62"/><circle cx="124" cy="65" r="8" fill="#2b6a62"/><circle cx="279" cy="48" r="8" fill="#2b6a62"/><circle cx="265" cy="105" r="8" fill="#357a70"/><circle cx="234" cy="114" r="8" fill="#2b6a62"/><circle cx="49" cy="137" r="8" fill="#357a70"/><circle cx="97" cy="185" r="8" fill="#357a70"/><circle cx="165" cy="235" r="8" fill="#357a70"/><circle cx="118" cy="52" r="8" fill="#2b6a62"/><circle cx="55" cy="128" r="8" fill="#2b6a62"/><circle cx="113" cy="238" r="8" fill="#2b6a62"/><circle cx="288" cy="25" r="8" fill="#357a70"/><circle cx="175" cy="23" r="8" fill="#2b6a62"/><circle cx="113" cy="141" r="8" fill="#2b6a62"/><circle cx="42" cy="43" r="8" fill="#357a70"/><circle cx="375" cy="173" r="8" fill="#2b6a62"/><circle cx="229" cy="240" r="8" fill="#357a70"/><circle cx="348" cy="184" r="8" fill="#2b6a62"/><circle cx="16" cy="168" r="8" fill="#357a70"/><circle cx="33" cy="86" r="8" fill="#2b6a62"/><circle cx="420.0" cy="111.5" r="8" fill="#fff6e2"/><circle cx="440.5" cy="111.5" r="8" fill="#fff6e2"/><circle cx="461.0" cy="111.5" r="8" fill="#fff6e2"/><circle cx="481.5" cy="111.5" r="8" fill="#fff6e2"/><circle cx="502.0" cy="111.5" r="8" fill="#fff6e2"/><circle cx="522.5" cy="111.5" r="8" fill="#fff6e2"/><circle cx="543.0" cy="111.5" r="8" fill="#fff6e2"/><circle cx="563.5" cy="111.5" r="8" fill="#fff6e2"/><circle cx="584.0" cy="111.5" r="8" fill="#fff6e2"/><circle cx="604.5" cy="111.5" r="8" fill="#fff6e2"/><circle cx="625.0" cy="111.5" r="8" fill="#fff6e2"/><circle cx="645.5" cy="111.5" r="8" fill="#fff6e2"/><circle cx="666.0" cy="111.5" r="8" fill="#fff6e2"/><circle cx="686.5" cy="111.5" r="8" fill="#fff6e2"/><circle cx="707.0" cy="111.5" r="8" fill="#fff6e2"/><circle cx="727.5" cy="111.5" r="8" fill="#fff6e2"/><circle cx="748.0" cy="111.5" r="8" fill="#fff6e2"/><circle cx="768.5" cy="111.5" r="8" fill="#fff6e2"/><circle cx="789.0" cy="111.5" r="8" fill="#fff6e2"/><circle cx="420.0" cy="133.5" r="8" fill="#fff6e2"/><circle cx="440.5" cy="133.5" r="8" fill="#fff6e2"/><circle cx="461.0" cy="133.5" r="8" fill="#fff6e2"/><circle cx="481.5" cy="133.5" r="8" fill="#fff6e2"/><circle cx="502.0" cy="133.5" r="8" fill="#fff6e2"/><circle cx="522.5" cy="133.5" r="8" fill="#fff6e2"/><circle cx="543.0" cy="133.5" r="8" fill="#fff6e2"/><circle cx="563.5" cy="133.5" r="8" fill="#fff6e2"/><circle cx="584.0" cy="133.5" r="8" fill="#fff6e2"/><circle cx="604.5" cy="133.5" r="8" fill="#fff6e2"/><circle cx="625.0" cy="133.5" r="8" fill="#fff6e2"/><circle cx="645.5" cy="133.5" r="8" fill="#fff6e2"/><circle cx="666.0" cy="133.5" r="8" fill="#fff6e2"/><circle cx="686.5" cy="133.5" r="8" fill="#fff6e2"/><circle cx="707.0" cy="133.5" r="8" fill="#fff6e2"/><circle cx="727.5" cy="133.5" r="8" fill="#fff6e2"/><circle cx="748.0" cy="133.5" r="8" fill="#fff6e2"/><circle cx="768.5" cy="133.5" r="8" fill="#fff6e2"/><circle cx="789.0" cy="133.5" r="8" fill="#fff6e2"/><circle cx="420.0" cy="155.5" r="8" fill="#fff6e2"/><circle cx="440.5" cy="155.5" r="8" fill="#fff6e2"/><circle cx="461.0" cy="155.5" r="8" fill="#fff6e2"/><circle cx="481.5" cy="155.5" r="8" fill="#fff6e2"/><circle cx="502.0" cy="155.5" r="8" fill="#fff6e2"/><circle cx="522.5" cy="155.5" r="8" fill="#fff6e2"/><circle cx="543.0" cy="155.5" r="8" fill="#fff6e2"/><circle cx="563.5" cy="155.5" r="8" fill="#fff6e2"/><circle cx="584.0" cy="155.5" r="8" fill="#fff6e2"/><circle cx="604.5" cy="155.5" r="8" fill="#fff6e2"/><circle cx="625.0" cy="155.5" r="8" fill="#fff6e2"/><circle cx="645.5" cy="155.5" r="8" fill="#fff6e2"/><circle cx="666.0" cy="155.5" r="8" fill="#fff6e2"/><circle cx="686.5" cy="155.5" r="8" fill="#fff6e2"/><circle cx="707.0" cy="155.5" r="8" fill="#fff6e2"/><circle cx="727.5" cy="155.5" r="8" fill="#fff6e2"/><circle cx="748.0" cy="155.5" r="8" fill="#fff6e2"/><circle cx="768.5" cy="155.5" r="8" fill="#fff6e2"/><circle cx="789.0" cy="155.5" r="8" fill="#fff6e2"/><circle cx="830" cy="40" r="9" fill="#ffe27a"/><circle cx="852" cy="40" r="9" fill="#ffe27a"/><circle cx="874" cy="40" r="9" fill="#ffe27a"/><circle cx="896" cy="40" r="9" fill="#ffe27a"/><circle cx="918" cy="40" r="9" fill="#ffe27a"/><circle cx="940" cy="40" r="9" fill="#ffe27a"/><circle cx="962" cy="40" r="9" fill="#ffe27a"/><circle cx="984" cy="40" r="9" fill="#ffe27a"/><circle cx="1006" cy="40" r="9" fill="#ffe27a"/><circle cx="1028" cy="40" r="9" fill="#ffe27a"/><circle cx="1050" cy="40" r="9" fill="#ffe27a"/><circle cx="1072" cy="40" r="9" fill="#ffe27a"/><circle cx="1094" cy="40" r="9" fill="#ffe27a"/><circle cx="1116" cy="40" r="9" fill="#ffe27a"/><circle cx="1138" cy="40" r="9" fill="#ffe27a"/><circle cx="1160" cy="40" r="9" fill="#ffe27a"/><circle cx="830" cy="102" r="9" fill="#31a593"/><circle cx="852" cy="102" r="9" fill="#31a593"/><circle cx="874" cy="102" r="9" fill="#31a593"/><circle cx="896" cy="102" r="9" fill="#31a593"/><circle cx="918" cy="102" r="9" fill="#31a593"/><circle cx="940" cy="102" r="9" fill="#31a593"/><circle cx="962" cy="102" r="9" fill="#31a593"/><circle cx="984" cy="102" r="9" fill="#31a593"/><circle cx="1006" cy="102" r="9" fill="#31a593"/><circle cx="1028" cy="102" r="9" fill="#31a593"/><circle cx="1050" cy="102" r="9" fill="#31a593"/><circle cx="830" cy="164" r="9" fill="#ff8fb1"/><circle cx="852" cy="164" r="9" fill="#ff8fb1"/><circle cx="874" cy="164" r="9" fill="#ff8fb1"/><circle cx="896" cy="164" r="9" fill="#ff8fb1"/><circle cx="918" cy="164" r="9" fill="#ff8fb1"/><circle cx="940" cy="164" r="9" fill="#ff8fb1"/><circle cx="962" cy="164" r="9" fill="#ff8fb1"/><circle cx="984" cy="164" r="9" fill="#ff8fb1"/><circle cx="1006" cy="164" r="9" fill="#ff8fb1"/><circle cx="1028" cy="164" r="9" fill="#ff8fb1"/><circle cx="1050" cy="164" r="9" fill="#ff8fb1"/><circle cx="1072" cy="164" r="9" fill="#ff8fb1"/><circle cx="1094" cy="164" r="9" fill="#ff8fb1"/><circle cx="1116" cy="164" r="9" fill="#ff8fb1"/><circle cx="1138" cy="164" r="9" fill="#ff8fb1"/><circle cx="1160" cy="164" r="9" fill="#ff8fb1"/><circle cx="830" cy="226" r="9" fill="#bfe6df"/><circle cx="852" cy="226" r="9" fill="#bfe6df"/><circle cx="874" cy="226" r="9" fill="#bfe6df"/><circle cx="896" cy="226" r="9" fill="#bfe6df"/><circle cx="918" cy="226" r="9" fill="#bfe6df"/><circle cx="940" cy="226" r="9" fill="#bfe6df"/><circle cx="962" cy="226" r="9" fill="#bfe6df"/><circle cx="984" cy="226" r="9" fill="#bfe6df"/><circle cx="1006" cy="226" r="9" fill="#bfe6df"/><circle cx="1028" cy="226" r="9" fill="#bfe6df"/><circle cx="1050" cy="226" r="9" fill="#bfe6df"/><circle cx="1072" cy="226" r="9" fill="#bfe6df"/><circle cx="1094" cy="226" r="9" fill="#bfe6df"/><circle cx="1116" cy="226" r="9" fill="#bfe6df"/></svg>
+    <svg class="mob" viewBox="0 0 300 400" role="img" aria-label="57 círculos soltos, juntando-se em uma faixa e se organizando em quatro fileiras, uma por dia do roteiro"><circle cx="293" cy="15" r="7" fill="#357a70"/><circle cx="218" cy="102" r="7" fill="#2b6a62"/><circle cx="234" cy="104" r="7" fill="#357a70"/><circle cx="31" cy="57" r="7" fill="#2b6a62"/><circle cx="256" cy="51" r="7" fill="#2b6a62"/><circle cx="254" cy="68" r="7" fill="#357a70"/><circle cx="115" cy="8" r="7" fill="#2b6a62"/><circle cx="30" cy="75" r="7" fill="#357a70"/><circle cx="259" cy="84" r="7" fill="#357a70"/><circle cx="274" cy="81" r="7" fill="#357a70"/><circle cx="133" cy="96" r="7" fill="#2b6a62"/><circle cx="155" cy="62" r="7" fill="#357a70"/><circle cx="179" cy="58" r="7" fill="#2b6a62"/><circle cx="281" cy="19" r="7" fill="#357a70"/><circle cx="80" cy="8" r="7" fill="#357a70"/><circle cx="48" cy="72" r="7" fill="#2b6a62"/><circle cx="223" cy="43" r="7" fill="#357a70"/><circle cx="150" cy="33" r="7" fill="#357a70"/><circle cx="197" cy="28" r="7" fill="#357a70"/><circle cx="237" cy="87" r="7" fill="#2b6a62"/><circle cx="259" cy="48" r="7" fill="#357a70"/><circle cx="67" cy="21" r="7" fill="#357a70"/><circle cx="246" cy="97" r="7" fill="#2b6a62"/><circle cx="279" cy="36" r="7" fill="#2b6a62"/><circle cx="39" cy="57" r="7" fill="#2b6a62"/><circle cx="245" cy="48" r="7" fill="#357a70"/><circle cx="199" cy="83" r="7" fill="#357a70"/><circle cx="99" cy="95" r="7" fill="#357a70"/><circle cx="257" cy="11" r="7" fill="#357a70"/><circle cx="170" cy="40" r="7" fill="#2b6a62"/><circle cx="190" cy="50" r="7" fill="#2b6a62"/><circle cx="14" cy="95" r="7" fill="#2b6a62"/><circle cx="230" cy="91" r="7" fill="#2b6a62"/><circle cx="135" cy="74" r="7" fill="#357a70"/><circle cx="281" cy="80" r="7" fill="#2b6a62"/><circle cx="243" cy="34" r="7" fill="#2b6a62"/><circle cx="223" cy="64" r="7" fill="#2b6a62"/><circle cx="58" cy="36" r="7" fill="#357a70"/><circle cx="161" cy="107" r="7" fill="#2b6a62"/><circle cx="120" cy="91" r="7" fill="#2b6a62"/><circle cx="32" cy="106" r="7" fill="#357a70"/><circle cx="44" cy="55" r="7" fill="#2b6a62"/><circle cx="115" cy="67" r="7" fill="#357a70"/><circle cx="140" cy="76" r="7" fill="#2b6a62"/><circle cx="35" cy="99" r="7" fill="#2b6a62"/><circle cx="68" cy="102" r="7" fill="#2b6a62"/><circle cx="287" cy="64" r="7" fill="#357a70"/><circle cx="82" cy="83" r="7" fill="#2b6a62"/><circle cx="107" cy="16" r="7" fill="#357a70"/><circle cx="105" cy="52" r="7" fill="#357a70"/><circle cx="146" cy="10" r="7" fill="#2b6a62"/><circle cx="130" cy="11" r="7" fill="#357a70"/><circle cx="203" cy="104" r="7" fill="#357a70"/><circle cx="50" cy="62" r="7" fill="#357a70"/><circle cx="277" cy="59" r="7" fill="#2b6a62"/><circle cx="224" cy="54" r="7" fill="#357a70"/><circle cx="245" cy="67" r="7" fill="#2b6a62"/><circle cx="100" cy="150.0" r="2.6" fill="#fff6e2"/><circle cx="120" cy="150.0" r="2.6" fill="#fff6e2"/><circle cx="140" cy="150.0" r="2.6" fill="#fff6e2"/><circle cx="100" cy="156.5" r="2.6" fill="#fff6e2"/><circle cx="120" cy="156.5" r="2.6" fill="#fff6e2"/><circle cx="140" cy="156.5" r="2.6" fill="#fff6e2"/><circle cx="100" cy="163.0" r="2.6" fill="#fff6e2"/><circle cx="120" cy="163.0" r="2.6" fill="#fff6e2"/><circle cx="140" cy="163.0" r="2.6" fill="#fff6e2"/><circle cx="100" cy="169.5" r="2.6" fill="#fff6e2"/><circle cx="120" cy="169.5" r="2.6" fill="#fff6e2"/><circle cx="140" cy="169.5" r="2.6" fill="#fff6e2"/><circle cx="100" cy="176.0" r="2.6" fill="#fff6e2"/><circle cx="120" cy="176.0" r="2.6" fill="#fff6e2"/><circle cx="140" cy="176.0" r="2.6" fill="#fff6e2"/><circle cx="100" cy="182.5" r="2.6" fill="#fff6e2"/><circle cx="120" cy="182.5" r="2.6" fill="#fff6e2"/><circle cx="140" cy="182.5" r="2.6" fill="#fff6e2"/><circle cx="100" cy="189.0" r="2.6" fill="#fff6e2"/><circle cx="120" cy="189.0" r="2.6" fill="#fff6e2"/><circle cx="140" cy="189.0" r="2.6" fill="#fff6e2"/><circle cx="100" cy="195.5" r="2.6" fill="#fff6e2"/><circle cx="120" cy="195.5" r="2.6" fill="#fff6e2"/><circle cx="140" cy="195.5" r="2.6" fill="#fff6e2"/><circle cx="100" cy="202.0" r="2.6" fill="#fff6e2"/><circle cx="120" cy="202.0" r="2.6" fill="#fff6e2"/><circle cx="140" cy="202.0" r="2.6" fill="#fff6e2"/><circle cx="100" cy="208.5" r="2.6" fill="#fff6e2"/><circle cx="120" cy="208.5" r="2.6" fill="#fff6e2"/><circle cx="140" cy="208.5" r="2.6" fill="#fff6e2"/><circle cx="100" cy="215.0" r="2.6" fill="#fff6e2"/><circle cx="120" cy="215.0" r="2.6" fill="#fff6e2"/><circle cx="140" cy="215.0" r="2.6" fill="#fff6e2"/><circle cx="100" cy="221.5" r="2.6" fill="#fff6e2"/><circle cx="120" cy="221.5" r="2.6" fill="#fff6e2"/><circle cx="140" cy="221.5" r="2.6" fill="#fff6e2"/><circle cx="100" cy="228.0" r="2.6" fill="#fff6e2"/><circle cx="120" cy="228.0" r="2.6" fill="#fff6e2"/><circle cx="140" cy="228.0" r="2.6" fill="#fff6e2"/><circle cx="100" cy="234.5" r="2.6" fill="#fff6e2"/><circle cx="120" cy="234.5" r="2.6" fill="#fff6e2"/><circle cx="140" cy="234.5" r="2.6" fill="#fff6e2"/><circle cx="100" cy="241.0" r="2.6" fill="#fff6e2"/><circle cx="120" cy="241.0" r="2.6" fill="#fff6e2"/><circle cx="140" cy="241.0" r="2.6" fill="#fff6e2"/><circle cx="100" cy="247.5" r="2.6" fill="#fff6e2"/><circle cx="120" cy="247.5" r="2.6" fill="#fff6e2"/><circle cx="140" cy="247.5" r="2.6" fill="#fff6e2"/><circle cx="100" cy="254.0" r="2.6" fill="#fff6e2"/><circle cx="120" cy="254.0" r="2.6" fill="#fff6e2"/><circle cx="140" cy="254.0" r="2.6" fill="#fff6e2"/><circle cx="100" cy="260.5" r="2.6" fill="#fff6e2"/><circle cx="120" cy="260.5" r="2.6" fill="#fff6e2"/><circle cx="140" cy="260.5" r="2.6" fill="#fff6e2"/><circle cx="100" cy="267.0" r="2.6" fill="#fff6e2"/><circle cx="120" cy="267.0" r="2.6" fill="#fff6e2"/><circle cx="140" cy="267.0" r="2.6" fill="#fff6e2"/><circle cx="16.0" cy="300" r="7" fill="#ffe27a"/><circle cx="33.5" cy="300" r="7" fill="#ffe27a"/><circle cx="51.0" cy="300" r="7" fill="#ffe27a"/><circle cx="68.5" cy="300" r="7" fill="#ffe27a"/><circle cx="86.0" cy="300" r="7" fill="#ffe27a"/><circle cx="103.5" cy="300" r="7" fill="#ffe27a"/><circle cx="121.0" cy="300" r="7" fill="#ffe27a"/><circle cx="138.5" cy="300" r="7" fill="#ffe27a"/><circle cx="156.0" cy="300" r="7" fill="#ffe27a"/><circle cx="173.5" cy="300" r="7" fill="#ffe27a"/><circle cx="191.0" cy="300" r="7" fill="#ffe27a"/><circle cx="208.5" cy="300" r="7" fill="#ffe27a"/><circle cx="226.0" cy="300" r="7" fill="#ffe27a"/><circle cx="243.5" cy="300" r="7" fill="#ffe27a"/><circle cx="261.0" cy="300" r="7" fill="#ffe27a"/><circle cx="278.5" cy="300" r="7" fill="#ffe27a"/><circle cx="16.0" cy="326" r="7" fill="#31a593"/><circle cx="33.5" cy="326" r="7" fill="#31a593"/><circle cx="51.0" cy="326" r="7" fill="#31a593"/><circle cx="68.5" cy="326" r="7" fill="#31a593"/><circle cx="86.0" cy="326" r="7" fill="#31a593"/><circle cx="103.5" cy="326" r="7" fill="#31a593"/><circle cx="121.0" cy="326" r="7" fill="#31a593"/><circle cx="138.5" cy="326" r="7" fill="#31a593"/><circle cx="156.0" cy="326" r="7" fill="#31a593"/><circle cx="173.5" cy="326" r="7" fill="#31a593"/><circle cx="191.0" cy="326" r="7" fill="#31a593"/><circle cx="16.0" cy="352" r="7" fill="#ff8fb1"/><circle cx="33.5" cy="352" r="7" fill="#ff8fb1"/><circle cx="51.0" cy="352" r="7" fill="#ff8fb1"/><circle cx="68.5" cy="352" r="7" fill="#ff8fb1"/><circle cx="86.0" cy="352" r="7" fill="#ff8fb1"/><circle cx="103.5" cy="352" r="7" fill="#ff8fb1"/><circle cx="121.0" cy="352" r="7" fill="#ff8fb1"/><circle cx="138.5" cy="352" r="7" fill="#ff8fb1"/><circle cx="156.0" cy="352" r="7" fill="#ff8fb1"/><circle cx="173.5" cy="352" r="7" fill="#ff8fb1"/><circle cx="191.0" cy="352" r="7" fill="#ff8fb1"/><circle cx="208.5" cy="352" r="7" fill="#ff8fb1"/><circle cx="226.0" cy="352" r="7" fill="#ff8fb1"/><circle cx="243.5" cy="352" r="7" fill="#ff8fb1"/><circle cx="261.0" cy="352" r="7" fill="#ff8fb1"/><circle cx="278.5" cy="352" r="7" fill="#ff8fb1"/><circle cx="16.0" cy="378" r="7" fill="#bfe6df"/><circle cx="33.5" cy="378" r="7" fill="#bfe6df"/><circle cx="51.0" cy="378" r="7" fill="#bfe6df"/><circle cx="68.5" cy="378" r="7" fill="#bfe6df"/><circle cx="86.0" cy="378" r="7" fill="#bfe6df"/><circle cx="103.5" cy="378" r="7" fill="#bfe6df"/><circle cx="121.0" cy="378" r="7" fill="#bfe6df"/><circle cx="138.5" cy="378" r="7" fill="#bfe6df"/><circle cx="156.0" cy="378" r="7" fill="#bfe6df"/><circle cx="173.5" cy="378" r="7" fill="#bfe6df"/><circle cx="191.0" cy="378" r="7" fill="#bfe6df"/><circle cx="208.5" cy="378" r="7" fill="#bfe6df"/><circle cx="226.0" cy="378" r="7" fill="#bfe6df"/><circle cx="243.5" cy="378" r="7" fill="#bfe6df"/></svg>
+    <div class="thirds">
+      <div data-r><h3>Antes de viajar</h3><p>Leia o sumário, escolha os dias que quer, reserve o que precisa pelos links com desconto, baixe os mapas e configure o celular.</p></div>
+      <div data-r style="--i:1"><h3>Na cidade</h3><p>Abra o dia, siga manhã, tarde e noite e pule o que estiver marcado como opcional se faltar tempo.</p></div>
+      <div data-r style="--i:2"><h3>No celular</h3><p>Há uma versão pensada para a tela do celular, com rolagem vertical. Você pode baixar o PDF e abrir sem internet.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="ha">
+  <div class="wrap">
+    <div class="about">
+      <div class="poly" data-r><img src="img/central-park.jpg" width="1000" height="1333" alt="Camila sorrindo à beira do lago do Central Park" loading="lazy"><span>central park</span></div>
+      <div>
+        <h2 id="ha" data-r>Quem é a sua guia?</h2>
+        <p data-r style="--i:1"><b>Cami</b> tem 30 anos, já conheceu 27 países e mora no Canadá há quase 3 anos. Já perdeu a conta de quantas vezes foi a Nova York.</p>
+        <p data-r style="--i:2">Seu amor por novas culturas e sabores faz a Cami explorar ao máximo os destinos e planejar os mínimos detalhes das viagens. É formada em Marketing, pós-graduada em Inteligência Competitiva e Inovação em Marketing, e soma mais de <b>600 mil seguidores</b> nas redes.</p>
+        <p class="hand" data-r style="--i:3">me segue pra mais dicas, tá?</p>
+        <div class="acts" data-r style="--i:3"><a class="pill" href="#preco">eu quero o guia</a>
+          <div class="soc"><a class="link" href="https://www.instagram.com/camilamontreal">Instagram</a><a class="link" href="https://www.tiktok.com/@camilamontreal">TikTok</a><a class="link" href="https://www.youtube.com/@camilamontreal">YouTube</a></div></div>
       </div>
     </div>
   </div>
-  <p class="cap" id="cap" aria-live="off">Sumário: toque e vá direto para o dia ou a seção que você precisa.</p>
 </section>
 
-<section class="cards" aria-labelledby="hc2">
-  <h2 id="hc2" data-r>O que só quem já foi conta</h2>
-  <div class="seg" data-r style="--i:1"><div role="tablist" aria-label="Exemplos">
-    <button role="tab" aria-selected="true" data-t="0">Segredos</button>
-    <button role="tab" aria-selected="false" data-t="1">Economia</button>
-    <button role="tab" aria-selected="false" data-t="2">Broadway</button>
-    <button role="tab" aria-selected="false" data-t="3">Cinema</button>
-  </div></div>
-  <div class="big" data-r style="--i:2">
-    <img class="on" src="img/grand-central.jpg" width="1000" height="1333" alt="Camila no saguão da Grand Central Terminal" data-p="0">
-    <img src="img/ferry.jpg" width="1000" height="1333" alt="Camila de gorro olhando a Estátua da Liberdade da balsa" data-p="1" loading="lazy">
-    <img src="img/times-wide.jpg" width="936" height="775" alt="Camila olhando para cima na Times Square" data-p="2" loading="lazy">
-    <img src="img/friends.jpg" width="1000" height="1333" alt="Camila na cozinha do apartamento de Friends" data-p="3" loading="lazy">
-    <div class="scrim" aria-live="polite"><h3 id="st">Whispering Gallery</h3><p id="sp">De costas para o relógio, siga pelo arco à direita (saída Lexington), vire à direita e desça a rampa. Cada pessoa fala num canto do arco e a outra ouve do lado oposto.</p></div>
+<section class="sec" aria-label="Para quem é">
+  <div class="wrap who">
+    <div class="y"><h2 data-r>É para você se</h2>
+      <ul>
+        <li data-r>Está planejando viajar para Nova York e quer um roteiro pronto para adaptar.</li>
+        <li data-r style="--i:1">Prefere ter tudo organizado em um lugar.</li>
+        <li data-r style="--i:2">Quer dicas práticas, com horário, endereço e preço.</li>
+        <li data-r style="--i:3">Quer um guia com opinião, não uma lista neutra.</li>
+      </ul></div>
+    <div class="n"><h2 data-r>Talvez não seja se</h2>
+      <ul>
+        <li data-r>Prefere improvisar tudo e não gosta de roteiro.</li>
+        <li data-r style="--i:1">Procura um guia focado em compras ou vida noturna. O guia cobre os dois, mas o foco é turismo e experiências.</li>
+        <li data-r style="--i:2">Quer um roteiro de mais de 4 dias completos. Há ideias extras na seção "Tem mais dias?".</li>
+        <li data-r style="--i:3">Espera atendimento individual. O guia é um material digital.</li>
+      </ul></div>
   </div>
-  <div class="pager"><button type="button" id="prev" aria-label="Anterior">←</button><span id="pg">1 / 4</span><button type="button" id="next" aria-label="Próximo">→</button></div>
-</section>
-
-<section class="incl" id="incluso" aria-labelledby="hi">
-  <div class="ph" data-r><img src="img/bridge-walk.jpg" width="1000" height="1333" alt="Camila sentada na Ponte do Brooklyn" loading="lazy"></div>
-  <div class="ticket" data-r style="--i:1">
-    <h2 id="hi">O que está incluso?</h2>
-    <ul>
-      <li><span><b>Roteiro detalhado dia a dia</b>, com manhã, tarde e noite</span></li>
-      <li><span>Dicas de quem já foi a Nova York <b>inúmeras vezes</b></span></li>
-      <li><span><b>Segredos</b> que poucos turistas conhecem</span></li>
-      <li><span><b>Guia fotográfico</b> com os melhores ângulos</span></li>
-      <li><span><b>Mapa interativo</b> com +200 locais, restaurantes e banheiros gratuitos</span></li>
-      <li><span><b>Links de reserva</b> com desconto em ingressos e passeios</span></li>
-      <li><span>Lista de <b>20 locações</b> de filmes e séries famosas</span></li>
-      <li><span><b>Atualizações gratuitas</b> pelo mesmo link</span></li>
-    </ul>
-    <p class="note-s">Roteiro e mapa funcionam offline depois de baixados.</p>
-  </div>
-  <div class="ph" data-r style="--i:2"><img src="img/vessel.jpg" width="1000" height="1333" alt="Camila de óculos escuros em frente ao Vessel, em Hudson Yards" loading="lazy"></div>
-</section>
-
-<section class="list" aria-labelledby="hl">
-  <div class="hd"><h2 id="hl" data-r>Erros para evitar</h2><span>6 dicas do guia</span></div>
-  <ul>
-    <li data-r><img src="img/avenue.jpg" width="1000" height="1333" alt="" loading="lazy"><div><h3>Trem do aeroporto</h3><p>Eu comprei o bilhete errado, perdi o certo e gastei US$ 200 na primeira hora. O guia manda pesquisar o bilhete exato antes de embarcar.</p></div></li>
-    <li data-r style="--i:1"><img src="img/statue.jpg" width="1000" height="1333" alt="" loading="lazy"><div><h3>Estátua da Liberdade</h3><p>Sem desembarque na ilha, o Staten Island Ferry é gratuito. O guia diz como chegar e de que lado sentar.</p></div></li>
-    <li data-r><img src="img/times-square.jpg" width="1000" height="1333" alt="" loading="lazy"><div><h3>Ingresso de Broadway</h3><p>A loteria dá chance de ingressos bem mais baratos, e há áudio-guia e legendas em português para vários musicais.</p></div></li>
-    <li data-r style="--i:1"><img src="img/orange-table.jpg" width="1000" height="1333" alt="" loading="lazy"><div><h3>Café mais caro do que precisava</h3><p>Antes de pedir, procure promoções na porta. Eu paguei US$ 2 em vez de 4 só perguntando.</p></div></li>
-    <li data-r><img src="img/rink.jpg" width="1000" height="1333" alt="" loading="lazy"><div><h3>Patinação no gelo</h3><p>Preço de cada pista, e qual delas tem entrada grátis: no Bryant Park você paga só o aluguel dos patins.</p></div></li>
-    <li data-r style="--i:1"><img src="img/bull.jpg" width="1000" height="1333" alt="" loading="lazy"><div><h3>Banheiro público</h3><p>É quase impossível achar banheiro público em Nova York. O mapa interativo tem uma aba só com banheiros gratuitos.</p></div></li>
-  </ul>
-</section>
-
-<section class="cmp" aria-label="Dicas soltas e este guia">
-  <div class="a">
-    <h2 data-r>Dicas soltas ajudam</h2>
-    <ul>
-      <li data-r>Cada post fala de um lugar</li>
-      <li data-r style="--i:1">Você decide sozinha(o) a ordem</li>
-      <li data-r style="--i:2">Difícil de achar de novo</li>
-      <li data-r style="--i:3">Todo lugar parece imperdível</li>
-      <li data-r style="--i:4">Links espalhados pelas redes</li>
-    </ul>
-  </div>
-  <div class="b">
-    <h2 data-r>Este guia poupa tempo</h2>
-    <ul>
-      <li data-r>Roteiro de 4 dias, organizado por região</li>
-      <li data-r style="--i:1">Manhã, tarde e noite já sugeridos</li>
-      <li data-r style="--i:2">Sumário clicável</li>
-      <li data-r style="--i:3">Marco o que é opcional e o que eu pularia</li>
-      <li data-r style="--i:4">Links de reserva, mapa e vídeos no mesmo lugar</li>
-    </ul>
-    <p class="foot" data-r>Você continua usando as redes. Só não precisa montar tudo sozinha(o).</p>
-  </div>
-</section>
-
-<section class="how" aria-labelledby="hh">
-  <h2 id="hh" data-r>De caos para quatro dias</h2>
-  <p class="lead" data-r style="--i:1">Cada círculo é uma parada do guia: soltas, juntas e, por fim, em fila, uma fileira por dia.</p>
-  <svg class="dsk" viewBox="0 0 1200 267" role="img" aria-label="57 círculos soltos, juntando-se em uma faixa e se organizando em quatro fileiras, uma por dia do roteiro"><circle cx="129" cy="46" r="8" fill="#dcefeb"/><circle cx="35" cy="143" r="8" fill="#c4e3dc"/><circle cx="226" cy="236" r="8" fill="#dcefeb"/><circle cx="22" cy="117" r="8" fill="#dcefeb"/><circle cx="98" cy="146" r="8" fill="#dcefeb"/><circle cx="317" cy="39" r="8" fill="#dcefeb"/><circle cx="244" cy="154" r="8" fill="#dcefeb"/><circle cx="224" cy="108" r="8" fill="#dcefeb"/><circle cx="25" cy="223" r="8" fill="#c4e3dc"/><circle cx="165" cy="144" r="8" fill="#c4e3dc"/><circle cx="218" cy="179" r="8" fill="#dcefeb"/><circle cx="226" cy="168" r="8" fill="#c4e3dc"/><circle cx="44" cy="187" r="8" fill="#dcefeb"/><circle cx="240" cy="133" r="8" fill="#c4e3dc"/><circle cx="299" cy="125" r="8" fill="#c4e3dc"/><circle cx="143" cy="70" r="8" fill="#dcefeb"/><circle cx="269" cy="69" r="8" fill="#c4e3dc"/><circle cx="204" cy="228" r="8" fill="#c4e3dc"/><circle cx="116" cy="254" r="8" fill="#dcefeb"/><circle cx="199" cy="49" r="8" fill="#c4e3dc"/><circle cx="65" cy="131" r="8" fill="#dcefeb"/><circle cx="368" cy="27" r="8" fill="#c4e3dc"/><circle cx="135" cy="96" r="8" fill="#c4e3dc"/><circle cx="225" cy="123" r="8" fill="#dcefeb"/><circle cx="361" cy="127" r="8" fill="#dcefeb"/><circle cx="31" cy="184" r="8" fill="#c4e3dc"/><circle cx="114" cy="105" r="8" fill="#c4e3dc"/><circle cx="16" cy="124" r="8" fill="#dcefeb"/><circle cx="236" cy="132" r="8" fill="#dcefeb"/><circle cx="295" cy="40" r="8" fill="#dcefeb"/><circle cx="157" cy="238" r="8" fill="#c4e3dc"/><circle cx="38" cy="121" r="8" fill="#c4e3dc"/><circle cx="338" cy="214" r="8" fill="#c4e3dc"/><circle cx="272" cy="256" r="8" fill="#c4e3dc"/><circle cx="366" cy="46" r="8" fill="#dcefeb"/><circle cx="65" cy="173" r="8" fill="#dcefeb"/><circle cx="189" cy="156" r="8" fill="#c4e3dc"/><circle cx="113" cy="45" r="8" fill="#c4e3dc"/><circle cx="236" cy="88" r="8" fill="#dcefeb"/><circle cx="266" cy="137" r="8" fill="#dcefeb"/><circle cx="179" cy="227" r="8" fill="#c4e3dc"/><circle cx="157" cy="107" r="8" fill="#c4e3dc"/><circle cx="245" cy="24" r="8" fill="#dcefeb"/><circle cx="376" cy="119" r="8" fill="#dcefeb"/><circle cx="135" cy="21" r="8" fill="#dcefeb"/><circle cx="220" cy="143" r="8" fill="#c4e3dc"/><circle cx="238" cy="26" r="8" fill="#dcefeb"/><circle cx="238" cy="45" r="8" fill="#c4e3dc"/><circle cx="365" cy="159" r="8" fill="#c4e3dc"/><circle cx="54" cy="221" r="8" fill="#c4e3dc"/><circle cx="188" cy="86" r="8" fill="#dcefeb"/><circle cx="46" cy="94" r="8" fill="#c4e3dc"/><circle cx="187" cy="182" r="8" fill="#dcefeb"/><circle cx="85" cy="247" r="8" fill="#c4e3dc"/><circle cx="63" cy="144" r="8" fill="#dcefeb"/><circle cx="292" cy="83" r="8" fill="#dcefeb"/><circle cx="268" cy="74" r="8" fill="#c4e3dc"/><circle cx="420.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="440.5" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="461.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="481.5" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="502.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="522.5" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="543.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="563.5" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="584.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="604.5" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="625.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="645.5" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="666.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="686.5" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="707.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="727.5" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="748.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="768.5" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="789.0" cy="111.5" r="8" fill="#8fbdb4"/><circle cx="420.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="440.5" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="461.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="481.5" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="502.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="522.5" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="543.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="563.5" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="584.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="604.5" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="625.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="645.5" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="666.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="686.5" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="707.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="727.5" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="748.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="768.5" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="789.0" cy="133.5" r="8" fill="#8fbdb4"/><circle cx="420.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="440.5" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="461.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="481.5" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="502.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="522.5" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="543.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="563.5" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="584.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="604.5" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="625.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="645.5" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="666.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="686.5" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="707.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="727.5" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="748.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="768.5" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="789.0" cy="155.5" r="8" fill="#8fbdb4"/><circle cx="830" cy="40" r="9" fill="#0e4b44"/><circle cx="852" cy="40" r="9" fill="#0e4b44"/><circle cx="874" cy="40" r="9" fill="#0e4b44"/><circle cx="896" cy="40" r="9" fill="#0e4b44"/><circle cx="918" cy="40" r="9" fill="#0e4b44"/><circle cx="940" cy="40" r="9" fill="#0e4b44"/><circle cx="962" cy="40" r="9" fill="#0e4b44"/><circle cx="984" cy="40" r="9" fill="#0e4b44"/><circle cx="1006" cy="40" r="9" fill="#0e4b44"/><circle cx="1028" cy="40" r="9" fill="#0e4b44"/><circle cx="1050" cy="40" r="9" fill="#0e4b44"/><circle cx="1072" cy="40" r="9" fill="#0e4b44"/><circle cx="1094" cy="40" r="9" fill="#0e4b44"/><circle cx="1116" cy="40" r="9" fill="#0e4b44"/><circle cx="1138" cy="40" r="9" fill="#0e4b44"/><circle cx="1160" cy="40" r="9" fill="#0e4b44"/><circle cx="830" cy="102" r="9" fill="#31a593"/><circle cx="852" cy="102" r="9" fill="#31a593"/><circle cx="874" cy="102" r="9" fill="#31a593"/><circle cx="896" cy="102" r="9" fill="#31a593"/><circle cx="918" cy="102" r="9" fill="#31a593"/><circle cx="940" cy="102" r="9" fill="#31a593"/><circle cx="962" cy="102" r="9" fill="#31a593"/><circle cx="984" cy="102" r="9" fill="#31a593"/><circle cx="1006" cy="102" r="9" fill="#31a593"/><circle cx="1028" cy="102" r="9" fill="#31a593"/><circle cx="1050" cy="102" r="9" fill="#31a593"/><circle cx="830" cy="164" r="9" fill="#7cc9bc"/><circle cx="852" cy="164" r="9" fill="#7cc9bc"/><circle cx="874" cy="164" r="9" fill="#7cc9bc"/><circle cx="896" cy="164" r="9" fill="#7cc9bc"/><circle cx="918" cy="164" r="9" fill="#7cc9bc"/><circle cx="940" cy="164" r="9" fill="#7cc9bc"/><circle cx="962" cy="164" r="9" fill="#7cc9bc"/><circle cx="984" cy="164" r="9" fill="#7cc9bc"/><circle cx="1006" cy="164" r="9" fill="#7cc9bc"/><circle cx="1028" cy="164" r="9" fill="#7cc9bc"/><circle cx="1050" cy="164" r="9" fill="#7cc9bc"/><circle cx="1072" cy="164" r="9" fill="#7cc9bc"/><circle cx="1094" cy="164" r="9" fill="#7cc9bc"/><circle cx="1116" cy="164" r="9" fill="#7cc9bc"/><circle cx="1138" cy="164" r="9" fill="#7cc9bc"/><circle cx="1160" cy="164" r="9" fill="#7cc9bc"/><circle cx="830" cy="226" r="9" fill="#b9ded7"/><circle cx="852" cy="226" r="9" fill="#b9ded7"/><circle cx="874" cy="226" r="9" fill="#b9ded7"/><circle cx="896" cy="226" r="9" fill="#b9ded7"/><circle cx="918" cy="226" r="9" fill="#b9ded7"/><circle cx="940" cy="226" r="9" fill="#b9ded7"/><circle cx="962" cy="226" r="9" fill="#b9ded7"/><circle cx="984" cy="226" r="9" fill="#b9ded7"/><circle cx="1006" cy="226" r="9" fill="#b9ded7"/><circle cx="1028" cy="226" r="9" fill="#b9ded7"/><circle cx="1050" cy="226" r="9" fill="#b9ded7"/><circle cx="1072" cy="226" r="9" fill="#b9ded7"/><circle cx="1094" cy="226" r="9" fill="#b9ded7"/><circle cx="1116" cy="226" r="9" fill="#b9ded7"/></svg>
-  <svg class="mob" viewBox="0 0 300 400" role="img" aria-label="57 círculos soltos, juntando-se em uma faixa e se organizando em quatro fileiras, uma por dia do roteiro"><circle cx="267" cy="45" r="7" fill="#dcefeb"/><circle cx="159" cy="90" r="7" fill="#c4e3dc"/><circle cx="189" cy="72" r="7" fill="#dcefeb"/><circle cx="238" cy="94" r="7" fill="#dcefeb"/><circle cx="64" cy="59" r="7" fill="#dcefeb"/><circle cx="290" cy="91" r="7" fill="#c4e3dc"/><circle cx="81" cy="80" r="7" fill="#c4e3dc"/><circle cx="135" cy="106" r="7" fill="#c4e3dc"/><circle cx="280" cy="46" r="7" fill="#dcefeb"/><circle cx="36" cy="57" r="7" fill="#c4e3dc"/><circle cx="65" cy="73" r="7" fill="#dcefeb"/><circle cx="144" cy="76" r="7" fill="#dcefeb"/><circle cx="246" cy="20" r="7" fill="#c4e3dc"/><circle cx="231" cy="87" r="7" fill="#c4e3dc"/><circle cx="261" cy="53" r="7" fill="#c4e3dc"/><circle cx="32" cy="107" r="7" fill="#c4e3dc"/><circle cx="139" cy="86" r="7" fill="#dcefeb"/><circle cx="214" cy="25" r="7" fill="#dcefeb"/><circle cx="15" cy="70" r="7" fill="#c4e3dc"/><circle cx="238" cy="22" r="7" fill="#c4e3dc"/><circle cx="195" cy="44" r="7" fill="#dcefeb"/><circle cx="13" cy="92" r="7" fill="#dcefeb"/><circle cx="158" cy="106" r="7" fill="#c4e3dc"/><circle cx="289" cy="28" r="7" fill="#dcefeb"/><circle cx="15" cy="30" r="7" fill="#dcefeb"/><circle cx="225" cy="42" r="7" fill="#c4e3dc"/><circle cx="246" cy="13" r="7" fill="#c4e3dc"/><circle cx="264" cy="77" r="7" fill="#c4e3dc"/><circle cx="244" cy="100" r="7" fill="#dcefeb"/><circle cx="159" cy="62" r="7" fill="#dcefeb"/><circle cx="257" cy="89" r="7" fill="#dcefeb"/><circle cx="229" cy="23" r="7" fill="#dcefeb"/><circle cx="142" cy="84" r="7" fill="#dcefeb"/><circle cx="100" cy="62" r="7" fill="#c4e3dc"/><circle cx="231" cy="18" r="7" fill="#dcefeb"/><circle cx="78" cy="36" r="7" fill="#dcefeb"/><circle cx="152" cy="67" r="7" fill="#dcefeb"/><circle cx="134" cy="72" r="7" fill="#dcefeb"/><circle cx="205" cy="55" r="7" fill="#c4e3dc"/><circle cx="152" cy="33" r="7" fill="#c4e3dc"/><circle cx="271" cy="102" r="7" fill="#dcefeb"/><circle cx="247" cy="22" r="7" fill="#dcefeb"/><circle cx="119" cy="40" r="7" fill="#dcefeb"/><circle cx="130" cy="30" r="7" fill="#c4e3dc"/><circle cx="231" cy="102" r="7" fill="#dcefeb"/><circle cx="276" cy="75" r="7" fill="#c4e3dc"/><circle cx="48" cy="101" r="7" fill="#c4e3dc"/><circle cx="70" cy="108" r="7" fill="#c4e3dc"/><circle cx="260" cy="24" r="7" fill="#dcefeb"/><circle cx="53" cy="53" r="7" fill="#c4e3dc"/><circle cx="104" cy="28" r="7" fill="#c4e3dc"/><circle cx="33" cy="46" r="7" fill="#c4e3dc"/><circle cx="165" cy="54" r="7" fill="#dcefeb"/><circle cx="117" cy="62" r="7" fill="#c4e3dc"/><circle cx="154" cy="14" r="7" fill="#dcefeb"/><circle cx="285" cy="18" r="7" fill="#c4e3dc"/><circle cx="85" cy="103" r="7" fill="#dcefeb"/><circle cx="100" cy="150.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="150.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="150.0" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="156.5" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="156.5" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="156.5" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="163.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="163.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="163.0" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="169.5" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="169.5" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="169.5" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="176.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="176.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="176.0" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="182.5" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="182.5" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="182.5" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="189.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="189.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="189.0" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="195.5" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="195.5" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="195.5" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="202.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="202.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="202.0" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="208.5" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="208.5" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="208.5" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="215.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="215.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="215.0" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="221.5" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="221.5" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="221.5" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="228.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="228.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="228.0" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="234.5" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="234.5" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="234.5" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="241.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="241.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="241.0" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="247.5" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="247.5" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="247.5" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="254.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="254.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="254.0" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="260.5" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="260.5" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="260.5" r="2.6" fill="#8fbdb4"/><circle cx="100" cy="267.0" r="2.6" fill="#8fbdb4"/><circle cx="120" cy="267.0" r="2.6" fill="#8fbdb4"/><circle cx="140" cy="267.0" r="2.6" fill="#8fbdb4"/><circle cx="16.0" cy="300" r="7" fill="#0e4b44"/><circle cx="33.5" cy="300" r="7" fill="#0e4b44"/><circle cx="51.0" cy="300" r="7" fill="#0e4b44"/><circle cx="68.5" cy="300" r="7" fill="#0e4b44"/><circle cx="86.0" cy="300" r="7" fill="#0e4b44"/><circle cx="103.5" cy="300" r="7" fill="#0e4b44"/><circle cx="121.0" cy="300" r="7" fill="#0e4b44"/><circle cx="138.5" cy="300" r="7" fill="#0e4b44"/><circle cx="156.0" cy="300" r="7" fill="#0e4b44"/><circle cx="173.5" cy="300" r="7" fill="#0e4b44"/><circle cx="191.0" cy="300" r="7" fill="#0e4b44"/><circle cx="208.5" cy="300" r="7" fill="#0e4b44"/><circle cx="226.0" cy="300" r="7" fill="#0e4b44"/><circle cx="243.5" cy="300" r="7" fill="#0e4b44"/><circle cx="261.0" cy="300" r="7" fill="#0e4b44"/><circle cx="278.5" cy="300" r="7" fill="#0e4b44"/><circle cx="16.0" cy="326" r="7" fill="#31a593"/><circle cx="33.5" cy="326" r="7" fill="#31a593"/><circle cx="51.0" cy="326" r="7" fill="#31a593"/><circle cx="68.5" cy="326" r="7" fill="#31a593"/><circle cx="86.0" cy="326" r="7" fill="#31a593"/><circle cx="103.5" cy="326" r="7" fill="#31a593"/><circle cx="121.0" cy="326" r="7" fill="#31a593"/><circle cx="138.5" cy="326" r="7" fill="#31a593"/><circle cx="156.0" cy="326" r="7" fill="#31a593"/><circle cx="173.5" cy="326" r="7" fill="#31a593"/><circle cx="191.0" cy="326" r="7" fill="#31a593"/><circle cx="16.0" cy="352" r="7" fill="#7cc9bc"/><circle cx="33.5" cy="352" r="7" fill="#7cc9bc"/><circle cx="51.0" cy="352" r="7" fill="#7cc9bc"/><circle cx="68.5" cy="352" r="7" fill="#7cc9bc"/><circle cx="86.0" cy="352" r="7" fill="#7cc9bc"/><circle cx="103.5" cy="352" r="7" fill="#7cc9bc"/><circle cx="121.0" cy="352" r="7" fill="#7cc9bc"/><circle cx="138.5" cy="352" r="7" fill="#7cc9bc"/><circle cx="156.0" cy="352" r="7" fill="#7cc9bc"/><circle cx="173.5" cy="352" r="7" fill="#7cc9bc"/><circle cx="191.0" cy="352" r="7" fill="#7cc9bc"/><circle cx="208.5" cy="352" r="7" fill="#7cc9bc"/><circle cx="226.0" cy="352" r="7" fill="#7cc9bc"/><circle cx="243.5" cy="352" r="7" fill="#7cc9bc"/><circle cx="261.0" cy="352" r="7" fill="#7cc9bc"/><circle cx="278.5" cy="352" r="7" fill="#7cc9bc"/><circle cx="16.0" cy="378" r="7" fill="#b9ded7"/><circle cx="33.5" cy="378" r="7" fill="#b9ded7"/><circle cx="51.0" cy="378" r="7" fill="#b9ded7"/><circle cx="68.5" cy="378" r="7" fill="#b9ded7"/><circle cx="86.0" cy="378" r="7" fill="#b9ded7"/><circle cx="103.5" cy="378" r="7" fill="#b9ded7"/><circle cx="121.0" cy="378" r="7" fill="#b9ded7"/><circle cx="138.5" cy="378" r="7" fill="#b9ded7"/><circle cx="156.0" cy="378" r="7" fill="#b9ded7"/><circle cx="173.5" cy="378" r="7" fill="#b9ded7"/><circle cx="191.0" cy="378" r="7" fill="#b9ded7"/><circle cx="208.5" cy="378" r="7" fill="#b9ded7"/><circle cx="226.0" cy="378" r="7" fill="#b9ded7"/><circle cx="243.5" cy="378" r="7" fill="#b9ded7"/></svg>
-  <div class="thirds">
-    <div data-r><h3>Antes de viajar</h3><p>Leia o sumário, escolha os dias que quer, reserve o que precisa pelos links com desconto, baixe os mapas e configure o celular.</p></div>
-    <div data-r style="--i:1"><h3>Na cidade</h3><p>Abra o dia, siga manhã, tarde e noite e pule o que estiver marcado como opcional se faltar tempo.</p></div>
-    <div data-r style="--i:2"><h3>No celular</h3><p>Há uma versão pensada para a tela do celular, com rolagem vertical. Você pode baixar o PDF e abrir sem internet.</p></div>
-  </div>
-</section>
-
-<section class="about" aria-labelledby="ha">
-  <div class="ph" data-r><img src="img/central-park.jpg" width="1000" height="1333" alt="Camila sorrindo à beira do lago do Central Park" loading="lazy"></div>
-  <div>
-    <h2 id="ha" data-r>Quem é a sua guia?</h2>
-    <p data-r style="--i:1"><b>Cami</b> tem 30 anos, já conheceu 27 países e mora no Canadá há quase 3 anos. Já perdeu a conta de quantas vezes foi a Nova York.</p>
-    <p data-r style="--i:2">Seu amor por novas culturas e sabores faz a Cami explorar ao máximo os destinos e planejar os mínimos detalhes das viagens. É formada em Marketing, pós-graduada em Inteligência Competitiva e Inovação em Marketing, e soma mais de <b>600 mil seguidores</b> nas redes.</p>
-    <div class="acts" data-r style="--i:3"><a class="btn teal" href="#preco">Eu quero o guia</a>
-      <div class="soc"><a class="link" href="https://www.instagram.com/camilamontreal">Instagram</a><a class="link" href="https://www.tiktok.com/@camilamontreal">TikTok</a><a class="link" href="https://www.youtube.com/@camilamontreal">YouTube</a></div></div>
-  </div>
-</section>
-
-<section class="who" aria-label="Para quem é">
-  <div class="y"><h2 data-r>É para você se</h2>
-    <ul>
-      <li data-r>Está planejando viajar para Nova York e quer um roteiro pronto para adaptar.</li>
-      <li data-r style="--i:1">Prefere ter tudo organizado em um lugar.</li>
-      <li data-r style="--i:2">Quer dicas práticas, com horário, endereço e preço.</li>
-      <li data-r style="--i:3">Quer um guia com opinião, não uma lista neutra.</li>
-    </ul></div>
-  <div class="n"><h2 data-r>Talvez não seja se</h2>
-    <ul>
-      <li data-r>Prefere improvisar tudo e não gosta de roteiro.</li>
-      <li data-r style="--i:1">Procura um guia focado em compras ou vida noturna. O guia cobre os dois, mas o foco é turismo e experiências.</li>
-      <li data-r style="--i:2">Quer um roteiro de mais de 4 dias completos. Há ideias extras na seção "Tem mais dias?".</li>
-      <li data-r style="--i:3">Espera atendimento individual. O guia é um material digital.</li>
-    </ul></div>
 </section>
 
 <section class="price" id="preco" aria-labelledby="hp">
-  <div class="hd">
-    <h2 id="hp" data-r>Seu embarque</h2>
-    <div class="seg" data-r style="--i:1"><div role="tablist" aria-label="Onde você está comprando">
+  <div class="wrap">
+    <h2 id="hp" data-r>Seu recibo de viagem</h2>
+    <div class="seg" role="tablist" aria-label="Onde você está comprando" data-r style="--i:1">
       <button role="tab" aria-selected="true" data-pl="br">Brasil</button>
       <button role="tab" aria-selected="false" data-pl="ca">Exterior</button>
-    </div></div>
-  </div>
-  <div class="pass" data-r style="--i:1">
-    <div class="main stg" data-s="br" role="tabpanel">
-      <p class="script">Nova York · o roteiro perfeito</p>
-      <span class="pr">R$ 67,90</span>
-      <span class="per">à vista, ou em até 9× de R$ 8,92 (parcelas com juros a partir de 2×)</span>
-      <p>Cartão de crédito, Pix, boleto ou PayPal.</p>
-      <p class="inc">Você recebe o link do PDF interativo (versões desktop e celular), o mapa interativo, atualizações gratuitas e garantia de 7 dias.</p>
-      <div><a class="btn" id="buy-br" href="#checkout-br">Comprar no Brasil</a></div>
     </div>
-    <div class="main stg" data-s="ca" role="tabpanel" hidden>
-      <p class="script">Nova York · o roteiro perfeito</p>
-      <span class="pr">CAD 21</span>
-      <span class="per">pagamento único, sem mensalidade</span>
-      <p>Cartão de crédito, PayPal ou Klarna.</p>
-      <p class="inc">Você recebe o link do PDF interativo (versões desktop e celular), o mapa interativo, atualizações gratuitas e garantia de 7 dias.</p>
-      <div><a class="btn" id="buy-ca" href="#checkout-ca">Comprar do exterior</a></div>
+    <div class="receipt" data-r style="--i:2">
+      <p class="hd">CAMILA MONTREAL</p>
+      <p class="sub">Nova York · o roteiro perfeito</p>
+      <dl>
+        <div><dt>1x roteiro de 4 dias, 57 paradas</dt><dd>incluso</dd></div>
+        <div><dt>1x mapa interativo, +200 locais</dt><dd>incluso</dd></div>
+        <div><dt>20 locações de filmes e séries</dt><dd>incluso</dd></div>
+        <div><dt>links de reserva com desconto</dt><dd>incluso</dd></div>
+        <div><dt>atualizações gratuitas</dt><dd>incluso</dd></div>
+        <div><dt>reembolso em até</dt><dd>7 dias</dd></div>
+      </dl>
+      <div class="stg" data-s="br">
+        <div class="tot"><b>TOTAL</b><strong>R$ 67,90</strong></div>
+        <p class="pay">à vista, ou em até 9x de R$ 8,92 (parcelas com juros a partir de 2x). Cartão, Pix, boleto ou PayPal.</p>
+        <div class="go"><a class="pill" id="buy-br" href="#checkout-br">Comprar no Brasil</a></div>
+      </div>
+      <div class="stg" data-s="ca" hidden>
+        <div class="tot"><b>TOTAL</b><strong>CAD 21</strong></div>
+        <p class="pay">pagamento único, sem mensalidade. Cartão, PayPal ou Klarna.</p>
+        <div class="go"><a class="pill" id="buy-ca" href="#checkout-ca">Comprar do exterior</a></div>
+      </div>
+      <div class="bar" id="bar" aria-hidden="true"></div>
+      <span class="pink">@camilamontreal · obrigada por passar por aqui</span>
     </div>
-    <div class="stub" aria-hidden="true"><p class="script">Embarque</p><span>Dia 1 a 4<br>Nova York<br>Acesso por e-mail</span><span>Garantia de 7 dias</span></div>
   </div>
 </section>
 
-<section class="faq" id="faq" aria-labelledby="hq">
-  <h2 id="hq" data-r>Perguntas frequentes</h2>
-  <div>
-    <details name="q" open><summary>Quando vou ter acesso ao guia?<i></i></summary><p>Assim que o pagamento for confirmado, você recebe um e-mail com o link do PDF interativo, com versão para desktop e versão para celular.</p></details>
-    <details name="q"><summary>O que vou receber?<i></i></summary><p>O PDF premium com o roteiro dia a dia, o acesso ao mapa interativo e vários links de desconto para ingressos, atividades e experiências.</p></details>
-    <details name="q"><summary>Funciona para quem não fala outra língua além do português?<i></i></summary><p>Sim! O guia foi feito todo em português e tem várias dicas para quem nunca foi ao destino, inclusive dicas culturais, além de dicas para ver musicais em português.</p></details>
-    <details name="q"><summary>Qual a diferença desse roteiro para qualquer outro?<i></i></summary><p>Além de especialidade no destino, o guia não mostra apenas atrações turísticas. Você encontra dicas que poucos turistas conhecem, experiências que poucos turistas fazem, dicas de aplicativos e sites, o que vestir, onde comer e onde tirar as melhores fotos.</p></details>
-    <details name="q"><summary>Preciso de internet na viagem para acessar o guia?<i></i></summary><p>Não! Tanto o roteiro quanto o mapa podem ser acessados offline. Menos uma coisa para você se preocupar durante a viagem.</p></details>
-    <details name="q"><summary>16 paradas em um dia não é demais?<i></i></summary><p>É um menu organizado por região, não uma obrigação. Há paradas marcadas como opcionais e muitas são só uma passada ou uma foto. Você escolhe o ritmo.</p></details>
-    <details name="q"><summary>Os preços e horários estão atualizados?<i></i></summary><p>Preços e horários em Nova York mudam. O guia recebe atualizações gratuitas pelo mesmo link, e eu recomendo conferir o site oficial antes de comprar ingressos.</p></details>
-    <details name="q"><summary>O que são os links com desconto?<i></i></summary><p>São links de reserva de passeios, ingressos e serviços com o meu cupom. Alguns parceiros me pagam uma comissão quando você reserva pelo link, sem custo extra para você.</p></details>
-    <details name="q"><summary>E se eu não gostar?<i></i></summary><p>Você pode pedir o reembolso em até 7 dias. Escreva para o contato que está no rodapé da página.</p></details>
-    <details name="q"><summary>Existem roteiros para outros destinos?<i></i></summary><p>Sim! Você pode conferir todos os meus roteiros nas minhas redes.</p></details>
+<section class="sec" id="faq" aria-labelledby="hq">
+  <div class="wrap faq">
+    <h2 id="hq" data-r>Perguntas frequentes</h2>
+    <div>
+      <details name="q" open><summary>Quando vou ter acesso ao guia?<i></i></summary><p>Assim que o pagamento for confirmado, você recebe um e-mail com o link do PDF interativo, com versão para desktop e versão para celular.</p></details>
+      <details name="q"><summary>O que vou receber?<i></i></summary><p>O PDF premium com o roteiro dia a dia, o acesso ao mapa interativo e vários links de desconto para ingressos, atividades e experiências.</p></details>
+      <details name="q"><summary>Funciona para quem não fala outra língua além do português?<i></i></summary><p>Sim! O guia foi feito todo em português e tem várias dicas para quem nunca foi ao destino, inclusive dicas culturais, além de dicas para ver musicais em português.</p></details>
+      <details name="q"><summary>Qual a diferença desse roteiro para qualquer outro?<i></i></summary><p>Além de especialidade no destino, o guia não mostra apenas atrações turísticas. Você encontra dicas que poucos turistas conhecem, experiências que poucos turistas fazem, dicas de aplicativos e sites, o que vestir, onde comer e onde tirar as melhores fotos.</p></details>
+      <details name="q"><summary>Preciso de internet na viagem para acessar o guia?<i></i></summary><p>Não! Tanto o roteiro quanto o mapa podem ser acessados offline. Menos uma coisa para você se preocupar durante a viagem.</p></details>
+      <details name="q"><summary>16 paradas em um dia não é demais?<i></i></summary><p>É um menu organizado por região, não uma obrigação. Há paradas marcadas como opcionais e muitas são só uma passada ou uma foto. Você escolhe o ritmo.</p></details>
+      <details name="q"><summary>Os preços e horários estão atualizados?<i></i></summary><p>Preços e horários em Nova York mudam. O guia recebe atualizações gratuitas pelo mesmo link, e eu recomendo conferir o site oficial antes de comprar ingressos.</p></details>
+      <details name="q"><summary>O que são os links com desconto?<i></i></summary><p>São links de reserva de passeios, ingressos e serviços com o meu cupom. Alguns parceiros me pagam uma comissão quando você reserva pelo link, sem custo extra para você.</p></details>
+      <details name="q"><summary>E se eu não gostar?<i></i></summary><p>Você pode pedir o reembolso em até 7 dias. Escreva para o contato que está no rodapé da página.</p></details>
+      <details name="q"><summary>Existem roteiros para outros destinos?<i></i></summary><p>Sim! Você pode conferir todos os meus roteiros nas minhas redes.</p></details>
+    </div>
   </div>
 </section>
 
 <section class="cta" aria-labelledby="hz">
-  <img src="img/times-wide.jpg" width="936" height="775" alt="Camila sorrindo na Times Square" loading="lazy">
-  <div class="scr"></div>
-  <div class="c">
+  <div class="wrap">
     <h2 id="hz" data-r>Quer conhecer o melhor de NY?</h2>
     <p data-r style="--i:1">Você já escolheu o destino. Falta só decidir como quer chegar lá: com 30 abas abertas ou com um guia na mão.</p>
-    <a class="btn teal" data-r style="--i:2" href="#preco">Eu quero</a>
+    <a class="pill cream" data-r style="--i:2" href="#preco">eu quero</a>
   </div>
 </section>
 
 </main>
 
 <footer>
-  <div class="in">
-    <div class="fbrand" aria-hidden="true">Camila Montreal</div>
-    <div class="fcols">
-      <div><h3>O guia</h3><ul><li><a class="link" href="#dentro">Por dentro</a></li><li><a class="link" href="#incluso">O que está incluso</a></li><li><a class="link" href="#preco">Preço</a></li></ul></div>
-      <div><h3>Redes</h3><ul><li><a class="link" href="https://www.instagram.com/camilamontreal">Instagram</a></li><li><a class="link" href="https://www.tiktok.com/@camilamontreal">TikTok</a></li><li><a class="link" href="https://www.youtube.com/@camilamontreal">YouTube</a></li></ul></div>
-      <div><h3>Informações</h3><ul><li><a class="link" href="#termos">Termos de uso</a></li><li><a class="link" href="#privacidade">Privacidade</a></li><li><a class="link" href="#contato">Contato</a></li></ul></div>
-      <div><h3>Uma dúvida?</h3><p>Fale comigo pelo contato do guia. Respondo o mais rápido que der.</p></div>
-    </div>
-    <p class="fine">Preços, horários e disponibilidade de passeios mudam. Confira nos sites oficiais antes de reservar. Alguns links de reserva podem render comissão para mim, sem custo extra para você.</p>
-    <div class="last"><span>© 2026 Camila Montreal · @camilamontreal</span><a class="btn sm" href="#preco">Eu quero</a></div>
-  </div>
+  <div class="fbrand" aria-hidden="true">Camila Montreal</div>
+  <nav class="fcols" aria-label="Rodapé"><a class="link" href="#dentro">por dentro</a><a class="link" href="#preco">preço</a><a class="link" href="https://www.instagram.com/camilamontreal">Instagram</a><a class="link" href="https://www.tiktok.com/@camilamontreal">TikTok</a><a class="link" href="https://www.youtube.com/@camilamontreal">YouTube</a><a class="link" href="#termos">termos de uso</a><a class="link" href="#privacidade">privacidade</a><a class="link" href="#contato">contato</a></nav>
+  <p class="fine">Preços, horários e disponibilidade de passeios mudam. Confira nos sites oficiais antes de reservar. Alguns links de reserva podem render comissão para mim, sem custo extra para você.</p>
+  <p class="fine hand">feito com carinho · © 2026 Camila Montreal</p>
 </footer>
 
 <script>
@@ -613,32 +625,57 @@ footer .in{max-width:1440px;margin-inline:auto}
     targets.forEach(function (t) { t.classList.add("in"); });
   }
 
-  /* tilted product settles flat when it reaches the middle of the screen */
-  var tilt = document.getElementById("tilt");
-  if (tilt && "IntersectionObserver" in window && !reduce) {
-    new IntersectionObserver(function (es) {
-      es.forEach(function (e) { tilt.classList.toggle("flat", e.isIntersecting); });
-    }, { threshold: 0.55 }).observe(tilt);
-  }
+  /* stickers you can throw */
+  var cluster = document.getElementById("cluster");
+  document.querySelectorAll(".stk").forEach(function (el) {
+    var x = 0, y = 0, vx = 0, vy = 0, sx, sy, ox, oy, lx, ly, lt, raf;
+    function put() { el.style.transform = "translate(" + x + "px," + y + "px)"; }
+    function clamp() {
+      var c = cluster.getBoundingClientRect(), r = el.getBoundingClientRect();
+      var dx = 0, dy = 0;
+      if (r.left < c.left - 40) dx = c.left - 40 - r.left;
+      if (r.right > c.right + 40) dx = c.right + 40 - r.right;
+      if (r.top < c.top - 30) dy = c.top - 30 - r.top;
+      if (r.bottom > c.bottom + 20) dy = c.bottom + 20 - r.bottom;
+      x += dx; y += dy;
+    }
+    function glide() {
+      vx *= 0.94; vy *= 0.94; x += vx; y += vy; clamp(); put();
+      if (Math.abs(vx) + Math.abs(vy) > 0.4) raf = requestAnimationFrame(glide);
+    }
+    el.addEventListener("pointerdown", function (e) {
+      cancelAnimationFrame(raf);
+      el.setPointerCapture(e.pointerId); el.classList.add("drag");
+      sx = e.clientX; sy = e.clientY; ox = x; oy = y; lx = sx; ly = sy; lt = performance.now(); vx = vy = 0;
+    });
+    el.addEventListener("pointermove", function (e) {
+      if (!el.classList.contains("drag")) return;
+      x = ox + e.clientX - sx; y = oy + e.clientY - sy;
+      var now = performance.now(), dt = Math.max(now - lt, 1);
+      vx = (e.clientX - lx) / dt * 16; vy = (e.clientY - ly) / dt * 16; lx = e.clientX; ly = e.clientY; lt = now;
+      put();
+    });
+    function up() {
+      if (!el.classList.contains("drag")) return;
+      el.classList.remove("drag");
+      if (!reduce) raf = requestAnimationFrame(glide);
+    }
+    el.addEventListener("pointerup", up);
+    el.addEventListener("pointercancel", up);
+  });
 
-  /* days -> stops (honest cumulative sum) */
+  /* quiz thread: days -> stops (honest cumulative sum) */
   var stops = [16, 11, 16, 14];
-  var labels = [
-    "1 dia: Midtown e Times Square",
-    "2 dias: Midtown, Times Square e Central Park",
-    "3 dias: mais Estátua, Downtown e Brooklyn",
-    "4 dias: Midtown, Central Park, Estátua, Brooklyn e Hudson Yards"
-  ];
-  var num = document.getElementById("num"), dl = document.getElementById("dlabel");
-  var dayBtns = document.querySelectorAll(".days button");
+  var num = document.getElementById("num"), sent = document.getElementById("sent");
+  var chips = document.querySelectorAll(".chips button");
   function setDays(n) {
     var sum = 0; for (var i = 0; i < n; i++) sum += stops[i];
-    num.textContent = sum; dl.textContent = labels[n - 1];
-    dayBtns.forEach(function (b) { b.setAttribute("aria-pressed", String(+b.dataset.d === n)); b.textContent = +b.dataset.d === 1 ? "1 dia" : b.dataset.d; });
+    num.textContent = sum; sent.textContent = n === 1 ? "1 dia" : n + " dias";
+    chips.forEach(function (b) { b.setAttribute("aria-pressed", String(+b.dataset.d === n)); });
   }
-  dayBtns.forEach(function (b) { b.addEventListener("click", function () { setDays(+b.dataset.d); }); });
+  chips.forEach(function (b) { b.addEventListener("click", function () { setDays(+b.dataset.d); }); });
 
-  /* guide pages frame */
+  /* guide pages: one taped card */
   var frame = document.getElementById("frame");
   var fi = frame.querySelectorAll("img"), cap = document.getElementById("cap"), cur = 0, timer;
   function show(n) {
@@ -646,32 +683,30 @@ footer .in{max-width:1440px;margin-inline:auto}
     fi.forEach(function (m, k) { m.classList.toggle("on", k === cur); });
     cap.textContent = fi[cur].dataset.c;
   }
-  function auto() { clearInterval(timer); if (!reduce) timer = setInterval(function () { show(cur + 1); }, 3000); }
+  function auto() { clearInterval(timer); if (!reduce) timer = setInterval(function () { show(cur + 1); }, 3200); }
   frame.addEventListener("click", function () { show(cur + 1); auto(); });
   frame.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " " || e.key === "ArrowRight") { e.preventDefault(); show(cur + 1); auto(); } });
   auto();
 
-  /* tabs + big photo card */
+  /* tabs */
   var data = [
     ["Whispering Gallery", "De costas para o relógio, siga pelo arco à direita (saída Lexington), vire à direita e desça a rampa. Cada pessoa fala num canto do arco e a outra ouve do lado oposto."],
     ["Estátua da Liberdade de graça", "O Staten Island Ferry é gratuito, sai a cada 30 minutos e a viagem dura uns 20. Na ida, suba até o último andar e fique nas janelas do lado direito. Na volta, garanta um lugar do lado esquerdo."],
     ["Musicais em português", "Áudio-guia ShowTrans para Aladdin, The Book of Mormon, Hadestown, O Rei Leão e Wicked, e legendas em português pelo app GalaPro. Chegue com 30 a 40 minutos de antecedência."],
     ["20 locações de filmes e séries", "Home Alone 2, Friends, Sex and the City, Ghostbusters, Spider-Man e mais, cada uma com endereço que abre no Google Maps."]
   ];
-  var tabs = document.querySelectorAll(".seg [data-t]");
-  var imgs = document.querySelectorAll(".big img");
-  var st = document.getElementById("st"), sp = document.getElementById("sp"), pg = document.getElementById("pg"), ti = 0;
-  function setTab(i) {
-    ti = (i + data.length) % data.length;
-    tabs.forEach(function (t, k) { t.setAttribute("aria-selected", String(k === ti)); });
-    imgs.forEach(function (m, k) { m.classList.toggle("on", k === ti); });
-    st.textContent = data[ti][0]; sp.textContent = data[ti][1]; pg.textContent = (ti + 1) + " / " + data.length;
-  }
-  tabs.forEach(function (t, i) { t.addEventListener("click", function () { setTab(i); }); });
-  document.getElementById("prev").addEventListener("click", function () { setTab(ti - 1); });
-  document.getElementById("next").addEventListener("click", function () { setTab(ti + 1); });
+  var tabs = document.querySelectorAll(".tabs [data-t]");
+  var imgs = document.querySelectorAll(".pane .ph img");
+  var st = document.getElementById("st"), sp = document.getElementById("sp");
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () {
+      tabs.forEach(function (b, k) { b.setAttribute("aria-selected", String(k === i)); });
+      imgs.forEach(function (m, k) { m.classList.toggle("on", k === i); });
+      st.textContent = data[i][0]; sp.textContent = data[i][1];
+    });
+  });
 
-  /* boarding pass: Brasil / Exterior */
+  /* receipt: Brasil / Exterior */
   var plans = document.querySelectorAll("[data-pl]");
   var stages = document.querySelectorAll(".stg");
   function setPlan(k) {
@@ -685,6 +720,11 @@ footer .in{max-width:1440px;margin-inline:auto}
   var BUY = { br: "#checkout-br", ca: "#checkout-ca" };
   document.getElementById("buy-br").href = BUY.br;
   document.getElementById("buy-ca").href = BUY.ca;
+
+  /* barcode */
+  var bar = document.getElementById("bar"), seed = 7, html = "";
+  for (var i = 0; i < 46; i++) { seed = (seed * 9301 + 49297) % 233280; html += '<i style="width:' + (1 + Math.floor(seed / 233280 * 4)) + 'px"></i>'; }
+  bar.innerHTML = html;
 })();
 
 </script>
