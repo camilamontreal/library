@@ -21,7 +21,7 @@
 - [x] **Estrutura e copy aprovadas ("sim para tudo")**: fotos de Sacré-Coeur/Maison Rose e do almoço confirmadas, "O roteiro perfeito" liberado como nome. Números de locações Emily e do mapa, detalhes do cupom e suporte não foram respondidos: **a página não cita esses números** até ela informar
 - [ ] Links de checkout (BR e internacional), a definir na instalação
 - [x] Brainstorm de tema, 1ª rodada (seção "Decisões de design")
-- [ ] Brainstorm 2ª rodada e ok para começar a construir
+- [x] Brainstorm 2ª rodada: conceito "caderno de viagem" (v2 publicada). A v1 (metrô/Sena/baguete) foi rejeitada
 
 ---
 
@@ -174,3 +174,16 @@ Quem está planejando Paris recebe **o roteiro que a Camila faria de novo**, org
 - **Veículo que passa na faixa de dicas:** 2CV ou Vélib'.
 - **Rodapé:** baguete e carrinho de crepe (o pombo fica).
 - **Sem:** balão de ar quente, gárgula, métro como tema. Paleta e fonte vêm do guia de Paris (seção acima).
+
+
+## Versão 2: caderno de viagem (Camila, 2ª rodada)
+
+A v1 (`site-paris/`) foi rejeitada: parecia Nova York, com pouca ilusão de Paris, e as animações/personagens não empolgaram. A v2 (`site-paris-v2/`) é a versão atual.
+
+- **Conceito:** a página é o caderno de viagem da Camila sobre uma mesa de café. Cartelas de papel com fita adesiva no lugar de títulos soltos; fotos viram polaroids.
+- **Rolagem que viaja:** o cenário (Torre, Louvre, Notre-Dame, Panthéon, Versalhes, Arco, Sacré-Cœur) corre ao fundo e o céu vai do amanhecer à noite, com sol que vira lua e estrelas.
+- **Mapa de caderno:** Paris desenhada à mão (Sena, ilhas, périphérique, rabiscos dos monumentos). Pinos numerados; ao escolher uma região a rota é traçada e as polaroids "caem".
+- **"O que está incluso?":** fachada haussmanniana com nove janelas de venezianas e sacadas de ferro. Cada janela abre e mostra o item.
+- **Preço:** "menu do dia" com carimbo "Bon appétit" ao clicar em comprar.
+- **Personagens:** só o pombo no rodapé. Sem baguete, 2CV nem barco.
+- **Paleta e fonte:** as do guia (creme e rosé dominando, bordô nos detalhes), Montserrat, mais Caveat nas anotações à mão.
