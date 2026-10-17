@@ -187,3 +187,14 @@ A v1 (`site-paris/`) foi rejeitada: parecia Nova York, com pouca ilusão de Pari
 - **Preço:** "menu do dia" com carimbo "Bon appétit" ao clicar em comprar.
 - **Personagens:** só o pombo no rodapé. Sem baguete, 2CV nem barco.
 - **Paleta e fonte:** as do guia (creme e rosé dominando, bordô nos detalhes), Montserrat, mais Caveat nas anotações à mão.
+
+## Versão 3: confeitaria parisiense (Camila, 3ª rodada)
+
+A v2 (caderno) foi rejeitada: cores apagadas e fofinhas demais, muito "colagem" e pouco luxo. A v3 (`site-paris-v3/`) é a versão atual.
+
+- **Conceito:** confeitaria parisiense. Cada seção é um "sabor" de macaron em bloco de cor grande, com borda de festão (scalloped) entre os blocos.
+- **Paleta (framboesa viva):** framboesa `#C8284F`, rosa `#F59BB8`, pistache `#9BCB7B`, limão `#F6D44B`, baunilha `#FBF1DC`, chocolate `#5B1A2B`. Lavanda só em detalhes. As placas azuis de rua continuam em "Quanto custa não se planejar?".
+- **Tipografia:** Montserrat (a do guia) + Playfair Display itálico só nos destaques (ex.: "meus olhos", "faria de novo").
+- **Fotos:** em cantos arredondados, grandes (abertura, regiões, mosaico "Você já se vê lá?").
+- **Interações com função:** caixa de macarons (cada macaron abre e mostra um item incluso), mapa de Paris em blocos de cor com rota entre regiões, folheador do guia, troca PT/EN, chuva de macarons ao clicar em comprar.
+- **Sem:** polaroids, fita adesiva, cenário que muda, personagens (fica só o pombo no rodapé).
