@@ -20,7 +20,8 @@
 - [x] Headline: voz pessoal. Dias: por região, sem número. Disney: link discreto para o e-book
 - [x] **Estrutura e copy aprovadas ("sim para tudo")**: fotos de Sacré-Coeur/Maison Rose e do almoço confirmadas, "O roteiro perfeito" liberado como nome. Números de locações Emily e do mapa, detalhes do cupom e suporte não foram respondidos: **a página não cita esses números** até ela informar
 - [ ] Links de checkout (BR e internacional), a definir na instalação
-- [ ] Brainstorm de tema por pop-up (só depois da copy aprovada)
+- [x] Brainstorm de tema, 1ª rodada (seção "Decisões de design")
+- [ ] Brainstorm 2ª rodada e ok para começar a construir
 
 ---
 
@@ -160,3 +161,16 @@ Quem está planejando Paris recebe **o roteiro que a Camila faria de novo**, org
 - [ ] O que o cupom `CAMILAMONTREAL5` cobre e validade
 - [ ] Suporte pós-compra (e-mail ou Instagram)
 - [ ] Link do mapa interativo e do material de espiada (autorizar borrar texto corrido)
+
+
+---
+
+## Decisões de design (Camila, 1ª rodada)
+
+- **Fio condutor:** terraços, telhados, Sena e barcos (não o métro).
+- **"O que está incluso?":** telhados de Paris que sobem ao clicar (Eiffel, Arco do Triunfo, Sacré-Cœur, Notre-Dame, Louvre).
+- **Mascote que ensina a clicar:** baguete com boina (a boina vermelha é a das fotos dela).
+- **Placas:** placas azuis de rua ("Rue de...") para "Quanto custa não se planejar".
+- **Veículo que passa na faixa de dicas:** 2CV ou Vélib'.
+- **Rodapé:** baguete e carrinho de crepe (o pombo fica).
+- **Sem:** balão de ar quente, gárgula, métro como tema. Paleta e fonte vêm do guia de Paris (seção acima).
