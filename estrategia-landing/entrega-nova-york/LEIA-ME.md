@@ -12,6 +12,10 @@ Esta pasta está pronta para subir em qualquer hospedagem de site estático (Net
 | `img/` | Fotos da página |
 | `og.jpg` | Imagem que aparece quando o link é enviado no WhatsApp ou Instagram |
 | `termos.html`, `privacidade.html` | Rascunhos das páginas de termos e privacidade |
+| `textos.js`, `boot.js` | Textos em português e inglês e um pequeno arranque. Não mexa |
+| `fonts/` | Fonte Montserrat hospedada junto (não depende do Google) |
+| `_headers`, `vercel.json`, `.htaccess` | Cabeçalhos de segurança. Use o que combina com a sua hospedagem |
+| `SEGURANCA-E-ANUNCIOS.md` | **Leia antes de anunciar**: segurança, medição e checklist |
 
 ## 1. Colocar os links de checkout
 
@@ -61,7 +65,7 @@ Deixando vazio, nada é carregado. Com os IDs, a página envia estes eventos:
 - `change_language`: trocou entre PT e EN.
 - `click_help`: clicou em "Dúvidas? Fale comigo".
 
-Se ativar a medição, mantenha o item correspondente na `privacidade.html`.
+Se ativar a medição, aparece um aviso de cookies e as ferramentas só carregam depois que a pessoa aceita. Mantenha o item correspondente na `privacidade.html`.
 
 ## 6. Checklist antes de divulgar
 
@@ -71,6 +75,10 @@ Se ativar a medição, mantenha o item correspondente na `privacidade.html`.
 4. Abrir `termos.html` e `privacidade.html` e ver se não sobrou nenhum campo amarelo.
 5. Enviar o link para você mesma no WhatsApp e ver se a imagem de compartilhamento aparece.
 6. Rolar a página inteira no celular e ver se todas as fotos aparecem.
+
+## Segurança e anúncios
+
+Veja `SEGURANCA-E-ANUNCIOS.md`. Resumo: suba **todos** os arquivos desta pasta, inclusive `_headers` (ou `vercel.json`, ou `.htaccess`), para a política de segurança valer.
 
 ## Peso da página
 

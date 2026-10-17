@@ -148,6 +148,7 @@ EN.update({"gar":"7-day guarantee.","lg":"Showing the site in English: price in 
 
 EN.update({"colead":"Improvising in New York usually costs money and hours.","cs1":"I wasted US$ 200 on my first trip.","ab2":"Her love for new cultures and flavors makes Cami explore destinations to the fullest and plan every little detail of her trips. She also leads travel groups around the world and loves sharing experiences!"})
 EN.update({"bbuy":"Get the guide","bfree":"Available","help":"Questions? Message me on Instagram"})
+EN.update({"cns":"We use measurement cookies to understand which ads work. Do you accept?","cnsl":"Privacy","cno":"Decline","cyes":"Accept"})
 tpl=open('index.tpl.html',encoding='utf-8').read()
 PT={}
 def rep(m):

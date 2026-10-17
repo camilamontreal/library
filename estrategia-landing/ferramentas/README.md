@@ -8,6 +8,8 @@ Todas foram usadas para construir a página de Nova York. Rodam neste ambiente (
 | `checar.mjs` | Abre a página em PT/EN, celular/desktop e acusa erro de JavaScript, rolagem lateral, imagem quebrada e 404. |
 | `secao.mjs` | Rola até um seletor e tira uma captura de tela, para revisar uma seção. |
 | `desfocar_paginas_pdf.py` | Renderiza páginas do PDF do guia em webp e **desfoca só o texto corrido**, deixando títulos e fotos nítidos (assim a espiada não entrega o conteúdo). |
+| `servir_com_cabecalhos.py` | Serve a pasta de entrega aplicando o `_headers` (CSP etc.), para testar localmente sem violações. |
+| `fontes/` | Montserrat (latin) em woff2, copiada para a entrega. |
 | `podar_css.py` | Remove do CSS as regras e animações que não aparecem mais no HTML/JS. |
 
 ## Preparação (uma vez por sessão)

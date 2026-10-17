@@ -131,6 +131,9 @@ Ferramentas prontas (build, checagem, capturas, desfoque de páginas do PDF, pod
 
 `ferramentas/build_entrega.py` gera a pasta de entrega (como `entrega-nova-york/`) com `LEIA-ME.md` para ela: links no `config.js`, imagem de compartilhamento (`og:image` com endereço completo), termos e privacidade (rascunhos), medição e checklist.
 
+### Segurança (já embutida no build)
+`build_entrega.py` gera a pasta endurecida: sem scripts inline (`textos.js`, `boot.js`), CSP restrita (aceita só o próprio site + Google Analytics e Pixel do Meta), cabeçalhos em `_headers`/`vercel.json`/`.htaccess`, fonte própria (`ferramentas/fontes/`), links só `https`, `rel="noopener noreferrer"`, repasse de UTM/fbclid ao checkout, aviso de cookies que só libera a medição após aceite. Teste local com `ferramentas/servir_com_cabecalhos.py`. Regras ao criar páginas novas: **nada de `<script>` inline nem `onclick`**, nada de domínio externo sem incluir na CSP, nenhum dado coletado pela página. Ver `entrega-nova-york/SEGURANCA-E-ANUNCIOS.md` (serve de molde).
+
 ## 8. O que falta de Nova York (para a Camila resolver na instalação)
 
 Links de checkout (BR e internacional), moeda internacional (CAD ou USD), e confirmar parcelamento, garantia e atualizações.

@@ -7,19 +7,43 @@
   var CM = window.CM || {};
   var BUY = CM.buy || { pt: "#checkout-pt", en: "#checkout-en" };
 
-  /* ---------- measurement (only loads what has an ID in config.js) ---------- */
+  /* ---------- safety: only https links (or a "#" placeholder) are ever followed ---------- */
+  function safe(u) { return typeof u === "string" && (u.charAt(0) === "#" || /^https:\/\//i.test(u)) ? u : "#"; }
+  /* ---------- keep the ad tracking parameters when sending the visitor to checkout ---------- */
+  var AD = {};
+  (function () {
+    var KEYS = /^(utm_[a-z_]+|fbclid|gclid|gbraid|wbraid|ttclid|msclkid|src|sck)$/i;
+    try {
+      var q = new URLSearchParams(window.location.search), saved = {};
+      try { saved = JSON.parse(sessionStorage.getItem("cm-ad") || "{}"); } catch (e) {}
+      q.forEach(function (v, k) { if (KEYS.test(k)) saved[k] = String(v).slice(0, 200); });
+      AD = saved; try { sessionStorage.setItem("cm-ad", JSON.stringify(saved)); } catch (e) {}
+    } catch (e) {}
+  })();
+  function buyUrl(l) {
+    var base = safe(BUY[l]);
+    if (base.charAt(0) === "#" || CM.passParams === false) return base;
+    try { var u = new URL(base); Object.keys(AD).forEach(function (k) { if (!u.searchParams.has(k)) u.searchParams.set(k, AD[k]); }); return u.toString(); } catch (e) { return base; }
+  }
+
+  /* ---------- measurement: loads only after consent, and only with an ID in config.js ---------- */
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
-  if (CM.ga) { var gs = document.createElement("script"); gs.async = true; gs.src = "https://www.googletagmanager.com/gtag/js?id=" + CM.ga; document.head.appendChild(gs); gtag("js", new Date()); gtag("config", CM.ga); }
-  if (CM.pixel) {
-    !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = "2.0"; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
-    window.fbq("init", CM.pixel); window.fbq("track", "PageView");
+  var consent = null; try { consent = localStorage.getItem("cm-consent"); } catch (e) {}
+  function startMeasure() {
+    if (startMeasure.done) return; startMeasure.done = true;
+    if (CM.ga) { var gs = document.createElement("script"); gs.async = true; gs.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(CM.ga); document.head.appendChild(gs); gtag("js", new Date()); gtag("config", CM.ga, { anonymize_ip: true }); }
+    if (CM.pixel) {
+      !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = "2.0"; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+      window.fbq("init", CM.pixel); window.fbq("track", "PageView");
+    }
   }
+  if ((CM.ga || CM.pixel) && consent === "yes") startMeasure();
   function track(name, p) {
     p = p || {}; p.lang = lang;
     try {
       window.dataLayer.push({ event: name, lang: lang, params: p });
-      if (CM.ga) gtag("event", name, p);
+      if (CM.ga && startMeasure.done) gtag("event", name, p);
       if (window.fbq) { if (name === "click_buy") window.fbq("track", "InitiateCheckout", { currency: lang === "pt" ? "BRL" : "CAD" }); else window.fbq("trackCustom", name, p); }
     } catch (e) {}
   }
@@ -250,9 +274,9 @@
   var busy = false, buy = $("buy");
   function paintPrice() {
     $("mprice").textContent = D().price; $("per").textContent = D().per;
-    buy.href = BUY[lang]; $("bbtn").href = BUY[lang]; $("bbp").textContent = D().price;
+    buy.href = buyUrl(lang); $("bbtn").href = buyUrl(lang); $("bbp").textContent = D().price;
     $("pays").innerHTML = D().pays.map(function (n) { return "<li>" + n + "</li>"; }).join("");
-    $("help").href = CM.contact || $("help").href; $("flink").href = CM.contact || $("flink").href;
+    $("help").href = safe(CM.contact || $("help").href); $("flink").href = safe(CM.contact || $("flink").href);
   }
   $("bbtn").addEventListener("click", function () { track("click_buy", { from: "bar" }); });
   $("help").addEventListener("click", function () { track("click_help"); });
@@ -262,7 +286,7 @@
     e.preventDefault(); busy = true;
     document.querySelector(".pay").classList.add("go");
     
-    setTimeout(function () { window.location.href = BUY[lang]; busy = false; }, 1500);
+    setTimeout(function () { window.location.href = buyUrl(lang); busy = false; }, 1500);
   });
 
   /* ---------- skyline (included) ---------- */
@@ -335,6 +359,14 @@
   }
   $("squirrel").addEventListener("click", function () { say(D().squirrel); });
   $("cart").addEventListener("click", function () { say(D().cart); });
+
+  /* ---------- consent banner ---------- */
+  var cbox = $("consent");
+  if ((CM.ga || CM.pixel) && consent === null) {
+    setTimeout(function () { cbox.hidden = false; }, 1200);
+    $("cyes").addEventListener("click", function () { try { localStorage.setItem("cm-consent", "yes"); } catch (e) {} cbox.hidden = true; startMeasure(); });
+    $("cno").addEventListener("click", function () { try { localStorage.setItem("cm-consent", "no"); } catch (e) {} cbox.hidden = true; });
+  }
 
   /* ---------- warm up the lazy images so they are never blank ---------- */
   function warm() { document.querySelectorAll("img[loading=lazy]").forEach(function (m) { m.loading = "eager"; }); }
