@@ -18,7 +18,7 @@
 - [x] Cores, fontes e conteúdo extraídos (seção abaixo)
 - [x] Autoria: valem os dados de NY (32 anos, 38 países, Montreal há 4 anos, +600 mil, grupos). Paris: só "vou com frequência"
 - [x] Headline: voz pessoal. Dias: por região, sem número. Disney: link discreto para o e-book
-- [ ] **Aprovar estrutura e copy (seção "Proposta de estrutura e copy")**
+- [x] **Estrutura e copy aprovadas ("sim para tudo")**: fotos de Sacré-Coeur/Maison Rose e do almoço confirmadas, "O roteiro perfeito" liberado como nome. Números de locações Emily e do mapa, detalhes do cupom e suporte não foram respondidos: **a página não cita esses números** até ela informar
 - [ ] Links de checkout (BR e internacional), a definir na instalação
 - [ ] Brainstorm de tema por pop-up (só depois da copy aprovada)
 
@@ -74,7 +74,7 @@ Os dois arquivos são **HTML** (42 páginas cada), não PDF. O texto é idêntic
 
 ## Proposta de estrutura e copy (para aprovação)
 
-> Rascunho. Nada de design ou código. `[A CONFIRMAR]` = dado que só a Camila tem. Não há depoimentos, números de vendas nem escassez.
+> **Aprovada pela Camila.** Nada de design ou código. `[A CONFIRMAR]` = dado que só a Camila tem. Não há depoimentos, números de vendas nem escassez.
 
 ### Estratégia em uma frase
 Quem está planejando Paris recebe **o roteiro que a Camila faria de novo**, organizado por região, com as locações de Emily in Paris, onde ficar, onde comer bem e barato e como se proteger, tudo no celular e no desktop.
