@@ -198,3 +198,14 @@ A v2 (caderno) foi rejeitada: cores apagadas e fofinhas demais, muito "colagem" 
 - **Fotos:** em cantos arredondados, grandes (abertura, regiões, mosaico "Você já se vê lá?").
 - **Interações com função:** caixa de macarons (cada macaron abre e mostra um item incluso), mapa de Paris em blocos de cor com rota entre regiões, folheador do guia, troca PT/EN, chuva de macarons ao clicar em comprar.
 - **Sem:** polaroids, fita adesiva, cenário que muda, personagens (fica só o pombo no rodapé).
+
+## 4ª rodada: escolher entre 4 aberturas (Camila rejeitou a v3)
+
+A v3 (confeitaria) foi rejeitada: cores doces demais, parecia loja de doces, sem o estilo dela e com blocos chapados. Em vez de propor outro conceito, foi montado um comparativo único (`opcoes-paris/`) com 4 aberturas e a seção "O que é este guia?" de cada:
+
+- **A · Foto inteira:** foto dela em tela cheia com véu bordô, parente da página de NY, placa azul de rua.
+- **B · Revista:** tela dividida, serifa grande, preto, creme e vermelho, foto vertical grande.
+- **C · Paris à noite:** foto noturna, azul-noite e dourado, serifa.
+- **D · Parede de fotos:** várias fotos dela em colunas que se movem, como o feed, com cartão branco de título.
+
+Aguardando a escolha da Camila (ou o que aproveitar de cada uma).
