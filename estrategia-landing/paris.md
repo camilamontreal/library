@@ -209,3 +209,14 @@ A v3 (confeitaria) foi rejeitada: cores doces demais, parecia loja de doces, sem
 - **D · Parede de fotos:** várias fotos dela em colunas que se movem, como o feed, com cartão branco de título.
 
 Aguardando a escolha da Camila (ou o que aproveitar de cada uma).
+
+## Versão 4: A + D (Camila escolheu A e D)
+
+Escolhas: abertura A com a parede de fotos do D logo abaixo, mesma ordem e copy aprovadas, paleta bordô, creme e vermelho do guia. Para "O que está incluso?" ela pediu uma ideia mais criativa.
+
+- **Abertura (A):** foto dela em tela cheia com véu bordô, título grande e serifa itálica em "meus olhos".
+- **Parede (D):** logo abaixo, colunas das fotos dela em movimento com o cartão "Você já se vê lá?".
+- **Regiões:** seis blocos de foto (1 por região); ao escolher, abre o painel com 3 fotos, paradas e a dica.
+- **Incluso = stories do Instagram:** 9 destaques redondos com fotos dela; ao tocar abre uma história em tela cheia (barras de progresso, avança sozinha, toque nas laterais ou setas do teclado, Esc fecha, segurar pausa).
+- **Placas azuis, band de atualizações, preço com carimbo "Bon voyage", fechamento com a Torre à noite.**
+- Arquivos: `site-paris-v4/` (fonte), `entrega-paris/` (pacote), `site-paris-artifact/` (Artifact).
